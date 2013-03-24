@@ -17,7 +17,6 @@
 		2170328816FE96D900A43833 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170328716FE96D900A43833 /* Default@2x.png */; };
 		2170328A16FE96D900A43833 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170328916FE96D900A43833 /* Default-568h@2x.png */; };
 		2170328D16FE96D900A43833 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2170328B16FE96D900A43833 /* MainStoryboard.storyboard */; };
-		2170329016FE96D900A43833 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2170328F16FE96D900A43833 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +34,6 @@
 		2170328716FE96D900A43833 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2170328916FE96D900A43833 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2170328C16FE96D900A43833 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		2170328E16FE96D900A43833 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2170328F16FE96D900A43833 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +83,6 @@
 				2170328216FE96D900A43833 /* AppDelegate.h */,
 				2170328316FE96D900A43833 /* AppDelegate.m */,
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
-				2170328E16FE96D900A43833 /* ViewController.h */,
-				2170328F16FE96D900A43833 /* ViewController.m */,
 				2170327A16FE96D900A43833 /* Supporting Files */,
 			);
 			path = vandyRecCenter;
@@ -175,7 +170,6 @@
 			files = (
 				2170328016FE96D900A43833 /* main.m in Sources */,
 				2170328416FE96D900A43833 /* AppDelegate.m in Sources */,
-				2170329016FE96D900A43833 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
