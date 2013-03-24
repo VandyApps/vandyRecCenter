@@ -9,90 +9,90 @@
             <objects>
                 <viewController id="gCv-Nj-e3x" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xg5-Oj-fz1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hours" image="11-clock.png" id="eec-GJ-Oyu"/>
+                    <navigationItem key="navigationItem" title="Hours" id="Tdd-lq-Ehu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvl-4L-vfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="-716"/>
+            <point key="canvasLocation" x="911" y="-716"/>
         </scene>
         <!--View Controller - Traffic-->
         <scene sceneID="o2e-LL-kN8">
             <objects>
                 <viewController id="HZ8-9J-cNb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rpB-57-BEu">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Traffic" image="112-group.png" id="jpo-KG-2B2"/>
+                    <navigationItem key="navigationItem" title="Traffic" id="uKl-fF-WQp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4K-mP-QHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="-17"/>
+            <point key="canvasLocation" x="911" y="-17"/>
         </scene>
         <!--View Controller - Programs-->
         <scene sceneID="7hF-mO-Cpy">
             <objects>
                 <viewController id="1Ez-Ad-XTq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eYs-ud-PHt">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Programs" image="83-calendar.png" id="F7K-gx-0Ak"/>
+                    <navigationItem key="navigationItem" title="Programs" id="IXE-Ns-Xqy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzi-4g-aPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="1395"/>
+            <point key="canvasLocation" x="911" y="1395"/>
         </scene>
         <!--View Controller - Intramurals-->
         <scene sceneID="OW7-Ay-8qD">
             <objects>
                 <viewController id="FBx-ur-qvz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DVR-gG-xcS">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Intramurals" image="63-runner.png" id="RiE-31-ECd"/>
+                    <navigationItem key="navigationItem" title="Intramurals" id="fWI-tc-TSx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YnG-QF-bak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="689"/>
+            <point key="canvasLocation" x="911" y="689"/>
         </scene>
         <!--View Controller - Map-->
         <scene sceneID="6Y1-a8-hIs">
             <objects>
                 <viewController id="8jJ-Q2-Noq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Owg-Q7-apI">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="103-map.png" id="iOd-tE-7cJ"/>
+                    <navigationItem key="navigationItem" title="Map" id="eAR-pn-A73"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quX-sA-XZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="2077"/>
+            <point key="canvasLocation" x="911" y="2077"/>
         </scene>
-        <!--View Controller - Home-->
+        <!--View Controller - Vandy Rec Center-->
         <scene sceneID="mni-wY-s0P">
             <objects>
                 <viewController id="el6-RT-IAc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9DO-eE-itp">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="53-house.png" id="sqX-Sr-7r7"/>
+                    <navigationItem key="navigationItem" title="Vandy Rec Center" id="Pm6-lV-RIf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYZ-6n-kAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="-1382"/>
+            <point key="canvasLocation" x="911" y="-1382"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fLr-oT-4AT">
@@ -105,17 +105,131 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="el6-RT-IAc" kind="relationship" relationship="viewControllers" id="hPL-Da-iPh"/>
-                        <segue destination="gCv-Nj-e3x" kind="relationship" relationship="viewControllers" id="Jv9-cQ-iDr"/>
-                        <segue destination="HZ8-9J-cNb" kind="relationship" relationship="viewControllers" id="yFH-Yq-nXH"/>
-                        <segue destination="FBx-ur-qvz" kind="relationship" relationship="viewControllers" id="jKj-qM-dtD"/>
-                        <segue destination="1Ez-Ad-XTq" kind="relationship" relationship="viewControllers" id="qGU-av-C10"/>
-                        <segue destination="8jJ-Q2-Noq" kind="relationship" relationship="viewControllers" id="L7z-jl-b3a"/>
+                        <segue destination="oI7-ZR-dPW" kind="relationship" relationship="viewControllers" id="hPL-Da-iPh"/>
+                        <segue destination="U2g-yw-rgC" kind="relationship" relationship="viewControllers" id="Jv9-cQ-iDr"/>
+                        <segue destination="h77-Ar-zoT" kind="relationship" relationship="viewControllers" id="yFH-Yq-nXH"/>
+                        <segue destination="hJQ-9W-oaB" kind="relationship" relationship="viewControllers" id="jKj-qM-dtD"/>
+                        <segue destination="2PB-Kj-I9s" kind="relationship" relationship="viewControllers" id="qGU-av-C10"/>
+                        <segue destination="qJy-U6-XwR" kind="relationship" relationship="viewControllers" id="L7z-jl-b3a"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8W-zy-V6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-169" y="-34"/>
+        </scene>
+        <!--Navigation Controller - Home-->
+        <scene sceneID="5C5-2t-edS">
+            <objects>
+                <navigationController id="oI7-ZR-dPW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="53-house.png" id="sqX-Sr-7r7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f2d-Xv-i63">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="el6-RT-IAc" kind="relationship" relationship="rootViewController" id="Xfq-DO-JEF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKN-zc-xgO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="-1382"/>
+        </scene>
+        <!--Navigation Controller - Hours-->
+        <scene sceneID="i0V-9l-9bX">
+            <objects>
+                <navigationController id="U2g-yw-rgC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Hours" image="11-clock.png" id="eec-GJ-Oyu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RqK-Vd-zvR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gCv-Nj-e3x" kind="relationship" relationship="rootViewController" id="LBa-SC-vC3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVk-oK-yXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="-716"/>
+        </scene>
+        <!--Navigation Controller - Traffic-->
+        <scene sceneID="Tfv-Dq-o5X">
+            <objects>
+                <navigationController id="h77-Ar-zoT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Traffic" image="112-group.png" id="jpo-KG-2B2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sul-ey-eSP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HZ8-9J-cNb" kind="relationship" relationship="rootViewController" id="MYh-1h-GAv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbY-nQ-phI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="-17"/>
+        </scene>
+        <!--Navigation Controller - Intramurals-->
+        <scene sceneID="48O-jf-Tue">
+            <objects>
+                <navigationController id="hJQ-9W-oaB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Intramurals" image="63-runner.png" id="RiE-31-ECd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9hc-DA-gaL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FBx-ur-qvz" kind="relationship" relationship="rootViewController" id="PUU-eS-XUL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZB-E5-cOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="689"/>
+        </scene>
+        <!--Navigation Controller - Programs-->
+        <scene sceneID="K5Y-M0-n0T">
+            <objects>
+                <navigationController id="2PB-Kj-I9s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Programs" image="83-calendar.png" id="F7K-gx-0Ak"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Q9-br-lGH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1Ez-Ad-XTq" kind="relationship" relationship="rootViewController" id="QMc-2W-lVb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ETT-FM-C1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="1395"/>
+        </scene>
+        <!--Navigation Controller - Map-->
+        <scene sceneID="Aon-yH-6xm">
+            <objects>
+                <navigationController id="qJy-U6-XwR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="103-map.png" id="iOd-tE-7cJ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R7M-P6-2TB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8jJ-Q2-Noq" kind="relationship" relationship="rootViewController" id="Opp-Cu-d6C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHe-ns-iBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="2077"/>
         </scene>
     </scenes>
     <resources>

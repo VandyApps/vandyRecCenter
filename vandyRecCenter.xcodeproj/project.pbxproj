@@ -107,7 +107,6 @@
 				2170328216FE96D900A43833 /* AppDelegate.h */,
 				2170328316FE96D900A43833 /* AppDelegate.m */,
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
-				2170329616FE990300A43833 /* 11-clock.png */,
 				217032AE16FE990600A43833 /* icons */,
 				2170327A16FE96D900A43833 /* Supporting Files */,
 			);
@@ -131,6 +130,7 @@
 		217032AE16FE990600A43833 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				2170329616FE990300A43833 /* 11-clock.png */,
 				2170329716FE990300A43833 /* 11-clock@2x.png */,
 				2170329816FE990300A43833 /* 53-house.png */,
 				2170329916FE990300A43833 /* 53-house@2x.png */,
