@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Item 2-->
+        <!--View Controller - Hours-->
         <scene sceneID="nWf-t8-K9D">
             <objects>
                 <viewController id="gCv-Nj-e3x" sceneMemberID="viewController">
@@ -13,13 +13,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="eec-GJ-Oyu"/>
+                    <tabBarItem key="tabBarItem" title="Hours" image="11-clock.png" id="eec-GJ-Oyu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvl-4L-vfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="-716"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--View Controller - Traffic-->
         <scene sceneID="o2e-LL-kN8">
             <objects>
                 <viewController id="HZ8-9J-cNb" sceneMemberID="viewController">
@@ -28,13 +28,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="jpo-KG-2B2"/>
+                    <tabBarItem key="tabBarItem" title="Traffic" image="112-group.png" id="jpo-KG-2B2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4K-mP-QHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="-17"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--View Controller - Programs-->
         <scene sceneID="7hF-mO-Cpy">
             <objects>
                 <viewController id="1Ez-Ad-XTq" sceneMemberID="viewController">
@@ -43,13 +43,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="F7K-gx-0Ak"/>
+                    <tabBarItem key="tabBarItem" title="Programs" image="83-calendar.png" id="F7K-gx-0Ak"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzi-4g-aPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="1395"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--View Controller - Intramurals-->
         <scene sceneID="OW7-Ay-8qD">
             <objects>
                 <viewController id="FBx-ur-qvz" sceneMemberID="viewController">
@@ -58,13 +58,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="RiE-31-ECd"/>
+                    <tabBarItem key="tabBarItem" title="Intramurals" image="63-runner.png" id="RiE-31-ECd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YnG-QF-bak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="689"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--View Controller - Map-->
         <scene sceneID="6Y1-a8-hIs">
             <objects>
                 <viewController id="8jJ-Q2-Noq" sceneMemberID="viewController">
@@ -73,13 +73,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="iOd-tE-7cJ"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="103-map.png" id="iOd-tE-7cJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quX-sA-XZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="2077"/>
         </scene>
-        <!--View Controller - Item 1-->
+        <!--View Controller - Home-->
         <scene sceneID="mni-wY-s0P">
             <objects>
                 <viewController id="el6-RT-IAc" sceneMemberID="viewController">
@@ -88,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="sqX-Sr-7r7"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="53-house.png" id="sqX-Sr-7r7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYZ-6n-kAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,6 +118,14 @@
             <point key="canvasLocation" x="-169" y="-34"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="103-map.png" width="26" height="21"/>
+        <image name="11-clock.png" width="25" height="25"/>
+        <image name="112-group.png" width="32" height="21"/>
+        <image name="53-house.png" width="22" height="22"/>
+        <image name="63-runner.png" width="18" height="25"/>
+        <image name="83-calendar.png" width="23" height="25"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
