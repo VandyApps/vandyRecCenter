@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2170327416FE96D900A43833 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170327316FE96D900A43833 /* UIKit.framework */; };
+		2170327616FE96D900A43833 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170327516FE96D900A43833 /* Foundation.framework */; };
+		2170327816FE96D900A43833 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170327716FE96D900A43833 /* CoreGraphics.framework */; };
+		2170327E16FE96D900A43833 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2170327C16FE96D900A43833 /* InfoPlist.strings */; };
+		2170328016FE96D900A43833 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2170327F16FE96D900A43833 /* main.m */; };
+		2170328416FE96D900A43833 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2170328316FE96D900A43833 /* AppDelegate.m */; };
+		2170328616FE96D900A43833 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170328516FE96D900A43833 /* Default.png */; };
+		2170328816FE96D900A43833 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170328716FE96D900A43833 /* Default@2x.png */; };
+		2170328A16FE96D900A43833 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170328916FE96D900A43833 /* Default-568h@2x.png */; };
+		2170328D16FE96D900A43833 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2170328B16FE96D900A43833 /* MainStoryboard.storyboard */; };
+		2170329016FE96D900A43833 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2170328F16FE96D900A43833 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2170327016FE96D900A43833 /* vandyRecCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vandyRecCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2170327316FE96D900A43833 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2170327516FE96D900A43833 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2170327716FE96D900A43833 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2170327B16FE96D900A43833 /* vandyRecCenter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "vandyRecCenter-Info.plist"; sourceTree = "<group>"; };
+		2170327D16FE96D900A43833 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2170327F16FE96D900A43833 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2170328116FE96D900A43833 /* vandyRecCenter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vandyRecCenter-Prefix.pch"; sourceTree = "<group>"; };
+		2170328216FE96D900A43833 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2170328316FE96D900A43833 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2170328516FE96D900A43833 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2170328716FE96D900A43833 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2170328916FE96D900A43833 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2170328C16FE96D900A43833 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		2170328E16FE96D900A43833 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2170328F16FE96D900A43833 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2170326D16FE96D900A43833 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2170327416FE96D900A43833 /* UIKit.framework in Frameworks */,
+				2170327616FE96D900A43833 /* Foundation.framework in Frameworks */,
+				2170327816FE96D900A43833 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2170326716FE96D900A43833 = {
+			isa = PBXGroup;
+			children = (
+				2170327916FE96D900A43833 /* vandyRecCenter */,
+				2170327216FE96D900A43833 /* Frameworks */,
+				2170327116FE96D900A43833 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2170327116FE96D900A43833 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2170327016FE96D900A43833 /* vandyRecCenter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2170327216FE96D900A43833 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2170327316FE96D900A43833 /* UIKit.framework */,
+				2170327516FE96D900A43833 /* Foundation.framework */,
+				2170327716FE96D900A43833 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2170327916FE96D900A43833 /* vandyRecCenter */ = {
+			isa = PBXGroup;
+			children = (
+				2170328216FE96D900A43833 /* AppDelegate.h */,
+				2170328316FE96D900A43833 /* AppDelegate.m */,
+				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
+				2170328E16FE96D900A43833 /* ViewController.h */,
+				2170328F16FE96D900A43833 /* ViewController.m */,
+				2170327A16FE96D900A43833 /* Supporting Files */,
+			);
+			path = vandyRecCenter;
+			sourceTree = "<group>";
+		};
+		2170327A16FE96D900A43833 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2170327B16FE96D900A43833 /* vandyRecCenter-Info.plist */,
+				2170327C16FE96D900A43833 /* InfoPlist.strings */,
+				2170327F16FE96D900A43833 /* main.m */,
+				2170328116FE96D900A43833 /* vandyRecCenter-Prefix.pch */,
+				2170328516FE96D900A43833 /* Default.png */,
+				2170328716FE96D900A43833 /* Default@2x.png */,
+				2170328916FE96D900A43833 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2170326F16FE96D900A43833 /* vandyRecCenter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2170329316FE96D900A43833 /* Build configuration list for PBXNativeTarget "vandyRecCenter" */;
+			buildPhases = (
+				2170326C16FE96D900A43833 /* Sources */,
+				2170326D16FE96D900A43833 /* Frameworks */,
+				2170326E16FE96D900A43833 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vandyRecCenter;
+			productName = vandyRecCenter;
+			productReference = 2170327016FE96D900A43833 /* vandyRecCenter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2170326816FE96D900A43833 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Brendan McNamara";
+			};
+			buildConfigurationList = 2170326B16FE96D900A43833 /* Build configuration list for PBXProject "vandyRecCenter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2170326716FE96D900A43833;
+			productRefGroup = 2170327116FE96D900A43833 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2170326F16FE96D900A43833 /* vandyRecCenter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2170326E16FE96D900A43833 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2170327E16FE96D900A43833 /* InfoPlist.strings in Resources */,
+				2170328616FE96D900A43833 /* Default.png in Resources */,
+				2170328816FE96D900A43833 /* Default@2x.png in Resources */,
+				2170328A16FE96D900A43833 /* Default-568h@2x.png in Resources */,
+				2170328D16FE96D900A43833 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2170326C16FE96D900A43833 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2170328016FE96D900A43833 /* main.m in Sources */,
+				2170328416FE96D900A43833 /* AppDelegate.m in Sources */,
+				2170329016FE96D900A43833 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2170327C16FE96D900A43833 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2170327D16FE96D900A43833 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2170328B16FE96D900A43833 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2170328C16FE96D900A43833 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2170329116FE96D900A43833 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2170329216FE96D900A43833 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2170329416FE96D900A43833 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "vandyRecCenter/vandyRecCenter-Prefix.pch";
+				INFOPLIST_FILE = "vandyRecCenter/vandyRecCenter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2170329516FE96D900A43833 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "vandyRecCenter/vandyRecCenter-Prefix.pch";
+				INFOPLIST_FILE = "vandyRecCenter/vandyRecCenter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2170326B16FE96D900A43833 /* Build configuration list for PBXProject "vandyRecCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2170329116FE96D900A43833 /* Debug */,
+				2170329216FE96D900A43833 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2170329316FE96D900A43833 /* Build configuration list for PBXNativeTarget "vandyRecCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2170329416FE96D900A43833 /* Debug */,
+				2170329516FE96D900A43833 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2170326816FE96D900A43833 /* Project object */;
+}
