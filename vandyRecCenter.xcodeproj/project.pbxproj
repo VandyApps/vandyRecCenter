@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		210E354A16FF979B00180CB2 /* 89-dumbells.png in Resources */ = {isa = PBXBuildFile; fileRef = 210E354816FF979B00180CB2 /* 89-dumbells.png */; };
 		210E354B16FF979B00180CB2 /* 89-dumbells@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 210E354916FF979B00180CB2 /* 89-dumbells@2x.png */; };
+		212DECD2170096C40041498E /* imageOfRec.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 212DECD1170096C40041498E /* imageOfRec.jpeg */; };
 		2170327416FE96D900A43833 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170327316FE96D900A43833 /* UIKit.framework */; };
 		2170327616FE96D900A43833 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170327516FE96D900A43833 /* Foundation.framework */; };
 		2170327816FE96D900A43833 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170327716FE96D900A43833 /* CoreGraphics.framework */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		210E354816FF979B00180CB2 /* 89-dumbells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "89-dumbells.png"; sourceTree = "<group>"; };
 		210E354916FF979B00180CB2 /* 89-dumbells@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "89-dumbells@2x.png"; sourceTree = "<group>"; };
+		212DECD1170096C40041498E /* imageOfRec.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imageOfRec.jpeg; path = ../imageOfRec.jpeg; sourceTree = "<group>"; };
 		2170327016FE96D900A43833 /* vandyRecCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vandyRecCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2170327316FE96D900A43833 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2170327516FE96D900A43833 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		212DECD01700965A0041498E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				212DECD1170096C40041498E /* imageOfRec.jpeg */,
+				217032AE16FE990600A43833 /* icons */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		2170326716FE96D900A43833 = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +122,7 @@
 				2170328216FE96D900A43833 /* AppDelegate.h */,
 				2170328316FE96D900A43833 /* AppDelegate.m */,
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
-				217032AE16FE990600A43833 /* icons */,
+				212DECD01700965A0041498E /* Images */,
 				2170327A16FE96D900A43833 /* Supporting Files */,
 			);
 			path = vandyRecCenter;
@@ -222,6 +233,7 @@
 				217032AD16FE990300A43833 /* 112-group@2x.png in Resources */,
 				210E354A16FF979B00180CB2 /* 89-dumbells.png in Resources */,
 				210E354B16FF979B00180CB2 /* 89-dumbells@2x.png in Resources */,
+				212DECD2170096C40041498E /* imageOfRec.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
