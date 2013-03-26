@@ -10,4 +10,7 @@
 
 @interface browserViewController : UIViewController
 
+#define REC_URL @"http://www.vanderbilt.edu/studentrec/"
+
+@property (nonatomic, weak) IBOutlet UIWebView *homePageForRec;
 @end

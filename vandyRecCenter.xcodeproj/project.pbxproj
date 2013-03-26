@@ -90,13 +90,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		21201EB917020AB800E89605 /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = TableViewCells;
-			sourceTree = "<group>";
-		};
 		212DECD01700965A0041498E /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +135,6 @@
 				2170328316FE96D900A43833 /* AppDelegate.m */,
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
 				21FC9F9017025F1B0065EEC2 /* view controllers */,
-				21201EB917020AB800E89605 /* TableViewCells */,
 				212DECD01700965A0041498E /* Images */,
 				2170327A16FE96D900A43833 /* Supporting Files */,
 			);

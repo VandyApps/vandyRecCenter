@@ -14,7 +14,7 @@
 
 @implementation homeViewController
 
-
+@synthesize tableView = _tableView;
 
 
 - (void) viewDidLoad {

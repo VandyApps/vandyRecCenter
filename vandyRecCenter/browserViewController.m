@@ -13,26 +13,20 @@
 @end
 
 @implementation browserViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize homePageForRec = _homePageForRec;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL: [NSURL URLWithString: REC_URL]];
+    [self.homePageForRec loadRequest: urlRequest];
+    self.homePageForRec.scalesPageToFit = YES;
+    
+    //create an asynchronous loading spiral
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end

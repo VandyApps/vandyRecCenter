@@ -183,6 +183,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="The Rec" id="Hjl-Jm-16d"/>
+                    <connections>
+                        <outlet property="homePageForRec" destination="qjH-7N-tJQ" id="R4d-2T-Uac"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKZ-TK-LLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -372,6 +375,23 @@
         <image name="gradient.png" width="200" height="100"/>
         <image name="imageOfRec.jpeg" width="550" height="323"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="browserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="homeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
