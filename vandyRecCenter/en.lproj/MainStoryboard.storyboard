@@ -162,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="911" y="-1382"/>
         </scene>
-        <!--View Controller - The Rec-->
+        <!--Browser View Controller - The Rec-->
         <scene sceneID="AoT-WZ-XIz">
             <objects>
-                <viewController id="Ckq-7B-Edj" sceneMemberID="viewController">
+                <viewController id="Ckq-7B-Edj" customClass="browserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I5L-dG-XUi">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -372,17 +372,6 @@
         <image name="gradient.png" width="200" height="100"/>
         <image name="imageOfRec.jpeg" width="550" height="323"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="homeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
