@@ -79,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="911" y="2969"/>
         </scene>
-        <!--Home View Controller - Vandy Rec Center-->
+        <!--Home View Controller - The Rec-->
         <scene sceneID="mni-wY-s0P">
             <objects>
                 <viewController id="el6-RT-IAc" customClass="homeViewController" sceneMemberID="viewController">
@@ -106,7 +106,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="XtL-BW-0RY"/>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Here is where the text belongs.  This allows for multiple lines to display.  Go to website for more details" translatesAutoresizingMaskIntoConstraints="NO" id="LRU-oN-TlV">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Here is where the text belongs.  This allows for multiple lines to display.  Go to website for more details" translatesAutoresizingMaskIntoConstraints="NO" id="LRU-oN-TlV">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="85" id="PJj-eE-bFW"/>
                                                         <constraint firstAttribute="width" constant="215" id="oJL-Vw-yNu"/>
@@ -115,7 +115,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Logo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCR-4j-Fvu">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Logo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCR-4j-Fvu">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="QRU-Bm-cyg"/>
                                                         <constraint firstAttribute="height" constant="63" id="ybP-hw-0hM"/>
@@ -152,7 +152,7 @@
                             <constraint firstItem="ynZ-T0-bzV" firstAttribute="trailing" secondItem="9DO-eE-itp" secondAttribute="trailing" type="default" id="yL1-ep-8Xa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Vandy Rec Center" id="Pm6-lV-RIf"/>
+                    <navigationItem key="navigationItem" title="The Rec" id="Pm6-lV-RIf"/>
                     <connections>
                         <outlet property="tableView" destination="DQc-C5-ZJF" id="bmB-MF-Rvi"/>
                         <segue destination="Ckq-7B-Edj" kind="push" identifier="recCenterHomePage" id="eHM-7z-o1b"/>
@@ -162,7 +162,7 @@
             </objects>
             <point key="canvasLocation" x="911" y="-1382"/>
         </scene>
-        <!--View Controller - Vandy Rec Center-->
+        <!--View Controller - The Rec-->
         <scene sceneID="AoT-WZ-XIz">
             <objects>
                 <viewController id="Ckq-7B-Edj" sceneMemberID="viewController">
@@ -182,7 +182,7 @@
                             <constraint firstItem="qjH-7N-tJQ" firstAttribute="trailing" secondItem="I5L-dG-XUi" secondAttribute="trailing" type="default" id="xJo-dJ-nVD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Vandy Rec Center" id="Hjl-Jm-16d"/>
+                    <navigationItem key="navigationItem" title="The Rec" id="Hjl-Jm-16d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKZ-TK-LLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -372,6 +372,17 @@
         <image name="gradient.png" width="200" height="100"/>
         <image name="imageOfRec.jpeg" width="550" height="323"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="homeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
