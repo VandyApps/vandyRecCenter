@@ -37,7 +37,8 @@
         
     }
     
-   
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
     
@@ -53,5 +54,11 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //simply segue to the home page of the rec center... does not matter which button is clicked
+    [self performSegueWithIdentifier:@"recCenterHomePage" sender: self];
+}
+
 
 @end

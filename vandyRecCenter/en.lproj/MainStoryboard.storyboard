@@ -108,8 +108,8 @@
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="XtL-BW-0RY"/>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Here is where the text belongs.  This allows for multiple lines to display.  Go to website for more details" translatesAutoresizingMaskIntoConstraints="NO" id="LRU-oN-TlV">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="233" id="Htg-B0-NkC"/>
                                                         <constraint firstAttribute="height" constant="85" id="PJj-eE-bFW"/>
+                                                        <constraint firstAttribute="width" constant="215" id="oJL-Vw-yNu"/>
                                                     </constraints>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -128,10 +128,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="LRU-oN-TlV" secondAttribute="trailing" constant="20" type="default" id="5T5-tS-5Po"/>
                                             <constraint firstItem="XtL-BW-0RY" firstAttribute="trailing" secondItem="94Y-zq-ytj" secondAttribute="trailing" type="default" id="AAJ-VX-Hzl"/>
                                             <constraint firstItem="rCR-4j-Fvu" firstAttribute="centerY" secondItem="XtL-BW-0RY" secondAttribute="centerY" type="default" id="HdU-sW-7Bq"/>
                                             <constraint firstItem="LRU-oN-TlV" firstAttribute="top" secondItem="94Y-zq-ytj" secondAttribute="top" constant="11" id="Nw9-4k-vwL"/>
+                                            <constraint firstItem="rCR-4j-Fvu" firstAttribute="leading" secondItem="94Y-zq-ytj" secondAttribute="leading" constant="17" id="V8d-Mg-uka"/>
                                             <constraint firstItem="rCR-4j-Fvu" firstAttribute="top" secondItem="94Y-zq-ytj" secondAttribute="top" constant="20" type="default" id="YiB-su-Yac"/>
                                             <constraint firstItem="XtL-BW-0RY" firstAttribute="top" secondItem="94Y-zq-ytj" secondAttribute="top" type="default" id="ann-4g-kg5"/>
                                             <constraint firstItem="XtL-BW-0RY" firstAttribute="leading" secondItem="94Y-zq-ytj" secondAttribute="leading" type="default" id="w4a-xb-Iuo"/>
@@ -155,11 +155,38 @@
                     <navigationItem key="navigationItem" title="Vandy Rec Center" id="Pm6-lV-RIf"/>
                     <connections>
                         <outlet property="tableView" destination="DQc-C5-ZJF" id="bmB-MF-Rvi"/>
+                        <segue destination="Ckq-7B-Edj" kind="push" identifier="recCenterHomePage" id="eHM-7z-o1b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYZ-6n-kAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="911" y="-1382"/>
+        </scene>
+        <!--View Controller - Vandy Rec Center-->
+        <scene sceneID="AoT-WZ-XIz">
+            <objects>
+                <viewController id="Ckq-7B-Edj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I5L-dG-XUi">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qjH-7N-tJQ">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qjH-7N-tJQ" firstAttribute="bottom" secondItem="I5L-dG-XUi" secondAttribute="bottom" type="default" id="1xC-LB-P1I"/>
+                            <constraint firstItem="qjH-7N-tJQ" firstAttribute="top" secondItem="I5L-dG-XUi" secondAttribute="top" type="default" id="Uvi-z7-CnW"/>
+                            <constraint firstItem="qjH-7N-tJQ" firstAttribute="leading" secondItem="I5L-dG-XUi" secondAttribute="leading" type="default" id="vYD-Ez-2Gi"/>
+                            <constraint firstItem="qjH-7N-tJQ" firstAttribute="trailing" secondItem="I5L-dG-XUi" secondAttribute="trailing" type="default" id="xJo-dJ-nVD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Vandy Rec Center" id="Hjl-Jm-16d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKZ-TK-LLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1331" y="-1384"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fLr-oT-4AT">
@@ -345,17 +372,6 @@
         <image name="gradient.png" width="200" height="100"/>
         <image name="imageOfRec.jpeg" width="550" height="323"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="homeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
