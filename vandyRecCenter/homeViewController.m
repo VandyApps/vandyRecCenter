@@ -33,14 +33,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"homeCell"];
     
     if (!cell) {
+        
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"homeCell"];
         
     }
     
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    
+    //makes cell clickable under the text view
+
+    [[(UITextView*) cell viewWithTag: 2] setUserInteractionEnabled: NO];     
     
     return cell;
     
