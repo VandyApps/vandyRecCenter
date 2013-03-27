@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>regularHours</key>
+		<array>
+			<string>12:00 pm - 11:00 pm</string>
+			<string>5:30 am - 11:00 pm</string>
+			<string>5:30 am - 11:00 pm</string>
+			<string>5:30 am - 11:00 pm</string>
+			<string>5:30 am - 11:00 pm</string>
+			<string>5:30 am - 12:00 am</string>
+			<string>9:00 am - 10:00 pm</string>
+		</array>
+		<key>poolHours</key>
+		<array/>
+		<key>summerHours</key>
+		<array/>
+		<key>winterHours</key>
+		<array/>
+		<key></key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>Break 1</key>
+		<array/>
+		<key>Break 2</key>
+		<array/>
+	</dict>
+</array>
+</plist>
