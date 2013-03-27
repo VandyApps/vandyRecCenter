@@ -18,12 +18,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL: [NSURL URLWithString: REC_URL]];
-    [self.homePageForRec loadRequest: urlRequest];
-    self.homePageForRec.scalesPageToFit = YES;
+	NSURLRequest *urlRequest = [NSURLRequest requestWithURL: [NSURL URLWithString: REC_URL]];
+    //add spinner to indicate that the page is loading
+    dispatch_queue_t loadRequest = dispatch_queue_create("load home page", 0);
+    dispatch_async(loadRequest, ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.homePageForRec loadRequest: urlRequest];
+            self.homePageForRec.scalesPageToFit = YES;
+            
+        });
+        
+    });
+    
+
     
     //create an asynchronous loading spiral
+    
     
 }
 
