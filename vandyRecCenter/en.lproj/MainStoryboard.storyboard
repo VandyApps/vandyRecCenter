@@ -12,15 +12,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="goldGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="8V0-e5-gUf">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="199" id="DkL-2h-8hz"/>
-                                </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Here are where the hours go" translatesAutoresizingMaskIntoConstraints="NO" id="4Iv-2d-UyC">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pFZ-C3-1SE">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -61,24 +52,52 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="goldGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-oF-nk5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="198" id="xBs-qu-991"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-eu-bAF">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="M4Y-U0-wFV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d36-qw-WAa">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="QJf-Bd-i5b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jVx-d3-6tx" firstAttribute="centerY" secondItem="T0o-oF-nk5" secondAttribute="centerY" type="default" id="0D4-T9-VyP"/>
+                            <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="1sk-R7-5E3"/>
                             <constraint firstItem="pFZ-C3-1SE" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="2E0-Vv-UEV"/>
-                            <constraint firstItem="4Iv-2d-UyC" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="default" id="RKj-Ik-qKL"/>
-                            <constraint firstItem="8V0-e5-gUf" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="default" id="RbD-yJ-14j"/>
+                            <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="59" id="QOV-Zh-2G3"/>
+                            <constraint firstItem="T0o-oF-nk5" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="default" id="R4f-jw-c0q"/>
+                            <constraint firstItem="jVx-d3-6tx" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="W70-05-lUL"/>
+                            <constraint firstItem="zhd-eu-bAF" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="XPS-GC-m4K"/>
                             <constraint firstItem="pFZ-C3-1SE" firstAttribute="bottom" secondItem="xg5-Oj-fz1" secondAttribute="bottom" type="default" id="ca6-mE-bz7"/>
-                            <constraint firstItem="4Iv-2d-UyC" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="gtr-zC-dp1"/>
-                            <constraint firstItem="8V0-e5-gUf" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="jaC-uk-fcx"/>
-                            <constraint firstItem="8V0-e5-gUf" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="nAV-2S-gUk"/>
-                            <constraint firstItem="pFZ-C3-1SE" firstAttribute="top" secondItem="4Iv-2d-UyC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="olc-Ca-iGA"/>
-                            <constraint firstItem="4Iv-2d-UyC" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="uzs-W7-tI8"/>
+                            <constraint firstItem="T0o-oF-nk5" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fAQ-aV-0Oh"/>
+                            <constraint firstItem="jVx-d3-6tx" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fRH-PR-EcC"/>
+                            <constraint firstItem="T0o-oF-nk5" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="lKA-Pb-S0G"/>
+                            <constraint firstItem="zhd-eu-bAF" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="nJt-Fd-1Jr"/>
+                            <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="155" id="wgR-VV-l6x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hours" id="Tdd-lq-Ehu"/>
                     <connections>
-                        <outlet property="hoursDisplay" destination="4Iv-2d-UyC" id="qaW-Kk-oiS"/>
+                        <outlet property="remainingTime" destination="d36-qw-WAa" id="1RL-zK-B3w"/>
+                        <outlet property="scrollHours" destination="jVx-d3-6tx" id="y5N-5F-57u"/>
                         <outlet property="tableView" destination="pFZ-C3-1SE" id="Lx3-KW-5cH"/>
+                        <outlet property="titleDisplay" destination="zhd-eu-bAF" id="IRm-Y0-dlI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvl-4L-vfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -462,7 +481,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="hoursDisplay" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleDisplay" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
