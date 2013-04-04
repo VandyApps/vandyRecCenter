@@ -8,6 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+
+//macros for scroll view
+#define NUM_OF_PAGES 7
+#define HEIGHT_OF_PAGE 80
+#define WIDTH_OF_PAGE 320
+#define X_COOR_OF_PAGE 0
+#define Y_COOR_OF_PAGE 59
+
+//macros for elements inside a single page
+
+//title label
+#define X_COOR_OF_TITLE_LABEL 110
+#define Y_COOR_OF_TITLE_LABEL 10
+#define HEIGHT_OF_TITLE_LABEL 30
+#define WIDTH_OF_TITLE_LABEL 100
+//hours label
+
+
 @interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleDisplay;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollHours;

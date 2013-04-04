@@ -69,19 +69,24 @@
 
 - (void) setUpScrollView {
     
-    self.scrollHours.frame = CGRectMake(0, 59, 320, 80);
     
-    //this is temporary to make debugging easier
+    self.scrollHours.frame = CGRectMake(X_COOR_OF_PAGE, Y_COOR_OF_PAGE, WIDTH_OF_PAGE, HEIGHT_OF_PAGE);
+    
+    self.scrollHours.contentSize = CGSizeMake(WIDTH_OF_PAGE * NUM_OF_PAGES, HEIGHT_OF_PAGE);
+    
     self.scrollHours.backgroundColor = [UIColor whiteColor];
     
-    UILabel* dayOfWeek = [[UILabel alloc] init];
-    dayOfWeek.frame = CGRectMake(110, 10, 100, 30);
-    dayOfWeek.textAlignment = NSTextAlignmentCenter;
+    UILabel* tempLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL, Y_COOR_OF_TITLE_LABEL, WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+    
+    tempLabel.text = @"Title here";
+    [self.scrollHours addSubview: tempLabel];
     
     
-    dayOfWeek.text = @"Monday";
-    [self.scrollHours addSubview: dayOfWeek];
-    NSLog(@"Height of %g, width of %g, x of %g and y of %g", self.scrollHours.frame.size.height, self.scrollHours.frame.size.width, self.scrollHours.frame.origin.x, self.scrollHours.frame.origin.y);
+    UILabel* anotherLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL + WIDTH_OF_PAGE, Y_COOR_OF_TITLE_LABEL, WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+    
+    anotherLabel.text = @"Title here";
+    [self.scrollHours addSubview: anotherLabel];
+
 }
 
 
