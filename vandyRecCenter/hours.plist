@@ -3,8 +3,12 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>closed</key>
+		<false/>
+		<key>mainHours</key>
+		<true/>
 		<key>title</key>
-		<string>Regular Hours</string>
+		<string>Fall Hours</string>
 		<key>hours</key>
 		<array>
 			<string>12:00 PM - 11:00 PM</string>
@@ -15,28 +19,82 @@
 			<string>5:30 AM - 12:00 AM</string>
 			<string>9:00 AM - 10:00 PM</string>
 		</array>
+		<key>beginningDate</key>
+		<date>2013-08-28T05:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-12-06T06:00:00Z</date>
 	</dict>
 	<dict>
+		<key>closed</key>
+		<false/>
+		<key>mainHours</key>
+		<true/>
+		<key>title</key>
+		<string>Winter Hours</string>
+		<key>hours</key>
+		<array/>
+		<key>beginningDate</key>
+		<date>2013-12-08T06:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-01-06T06:00:00Z</date>
+	</dict>
+	<dict>
+		<key>closed</key>
+		<false/>
+		<key>mainHours</key>
+		<true/>
+		<key>title</key>
+		<string>Spring Hours</string>
+		<key>hours</key>
+		<array/>
+		<key>beginningDate</key>
+		<date>2013-01-07T06:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-05-02T05:00:00Z</date>
+	</dict>
+	<dict>
+		<key>closed</key>
+		<false/>
+		<key>mainHours</key>
+		<true/>
+		<key>title</key>
+		<string>Summer Hours</string>
+	</dict>
+	<dict>
+		<key>closed</key>
+		<false/>
+		<key>mainHours</key>
+		<false/>
 		<key>title</key>
 		<string>Pool Hours</string>
 		<key>hours</key>
 		<array>
 			<string></string>
 		</array>
+		<key>beginningDate</key>
+		<string>Jan 1, 2013 12:00:00 AM</string>
+		<key>endDate</key>
+		<string>Jan 1, 2014 12:00:00 AM</string>
 	</dict>
 	<dict>
+		<key>closed</key>
+		<true/>
 		<key>title</key>
-		<string>Summer Hours</string>
-		<key>hours</key>
-		<array/>
+		<string>Christmas</string>
+		<key>beginningDate</key>
+		<date>2013-12-24T06:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-12-26T06:00:00Z</date>
 	</dict>
 	<dict>
+		<key>closed</key>
+		<true/>
 		<key>title</key>
-		<string>Winter Hours</string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>Fall Break</string>
+		<string>Thanksgiving</string>
+		<key>beginningDate</key>
+		<date>2013-11-22T06:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-11-29T06:00:00Z</date>
 	</dict>
 </array>
 </plist>

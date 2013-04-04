@@ -12,7 +12,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="goldGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-oF-nk5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="goldGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-oF-nk5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="198" id="xTo-cy-Rlz"/>
+                                </constraints>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Regular Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-eu-bAF">
                                 <constraints>
@@ -73,17 +77,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="T0o-oF-nk5" firstAttribute="bottom" secondItem="xg5-Oj-fz1" secondAttribute="bottom" type="default" id="2pf-Ay-Tbn"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="LR4-4V-lv2"/>
                             <constraint firstItem="zhd-eu-bAF" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="O7Y-fU-MkP"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="59" id="QOV-Zh-2G3"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="default" id="R4f-jw-c0q"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="W70-05-lUL"/>
+                            <constraint firstItem="jVx-d3-6tx" firstAttribute="centerY" secondItem="T0o-oF-nk5" secondAttribute="centerY" type="default" id="X5B-cI-c4p"/>
                             <constraint firstItem="zhd-eu-bAF" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="XPS-GC-m4K"/>
                             <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="bbo-Ax-3IY"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fAQ-aV-0Oh"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fRH-PR-EcC"/>
-                            <constraint firstAttribute="bottom" secondItem="jVx-d3-6tx" secondAttribute="bottom" constant="228" id="hQq-fV-KRI"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="lKA-Pb-S0G"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="bottom" secondItem="xg5-Oj-fz1" secondAttribute="bottom" type="default" id="s0G-B1-oj3"/>
                             <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="155" id="wgR-VV-l6x"/>
