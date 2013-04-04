@@ -39,6 +39,65 @@
 }
 
 
+- (NSArray*) getAllClosedHours {
+    NSArray *closeHours = [[NSArray alloc] init];
+    NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
+    
+    NSDictionary* nextHours;
+    while (nextHours = [enumerateHours nextObject]) {
+        
+        if ([[nextHours objectForKey: @"closed"] boolValue]) {
+            closeHours = [closeHours arrayByAddingObject: nextHours];
+        }
+    }
+    return closeHours;
+    
+}
+
+- (NSArray*) getAllOpenHours {
+    NSArray *openHours = [[NSArray alloc] init];
+    NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
+    
+    NSDictionary* nextHours;
+    while (nextHours = [enumerateHours nextObject]) {
+        
+        if (![[nextHours objectForKey: @"closed"] boolValue]) {
+            openHours = [openHours arrayByAddingObject: nextHours];
+        }
+    }
+    return openHours;
+}
+
+- (NSArray*) getAllMainHours {
+    
+    NSArray *mainHours = [[NSArray alloc] init];
+    NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
+    
+    NSDictionary* nextHours;
+    while (nextHours = [enumerateHours nextObject]) {
+        
+        if (![[nextHours objectForKey: @"closed"] boolValue] && [[nextHours objectForKey:@"mainHours"] boolValue]) {
+            mainHours = [mainHours arrayByAddingObject: nextHours];
+        }
+    }
+    return mainHours;
+}
+
+- (NSArray*) getAllOtherHours {
+    
+    NSArray *mainHours = [[NSArray alloc] init];
+    NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
+    
+    NSDictionary* nextHours;
+    while (nextHours = [enumerateHours nextObject]) {
+        
+        if (![[nextHours objectForKey: @"closed"] boolValue] && ![[nextHours objectForKey:@"mainHours"] boolValue]) {
+            mainHours = [mainHours arrayByAddingObject: nextHours];
+        }
+    }
+    return mainHours;
+}
+
 //private methods
 
 //this assumes that the selected hours has been set
@@ -73,62 +132,4 @@
     return nil;
 }
 
-- (NSArray*) getAllClosedHours {
-    NSArray *closeHours = [[NSArray alloc] init];
-    NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
-    
-    NSDictionary* nextHours;
-    while (nextHours = [enumerateHours nextObject]) {
-    
-        if ([[nextHours objectForKey: @"closed"] boolValue]) {
-            closeHours = [closeHours arrayByAddingObject: nextHours];
-        }
-    }
-    return closeHours;
-    
-}
-
-- (NSArray*) getAllOpenHours {
-    NSArray *openHours = [[NSArray alloc] init];
-    NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
-    
-    NSDictionary* nextHours;
-    while (nextHours = [enumerateHours nextObject]) {
-        
-        if (![[nextHours objectForKey: @"closed"] boolValue]) {
-            openHours = [openHours arrayByAddingObject: nextHours];
-        }
-    }
-    return openHours;
-}
-
-- (NSArray*) getAllMainHours {
-
-    NSArray *mainHours = [[NSArray alloc] init];
-    NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
-    
-    NSDictionary* nextHours;
-    while (nextHours = [enumerateHours nextObject]) {
-        
-        if (![[nextHours objectForKey: @"closed"] boolValue] && [[nextHours objectForKey:@"mainHours"] boolValue]) {
-            mainHours = [mainHours arrayByAddingObject: nextHours];
-        }
-    }
-    return mainHours;
-}
-
-- (NSArray*) getAllOtherHours {
-    
-    NSArray *mainHours = [[NSArray alloc] init];
-    NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
-    
-    NSDictionary* nextHours;
-    while (nextHours = [enumerateHours nextObject]) {
-        
-        if (![[nextHours objectForKey: @"closed"] boolValue] && ![[nextHours objectForKey:@"mainHours"] boolValue]) {
-            mainHours = [mainHours arrayByAddingObject: nextHours];
-        }
-    }
-    return mainHours;
-}
 @end
