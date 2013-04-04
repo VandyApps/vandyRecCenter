@@ -11,6 +11,9 @@
 @interface hoursViewController()
 
 @property (nonatomic, strong, readonly) NSArray* hours;
+
+//should this be a strong pointer?
+@property (nonatomic, strong) NSDictionary* currentHoursToDisplay;
 @end
 
 
@@ -37,6 +40,7 @@
     //is this the best place to set this?
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self setUpScrollView];
 }
 
 //table view stuff
@@ -62,4 +66,23 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
+- (void) setUpScrollView {
+    
+    self.scrollHours.frame = CGRectMake(0, 59, 320, 80);
+    
+    //this is temporary to make debugging easier
+    self.scrollHours.backgroundColor = [UIColor whiteColor];
+    
+    UILabel* dayOfWeek = [[UILabel alloc] init];
+    dayOfWeek.frame = CGRectMake(110, 10, 100, 30);
+    dayOfWeek.textAlignment = NSTextAlignmentCenter;
+    
+    
+    dayOfWeek.text = @"Monday";
+    [self.scrollHours addSubview: dayOfWeek];
+    NSLog(@"Height of %g, width of %g, x of %g and y of %g", self.scrollHours.frame.size.height, self.scrollHours.frame.size.width, self.scrollHours.frame.origin.x, self.scrollHours.frame.origin.y);
+}
+
+
 @end

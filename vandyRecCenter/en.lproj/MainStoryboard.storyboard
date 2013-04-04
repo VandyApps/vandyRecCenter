@@ -57,38 +57,38 @@
                                     <constraint firstAttribute="height" constant="198" id="xBs-qu-991"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-eu-bAF">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Regular Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-eu-bAF">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="M4Y-U0-wFV"/>
+                                    <constraint firstAttribute="width" constant="124" id="ea9-9b-w2y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d36-qw-WAa">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="closes in 3h 45m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d36-qw-WAa">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="99" id="QJf-Bd-i5b"/>
+                                    <constraint firstAttribute="width" constant="154" id="W8f-Uu-Bj4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.38170416410278168" green="0.37885421873118846" blue="0.77080676020408156" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="centerY" secondItem="T0o-oF-nk5" secondAttribute="centerY" type="default" id="0D4-T9-VyP"/>
-                            <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="1sk-R7-5E3"/>
                             <constraint firstItem="pFZ-C3-1SE" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="2E0-Vv-UEV"/>
+                            <constraint firstItem="zhd-eu-bAF" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="O7Y-fU-MkP"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="59" id="QOV-Zh-2G3"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="default" id="R4f-jw-c0q"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="W70-05-lUL"/>
                             <constraint firstItem="zhd-eu-bAF" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="XPS-GC-m4K"/>
+                            <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="bbo-Ax-3IY"/>
                             <constraint firstItem="pFZ-C3-1SE" firstAttribute="bottom" secondItem="xg5-Oj-fz1" secondAttribute="bottom" type="default" id="ca6-mE-bz7"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fAQ-aV-0Oh"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fRH-PR-EcC"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="lKA-Pb-S0G"/>
-                            <constraint firstItem="zhd-eu-bAF" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="nJt-Fd-1Jr"/>
                             <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="155" id="wgR-VV-l6x"/>
                         </constraints>
                     </view>

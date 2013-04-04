@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleDisplay;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollHours;
 @property (weak, nonatomic) IBOutlet UILabel *remainingTime;
