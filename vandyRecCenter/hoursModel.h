@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSArray* allHours;
 @property (nonatomic, strong) NSDictionary* selectedHours;
-@property (nonatomic, strong) NSString* path; //set in the initializer
+//@property (nonatomic, strong) NSString* path; //set in the initializer
 
 //this is the default initializer
 //sets selected hours to the first intance of hours that it sees in the pList
