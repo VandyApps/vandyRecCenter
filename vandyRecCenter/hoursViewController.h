@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "hoursModel.h"
 
 //macros for scroll view
 #define NUM_OF_PAGES 7
@@ -31,7 +31,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollHours;
 @property (weak, nonatomic) IBOutlet UILabel *remainingTime;
 
-@property (weak, nonatomic) IBOutlet UITextView *hoursDisplay;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, strong) hoursModel* hoursModel;
 @end

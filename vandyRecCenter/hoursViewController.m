@@ -20,7 +20,7 @@
 @implementation hoursViewController
 
 @synthesize tableView = _tableView;
-@synthesize hoursDisplay = _hoursDisplay;
+@synthesize hoursModel = _hoursModel;
 @synthesize hours = _hours;
 
 ///////////////////////////////////
@@ -33,6 +33,14 @@
         _hours = [[NSArray alloc] initWithContentsOfFile: pathToHours];
     }
     return _hours;
+}
+
+- (hoursModel*) hoursModel {
+    if (!_hoursModel) {
+        NSString *path = [[NSBundle mainBundle] pathForResource: @"hours" ofType:@"plist"];
+        _hoursModel = [[hoursModel alloc] initWithPathToPList: path];
+    }
+    return _hoursModel;
 }
 
 - (void) viewDidLoad {
@@ -53,18 +61,56 @@
     
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"hoursCell"];
     }
-   [(UILabel*) [cell viewWithTag: 2] setText:[(NSDictionary*) [self.hours objectAtIndex: indexPath.row] objectForKey: @"title"]];
+   
+    if (indexPath.section == 0) {
+    
+        
+         NSString* title = [[[self.hoursModel getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
+        
+        [ (UILabel*) [cell viewWithTag: 2] setText: title];
+        
+        
+    } else if (indexPath.section == 1) {
+        
+        NSString* title = [[[self.hoursModel getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
+        
+        [ (UILabel*) [cell viewWithTag: 2] setText: title];
+        
+    } else  {//last section
+    
+        NSString* title = [[[self.hoursModel getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
+        
+        [ (UILabel*) [cell viewWithTag: 2] setText: title];
+        
+    }
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    NSLog(@"%u", [self.hours count]);
-    return [self.hours count];
+    if (section == 0) {
+    
+        return [[self.hoursModel getAllMainHours] count];
+    } else if (section == 1) {
+    
+        return [[self.hoursModel getAllOtherHours] count];
+    } else {
+        return [[self.hoursModel getAllClosedHours] count];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 3;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"Main Hours";
+    } else if (section == 1) {
+        return @"Other Hours";
+    } else {
+    
+        return @"Closed";
+    }
 }
 
 - (void) setUpScrollView {

@@ -22,8 +22,13 @@
 //returns true if it was able to locate the
 //hours with the selected title
 - (BOOL) selectHoursWithTitle: (NSString*) title;
- 
+
+
+//these methods all return an array of size 0
+//if nothing could be found
 - (NSArray*) getAllClosedHours;
 - (NSArray*) getAllOpenHours;
+- (NSArray*) getAllMainHours;
+- (NSArray*) getAllOtherHours; //hours that are not main hours
 
 @end
