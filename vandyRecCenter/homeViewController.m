@@ -42,8 +42,7 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     //makes cell clickable under the text view
 
-    [[(UITextView*) cell viewWithTag: 2] setUserInteractionEnabled: NO];     
-    
+    [[(UITextView*) cell viewWithTag: 2] setUserInteractionEnabled: NO];
     return cell;
     
 }

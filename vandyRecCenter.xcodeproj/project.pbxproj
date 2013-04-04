@@ -14,6 +14,8 @@
 		212DECD2170096C40041498E /* imageOfRec.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 212DECD1170096C40041498E /* imageOfRec.jpeg */; };
 		212DECD717009AC60041498E /* homeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212DECD617009AC60041498E /* homeViewController.m */; };
 		2137613E1702895D008B3FBD /* hours.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2137613D1702895D008B3FBD /* hours.plist */; };
+		215D04D2170D0AF8008D8277 /* hoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215D04D1170D0AF8008D8277 /* hoursViewController.m */; };
+		215D04D6170D146D008D8277 /* goldGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 215D04D5170D146D008D8277 /* goldGradient.png */; };
 		2170327416FE96D900A43833 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170327316FE96D900A43833 /* UIKit.framework */; };
 		2170327616FE96D900A43833 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170327516FE96D900A43833 /* Foundation.framework */; };
 		2170327816FE96D900A43833 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170327716FE96D900A43833 /* CoreGraphics.framework */; };
@@ -48,6 +50,9 @@
 		212DECD517009AC60041498E /* homeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeViewController.h; sourceTree = "<group>"; };
 		212DECD617009AC60041498E /* homeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeViewController.m; sourceTree = "<group>"; };
 		2137613D1702895D008B3FBD /* hours.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hours.plist; sourceTree = "<group>"; };
+		215D04D0170D0AF8008D8277 /* hoursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hoursViewController.h; sourceTree = "<group>"; };
+		215D04D1170D0AF8008D8277 /* hoursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hoursViewController.m; sourceTree = "<group>"; };
+		215D04D5170D146D008D8277 /* goldGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goldGradient.png; path = ../goldGradient.png; sourceTree = "<group>"; };
 		2170327016FE96D900A43833 /* vandyRecCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vandyRecCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2170327316FE96D900A43833 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2170327516FE96D900A43833 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +100,7 @@
 		212DECD01700965A0041498E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				215D04D5170D146D008D8277 /* goldGradient.png */,
 				21201EC31702199B00E89605 /* vandyLogo.png */,
 				21201EC11702177D00E89605 /* gradient.png */,
 				212DECD1170096C40041498E /* imageOfRec.jpeg */,
@@ -186,6 +192,8 @@
 				212DECD617009AC60041498E /* homeViewController.m */,
 				21FC9F8D17025F160065EEC2 /* browserViewController.h */,
 				21FC9F8E17025F160065EEC2 /* browserViewController.m */,
+				215D04D0170D0AF8008D8277 /* hoursViewController.h */,
+				215D04D1170D0AF8008D8277 /* hoursViewController.m */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 				21201EC21702177D00E89605 /* gradient.png in Resources */,
 				21201EC41702199B00E89605 /* vandyLogo.png in Resources */,
 				2137613E1702895D008B3FBD /* hours.plist in Resources */,
+				215D04D6170D146D008D8277 /* goldGradient.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +287,7 @@
 				2170328416FE96D900A43833 /* AppDelegate.m in Sources */,
 				212DECD717009AC60041498E /* homeViewController.m in Sources */,
 				21FC9F8F17025F160065EEC2 /* browserViewController.m in Sources */,
+				215D04D2170D0AF8008D8277 /* hoursViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

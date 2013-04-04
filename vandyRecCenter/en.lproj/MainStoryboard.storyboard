@@ -4,16 +4,20 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Hours-->
+        <!--Hours View Controller - Hours-->
         <scene sceneID="nWf-t8-K9D">
             <objects>
-                <viewController id="gCv-Nj-e3x" sceneMemberID="viewController">
+                <viewController id="gCv-Nj-e3x" customClass="hoursViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xg5-Oj-fz1">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="goldGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="8V0-e5-gUf">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="199" id="DkL-2h-8hz"/>
+                                </constraints>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Here are where the hours go" translatesAutoresizingMaskIntoConstraints="NO" id="4Iv-2d-UyC">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -23,19 +27,59 @@
                                     <constraint firstAttribute="height" constant="170" id="BRd-4i-nmp"/>
                                     <constraint firstAttribute="width" constant="325" id="VLz-xn-3Fg"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="hoursCell" id="H6q-Iv-5eu">
+                                        <rect key="frame" x="0.0" y="22" width="325" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="2p8-8n-GnK">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="pgO-TL-NZp"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftg-iw-HTc">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="142" id="h5W-d2-k75"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="2p8-8n-GnK" firstAttribute="trailing" secondItem="H6q-Iv-5eu" secondAttribute="trailing" type="default" id="7D0-yb-Nep"/>
+                                            <constraint firstItem="ftg-iw-HTc" firstAttribute="leading" secondItem="H6q-Iv-5eu" secondAttribute="leading" constant="20" type="default" id="AfX-Kw-0OB"/>
+                                            <constraint firstItem="2p8-8n-GnK" firstAttribute="leading" secondItem="H6q-Iv-5eu" secondAttribute="leading" type="default" id="EPV-v0-HYr"/>
+                                            <constraint firstItem="ftg-iw-HTc" firstAttribute="centerY" secondItem="2p8-8n-GnK" secondAttribute="centerY" type="default" id="cl2-hP-NO5"/>
+                                            <constraint firstItem="2p8-8n-GnK" firstAttribute="top" secondItem="H6q-Iv-5eu" secondAttribute="top" type="default" id="mWG-IH-Vtm"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pFZ-C3-1SE" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="2E0-Vv-UEV"/>
-                            <constraint firstItem="pFZ-C3-1SE" firstAttribute="top" secondItem="4Iv-2d-UyC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ctm-Ky-nb4"/>
                             <constraint firstItem="4Iv-2d-UyC" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="default" id="RKj-Ik-qKL"/>
+                            <constraint firstItem="8V0-e5-gUf" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="default" id="RbD-yJ-14j"/>
                             <constraint firstItem="pFZ-C3-1SE" firstAttribute="bottom" secondItem="xg5-Oj-fz1" secondAttribute="bottom" type="default" id="ca6-mE-bz7"/>
                             <constraint firstItem="4Iv-2d-UyC" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="gtr-zC-dp1"/>
+                            <constraint firstItem="8V0-e5-gUf" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="jaC-uk-fcx"/>
+                            <constraint firstItem="8V0-e5-gUf" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="nAV-2S-gUk"/>
+                            <constraint firstItem="pFZ-C3-1SE" firstAttribute="top" secondItem="4Iv-2d-UyC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="olc-Ca-iGA"/>
                             <constraint firstItem="4Iv-2d-UyC" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="uzs-W7-tI8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hours" id="Tdd-lq-Ehu"/>
+                    <connections>
+                        <outlet property="hoursDisplay" destination="4Iv-2d-UyC" id="qaW-Kk-oiS"/>
+                        <outlet property="tableView" destination="pFZ-C3-1SE" id="Lx3-KW-5cH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvl-4L-vfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -394,6 +438,7 @@
         <image name="63-runner.png" width="18" height="25"/>
         <image name="83-calendar.png" width="23" height="25"/>
         <image name="89-dumbells.png" width="28" height="10"/>
+        <image name="goldGradient.png" width="200" height="100"/>
         <image name="gradient.png" width="200" height="100"/>
         <image name="imageOfRec.jpeg" width="550" height="323"/>
     </resources>
@@ -410,6 +455,13 @@
         <class className="homeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="hoursViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="hoursDisplay" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
