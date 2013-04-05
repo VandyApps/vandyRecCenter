@@ -157,6 +157,10 @@
     NSString *formattedStartDate = [semiFormattedStartDate substringWithRange: NSMakeRange(0, [semiFormattedEndDate length] - 6)];
     NSString *formattedEndDate = [semiFormattedEndDate substringWithRange: NSMakeRange(0, [semiFormattedEndDate length] - 6)];
     
+    if ([formattedStartDate isEqualToString: formattedEndDate]) {
+        return @"All year round";
+    }
+    
     return [formattedStartDate stringByAppendingFormat: @" - %@", formattedEndDate];
 }
 - (void) setUpScrollView {

@@ -59,6 +59,10 @@
 		<true/>
 		<key>title</key>
 		<string>Summer Hours</string>
+		<key>beginningDate</key>
+		<date>2013-05-02T05:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-08-28T05:00:00Z</date>
 	</dict>
 	<dict>
 		<key>closed</key>
@@ -67,14 +71,14 @@
 		<false/>
 		<key>title</key>
 		<string>Pool Hours</string>
+		<key>beginningDate</key>
+		<date>2013-01-01T06:00:00Z</date>
+		<key>endDate</key>
+		<date>2014-01-01T06:00:00Z</date>
 		<key>hours</key>
 		<array>
 			<string></string>
 		</array>
-		<key>beginningDate</key>
-		<string>Jan 1, 2013 12:00:00 AM</string>
-		<key>endDate</key>
-		<string>Jan 1, 2014 12:00:00 AM</string>
 	</dict>
 	<dict>
 		<key>closed</key>
@@ -83,6 +87,10 @@
 		<false/>
 		<key>title</key>
 		<string>Fall Break Hours</string>
+		<key>beginningDate</key>
+		<date>2013-10-22T05:00:00Z</date>
+		<key>endDate</key>
+		<date>2013-10-26T05:00:00Z</date>
 		<key>hours</key>
 		<array/>
 	</dict>
