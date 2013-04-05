@@ -78,6 +78,16 @@
 	</dict>
 	<dict>
 		<key>closed</key>
+		<false/>
+		<key>mainHours</key>
+		<false/>
+		<key>title</key>
+		<string>Fall Break Hours</string>
+		<key>hours</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>closed</key>
 		<true/>
 		<key>title</key>
 		<string>Christmas</string>

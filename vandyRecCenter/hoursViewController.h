@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "hoursModel.h"
-
+#import "NSDate-MyDateClass.h"
 //macros for scroll view
 #define NUM_OF_PAGES 7
 #define HEIGHT_OF_PAGE 80

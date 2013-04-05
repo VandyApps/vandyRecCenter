@@ -39,6 +39,7 @@
 		217032AC16FE990300A43833 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = 217032A016FE990300A43833 /* 112-group.png */; };
 		217032AD16FE990300A43833 /* 112-group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217032A116FE990300A43833 /* 112-group@2x.png */; };
 		21E9C957170DFE230079BC75 /* hoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E9C956170DFE230079BC75 /* hoursModel.m */; };
+		21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */; };
 		21FC9F8F17025F160065EEC2 /* browserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC9F8E17025F160065EEC2 /* browserViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,8 @@
 		217032A116FE990300A43833 /* 112-group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group@2x.png"; sourceTree = "<group>"; };
 		21E9C955170DFE230079BC75 /* hoursModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hoursModel.h; sourceTree = "<group>"; };
 		21E9C956170DFE230079BC75 /* hoursModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hoursModel.m; sourceTree = "<group>"; };
+		21EAD7E6170E883900449EA3 /* NSDate-MyDateClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-MyDateClass.h"; sourceTree = "<group>"; };
+		21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-MyDateClass.m"; sourceTree = "<group>"; };
 		21FC9F8D17025F160065EEC2 /* browserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = browserViewController.h; sourceTree = "<group>"; };
 		21FC9F8E17025F160065EEC2 /* browserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = browserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +151,7 @@
 				2137613D1702895D008B3FBD /* hours.plist */,
 				21E9C955170DFE230079BC75 /* hoursModel.h */,
 				21E9C956170DFE230079BC75 /* hoursModel.m */,
+				21EAD7E2170E81B600449EA3 /* Date Category */,
 				21FC9F9017025F1B0065EEC2 /* view controllers */,
 				212DECD01700965A0041498E /* Images */,
 				2170327A16FE96D900A43833 /* Supporting Files */,
@@ -188,6 +192,15 @@
 				217032A116FE990300A43833 /* 112-group@2x.png */,
 			);
 			name = icons;
+			sourceTree = "<group>";
+		};
+		21EAD7E2170E81B600449EA3 /* Date Category */ = {
+			isa = PBXGroup;
+			children = (
+				21EAD7E6170E883900449EA3 /* NSDate-MyDateClass.h */,
+				21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */,
+			);
+			name = "Date Category";
 			sourceTree = "<group>";
 		};
 		21FC9F9017025F1B0065EEC2 /* view controllers */ = {
@@ -294,6 +307,7 @@
 				21FC9F8F17025F160065EEC2 /* browserViewController.m in Sources */,
 				215D04D2170D0AF8008D8277 /* hoursViewController.m in Sources */,
 				21E9C957170DFE230079BC75 /* hoursModel.m in Sources */,
+				21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

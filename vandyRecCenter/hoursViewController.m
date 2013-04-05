@@ -49,6 +49,9 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self setUpScrollView];
+    
+    NSDate* currentDate = [[NSDate alloc] init];
+    NSLog(@"%@", [currentDate dayOfTheWeekAsString]);
 }
 
 //table view stuff
@@ -134,7 +137,9 @@
      return imageView;
 }
  
-
+- (NSString*) getDateStringWithStartDate: (NSDate*) startDate andEndDate: (NSDate*) endDate {
+    
+}
 - (void) setUpScrollView {
     
     
