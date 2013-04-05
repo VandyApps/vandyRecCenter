@@ -113,6 +113,28 @@
     }
 }
 
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"goldGradient.png"]];
+    UILabel* title = [[UILabel alloc] initWithFrame: CGRectMake(10, 2, 320, 20)];
+    title.backgroundColor = [UIColor clearColor];
+    if (section == 0) {
+    
+        title.text = @"Main Hours";
+    } else if (section == 1) {
+    
+        title.text = @"Other Hours";
+    } else  {//section is 2
+        
+        title.text = @"Closed";
+    }
+    [imageView addSubview: title];
+     return imageView;
+}
+ 
+
 - (void) setUpScrollView {
     
     
