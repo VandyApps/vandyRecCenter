@@ -49,9 +49,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self setUpScrollView];
-    
-    NSDate* currentDate = [[NSDate alloc] init];
-    NSLog(@"%@", [currentDate dayOfTheWeekAsString]);
 }
 
 //table view stuff
@@ -70,22 +67,35 @@
         
          NSString* title = [[[self.hoursModel getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
         
+        NSDate* startDate = [[[self.hoursModel getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
+        NSDate *endDate = [[[self.hoursModel getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
+        
         [ (UILabel*) [cell viewWithTag: 2] setText: title];
         
-        
+        [(UILabel *) [cell viewWithTag: 3] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
     } else if (indexPath.section == 1) {
         
         NSString* title = [[[self.hoursModel getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
         
+        NSDate *startDate = [[[self.hoursModel getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
+        NSDate *endDate = [[[self.hoursModel getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
+        
+        
         [ (UILabel*) [cell viewWithTag: 2] setText: title];
+         [(UILabel *) [cell viewWithTag: 3] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
         
     } else  {//last section
     
         NSString* title = [[[self.hoursModel getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
+        NSDate *startDate = [[[self.hoursModel getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
+        NSDate *endDate = [[[self.hoursModel getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
+        
         
         [ (UILabel*) [cell viewWithTag: 2] setText: title];
-        
+        [(UILabel *) [cell viewWithTag: 3] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
     }
+    
+    
     return cell;
 }
 
@@ -139,6 +149,15 @@
  
 - (NSString*) getDateStringWithStartDate: (NSDate*) startDate andEndDate: (NSDate*) endDate {
     
+    NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
+    formatDate.dateStyle = NSDateFormatterMediumStyle;
+    NSString* semiFormattedStartDate = [formatDate stringFromDate: startDate];
+    NSString *semiFormattedEndDate = [formatDate stringFromDate: endDate];
+    
+    NSString *formattedStartDate = [semiFormattedStartDate substringWithRange: NSMakeRange(0, [semiFormattedEndDate length] - 6)];
+    NSString *formattedEndDate = [semiFormattedEndDate substringWithRange: NSMakeRange(0, [semiFormattedEndDate length] - 6)];
+    
+    return [formattedStartDate stringByAppendingFormat: @" - %@", formattedEndDate];
 }
 - (void) setUpScrollView {
     

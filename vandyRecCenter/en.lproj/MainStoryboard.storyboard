@@ -34,30 +34,35 @@
                                 <color key="textColor" red="0.38170416410278168" green="0.37885421873118846" blue="0.77080676020408156" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-2R-rxO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="48" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-2R-rxO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="325" id="fDN-8o-qeb"/>
                                     <constraint firstAttribute="height" constant="170" id="vcl-Tq-wN0"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="hoursCell" id="zcg-PI-WmN">
-                                        <rect key="frame" x="0.0" y="22" width="325" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="hoursCell" rowHeight="48" id="zcg-PI-WmN">
+                                        <rect key="frame" x="0.0" y="22" width="325" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="325" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="W2l-72-IWG">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="43" id="vW2-eT-Cr9"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="W2l-72-IWG"/>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD2-5q-eZT">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="142" id="GMR-dP-lYd"/>
+                                                        <constraint firstAttribute="height" constant="21" id="FTV-vP-ceB"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLP-17-vJM">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="104" id="gvZ-ZS-GH7"/>
+                                                        <constraint firstAttribute="height" constant="21" id="y9Z-YP-MEW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -65,11 +70,15 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="dLP-17-vJM" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="20" type="default" id="3Zz-mX-Oeh"/>
                                             <constraint firstItem="W2l-72-IWG" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" type="default" id="Hic-wb-Hvu"/>
                                             <constraint firstItem="VD2-5q-eZT" firstAttribute="leading" secondItem="zcg-PI-WmN" secondAttribute="leading" constant="20" type="default" id="LDQ-4Z-QV3"/>
                                             <constraint firstItem="W2l-72-IWG" firstAttribute="trailing" secondItem="zcg-PI-WmN" secondAttribute="trailing" type="default" id="RhJ-Dh-axN"/>
+                                            <constraint firstItem="VD2-5q-eZT" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="11" id="Vl6-X3-Cze"/>
+                                            <constraint firstItem="dLP-17-vJM" firstAttribute="leading" secondItem="VD2-5q-eZT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ybz-XJ-Zh8"/>
                                             <constraint firstItem="W2l-72-IWG" firstAttribute="leading" secondItem="zcg-PI-WmN" secondAttribute="leading" type="default" id="lAp-q1-MRP"/>
-                                            <constraint firstItem="VD2-5q-eZT" firstAttribute="centerY" secondItem="W2l-72-IWG" secondAttribute="centerY" type="default" id="xSv-7h-knC"/>
+                                            <constraint firstAttribute="trailing" secondItem="dLP-17-vJM" secondAttribute="trailing" constant="20" type="default" id="nAf-pv-ezR"/>
+                                            <constraint firstItem="W2l-72-IWG" firstAttribute="centerY" secondItem="zcg-PI-WmN" secondAttribute="centerY" type="default" id="wTB-cv-VPg"/>
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>
