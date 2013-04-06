@@ -32,5 +32,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *remainingTime;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) hoursModel* hoursModel;
+@property (nonatomic, strong) hoursModel* hours;
 @end

@@ -10,7 +10,6 @@
 
 @interface hoursViewController()
 
-@property (nonatomic, strong, readonly) NSArray* hours;
 
 //should this be a strong pointer?
 @property (nonatomic, strong) NSDictionary* currentHoursToDisplay;
@@ -20,22 +19,14 @@
 @implementation hoursViewController
 
 @synthesize tableView = _tableView;
-@synthesize hoursModel = _hoursModel;
-@synthesize hours = _hours;
+@synthesize hours = _hoursModel;
 
 ///////////////////////////////////
 //custom getters and setters///////
 /////////////////////////////////
 
-- (NSArray*) hours {
-    if (_hours == nil) {
-        NSString *pathToHours = [[NSBundle mainBundle] pathForResource: @"hours" ofType: @"plist"];
-        _hours = [[NSArray alloc] initWithContentsOfFile: pathToHours];
-    }
-    return _hours;
-}
 
-- (hoursModel*) hoursModel {
+- (hoursModel*) hours {
     if (!_hoursModel) {
         NSString *path = [[NSBundle mainBundle] pathForResource: @"hours" ofType:@"plist"];
         _hoursModel = [[hoursModel alloc] initWithPathToPList: path];
@@ -65,20 +56,20 @@
     if (indexPath.section == 0) {
     
         
-         NSString* title = [[[self.hoursModel getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
+         NSString* title = [[[self.hours getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
         
-        NSDate* startDate = [[[self.hoursModel getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
-        NSDate *endDate = [[[self.hoursModel getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
+        NSDate* startDate = [[[self.hours getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
+        NSDate *endDate = [[[self.hours getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
         
         [ (UILabel*) [cell viewWithTag: 2] setText: title];
         
         [(UILabel *) [cell viewWithTag: 3] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
     } else if (indexPath.section == 1) {
         
-        NSString* title = [[[self.hoursModel getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
+        NSString* title = [[[self.hours getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
         
-        NSDate *startDate = [[[self.hoursModel getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
-        NSDate *endDate = [[[self.hoursModel getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
+        NSDate *startDate = [[[self.hours getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
+        NSDate *endDate = [[[self.hours getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
         
         
         [ (UILabel*) [cell viewWithTag: 2] setText: title];
@@ -86,9 +77,9 @@
         
     } else  {//last section
     
-        NSString* title = [[[self.hoursModel getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
-        NSDate *startDate = [[[self.hoursModel getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
-        NSDate *endDate = [[[self.hoursModel getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
+        NSString* title = [[[self.hours getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
+        NSDate *startDate = [[[self.hours getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
+        NSDate *endDate = [[[self.hours getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
         
         
         [ (UILabel*) [cell viewWithTag: 2] setText: title];
@@ -102,12 +93,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
     
-        return [[self.hoursModel getAllMainHours] count];
+        return [[self.hours getAllMainHours] count];
     } else if (section == 1) {
     
-        return [[self.hoursModel getAllOtherHours] count];
+        return [[self.hours getAllOtherHours] count];
     } else {
-        return [[self.hoursModel getAllClosedHours] count];
+        return [[self.hours getAllClosedHours] count];
     }
 }
 
@@ -152,13 +143,13 @@
     NSString *title;
     if (indexPath.section == 0) {
     
-        title = [[[self.hoursModel getAllMainHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
+        title = [[[self.hours getAllMainHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
     } else if (indexPath.section == 1) {
     
-         title = [[[self.hoursModel getAllOtherHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
+         title = [[[self.hours getAllOtherHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
     } else {
     
-        title = [[[self.hoursModel getAllClosedHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
+        title = [[[self.hours getAllClosedHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
     }
     
     NSLog(@"Hours selected: %@", title);
