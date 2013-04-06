@@ -146,6 +146,24 @@
     [imageView addSubview: title];
      return imageView;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *title;
+    if (indexPath.section == 0) {
+    
+        title = [[[self.hoursModel getAllMainHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
+    } else if (indexPath.section == 1) {
+    
+         title = [[[self.hoursModel getAllOtherHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
+    } else {
+    
+        title = [[[self.hoursModel getAllClosedHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
+    }
+    
+    NSLog(@"Hours selected: %@", title);
+}
+
  
 - (NSString*) getDateStringWithStartDate: (NSDate*) startDate andEndDate: (NSDate*) endDate {
     
