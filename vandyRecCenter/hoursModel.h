@@ -11,7 +11,7 @@
 @interface hoursModel : NSObject
 
 @property (nonatomic, strong) NSArray* allHours;
-@property (nonatomic, strong) NSDictionary* selectedHours;
+@property (nonatomic, readonly) NSUInteger selectedHours; //index of NSArray for the hours selected
 //@property (nonatomic, strong) NSString* path; //set in the initializer
 
 //this is the default initializer
@@ -30,5 +30,12 @@
 - (NSArray*) getAllOpenHours;
 - (NSArray*) getAllMainHours;
 - (NSArray*) getAllOtherHours; //hours that are not main hours
+
+//methods dealing with the current time
+- (NSDictionary*) getHoursForCurrentTime;
+- (BOOL) isOpen;
+- (BOOL) isClosed;
+- (NSTimeInterval) timeUntilOpen;
+- (NSTimeInterval) timeUntilClosed;
 
 @end

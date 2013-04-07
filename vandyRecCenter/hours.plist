@@ -7,6 +7,8 @@
 		<false/>
 		<key>mainHours</key>
 		<true/>
+		<key>facilityHours</key>
+		<false/>
 		<key>title</key>
 		<string>Fall Hours</string>
 		<key>hours</key>
@@ -29,6 +31,8 @@
 		<false/>
 		<key>mainHours</key>
 		<true/>
+		<key>facilityHours</key>
+		<false/>
 		<key>title</key>
 		<string>Winter Hours</string>
 		<key>hours</key>
@@ -43,6 +47,8 @@
 		<false/>
 		<key>mainHours</key>
 		<true/>
+		<key>facilityHours</key>
+		<false/>
 		<key>title</key>
 		<string>Spring Hours</string>
 		<key>hours</key>
@@ -57,6 +63,8 @@
 		<false/>
 		<key>mainHours</key>
 		<true/>
+		<key>facilityHours</key>
+		<false/>
 		<key>title</key>
 		<string>Summer Hours</string>
 		<key>beginningDate</key>
@@ -69,6 +77,8 @@
 		<false/>
 		<key>mainHours</key>
 		<false/>
+		<key>facilityHours</key>
+		<true/>
 		<key>title</key>
 		<string>Pool Hours</string>
 		<key>beginningDate</key>
@@ -84,6 +94,8 @@
 		<key>closed</key>
 		<false/>
 		<key>mainHours</key>
+		<false/>
+		<key>facilityHours</key>
 		<false/>
 		<key>title</key>
 		<string>Fall Break Hours</string>

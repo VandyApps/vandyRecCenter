@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSDictionary* currentHoursToDisplay;
 @property (nonatomic) NSInteger sectionOfSelectedCell;
 @property (nonatomic) NSInteger rowOfSelectedCell;
+@property (nonatomic) NSInteger sectionOfCurrentHours;
+@property (nonatomic) NSInteger rowOfCurrentHours;
 
 @end
 
@@ -44,9 +46,6 @@
     self.tableView.dataSource = self;
     [self setUpScrollView];
     
-    //for now, set to -1 so that nothing is selected
-    self.sectionOfSelectedCell = -1;
-    self.rowOfSelectedCell = -1;
 }
 
 //table view stuff
@@ -210,6 +209,7 @@
     [self.scrollHours addSubview: anotherLabel];
 
 }
+
 
 
 @end

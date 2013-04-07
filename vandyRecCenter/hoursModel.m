@@ -22,12 +22,25 @@
         self.allHours = [[NSArray alloc] initWithContentsOfFile: path];
         
         //make selected hours the current hours
-        self.selectedHours = [self findCurrentHours];
         
     }
     return self;
     
 }
+
+- (void) setSelectedHoursWithTitle: (NSString*) title {
+    
+   
+    BOOL foundSelectedObject = NO;
+    for (size_t i = 0; i < [self.allHours count] && !foundSelectedObject; ++i) {
+        if ([[(NSDictionary*) [self.allHours objectAtIndex: i] objectForKey: @"title"] isEqualToString: title]) {
+            _selectedHours = i;
+            foundSelectedObject = YES;
+        }
+    }
+}
+
+
 
 - (id) init {
     self = [self initWithPathToPList:nil];
@@ -98,9 +111,16 @@
     return mainHours;
 }
 
+
+- (NSDictionary*) getHoursForCurrentTime {
+
+    
+}
+
 //private methods
 
 //this assumes that the selected hours has been set
+/*
 - (NSDictionary*) findCurrentHours {
     NSEnumerator *hoursEnumerator = [self.allHours objectEnumerator];
     
@@ -131,5 +151,6 @@
     //the date could not be found for some reason
     return nil;
 }
+ */
 
 @end
