@@ -24,7 +24,7 @@
 @implementation hoursViewController
 
 @synthesize tableView = _tableView;
-@synthesize hours = _hoursModel;
+@synthesize hours = _hours;
 
 ///////////////////////////////////
 //custom getters and setters///////
@@ -32,11 +32,11 @@
 
 
 - (hoursModel*) hours {
-    if (!_hoursModel) {
+    if (!_hours) {
         NSString *path = [[NSBundle mainBundle] pathForResource: @"hours" ofType:@"plist"];
-        _hoursModel = [[hoursModel alloc] initWithPathToPList: path];
+        _hours = [[hoursModel alloc] initWithPathToPList: path];
     }
-    return _hoursModel;
+    return _hours;
 }
 
 - (void) viewDidLoad {
@@ -45,7 +45,12 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self setUpScrollView];
+    NSLog(@"%@", [[self.hours getHoursForCurrentTime] objectForKey: @"title"]);
     
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    NSLog(@"View did appear was called");
 }
 
 //table view stuff

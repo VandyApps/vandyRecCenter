@@ -114,7 +114,28 @@
 
 - (NSDictionary*) getHoursForCurrentTime {
 
+    NSEnumerator *hoursEnum = [self.allHours objectEnumerator];
+    NSDictionary* nextHours;
+    NSDictionary * currentHours;
+    nextHours = [hoursEnum nextObject];
     
+    NSDate *currentDate = [[NSDate alloc] init];
+    while (nextHours = [hoursEnum nextObject]) {
+        if (![[nextHours objectForKey: @"closed"] boolValue]) {
+        
+            if ([[nextHours objectForKey: @"facilityHours"] boolValue]) {
+                if ([currentDate compare: [nextHours objectForKey: @"beginningDate"]] == NSOrderedAscending && [currentDate compare: [nextHours objectForKey: @"endDate"]] == NSOrderedDescending) {
+                    
+                    return currentHours;
+                }
+            }
+        } else if ([currentDate compare: [nextHours objectForKey: @"beginningDate"]] == NSOrderedAscending && [currentDate compare: [nextHours objectForKey: @"endDate"]] == NSOrderedDescending){
+            
+            return currentHours;
+        }
+        
+    }
+    return  currentHours;
 }
 
 //private methods
