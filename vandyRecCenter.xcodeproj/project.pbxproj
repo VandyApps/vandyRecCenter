@@ -40,7 +40,6 @@
 		217032AD16FE990300A43833 /* 112-group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217032A116FE990300A43833 /* 112-group@2x.png */; };
 		21DBAFC117108C1C00C7C34D /* brownGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DBAFC017108C1C00C7C34D /* brownGradient.png */; };
 		21E9C957170DFE230079BC75 /* hoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E9C956170DFE230079BC75 /* hoursModel.m */; };
-		21E9D239171236FA004C7D84 /* NSDateFormatter-MyDateFormatterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E9D238171236FA004C7D84 /* NSDateFormatter-MyDateFormatterClass.m */; };
 		21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */; };
 		21FC9F8F17025F160065EEC2 /* browserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC9F8E17025F160065EEC2 /* browserViewController.m */; };
 /* End PBXBuildFile section */
@@ -86,8 +85,6 @@
 		21DBAFC017108C1C00C7C34D /* brownGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brownGradient.png; sourceTree = "<group>"; };
 		21E9C955170DFE230079BC75 /* hoursModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hoursModel.h; sourceTree = "<group>"; };
 		21E9C956170DFE230079BC75 /* hoursModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hoursModel.m; sourceTree = "<group>"; };
-		21E9D237171236FA004C7D84 /* NSDateFormatter-MyDateFormatterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter-MyDateFormatterClass.h"; sourceTree = "<group>"; };
-		21E9D238171236FA004C7D84 /* NSDateFormatter-MyDateFormatterClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter-MyDateFormatterClass.m"; sourceTree = "<group>"; };
 		21EAD7E6170E883900449EA3 /* NSDate-MyDateClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-MyDateClass.h"; sourceTree = "<group>"; };
 		21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-MyDateClass.m"; sourceTree = "<group>"; };
 		21FC9F8D17025F160065EEC2 /* browserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = browserViewController.h; sourceTree = "<group>"; };
@@ -205,8 +202,6 @@
 			children = (
 				21EAD7E6170E883900449EA3 /* NSDate-MyDateClass.h */,
 				21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */,
-				21E9D237171236FA004C7D84 /* NSDateFormatter-MyDateFormatterClass.h */,
-				21E9D238171236FA004C7D84 /* NSDateFormatter-MyDateFormatterClass.m */,
 			);
 			name = "Date Category";
 			sourceTree = "<group>";
@@ -317,7 +312,6 @@
 				215D04D2170D0AF8008D8277 /* hoursViewController.m in Sources */,
 				21E9C957170DFE230079BC75 /* hoursModel.m in Sources */,
 				21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */,
-				21E9D239171236FA004C7D84 /* NSDateFormatter-MyDateFormatterClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
