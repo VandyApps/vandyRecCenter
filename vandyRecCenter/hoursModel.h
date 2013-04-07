@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSDate-MyDateClass.h"
 
 @interface hoursModel : NSObject
 
@@ -33,6 +34,8 @@
 
 //methods dealing with the current time
 - (NSDictionary*) getHoursForCurrentTime;
+- (NSString*) getOpenningTime; //formatted as 12:00 AM, returns nil if it is closed all day
+- (NSString*) getClosingTime; //formatted as 12:00 AM, returns nil if it is closed all day
 - (BOOL) isOpen;
 - (BOOL) isClosed;
 - (NSTimeInterval) timeUntilOpen;

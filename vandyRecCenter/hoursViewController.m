@@ -45,7 +45,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self setUpScrollView];
-    
+    NSLog(@"Openning at %@", [self.hours getOpenningTime]);
 }
 
 - (void) viewDidAppear:(BOOL)animated {
