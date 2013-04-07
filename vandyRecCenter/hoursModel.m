@@ -124,54 +124,21 @@
         if (![[nextHours objectForKey: @"closed"] boolValue]) {
         
             if ([[nextHours objectForKey: @"facilityHours"] boolValue]) {
-                if ([currentDate compare: [nextHours objectForKey: @"beginningDate"]] == NSOrderedAscending && [currentDate compare: [nextHours objectForKey: @"endDate"]] == NSOrderedDescending) {
-                    
+                if ([currentDate compare: [nextHours objectForKey: @"beginningDate"]] == NSOrderedDescending && [currentDate compare: [nextHours objectForKey: @"endDate"]] == NSOrderedAscending) {
+                    currentHours = nextHours;
                     return currentHours;
                 }
             }
-        } else if ([currentDate compare: [nextHours objectForKey: @"beginningDate"]] == NSOrderedAscending && [currentDate compare: [nextHours objectForKey: @"endDate"]] == NSOrderedDescending){
-            
+        } else if ([currentDate compare: [nextHours objectForKey: @"beginningDate"]] == NSOrderedDescending && [currentDate compare: [nextHours objectForKey: @"endDate"]] == NSOrderedAscending) {
+            currentHours = nextHours;
             return currentHours;
         }
         
     }
+    NSLog(@"Could not find current hours");
     return  currentHours;
 }
 
 //private methods
-
-//this assumes that the selected hours has been set
-/*
-- (NSDictionary*) findCurrentHours {
-    NSEnumerator *hoursEnumerator = [self.allHours objectEnumerator];
-    
-    NSDictionary* nextHours;
-    while (nextHours = [hoursEnumerator nextObject]) {
-        
-        if ([[nextHours objectForKey: @"closed"] boolValue]) {
-            
-            if ([[nextHours objectForKey: @"mainHours"] boolValue]) {
-                
-                NSDate* currentDate = [[NSDate alloc] init];
-                if ([currentDate compare: [nextHours objectForKey: @"beginningDate"]] == NSOrderedDescending && [currentDate compare: [nextHours objectForKey: @"endDate"]] == NSOrderedAscending) {
-                    
-                    //then this is the object to be selected
-                    return nextHours;
-                }
-            }
-        } else { //it must be a holiday
-            NSDate *currentDate = [[NSDate alloc] init];
-            
-            if ([currentDate compare: [nextHours objectForKey: @"beginningDate"]] == NSOrderedDescending && [currentDate compare: [nextHours objectForKey: @"endDate"]] == NSOrderedAscending) {
-                
-                //then this is the object to be selected
-                return nextHours;
-            }
-        }
-    }
-    //the date could not be found for some reason
-    return nil;
-}
- */
 
 @end

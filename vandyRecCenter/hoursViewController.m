@@ -45,12 +45,12 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self setUpScrollView];
-    NSLog(@"%@", [[self.hours getHoursForCurrentTime] objectForKey: @"title"]);
     
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    NSLog(@"View did appear was called");
+  
+    NSLog(@"Current hours: %@", [[self.hours getHoursForCurrentTime] objectForKey: @"title"]);
 }
 
 //table view stuff
