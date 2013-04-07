@@ -14,5 +14,9 @@
 //classes for retrieving the day of the week
 - (NSUInteger) dayOfTheWeekAsInt;
 - (NSString*) dayOfTheWeekAsString;
-- (NSString*) dayOfTheWeekForIndex: (NSInteger) index;
++ (NSString*) dayOfTheWeekForIndex: (NSInteger) index;
+
++ (NSUInteger) currentDayOfTheWeekAsInt;
++ (NSString*) currentDayOfTheWeekAsString;
+
 @end
