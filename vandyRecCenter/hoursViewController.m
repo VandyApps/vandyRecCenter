@@ -13,6 +13,9 @@
 
 //should this be a strong pointer?
 @property (nonatomic, strong) NSDictionary* currentHoursToDisplay;
+@property (nonatomic) NSInteger sectionOfSelectedCell;
+@property (nonatomic) NSInteger rowOfSelectedCell;
+
 @end
 
 
@@ -40,6 +43,10 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self setUpScrollView];
+    
+    //for now, set to -1 so that nothing is selected
+    self.sectionOfSelectedCell = -1;
+    self.rowOfSelectedCell = -1;
 }
 
 //table view stuff
@@ -82,11 +89,16 @@
         NSDate *endDate = [[[self.hours getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
         
         
-        [ (UILabel*) [cell viewWithTag: 2] setText: title];
+        [(UILabel*) [cell viewWithTag: 2] setText: title];
         [(UILabel *) [cell viewWithTag: 3] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
     }
     
-    
+    if (indexPath.section == self.sectionOfSelectedCell && indexPath.row == self.rowOfSelectedCell) {
+        
+        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"brownGradient.png"]];
+    } else {
+        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"blackGradient.png"]];
+    }
     return cell;
 }
 
@@ -153,6 +165,11 @@
     }
     
     NSLog(@"Hours selected: %@", title);
+    
+    //change color of gradient here
+    self.sectionOfSelectedCell = indexPath.section;
+    self.rowOfSelectedCell = indexPath.row;
+    [tableView reloadData];
 }
 
  

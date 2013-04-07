@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		210E354A16FF979B00180CB2 /* 89-dumbells.png in Resources */ = {isa = PBXBuildFile; fileRef = 210E354816FF979B00180CB2 /* 89-dumbells.png */; };
 		210E354B16FF979B00180CB2 /* 89-dumbells@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 210E354916FF979B00180CB2 /* 89-dumbells@2x.png */; };
-		21201EC21702177D00E89605 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC11702177D00E89605 /* gradient.png */; };
+		21201EC21702177D00E89605 /* blackGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC11702177D00E89605 /* blackGradient.png */; };
 		21201EC41702199B00E89605 /* vandyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC31702199B00E89605 /* vandyLogo.png */; };
 		212DECD2170096C40041498E /* imageOfRec.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 212DECD1170096C40041498E /* imageOfRec.jpeg */; };
 		212DECD717009AC60041498E /* homeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212DECD617009AC60041498E /* homeViewController.m */; };
@@ -38,6 +38,7 @@
 		217032AB16FE990300A43833 /* 103-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329F16FE990300A43833 /* 103-map@2x.png */; };
 		217032AC16FE990300A43833 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = 217032A016FE990300A43833 /* 112-group.png */; };
 		217032AD16FE990300A43833 /* 112-group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217032A116FE990300A43833 /* 112-group@2x.png */; };
+		21DBAFC117108C1C00C7C34D /* brownGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DBAFC017108C1C00C7C34D /* brownGradient.png */; };
 		21E9C957170DFE230079BC75 /* hoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E9C956170DFE230079BC75 /* hoursModel.m */; };
 		21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */; };
 		21FC9F8F17025F160065EEC2 /* browserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC9F8E17025F160065EEC2 /* browserViewController.m */; };
@@ -46,7 +47,7 @@
 /* Begin PBXFileReference section */
 		210E354816FF979B00180CB2 /* 89-dumbells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "89-dumbells.png"; sourceTree = "<group>"; };
 		210E354916FF979B00180CB2 /* 89-dumbells@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "89-dumbells@2x.png"; sourceTree = "<group>"; };
-		21201EC11702177D00E89605 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gradient.png; path = ../gradient.png; sourceTree = "<group>"; };
+		21201EC11702177D00E89605 /* blackGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackGradient.png; path = ../blackGradient.png; sourceTree = "<group>"; };
 		21201EC31702199B00E89605 /* vandyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vandyLogo.png; sourceTree = "<group>"; };
 		212DECD1170096C40041498E /* imageOfRec.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imageOfRec.jpeg; path = ../imageOfRec.jpeg; sourceTree = "<group>"; };
 		212DECD517009AC60041498E /* homeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeViewController.h; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		2170329F16FE990300A43833 /* 103-map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map@2x.png"; sourceTree = "<group>"; };
 		217032A016FE990300A43833 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		217032A116FE990300A43833 /* 112-group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group@2x.png"; sourceTree = "<group>"; };
+		21DBAFC017108C1C00C7C34D /* brownGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brownGradient.png; sourceTree = "<group>"; };
 		21E9C955170DFE230079BC75 /* hoursModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hoursModel.h; sourceTree = "<group>"; };
 		21E9C956170DFE230079BC75 /* hoursModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hoursModel.m; sourceTree = "<group>"; };
 		21EAD7E6170E883900449EA3 /* NSDate-MyDateClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-MyDateClass.h"; sourceTree = "<group>"; };
@@ -106,9 +108,10 @@
 		212DECD01700965A0041498E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				21DBAFC017108C1C00C7C34D /* brownGradient.png */,
 				215D04D5170D146D008D8277 /* goldGradient.png */,
 				21201EC31702199B00E89605 /* vandyLogo.png */,
-				21201EC11702177D00E89605 /* gradient.png */,
+				21201EC11702177D00E89605 /* blackGradient.png */,
 				212DECD1170096C40041498E /* imageOfRec.jpeg */,
 				217032AE16FE990600A43833 /* icons */,
 			);
@@ -287,10 +290,11 @@
 				210E354A16FF979B00180CB2 /* 89-dumbells.png in Resources */,
 				210E354B16FF979B00180CB2 /* 89-dumbells@2x.png in Resources */,
 				212DECD2170096C40041498E /* imageOfRec.jpeg in Resources */,
-				21201EC21702177D00E89605 /* gradient.png in Resources */,
+				21201EC21702177D00E89605 /* blackGradient.png in Resources */,
 				21201EC41702199B00E89605 /* vandyLogo.png in Resources */,
 				2137613E1702895D008B3FBD /* hours.plist in Resources */,
 				215D04D6170D146D008D8277 /* goldGradient.png in Resources */,
+				21DBAFC117108C1C00C7C34D /* brownGradient.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

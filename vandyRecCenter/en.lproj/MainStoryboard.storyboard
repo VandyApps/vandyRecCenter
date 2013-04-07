@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-oF-nk5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="blackGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-oF-nk5">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="198" id="xTo-cy-Rlz"/>
                                 </constraints>
@@ -48,7 +48,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="325" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="W2l-72-IWG"/>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2l-72-IWG"/>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD2-5q-eZT">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="FTV-vP-ceB"/>
@@ -466,7 +466,8 @@
         <image name="63-runner.png" width="18" height="25"/>
         <image name="83-calendar.png" width="23" height="25"/>
         <image name="89-dumbells.png" width="28" height="10"/>
-        <image name="gradient.png" width="200" height="100"/>
+        <image name="blackGradient.png" width="200" height="100"/>
+        <image name="gradient.png" width="16" height="16"/>
         <image name="imageOfRec.jpeg" width="550" height="323"/>
     </resources>
     <classes>
