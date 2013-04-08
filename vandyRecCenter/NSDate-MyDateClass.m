@@ -56,4 +56,41 @@
 + (NSString*) currentDayOfTheWeekAsString {
     return [NSDate dayOfTheWeekForIndex: [NSDate currentDayOfTheWeekAsInt]];
 }
+
++ (NSComparisonResult) compareTime:(NSString *)time1 withTime:(NSString *)time2 {
+    //convert to military time in minutes for ease of comparison
+    NSUInteger time1InMinutes = [NSDate timeInMinutes: time1];
+    NSUInteger time2InMinutes = [NSDate timeInMinutes: time2];
+    
+    if (time1InMinutes > time2InMinutes) {
+        return NSOrderedDescending;
+    } else if (time1InMinutes > time2InMinutes) {
+        return NSOrderedAscending;
+    } else {
+        return NSOrderedSame;
+    }
+}
+
+//private methods here
++ (NSUInteger) timeInMinutes: (NSString*) time { //time must be in format 12:00am
+    
+    NSUInteger timeInHours;
+    NSUInteger timeInMinutes;
+    BOOL isPM = NO;
+    if ([[time substringFromIndex: ([time length] - 2) ] isEqualToString: @"pm"]) {
+        isPM = YES;
+    }
+    for (size_t i = 0; i < [time length]; ++i) {
+        if ([time characterAtIndex: i] == ':') {
+            timeInHours = (NSUInteger) [[time substringWithRange: NSMakeRange(0, i)] intValue];
+            timeInMinutes = (NSUInteger) [[time substringWithRange:NSMakeRange(i+1, [time length] - (i+3))] intValue];
+        }
+    }
+   // NSLog(@"Time in hours is %u, time in minutes is %u, and isPM is %i", timeInHours, timeInMinutes, isPM);
+    
+    NSUInteger totalMinutes = 60 * timeInHours + timeInMinutes;
+    totalMinutes += (isPM) ? (12*60) : 0;
+    return totalMinutes;
+}
+
 @end
