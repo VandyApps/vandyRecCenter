@@ -21,7 +21,6 @@
 
 - (NSUInteger) dayOfTheWeekAsInt;
 - (NSString*) dayOfTheWeekAsString;
-- (NSComparisonResult) compareWithTime: (NSString*) time; //time is formatted as such: 12:00am
 
 
 

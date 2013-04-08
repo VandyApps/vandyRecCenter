@@ -168,12 +168,15 @@
 
 
 - (BOOL) isOpen {
-    NSDictionary* currentHours = [self getHoursForCurrentTime];
-    if (![[currentHours objectForKey: @"closed"] boolValue]) {
-        
-        NSDate *currentTime = [[NSDate alloc] init];
-        
-    } 
+    
+   
+    NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -60*60*5];
+    NSLog(@"The time is %@", currentDate);
+    NSDateFormatter *getTimeFormat = [[NSDateFormatter alloc] init];
+    getTimeFormat.timeStyle = NSDateFormatterShortStyle;
+    getTimeFormat.dateStyle = NSDateFormatterNoStyle;
+    NSLog(@"%@", [getTimeFormat stringFromDate: currentDate]);
+   // if ([NSDate compareTime: [self getOpenningTime] withTime: [getTimeFormat]]) {}
     return NO;
 }
 

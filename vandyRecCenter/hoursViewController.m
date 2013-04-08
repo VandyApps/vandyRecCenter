@@ -47,7 +47,7 @@
     [self setUpScrollView];
    NSDate *currentDate= [[NSDate alloc] init];
     NSDate *adjustedCurrentDate = [currentDate dateByAddingTimeInterval: -60 *60 *60 * 5];
-    NSLog(@"The time is %@", adjustedCurrentDate);
+    [self.hours isOpen];
 }
 
 - (void) viewDidAppear:(BOOL)animated {

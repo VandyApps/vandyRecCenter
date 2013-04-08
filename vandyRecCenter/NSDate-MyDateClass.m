@@ -31,10 +31,6 @@
 }
 
 
-- (NSComparisonResult) compareWithTime: (NSString*) time {
-    //for now, don't need this
-    return nil;
-}
 
 //index-based retrieval of the day of the week as a string
 //0 is Sunday and 6 is Saturday, other days fall in between
@@ -88,13 +84,13 @@
     NSUInteger timeInHours;
     NSUInteger timeInMinutes;
     BOOL isPM = NO;
-    if ([[time substringFromIndex: ([time length] - 2) ] isEqualToString: @"pm"]) {
+    if ([[[time substringFromIndex: ([time length] - 2) ] lowercaseString] isEqualToString: @"pm"]) {
         isPM = YES;
     }
     for (size_t i = 0; i < [time length]; ++i) {
         if ([time characterAtIndex: i] == ':') {
             timeInHours = (NSUInteger) [[time substringWithRange: NSMakeRange(0, i)] intValue];
-            timeInMinutes = (NSUInteger) [[time substringWithRange:NSMakeRange(i+1, [time length] - (i+3))] intValue];
+            timeInMinutes = (NSUInteger) [time substringWithRange:NSMakeRange(i+1, 2)];
         }
     }
    // NSLog(@"Time in hours is %u, time in minutes is %u, and isPM is %i", timeInHours, timeInMinutes, isPM);
