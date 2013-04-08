@@ -10,13 +10,18 @@
 
 @interface NSDate(MyDateClass)
 
+- (id) initWithCurrentTimeInTimeZone: (NSTimeZone*) timeZone;
 
-//classes for retrieving the day of the week
-- (NSUInteger) dayOfTheWeekAsInt;
-- (NSString*) dayOfTheWeekAsString;
 + (NSString*) dayOfTheWeekForIndex: (NSInteger) index;
-
 + (NSUInteger) currentDayOfTheWeekAsInt;
 + (NSString*) currentDayOfTheWeekAsString;
++ (NSComparisonResult) compareTime: (NSString*) time1 withTime: (NSString*) time2;
+
+- (NSUInteger) dayOfTheWeekAsInt;
+- (NSString*) dayOfTheWeekAsString;
+- (NSComparisonResult) compareWithTime: (NSString*) time; //time is formatted as such: 12:00am
+
+
+
 
 @end
