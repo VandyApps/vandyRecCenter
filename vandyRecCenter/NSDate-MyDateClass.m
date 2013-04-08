@@ -10,6 +10,7 @@
 
 @implementation NSDate(MyDateClass)
 
+
 - (NSUInteger) dayOfTheWeekAsInt {
     
     //January, 1970 was a Thursday, so add 4
@@ -92,5 +93,4 @@
     totalMinutes += (isPM) ? (12*60) : 0;
     return totalMinutes;
 }
-
 @end
