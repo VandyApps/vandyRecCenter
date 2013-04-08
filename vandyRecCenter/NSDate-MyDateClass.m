@@ -30,7 +30,17 @@
     return [NSDate dayOfTheWeekForIndex: [self dayOfTheWeekAsInt]];
 }
 
-
+- (NSDate*) dateBySettingTimeToTime:(NSString *)time {
+    
+    //get seconds
+    NSUInteger currentTime = (int) [self timeIntervalSince1970];
+    
+    //remove any seconds that are carried over by the day
+    NSUInteger newInterval = currentTime - (currentTime% (60*60*24));
+    NSDate *newDate = [[NSDate alloc] initWithTimeIntervalSince1970: newInterval];
+    newDate = [newDate dateByAddingTimeInterval: [NSDate timeInMinutes: time] * 60];
+    return newDate;
+}
 
 //index-based retrieval of the day of the week as a string
 //0 is Sunday and 6 is Saturday, other days fall in between

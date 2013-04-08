@@ -188,6 +188,16 @@
     return ![self isOpen];
 }
 
+- (NSTimeInterval) timeUntilClosed {
+
+    if ([self isOpen]) {
+    
+        //set the date to the opening date and time
+        NSDate *openingDate = [[NSDate alloc] init];
+        
+    }
+    return 0;
+}
 //private methods
 
 @end
