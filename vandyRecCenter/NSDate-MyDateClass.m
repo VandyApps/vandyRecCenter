@@ -82,7 +82,7 @@
 
 //private methods here
 + (NSUInteger) timeInMinutes: (NSString*) time { //time must be in format 12:00am
-    NSLog(@"Time string: %@", time);
+   
     NSUInteger timeInHours;
     NSUInteger timeInMinutes;
     BOOL isPM = NO;
@@ -93,15 +93,12 @@
         if ([time characterAtIndex: i] == ':') {
             timeInHours = (NSUInteger) [[time substringWithRange: NSMakeRange(0, i)] intValue];
             timeInMinutes = (NSUInteger)[ [time substringWithRange:NSMakeRange(i+1, 2)] intValue];
-            NSLog(@"Hour string: %@", [time substringWithRange: NSMakeRange(0, i)]);
-            NSLog(@"Time in minutes %@", [time substringWithRange:NSMakeRange(i+1, 2)]);
         }
     }
    // NSLog(@"Time in hours is %u, time in minutes is %u, and isPM is %i", timeInHours, timeInMinutes, isPM);
     
     NSUInteger totalMinutes = 60 * timeInHours + timeInMinutes;
     totalMinutes += (isPM && timeInHours != 12) ? (12*60) : 0;
-    NSLog(@"Total minutes are %u", totalMinutes);
     return totalMinutes;
 }
 @end

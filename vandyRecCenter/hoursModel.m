@@ -170,14 +170,22 @@
 - (BOOL) isOpen {
     
    
-    NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -60*60*5];
+    //NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -60*60*5];
+    NSDate *currentDate = [[NSDate alloc] init];
     NSLog(@"The time is %@", currentDate);
     NSDateFormatter *getTimeFormat = [[NSDateFormatter alloc] init];
     getTimeFormat.timeStyle = NSDateFormatterShortStyle;
     getTimeFormat.dateStyle = NSDateFormatterNoStyle;
-    NSLog(@"%@", [getTimeFormat stringFromDate: currentDate]);
-   // if ([NSDate compareTime: [self getOpenningTime] withTime: [getTimeFormat]]) {}
+    
+    if ( ([NSDate compareTime: [self getOpenningTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending || [NSDate compareTime: [self getOpenningTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedSame) && [NSDate compareTime: [self getClosingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending) {
+    
+        return YES;
+    }
     return NO;
+}
+
+- (BOOL) isClosed {
+    return ![self isOpen];
 }
 
 //private methods
