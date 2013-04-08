@@ -46,7 +46,7 @@
     self.tableView.dataSource = self;
     [self setUpScrollView];
     NSDate *currentDate= [[NSDate alloc] init];
-    NSLog(@"The redone time is %@", [currentDate dateBySettingTimeToTime: @"12:47pm"]);
+    NSLog(@"The redone time is %u", (NSUInteger) [self.hours timeUntilClosed]);
 }
 
 - (void) viewDidAppear:(BOOL)animated {

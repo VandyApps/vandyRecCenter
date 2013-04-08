@@ -192,9 +192,21 @@
 
     if ([self isOpen]) {
     
-        //set the date to the opening date and time
-        NSDate *openingDate = [[NSDate alloc] init];
         
+        NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
+        NSDate *closingDate = [currentDate dateBySettingTimeToTime: [self getClosingTime]];
+        return [closingDate timeIntervalSinceDate: currentDate];
+    }
+    return 0;
+}
+
+- (NSTimeInterval) timeUntilOpen {
+    if (![self isOpen]) {
+        
+        
+        NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
+        NSDate *openingDate = [currentDate dateBySettingTimeToTime: [self getClosingTime]];
+        return [openingDate timeIntervalSinceDate: currentDate];
     }
     return 0;
 }
