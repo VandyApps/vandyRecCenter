@@ -166,11 +166,14 @@
     return nil;
 }
 
+
 - (BOOL) isOpen {
     NSDictionary* currentHours = [self getHoursForCurrentTime];
-    if ([[currentHours objectForKey: @"closed"] boolValue]) {
-        return NO;
-    }
+    if (![[currentHours objectForKey: @"closed"] boolValue]) {
+        
+        NSDate *currentTime = [[NSDate alloc] init];
+        
+    } 
     return NO;
 }
 

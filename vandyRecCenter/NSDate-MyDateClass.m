@@ -10,6 +10,10 @@
 
 @implementation NSDate(MyDateClass)
 
++ (NSDate*) dateByAddingTimeCurrentTime:(NSTimeInterval)addedTime {
+    NSDate* currentDate = [[NSDate alloc] init];
+    return [currentDate dateByAddingTimeInterval: addedTime];
+}
 
 - (NSUInteger) dayOfTheWeekAsInt {
     
@@ -24,6 +28,12 @@
 - (NSString*) dayOfTheWeekAsString {
     
     return [NSDate dayOfTheWeekForIndex: [self dayOfTheWeekAsInt]];
+}
+
+
+- (NSComparisonResult) compareWithTime: (NSString*) time {
+    //for now, don't need this
+    return nil;
 }
 
 //index-based retrieval of the day of the week as a string

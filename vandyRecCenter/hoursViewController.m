@@ -45,8 +45,9 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self setUpScrollView];
-    NSLog(@"Openning at %@", [self.hours getOpenningTime]);
-    NSLog(@"Closing at %@", [self.hours getClosingTime]);
+   NSDate *currentDate= [[NSDate alloc] init];
+    NSDate *adjustedCurrentDate = [currentDate dateByAddingTimeInterval: -60 *60 *60 * 5];
+    NSLog(@"The time is %@", adjustedCurrentDate);
 }
 
 - (void) viewDidAppear:(BOOL)animated {
