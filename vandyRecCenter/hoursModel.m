@@ -153,6 +153,19 @@
     return nil;
 }
 
+- (NSString*) getClosingTime {
+    NSArray* arrayOfHours = [[self getHoursForCurrentTime] objectForKey: @"hours"];
+    NSLog(@"Current day is %u", [NSDate currentDayOfTheWeekAsInt]);
+    NSString* hours = [arrayOfHours objectAtIndex: [NSDate currentDayOfTheWeekAsInt]];
+    //get the string up until the space
+    for (size_t i = 0; i < [hours length]; ++i) {
+        if ([hours characterAtIndex: i] == '-') {
+            return [hours substringWithRange: NSMakeRange(i+2, [hours length] - (i+2))];
+        }
+    }
+    return nil;
+}
+
 - (BOOL) isOpen {
     NSDictionary* currentHours = [self getHoursForCurrentTime];
     if ([[currentHours objectForKey: @"closed"] boolValue]) {
