@@ -220,7 +220,7 @@
 
 - (NSTimeInterval) timeUntilClosed {
 
-    if ([self willOpenLaterToday]) {
+    if ([self isOpen]) {
     
         
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
@@ -231,7 +231,7 @@
 }
 
 - (NSTimeInterval) timeUntilOpen {
-    if (![self isOpen]) {
+    if ([self willOpenLaterToday]) {
         
         
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
