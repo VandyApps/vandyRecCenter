@@ -75,14 +75,15 @@
 ////////////////////
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier: @"hoursCell"];
+    static NSString* cellIdentifier = @"hoursCell";
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier: cellIdentifier];
     
     if (cell == nil) {
     
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"hoursCell"];
+        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: cellIdentifier];
     }
    
+    //setting up the cell specifics
     if (indexPath.section == 0) {
     
         
@@ -123,6 +124,10 @@
         [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"blackGradient.png"]];
     }
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return DEFAULT_HEIGHT_FOR_CELL;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
