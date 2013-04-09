@@ -67,6 +67,25 @@
 
 - (void) viewDidAppear:(BOOL)animated {
   
+    //set the remaining time label
+    //make the selected cell the current hours
+}
+
+
+////////////////////
+//private methods//
+///////////////////
+
+- (NSString*) displayTimeInterval: (NSTimeInterval) timeInterval untilClosing: (BOOL) isClosing {
+    
+    //interval in seconds
+    NSInteger hours = timeInterval / 3600;
+    NSInteger minutes = timeInterval / 60;
+    if (isClosing) {
+        return [NSString stringWithFormat: @"The Rec will close in %ih %im", hours, minutes];
+    } else {
+        return [NSString stringWithFormat: @"The Rec will open in %ih %im", hours, minutes];
+    }
     
 }
 
@@ -243,4 +262,8 @@
 //////////////////////
 //view related setup//
 //////////////////////
+
+- (void) refreshRemainingTime {
+    NSInteger displayTimeInSeconds;
+}
 @end
