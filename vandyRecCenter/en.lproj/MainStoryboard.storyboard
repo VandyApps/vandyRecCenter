@@ -41,14 +41,18 @@
                                     <constraint firstAttribute="height" constant="170" id="vcl-Tq-wN0"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="hoursCell" rowHeight="48" id="zcg-PI-WmN">
-                                        <rect key="frame" x="0.0" y="22" width="325" height="48"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="hoursCell" rowHeight="51" id="zcg-PI-WmN">
+                                        <rect key="frame" x="0.0" y="22" width="325" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="325" height="47"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2l-72-IWG"/>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2l-72-IWG">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="kPT-Ca-CAE"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD2-5q-eZT">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="FTV-vP-ceB"/>
@@ -59,8 +63,17 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLP-17-vJM">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="104" id="gvZ-ZS-GH7"/>
+                                                        <constraint firstAttribute="width" constant="104" id="VcU-eR-Dxr"/>
                                                         <constraint firstAttribute="height" constant="21" id="y9Z-YP-MEW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCJ-tg-Qt8">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="76" id="XXh-SV-B43"/>
+                                                        <constraint firstAttribute="height" constant="21" id="h36-Qr-kpj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,15 +83,16 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="dLP-17-vJM" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="20" type="default" id="3Zz-mX-Oeh"/>
-                                            <constraint firstItem="W2l-72-IWG" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" type="default" id="Hic-wb-Hvu"/>
+                                            <constraint firstItem="pCJ-tg-Qt8" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="7" id="5Hj-DF-PFm"/>
+                                            <constraint firstAttribute="trailing" secondItem="pCJ-tg-Qt8" secondAttribute="trailing" constant="20" type="default" id="Bp2-XO-7Vt"/>
                                             <constraint firstItem="VD2-5q-eZT" firstAttribute="leading" secondItem="zcg-PI-WmN" secondAttribute="leading" constant="20" type="default" id="LDQ-4Z-QV3"/>
                                             <constraint firstItem="W2l-72-IWG" firstAttribute="trailing" secondItem="zcg-PI-WmN" secondAttribute="trailing" type="default" id="RhJ-Dh-axN"/>
-                                            <constraint firstItem="VD2-5q-eZT" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="11" id="Vl6-X3-Cze"/>
                                             <constraint firstItem="dLP-17-vJM" firstAttribute="leading" secondItem="VD2-5q-eZT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ybz-XJ-Zh8"/>
+                                            <constraint firstItem="dLP-17-vJM" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="24" id="hax-hb-pVf"/>
                                             <constraint firstItem="W2l-72-IWG" firstAttribute="leading" secondItem="zcg-PI-WmN" secondAttribute="leading" type="default" id="lAp-q1-MRP"/>
                                             <constraint firstAttribute="trailing" secondItem="dLP-17-vJM" secondAttribute="trailing" constant="20" type="default" id="nAf-pv-ezR"/>
-                                            <constraint firstItem="W2l-72-IWG" firstAttribute="centerY" secondItem="zcg-PI-WmN" secondAttribute="centerY" type="default" id="wTB-cv-VPg"/>
+                                            <constraint firstItem="VD2-5q-eZT" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="14" id="rzY-vz-EQW"/>
+                                            <constraint firstItem="W2l-72-IWG" firstAttribute="centerY" secondItem="zcg-PI-WmN" secondAttribute="centerY" type="default" id="ykX-sg-mx3"/>
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>

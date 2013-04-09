@@ -23,8 +23,20 @@
 
 @implementation hoursViewController
 
-@synthesize tableView = _tableView;
+//private properties
+@synthesize currentHoursToDisplay = _currentHoursToDisplay;
+@synthesize rowOfCurrentHours = _rowOfCurrentHours;
+@synthesize sectionOfCurrentHours = _sectionOfCurrentHours;
+@synthesize rowOfSelectedCell = _rowOfSelectedCell;
+@synthesize sectionOfSelectedCell = _sectionOfSelectedCell;
+
+//public properties
 @synthesize hours = _hours;
+
+//UI properties
+@synthesize tableView = _tableView;
+@synthesize remainingTime = _remainingTime;
+@synthesize titleDisplay = _titleDisplay;
 
 ///////////////////////////////////
 //custom getters and setters///////
@@ -39,22 +51,28 @@
     return _hours;
 }
 
+
+/////////////////////
+//loading the view///
+////////////////////
+
 - (void) viewDidLoad {
     
     //is this the best place to set this?
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self setUpScrollView];
-    NSDate *currentDate= [[NSDate alloc] init];
-    NSLog(@"The redone time is %u", (NSUInteger) [self.hours timeUntilClosed]);
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated {
   
-    NSLog(@"Current hours: %@", [[self.hours getHoursForCurrentTime] objectForKey: @"title"]);
+    
 }
 
-//table view stuff
+////////////////////
+//table view stuff//
+////////////////////
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -217,5 +235,7 @@
 }
 
 
-
+//////////////////////
+//view related setup//
+//////////////////////
 @end

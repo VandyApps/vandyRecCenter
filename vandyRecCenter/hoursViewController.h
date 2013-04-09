@@ -30,7 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleDisplay;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollHours;
 @property (weak, nonatomic) IBOutlet UILabel *remainingTime;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (nonatomic, strong) hoursModel* hours;
 @end
