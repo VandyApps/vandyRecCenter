@@ -184,9 +184,6 @@
     return NO;
 }
 
-- (BOOL) isClosed {
-    return ![self isOpen];
-}
 
 - (NSTimeInterval) timeUntilClosed {
 

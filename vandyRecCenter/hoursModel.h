@@ -30,7 +30,7 @@
 - (NSArray*) getAllClosedHours;
 - (NSArray*) getAllOpenHours;
 - (NSArray*) getAllMainHours;
-- (NSArray*) getAllOtherHours; //hours that are not main hours
+- (NSArray*) getAllOtherHours; //hours that are not main hours or closed hours
 
 //methods dealing with the current time
 - (NSDictionary*) getHoursForCurrentTime;
@@ -44,8 +44,10 @@
 
 //checks the status of the rec center with respect to the current time
 - (BOOL) isOpen;
-- (BOOL) isClosed;
-- (NSTimeInterval) timeUntilOpen;
-- (NSTimeInterval) timeUntilClosed;
+- (BOOL) willOpenLaterToday; //NO if it is currently open
+- (BOOL) wasOpenEarlierToday; //NO if it is currently open
+
+- (NSTimeInterval) timeUntilOpen; //returns 0 when the rec center is open
+- (NSTimeInterval) timeUntilClosed;//returns 0 when the rec center is closed
 
 @end
