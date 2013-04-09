@@ -184,10 +184,43 @@
     return NO;
 }
 
+- (BOOL) willOpenLaterToday {
+
+    NSDate *currentDate = [[NSDate alloc] init];
+    
+    NSDateFormatter *getTimeFormat = [[NSDateFormatter alloc] init];
+    getTimeFormat.timeStyle = NSDateFormatterShortStyle;
+    getTimeFormat.dateStyle = NSDateFormatterNoStyle;
+    //set time to Nashville time
+    getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
+    
+    if ([self getOpenningTime] && [NSDate compareTime: [self getOpenningTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending) {
+        
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL) wasOpenEarlierToday {
+    NSDate *currentDate = [[NSDate alloc] init];
+    
+    NSDateFormatter *getTimeFormat = [[NSDateFormatter alloc] init];
+    getTimeFormat.timeStyle = NSDateFormatterShortStyle;
+    getTimeFormat.dateStyle = NSDateFormatterNoStyle;
+    //set time to Nashville time
+    getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
+    
+    if ([self getClosingTime] && [NSDate compareTime: [self getClosingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending) {
+        
+        return YES;
+    }
+    return NO;
+}
+
 
 - (NSTimeInterval) timeUntilClosed {
 
-    if ([self isOpen]) {
+    if ([self willOpenLaterToday]) {
     
         
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
