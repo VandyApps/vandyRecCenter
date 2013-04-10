@@ -54,15 +54,17 @@
         case 1:
             return @"Monday";
         case 2:
-            return @"Tueday";
+            return @"Tuesday";
         case 3:
             return @"Wednesday";
         case 4:
             return @"Thursday";
         case 5:
             return @"Friday";
-        default: //when the value is 6
+        case 6: 
             return @"Saturday";
+        default:
+            return nil;
     }
 }
 
