@@ -68,6 +68,7 @@
 - (void) viewDidAppear:(BOOL)animated {
   
     //set the remaining time label
+    [self refreshRemainingTime];
     //make the selected cell the current hours
 }
 
@@ -80,11 +81,11 @@
     
     //interval in seconds
     NSInteger hours = timeInterval / 3600;
-    NSInteger minutes = timeInterval / 60;
+    NSInteger minutes = (NSInteger) timeInterval % 60;
     if (isClosing) {
-        return [NSString stringWithFormat: @"The Rec will close in %ih %im", hours, minutes];
+        return [NSString stringWithFormat: @"Closing in %ih %im", hours, minutes];
     } else {
-        return [NSString stringWithFormat: @"The Rec will open in %ih %im", hours, minutes];
+        return [NSString stringWithFormat: @"Opening in %ih %im", hours, minutes];
     }
     
 }
@@ -264,6 +265,14 @@
 //////////////////////
 
 - (void) refreshRemainingTime {
-    NSInteger displayTimeInSeconds;
+    NSString *displayTime;
+    if ([self.hours isOpen]) {
+        displayTime = [self displayTimeInterval: [self.hours timeUntilClosed] untilClosing: YES];
+    } else if ([self.hours willOpenLaterToday]) {
+        displayTime = [self displayTimeInterval: [self.hours timeUntilOpen] untilClosing: NO];
+    } else {
+        displayTime = @"Closed for the day";
+    }
+    self.remainingTime.text = displayTime;
 }
 @end
