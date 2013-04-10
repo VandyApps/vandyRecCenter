@@ -12,17 +12,11 @@
 @interface hoursModel : NSObject
 
 @property (nonatomic, strong) NSArray* allHours;
-@property (nonatomic, readonly) NSUInteger selectedHours; //index of NSArray for the hours selected
-//@property (nonatomic, strong) NSString* path; //set in the initializer
 
 //this is the default initializer
 //sets selected hours to the first intance of hours that it sees in the pList
 - (id) initWithPathToPList: (NSString*) path;
 - (id) init;
-
-//returns true if it was able to locate the
-//hours with the selected title
-- (BOOL) selectHoursWithTitle: (NSString*) title;
 
 
 //these methods all return an array of size 0

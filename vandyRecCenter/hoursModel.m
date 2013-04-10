@@ -11,7 +11,6 @@
 @implementation hoursModel
 
 @synthesize allHours = _allHours;
-@synthesize selectedHours = _selectedHours;
 
 
 //getters and setters
@@ -27,19 +26,6 @@
     return self;
     
 }
-
-- (void) setSelectedHoursWithTitle: (NSString*) title {
-    
-   
-    BOOL foundSelectedObject = NO;
-    for (size_t i = 0; i < [self.allHours count] && !foundSelectedObject; ++i) {
-        if ([[(NSDictionary*) [self.allHours objectAtIndex: i] objectForKey: @"title"] isEqualToString: title]) {
-            _selectedHours = i;
-            foundSelectedObject = YES;
-        }
-    }
-}
-
 
 
 - (id) init {
