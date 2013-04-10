@@ -39,7 +39,14 @@
 }
 
 - (NSDictionary*) hoursWithTitle:(NSString *)title {
-    
+    NSEnumerator* hoursEnum = [self.allHours objectEnumerator];
+    NSDictionary* nextHours;
+    while (nextHours = [hoursEnum nextObject]) {
+        if ([[nextHours objectForKey: @"title"] isEqualToString: title]) {
+            return nextHours;
+        }
+    }
+    return nil;
 }
 
 
