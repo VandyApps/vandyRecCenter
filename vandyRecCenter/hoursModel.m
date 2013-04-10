@@ -8,6 +8,11 @@
 
 #import "hoursModel.h"
 
+@interface  hoursModel()
+
+@property (nonatomic, strong) NSArray* allHours;
+
+@end
 @implementation hoursModel
 
 @synthesize allHours = _allHours;
@@ -33,12 +38,12 @@
     return self;
 }
 
-- (BOOL) selectHoursWithTitle:(NSString *)title {
-    return NO;
+- (NSDictionary*) hoursWithTitle:(NSString *)title {
+    
 }
 
 
-- (NSArray*) getAllClosedHours {
+- (NSArray*) closedHours {
     NSArray *closeHours = [[NSArray alloc] init];
     NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
     
@@ -53,7 +58,7 @@
     
 }
 
-- (NSArray*) getAllOpenHours {
+- (NSArray*) openHours {
     NSArray *openHours = [[NSArray alloc] init];
     NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
     
@@ -67,7 +72,7 @@
     return openHours;
 }
 
-- (NSArray*) getAllMainHours {
+- (NSArray*) mainHours {
     
     NSArray *mainHours = [[NSArray alloc] init];
     NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
@@ -82,7 +87,7 @@
     return mainHours;
 }
 
-- (NSArray*) getAllOtherHours {
+- (NSArray*) otherHours {
     
     NSArray *mainHours = [[NSArray alloc] init];
     NSEnumerator *enumerateHours = [self.allHours objectEnumerator];
@@ -98,7 +103,7 @@
 }
 
 
-- (NSDictionary*) getHoursForCurrentTime {
+- (NSDictionary*) hoursForCurrentTime {
 
     NSEnumerator *hoursEnum = [self.allHours objectEnumerator];
     NSDictionary* nextHours;
@@ -126,8 +131,8 @@
 }
 
 
-- (NSString*) getOpenningTime {
-    NSArray* arrayOfHours = [[self getHoursForCurrentTime] objectForKey: @"hours"];
+- (NSString*) openingTime {
+    NSArray* arrayOfHours = [[self hoursForCurrentTime] objectForKey: @"hours"];
     NSLog(@"Current day is %u", [NSDate currentDayOfTheWeekAsInt]);
     NSString* hours = [arrayOfHours objectAtIndex: [NSDate currentDayOfTheWeekAsInt]];
     //get the string up until the space
@@ -139,8 +144,8 @@
     return nil;
 }
 
-- (NSString*) getClosingTime {
-    NSArray* arrayOfHours = [[self getHoursForCurrentTime] objectForKey: @"hours"];
+- (NSString*) closingTime {
+    NSArray* arrayOfHours = [[self hoursForCurrentTime] objectForKey: @"hours"];
     NSLog(@"Current day is %u", [NSDate currentDayOfTheWeekAsInt]);
     NSString* hours = [arrayOfHours objectAtIndex: [NSDate currentDayOfTheWeekAsInt]];
     //get the string up until the space
@@ -163,7 +168,7 @@
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
     
-    if ( ([NSDate compareTime: [self getOpenningTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending || [NSDate compareTime: [self getOpenningTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedSame) && [NSDate compareTime: [self getClosingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending) {
+    if ( ([NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending || [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedSame) && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending) {
     
         return YES;
     }
@@ -180,7 +185,7 @@
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
     
-    if ([self getOpenningTime] && [NSDate compareTime: [self getOpenningTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending) {
+    if ([self openingTime] && [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending) {
         
         return YES;
     }
@@ -196,7 +201,7 @@
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
     
-    if ([self getClosingTime] && [NSDate compareTime: [self getClosingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending) {
+    if ([self closingTime] && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending) {
         
         return YES;
     }
@@ -210,7 +215,7 @@
     
         
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
-        NSDate *closingDate = [currentDate dateBySettingTimeToTime: [self getClosingTime]];
+        NSDate *closingDate = [currentDate dateBySettingTimeToTime: [self closingTime]];
         return [closingDate timeIntervalSinceDate: currentDate];
     }
     return 0;
@@ -221,7 +226,7 @@
         
         
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
-        NSDate *openingDate = [currentDate dateBySettingTimeToTime: [self getClosingTime]];
+        NSDate *openingDate = [currentDate dateBySettingTimeToTime: [self closingTime]];
         return [openingDate timeIntervalSinceDate: currentDate];
     }
     return 0;

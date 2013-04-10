@@ -107,20 +107,20 @@
     if (indexPath.section == 0) {
     
         
-         NSString* title = [[[self.hours getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
+         NSString* title = [[[self.hours mainHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
         
-        NSDate* startDate = [[[self.hours getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
-        NSDate *endDate = [[[self.hours getAllMainHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
+        NSDate* startDate = [[[self.hours mainHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
+        NSDate *endDate = [[[self.hours mainHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
         
         [ (UILabel*) [cell viewWithTag: 2] setText: title];
         
         [(UILabel *) [cell viewWithTag: 3] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
     } else if (indexPath.section == 1) {
         
-        NSString* title = [[[self.hours getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
+        NSString* title = [[[self.hours otherHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
         
-        NSDate *startDate = [[[self.hours getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
-        NSDate *endDate = [[[self.hours getAllOtherHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
+        NSDate *startDate = [[[self.hours otherHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
+        NSDate *endDate = [[[self.hours otherHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
         
         
         [ (UILabel*) [cell viewWithTag: 2] setText: title];
@@ -128,9 +128,9 @@
         
     } else  {//last section
     
-        NSString* title = [[[self.hours getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
-        NSDate *startDate = [[[self.hours getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
-        NSDate *endDate = [[[self.hours getAllClosedHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
+        NSString* title = [[[self.hours closedHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
+        NSDate *startDate = [[[self.hours closedHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
+        NSDate *endDate = [[[self.hours closedHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
         
         
         [(UILabel*) [cell viewWithTag: 2] setText: title];
@@ -153,12 +153,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
     
-        return [[self.hours getAllMainHours] count];
+        return [[self.hours mainHours] count];
     } else if (section == 1) {
     
-        return [[self.hours getAllOtherHours] count];
+        return [[self.hours otherHours] count];
     } else {
-        return [[self.hours getAllClosedHours] count];
+        return [[self.hours closedHours] count];
     }
 }
 
@@ -203,13 +203,13 @@
     NSString *title;
     if (indexPath.section == 0) {
     
-        title = [[[self.hours getAllMainHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
+        title = [[[self.hours mainHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
     } else if (indexPath.section == 1) {
     
-         title = [[[self.hours getAllOtherHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
+         title = [[[self.hours otherHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
     } else {
     
-        title = [[[self.hours getAllClosedHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
+        title = [[[self.hours closedHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
     }
     
     self.titleDisplay.text = title;
