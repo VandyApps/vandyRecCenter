@@ -13,6 +13,7 @@
 //make this negative to subtract time
 + (NSDate*) dateByAddingTimeCurrentTime: (NSTimeInterval) addedTime;
 
++ (NSString*) weekDayAbreviationForIndex: (NSUInteger) index;
 + (NSString*) dayOfTheWeekForIndex: (NSInteger) index;
 + (NSUInteger) currentDayOfTheWeekAsInt;
 + (NSString*) currentDayOfTheWeekAsString;
