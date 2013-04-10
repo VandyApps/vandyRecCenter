@@ -81,7 +81,7 @@
     
     //interval in seconds
     NSInteger hours = timeInterval / 3600;
-    NSInteger minutes = (NSInteger) timeInterval % 60;
+    NSInteger minutes = ((NSInteger) timeInterval/ 60  + 1)% 60; //add 1 minute for rounding up purposes
     if (isClosing) {
         return [NSString stringWithFormat: @"Closing in %ih %im", hours, minutes];
     } else {
@@ -212,7 +212,7 @@
         title = [[[self.hours getAllClosedHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
     }
     
-    NSLog(@"Hours selected: %@", title);
+    self.titleDisplay.text = title;
     
     //change color of gradient here
     self.sectionOfSelectedCell = indexPath.section;
