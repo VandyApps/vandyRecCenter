@@ -211,9 +211,11 @@
     
         title = [[[self.hours closedHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
     }
-    
-    self.titleDisplay.text = title;
-    
+    //set the title in the view
+    self.titleDisplay.text = title; 
+    //get the array for the hours
+    NSArray* hours = [[self.hours hoursWithTitle: title] objectForKey: @"hours"];
+    NSLog(@"%@", hours);
     //change color of gradient here
     self.sectionOfSelectedCell = indexPath.section;
     self.rowOfSelectedCell = indexPath.row;
