@@ -90,6 +90,26 @@
     
 }
 
+//this returns an array of all the indices that are totally unique in sequence
+//MORE DETAILED COMMENTS HERE
+- (NSArray*) arrayOfUniqueIndices: (NSArray*) hours {
+    NSArray* arrayOfIndices = [[NSArray alloc] init];
+    for (size_t i =0; i < [hours count]; ++i) {
+        if (i == 0) {
+            arrayOfIndices = [arrayOfIndices arrayByAddingObject: [NSNumber numberWithInt: 0]];
+            
+        } else {
+        
+            if (![[hours objectAtIndex: i] isEqualToString: [hours objectAtIndex: i - 1]]) {
+                arrayOfIndices = [arrayOfIndices arrayByAddingObject: [NSNumber numberWithInt: i]];
+            } 
+        }
+        
+    }
+    return arrayOfIndices;
+}
+
+
 ////////////////////
 //table view stuff//
 ////////////////////
@@ -216,6 +236,7 @@
     //get the array for the hours
     NSArray* hours = [[self.hours hoursWithTitle: title] objectForKey: @"hours"];
     NSLog(@"%@", hours);
+    NSLog(@"Unique %@", [self arrayOfUniqueIndices: hours]);
     //change color of gradient here
     self.sectionOfSelectedCell = indexPath.section;
     self.rowOfSelectedCell = indexPath.row;
