@@ -61,7 +61,6 @@
     //is this the best place to set this?
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self setUpScrollView];
     
 }
 
@@ -241,6 +240,7 @@
     self.sectionOfSelectedCell = indexPath.section;
     self.rowOfSelectedCell = indexPath.row;
     [tableView reloadData];
+    [self setUpScrollViewWithNumberOfPages: [[self arrayOfUniqueIndices: hours] count]];
 }
 
  
@@ -260,12 +260,12 @@
     
     return [formattedStartDate stringByAppendingFormat: @" - %@", formattedEndDate];
 }
-- (void) setUpScrollView {
+- (void) setUpScrollViewWithNumberOfPages: (NSInteger) numberOfPages {
     
     
     self.scrollHours.frame = CGRectMake(X_COOR_OF_PAGE, Y_COOR_OF_PAGE, WIDTH_OF_PAGE, HEIGHT_OF_PAGE);
     
-    self.scrollHours.contentSize = CGSizeMake(WIDTH_OF_PAGE * NUM_OF_PAGES, HEIGHT_OF_PAGE);
+    self.scrollHours.contentSize = CGSizeMake(WIDTH_OF_PAGE * numberOfPages, HEIGHT_OF_PAGE);
     
     self.scrollHours.backgroundColor = [UIColor whiteColor];
     
