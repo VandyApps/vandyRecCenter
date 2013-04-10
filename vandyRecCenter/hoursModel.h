@@ -33,14 +33,9 @@
 - (NSArray*) getAllOtherHours; //hours that are not main hours or closed hours
 
 //methods dealing with the current time
-- (NSDictionary*) getHoursForCurrentTime;
+- (NSDictionary*) getHoursForCurrentTime; //compresses hours
 - (NSString*) getOpenningTime; //formatted as 12:00 AM, returns nil if it is closed all day
 - (NSString*) getClosingTime; //formatted as 12:00 AM, returns nil if it is closed all day
-
-//time is formatted as such: 12:00am
-//hoursTitle is the title of the hours within the hours plist
-- (BOOL) time: (NSString*) time isBeforeClosingTimeOfHours: (NSString*) hoursTitle; 
-- (BOOL) time: (NSString*) time isAfterOpeningTimeOfHours: (NSString*) hoursTitle;
 
 //checks the status of the rec center with respect to the current time
 - (BOOL) isOpen;
