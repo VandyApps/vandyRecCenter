@@ -10,9 +10,11 @@
 #import "hoursModel.h"
 #import "NSDate-MyDateClass.h"
 
+
+//macros
 #define DEFAULT_HEIGHT_FOR_CELL 51
 //macros for scroll view
-#define NUM_OF_PAGES 7
+#define DEFAULT_NUM_OF_PAGES 7 
 #define HEIGHT_OF_PAGE 80
 #define WIDTH_OF_PAGE 320
 #define X_COOR_OF_PAGE 0
@@ -21,11 +23,15 @@
 //macros for elements inside a single page
 
 //title label
-#define X_COOR_OF_TITLE_LABEL 110
+#define X_COOR_OF_TITLE_LABEL 35
 #define Y_COOR_OF_TITLE_LABEL 10
-#define HEIGHT_OF_TITLE_LABEL 30
-#define WIDTH_OF_TITLE_LABEL 100
+#define HEIGHT_OF_TITLE_LABEL 25
+#define WIDTH_OF_TITLE_LABEL 250
 //hours label
+#define X_COOR_OF_HOURS_LABEL 35
+#define Y_COOR_OF_HOURS_LABEL 40
+#define HEIGHT_OF_HOURS_LABEL 35
+#define WIDTH_OF_HOURS_LABEL 250
 
 
 @interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>

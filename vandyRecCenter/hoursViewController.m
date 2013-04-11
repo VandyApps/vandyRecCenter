@@ -108,6 +108,27 @@
     return arrayOfIndices;
 }
 
+- (NSArray*) titlesForArrayOfUniqueIndices: (NSArray*) arrayOfUniqueIndices {
+    NSArray* titles = [[NSArray alloc] init];
+    for (size_t i = 0; i < [arrayOfUniqueIndices count]; ++i) {
+        if (i+1 < [arrayOfUniqueIndices count]) { //then this is not the last index
+            if ([[arrayOfUniqueIndices objectAtIndex:i] intValue] != [[arrayOfUniqueIndices objectAtIndex:i+1] intValue] - 1) { //there is a range
+               
+                NSInteger startIndex = [[arrayOfUniqueIndices objectAtIndex: i] intValue];
+                NSInteger endIndex = [[arrayOfUniqueIndices objectAtIndex: i + 1] intValue] - 1;
+                titles = [titles arrayByAddingObject: [NSString stringWithFormat: @"%@ - %@", [NSDate weekDayAbreviationForIndex: startIndex], [NSDate weekDayAbreviationForIndex:endIndex]]];
+                
+                
+            } else { //there is no range, just a single day
+                titles = [titles arrayByAddingObject: [NSDate dayOfTheWeekForIndex:[[arrayOfUniqueIndices objectAtIndex: i] intValue]]];
+            }
+        } else {
+            titles = [titles arrayByAddingObject: [NSDate dayOfTheWeekForIndex: [[arrayOfUniqueIndices objectAtIndex:i] intValue]]];
+        }
+    }
+    return titles;
+}
+
 
 ////////////////////
 //table view stuff//
@@ -235,7 +256,7 @@
     //get the array for the hours
     NSArray* hours = [[self.hours hoursWithTitle: title] objectForKey: @"hours"];
     NSLog(@"%@", hours);
-    NSLog(@"Unique %@", [self arrayOfUniqueIndices: hours]);
+    NSLog(@"%@", [self titlesForArrayOfUniqueIndices:[self arrayOfUniqueIndices: hours]]);
     //change color of gradient here
     self.sectionOfSelectedCell = indexPath.section;
     self.rowOfSelectedCell = indexPath.row;
@@ -269,16 +290,20 @@
     
     self.scrollHours.backgroundColor = [UIColor whiteColor];
     
-    UILabel* tempLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL, Y_COOR_OF_TITLE_LABEL, WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+    UILabel* titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL, Y_COOR_OF_TITLE_LABEL, WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
     
-    tempLabel.text = @"Title here";
-    [self.scrollHours addSubview: tempLabel];
+    titleLabel.text = @"Title here";
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.backgroundColor = [UIColor yellowColor];
+    [self.scrollHours addSubview: titleLabel];
     
     
-    UILabel* anotherLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL + WIDTH_OF_PAGE, Y_COOR_OF_TITLE_LABEL, WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+    UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_HOURS_LABEL, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
     
-    anotherLabel.text = @"Title here";
-    [self.scrollHours addSubview: anotherLabel];
+    hoursLabel.text = @"Details go here";
+    hoursLabel.backgroundColor = [UIColor greenColor];
+    hoursLabel.textAlignment = NSTextAlignmentCenter;
+    [self.scrollHours addSubview: hoursLabel];
 
 }
 
