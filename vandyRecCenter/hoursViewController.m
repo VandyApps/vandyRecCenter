@@ -187,7 +187,10 @@
     self.sectionOfSelectedCell = self.sectionOfCurrentHours;
     [self.tableView reloadData]; //reload data so that the correct gradients display
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow: self.rowOfCurrentHours inSection:self.sectionOfCurrentHours] animated: YES scrollPosition: UITableViewScrollPositionMiddle];
-    //call didSelectRowAtIndexPath?
+    //process of selecting
+    NSString* title = [[self.hours hoursForCurrentTime] objectForKey: @"title"];
+    self.titleDisplay.text = title;
+    [self setUpScrollViewWithHoursTitle: title];
 }
 
 - (NSString*) getDateStringWithStartDate: (NSDate*) startDate andEndDate: (NSDate*) endDate {

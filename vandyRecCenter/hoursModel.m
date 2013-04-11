@@ -140,7 +140,6 @@
 
 - (NSString*) openingTime {
     NSArray* arrayOfHours = [[self hoursForCurrentTime] objectForKey: @"hours"];
-    NSLog(@"Current day is %u", [NSDate currentDayOfTheWeekAsInt]);
     NSString* hours = [arrayOfHours objectAtIndex: [NSDate currentDayOfTheWeekAsInt]];
     //get the string up until the space
     for (size_t i = 0; i < [hours length]; ++i) {
@@ -153,7 +152,6 @@
 
 - (NSString*) closingTime {
     NSArray* arrayOfHours = [[self hoursForCurrentTime] objectForKey: @"hours"];
-    NSLog(@"Current day is %u", [NSDate currentDayOfTheWeekAsInt]);
     NSString* hours = [arrayOfHours objectAtIndex: [NSDate currentDayOfTheWeekAsInt]];
     //get the string up until the space
     for (size_t i = 0; i < [hours length]; ++i) {
