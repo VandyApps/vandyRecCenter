@@ -122,7 +122,13 @@
                             <constraint firstItem="zhd-eu-bAF" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" constant="67" id="ylw-RM-FsN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Hours" id="Tdd-lq-Ehu"/>
+                    <navigationItem key="navigationItem" title="Hours" id="Tdd-lq-Ehu">
+                        <barButtonItem key="leftBarButtonItem" title="Current" id="FFC-FB-jBw">
+                            <connections>
+                                <action selector="current:" destination="gCv-Nj-e3x" id="TA5-ah-PFG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="pageControl" destination="dfS-Mu-bgP" id="oCs-ZX-oJw"/>
                         <outlet property="remainingTime" destination="d36-qw-WAa" id="1RL-zK-B3w"/>
@@ -492,33 +498,6 @@
         <image name="gradient.png" width="16" height="16"/>
         <image name="imageOfRec.jpeg" width="550" height="323"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="browserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="homeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="hoursViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="titleDisplay" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

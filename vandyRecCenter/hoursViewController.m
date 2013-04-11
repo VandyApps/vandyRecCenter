@@ -99,6 +99,14 @@
     [self selectCurrentDayOfWeek];
 }
 
+///////////
+//events///
+//////////
+
+- (IBAction)current:(UIBarButtonItem *)sender {
+    [self selectCurrentHours];
+    [self selectCurrentDayOfWeek];
+}
 
 ////////////////////
 //private methods//
@@ -177,9 +185,10 @@
 }
 
 
-/////////////////////////////////////////
+/////////////////////////////
 //methods for current time//
-/////////////////////////////////////////
+////////////////////////////
+
 - (void) setCurrentHours {
     NSDictionary* currentTime = [self.hours hoursForCurrentTime];
     assert([[currentTime objectForKey: @"facilityHours"] boolValue]);
@@ -462,6 +471,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     self.pageControl.currentPage = scrollView.contentOffset.x / WIDTH_OF_PAGE;
 }
+
 
 
 
