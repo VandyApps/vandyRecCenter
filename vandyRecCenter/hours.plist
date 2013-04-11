@@ -103,7 +103,13 @@
 		<date>2014-01-01T06:00:00Z</date>
 		<key>hours</key>
 		<array>
-			<string></string>
+			<string>7:00 am - 11:00 pm</string>
+			<string>7:00 am - 10:30 pm</string>
+			<string>7:30 am - 10:30 pm</string>
+			<string>6:00 am - 10:00 pm</string>
+			<string>4:00 am - 11:00 am</string>
+			<string>4:00 am - 11:00 am</string>
+			<string>5:00 am - 11:00 am</string>
 		</array>
 	</dict>
 	<dict>

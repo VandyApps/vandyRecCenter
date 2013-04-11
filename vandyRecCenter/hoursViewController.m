@@ -18,6 +18,7 @@
 @property (nonatomic) NSInteger sectionOfCurrentHours;
 @property (nonatomic) NSInteger rowOfCurrentHours;
 
+@property (nonatomic, strong, readonly) NSArray* subviewsInScrollView;
 @end
 
 
@@ -29,6 +30,7 @@
 @synthesize sectionOfCurrentHours = _sectionOfCurrentHours;
 @synthesize rowOfSelectedCell = _rowOfSelectedCell;
 @synthesize sectionOfSelectedCell = _sectionOfSelectedCell;
+@synthesize subviewsInScrollView = _subviewsInScrollView;
 
 //public properties
 @synthesize hours = _hours;
@@ -37,6 +39,7 @@
 @synthesize tableView = _tableView;
 @synthesize remainingTime = _remainingTime;
 @synthesize titleDisplay = _titleDisplay;
+@synthesize scrollHours = _scrollHours;
 
 ///////////////////////////////////
 //custom getters and setters///////
@@ -51,6 +54,25 @@
     return _hours;
 }
 
+- (void) viewWasAddedToScrollView: (UIView*) addedView {
+    if (!_subviewsInScrollView) {
+        _subviewsInScrollView = [[NSArray alloc] initWithObjects:addedView, nil];
+    } else {
+        _subviewsInScrollView = [_subviewsInScrollView arrayByAddingObject: addedView];
+    }
+    
+}
+- (void) removeAllSubviewsInScrollView {
+    if (_subviewsInScrollView && [_subviewsInScrollView count] != 0)
+    {
+        NSEnumerator *viewEnum = [_subviewsInScrollView objectEnumerator];
+        UIView *nextView;
+        while (nextView = [viewEnum nextObject]) {
+            [nextView removeFromSuperview];
+        }
+        _subviewsInScrollView = [[NSArray alloc] init];
+    }
+}
 
 /////////////////////
 //loading the view///
@@ -254,14 +276,11 @@
     //set the title in the view
     self.titleDisplay.text = title; 
     //get the array for the hours
-    NSArray* hours = [[self.hours hoursWithTitle: title] objectForKey: @"hours"];
-    NSLog(@"%@", hours);
-    NSLog(@"%@", [self titlesForArrayOfUniqueIndices:[self arrayOfUniqueIndices: hours]]);
     //change color of gradient here
     self.sectionOfSelectedCell = indexPath.section;
     self.rowOfSelectedCell = indexPath.row;
     [tableView reloadData];
-    [self setUpScrollViewWithNumberOfPages: [[self arrayOfUniqueIndices: hours] count]];
+    [self setUpScrollViewWithHoursTitle: title];
 }
 
  
@@ -281,29 +300,42 @@
     
     return [formattedStartDate stringByAppendingFormat: @" - %@", formattedEndDate];
 }
-- (void) setUpScrollViewWithNumberOfPages: (NSInteger) numberOfPages {
+- (void) setUpScrollViewWithHoursTitle: (NSString*) title {
     
+    //clear any existing subviews in the scroll view before adding new stuff
+    [self removeAllSubviewsInScrollView];
+    
+    NSDictionary* selectedHours = [self.hours hoursWithTitle: title];
+    NSArray* hours = [selectedHours objectForKey: @"hours"];
+    NSArray *scrollTitles = [self titlesForArrayOfUniqueIndices: [self arrayOfUniqueIndices: hours]];
+    NSInteger numberOfPages = [scrollTitles count];
     
     self.scrollHours.frame = CGRectMake(X_COOR_OF_PAGE, Y_COOR_OF_PAGE, WIDTH_OF_PAGE, HEIGHT_OF_PAGE);
     
     self.scrollHours.contentSize = CGSizeMake(WIDTH_OF_PAGE * numberOfPages, HEIGHT_OF_PAGE);
     
-    self.scrollHours.backgroundColor = [UIColor whiteColor];
+    for (size_t i = 0; i < [scrollTitles count]; ++i) {
     
-    UILabel* titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL, Y_COOR_OF_TITLE_LABEL, WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+        
+        UILabel* titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL + i*WIDTH_OF_PAGE, Y_COOR_OF_TITLE_LABEL , WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+        
+        titleLabel.text = [scrollTitles objectAtIndex: i];
+        titleLabel.textColor = [UIColor whiteColor];
+        titleLabel.backgroundColor = [UIColor clearColor];
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        [self.scrollHours addSubview: titleLabel];
+        [self viewWasAddedToScrollView: titleLabel]; //need to keep track of added views to remove later
+        
+        UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_HOURS_LABEL + i*WIDTH_OF_PAGE, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
+        
+        hoursLabel.text = [hours objectAtIndex: i];
+        hoursLabel.textColor = [UIColor whiteColor];
+        hoursLabel.backgroundColor = [UIColor clearColor];
+        hoursLabel.textAlignment = NSTextAlignmentCenter;
+        [self.scrollHours addSubview: hoursLabel];
+        [self viewWasAddedToScrollView: hoursLabel]; //need to keep track of added views to remove later
+    }
     
-    titleLabel.text = @"Title here";
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.backgroundColor = [UIColor yellowColor];
-    [self.scrollHours addSubview: titleLabel];
-    
-    
-    UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_HOURS_LABEL, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
-    
-    hoursLabel.text = @"Details go here";
-    hoursLabel.backgroundColor = [UIColor greenColor];
-    hoursLabel.textAlignment = NSTextAlignmentCenter;
-    [self.scrollHours addSubview: hoursLabel];
 
 }
 
@@ -323,4 +355,5 @@
     }
     self.remainingTime.text = displayTime;
 }
+
 @end
