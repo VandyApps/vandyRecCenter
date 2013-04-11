@@ -41,6 +41,10 @@
 		21DBAFC117108C1C00C7C34D /* brownGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DBAFC017108C1C00C7C34D /* brownGradient.png */; };
 		21E9C957170DFE230079BC75 /* hoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E9C956170DFE230079BC75 /* hoursModel.m */; };
 		21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */; };
+		21EB34F317177B0D0015AD77 /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34EF17177B0D0015AD77 /* leftArrow.png */; };
+		21EB34F417177B0D0015AD77 /* leftArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F017177B0D0015AD77 /* leftArrow@2x.png */; };
+		21EB34F517177B0D0015AD77 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F117177B0D0015AD77 /* rightArrow.png */; };
+		21EB34F617177B0D0015AD77 /* rightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F217177B0D0015AD77 /* rightArrow@2x.png */; };
 		21FC9F8F17025F160065EEC2 /* browserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC9F8E17025F160065EEC2 /* browserViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +91,10 @@
 		21E9C956170DFE230079BC75 /* hoursModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hoursModel.m; sourceTree = "<group>"; };
 		21EAD7E6170E883900449EA3 /* NSDate-MyDateClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-MyDateClass.h"; sourceTree = "<group>"; };
 		21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-MyDateClass.m"; sourceTree = "<group>"; };
+		21EB34EF17177B0D0015AD77 /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
+		21EB34F017177B0D0015AD77 /* leftArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leftArrow@2x.png"; sourceTree = "<group>"; };
+		21EB34F117177B0D0015AD77 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
+		21EB34F217177B0D0015AD77 /* rightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightArrow@2x.png"; sourceTree = "<group>"; };
 		21FC9F8D17025F160065EEC2 /* browserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = browserViewController.h; sourceTree = "<group>"; };
 		21FC9F8E17025F160065EEC2 /* browserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = browserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +116,10 @@
 		212DECD01700965A0041498E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				21EB34EF17177B0D0015AD77 /* leftArrow.png */,
+				21EB34F017177B0D0015AD77 /* leftArrow@2x.png */,
+				21EB34F117177B0D0015AD77 /* rightArrow.png */,
+				21EB34F217177B0D0015AD77 /* rightArrow@2x.png */,
 				21DBAFC017108C1C00C7C34D /* brownGradient.png */,
 				215D04D5170D146D008D8277 /* goldGradient.png */,
 				21201EC31702199B00E89605 /* vandyLogo.png */,
@@ -295,6 +307,10 @@
 				2137613E1702895D008B3FBD /* hours.plist in Resources */,
 				215D04D6170D146D008D8277 /* goldGradient.png in Resources */,
 				21DBAFC117108C1C00C7C34D /* brownGradient.png in Resources */,
+				21EB34F317177B0D0015AD77 /* leftArrow.png in Resources */,
+				21EB34F417177B0D0015AD77 /* leftArrow@2x.png in Resources */,
+				21EB34F517177B0D0015AD77 /* rightArrow.png in Resources */,
+				21EB34F617177B0D0015AD77 /* rightArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -108,6 +108,14 @@
     [self selectCurrentDayOfWeek];
 }
 
+//paging left and right are dynamically created events
+- (void) scrollOnePageLeft {
+
+}
+
+- (void) scrollOnePageRight {
+
+}
 ////////////////////
 //private methods//
 ///////////////////
@@ -460,6 +468,17 @@
         hoursLabel.textAlignment = NSTextAlignmentCenter;
         [self.scrollHours addSubview: hoursLabel];
         [self viewWasAddedToScrollView: hoursLabel]; //need to keep track of added views to remove later
+        
+        //create buttons
+        //left button
+        UIButton* leftButton = [[UIButton alloc] initWithFrame: CGRectMake(50 + i *WIDTH_OF_PAGE, 35, 10, 10)];
+        [leftButton setImage: [UIImage imageNamed: @"leftArrow.png"] forState: UIControlStateNormal];
+        [self.scrollHours addSubview: leftButton];
+        
+        //right button
+        UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(257.5 + i*WIDTH_OF_PAGE, 35, 10, 10)];
+        [rightButton setImage: [UIImage imageNamed: @"rightArrow.png"] forState:UIControlStateNormal];
+        [self.scrollHours addSubview: rightButton];
     }
     
 
