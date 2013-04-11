@@ -41,6 +41,8 @@
 @synthesize titleDisplay = _titleDisplay;
 @synthesize scrollHours = _scrollHours;
 @synthesize pageControl = _pageControl;
+
+
 ///////////////////////////////////
 //custom getters and setters///////
 /////////////////////////////////
@@ -80,10 +82,10 @@
 
 - (void) viewDidLoad {
     
-    //is this the best place to set this?
+    //setting the delegates
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+    self.scrollHours.delegate = self;
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -130,6 +132,24 @@
     return arrayOfIndices;
 }
 
+- (NSString*) getDateStringWithStartDate: (NSDate*) startDate andEndDate: (NSDate*) endDate {
+    
+    NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
+    formatDate.dateStyle = NSDateFormatterMediumStyle;
+    NSString* semiFormattedStartDate = [formatDate stringFromDate: startDate];
+    NSString *semiFormattedEndDate = [formatDate stringFromDate: endDate];
+    
+    NSString *formattedStartDate = [semiFormattedStartDate substringWithRange: NSMakeRange(0, [semiFormattedEndDate length] - 6)];
+    NSString *formattedEndDate = [semiFormattedEndDate substringWithRange: NSMakeRange(0, [semiFormattedEndDate length] - 6)];
+    
+    if ([formattedStartDate isEqualToString: formattedEndDate]) {
+        return @"All year round";
+    }
+    
+    return [formattedStartDate stringByAppendingFormat: @" - %@", formattedEndDate];
+}
+
+
 - (NSArray*) titlesForArrayOfUniqueIndices: (NSArray*) arrayOfUniqueIndices {
     NSArray* titles = [[NSArray alloc] init];
     for (size_t i = 0; i < [arrayOfUniqueIndices count]; ++i) {
@@ -149,6 +169,18 @@
         }
     }
     return titles;
+}
+
+- (void) refreshRemainingTime {
+    NSString *displayTime;
+    if ([self.hours isOpen]) {
+        displayTime = [self displayTimeInterval: [self.hours timeUntilClosed] untilClosing: YES];
+    } else if ([self.hours willOpenLaterToday]) {
+        displayTime = [self displayTimeInterval: [self.hours timeUntilOpen] untilClosing: NO];
+    } else {
+        displayTime = @"Closed for the day";
+    }
+    self.remainingTime.text = displayTime;
 }
 
 
@@ -283,23 +315,10 @@
     [self setUpScrollViewWithHoursTitle: title];
 }
 
+/////////////////////
+//scroll view stuff//
+/////////////////////
  
-- (NSString*) getDateStringWithStartDate: (NSDate*) startDate andEndDate: (NSDate*) endDate {
-    
-    NSDateFormatter *formatDate = [[NSDateFormatter alloc] init];
-    formatDate.dateStyle = NSDateFormatterMediumStyle;
-    NSString* semiFormattedStartDate = [formatDate stringFromDate: startDate];
-    NSString *semiFormattedEndDate = [formatDate stringFromDate: endDate];
-    
-    NSString *formattedStartDate = [semiFormattedStartDate substringWithRange: NSMakeRange(0, [semiFormattedEndDate length] - 6)];
-    NSString *formattedEndDate = [semiFormattedEndDate substringWithRange: NSMakeRange(0, [semiFormattedEndDate length] - 6)];
-    
-    if ([formattedStartDate isEqualToString: formattedEndDate]) {
-        return @"All year round";
-    }
-    
-    return [formattedStartDate stringByAppendingFormat: @" - %@", formattedEndDate];
-}
 - (void) setUpScrollViewWithHoursTitle: (NSString*) title {
     
     //clear any existing subviews in the scroll view before adding new stuff
@@ -310,10 +329,14 @@
     NSArray *scrollTitles = [self titlesForArrayOfUniqueIndices: [self arrayOfUniqueIndices: hours]];
     NSInteger numberOfPages = [scrollTitles count];
     
+    //set up the frame and content size of the scroll view
     self.scrollHours.frame = CGRectMake(X_COOR_OF_PAGE, Y_COOR_OF_PAGE, WIDTH_OF_PAGE, HEIGHT_OF_PAGE);
-    
     self.scrollHours.contentSize = CGSizeMake(WIDTH_OF_PAGE * numberOfPages, HEIGHT_OF_PAGE);
     
+    //set up the page controls for the scroll view
+    self.pageControl.numberOfPages = numberOfPages;
+    
+    //add the subviews to the scroll view
     for (size_t i = 0; i < [scrollTitles count]; ++i) {
     
         
@@ -339,21 +362,14 @@
 
 }
 
+/////////////////////////
+//scroll view delegate//
+////////////////////////
 
-//////////////////////
-//view related setup//
-//////////////////////
-
-- (void) refreshRemainingTime {
-    NSString *displayTime;
-    if ([self.hours isOpen]) {
-        displayTime = [self displayTimeInterval: [self.hours timeUntilClosed] untilClosing: YES];
-    } else if ([self.hours willOpenLaterToday]) {
-        displayTime = [self displayTimeInterval: [self.hours timeUntilOpen] untilClosing: NO];
-    } else {
-        displayTime = @"Closed for the day";
-    }
-    self.remainingTime.text = displayTime;
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    self.pageControl.currentPage = scrollView.contentOffset.x / 320;
 }
+
+
 
 @end
