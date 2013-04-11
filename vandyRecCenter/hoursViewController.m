@@ -485,13 +485,13 @@
         
         //create buttons
         //left button
-        UIButton* leftButton = [[UIButton alloc] initWithFrame: CGRectMake(50 + i *WIDTH_OF_PAGE, 35, 10, 10)];
+        UIButton* leftButton = [[UIButton alloc] initWithFrame: CGRectMake(X_COOR_OF_LEFT_BUTTON + i *WIDTH_OF_PAGE, Y_COOR_OF_BUTTON, WIDTH_OF_BUTTON, HEIGHT_OF_BUTTON)];
         [leftButton setImage: [UIImage imageNamed: @"leftArrow.png"] forState: UIControlStateNormal];
         [leftButton addTarget: self action:@selector(scrollOnePageLeft) forControlEvents: UIControlEventTouchUpInside];
         [self.scrollHours addSubview: leftButton];
         
         //right button
-        UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(257.5 + i*WIDTH_OF_PAGE, 35, 10, 10)];
+        UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(X_COOR_OF_RIGHT_BUTTON + i*WIDTH_OF_PAGE, Y_COOR_OF_BUTTON, WIDTH_OF_BUTTON, HEIGHT_OF_BUTTON)];
         [rightButton setImage: [UIImage imageNamed: @"rightArrow.png"] forState:UIControlStateNormal];
         [rightButton addTarget: self action: @selector(scrollOnePageRight) forControlEvents: UIControlEventTouchUpInside];
         [self.scrollHours addSubview: rightButton];

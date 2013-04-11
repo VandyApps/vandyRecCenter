@@ -32,6 +32,12 @@
 #define Y_COOR_OF_HOURS_LABEL 40
 #define HEIGHT_OF_HOURS_LABEL 35
 #define WIDTH_OF_HOURS_LABEL 250
+//button views
+#define X_COOR_OF_LEFT_BUTTON 50
+#define X_COOR_OF_RIGHT_BUTTON 257.5
+#define Y_COOR_OF_BUTTON 35
+#define HEIGHT_OF_BUTTON 10
+#define WIDTH_OF_BUTTON 10
 
 @interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
