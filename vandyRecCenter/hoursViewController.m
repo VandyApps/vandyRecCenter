@@ -93,8 +93,10 @@
     //set the remaining time label
     [self refreshRemainingTime];
     //make the selected cell the current hours
-    [self selectCurrentHours];
     
+    //TRY TO ADD MORE ABSTRACTION HERE
+    [self selectCurrentHours];
+    [self selectCurrentDayOfWeek];
 }
 
 
@@ -134,64 +136,6 @@
     return arrayOfIndices;
 }
 
-- (void) setCurrentHours {
-    NSDictionary* currentTime = [self.hours hoursForCurrentTime];
-    assert([[currentTime objectForKey: @"facilityHours"] boolValue]);
-    if ([[currentTime objectForKey: @"closed"] boolValue]) {
-        self.sectionOfCurrentHours = 2;
-        NSArray* closedHours = [self.hours closedHours];
-        BOOL foundCurrentHours = NO;
-        for (size_t i = 0; i < [closedHours count] && !foundCurrentHours; ++i) {
-            
-            if ([[[closedHours objectAtIndex: i] objectForKey: @"title"] isEqualToString: [currentTime objectForKey:@"title"]]) {
-            
-                self.rowOfCurrentHours = i;
-                foundCurrentHours = YES;
-            }
-        }
-        
-    } else if ([[currentTime objectForKey: @"mainHours"] boolValue]) {
-        self.sectionOfCurrentHours = 0;
-        
-        NSArray* mainHours = [self.hours mainHours];
-        BOOL foundCurrentHours = NO;
-        for (size_t i = 0; i < [mainHours count] && !foundCurrentHours; ++i) {
-            
-            if ([[[mainHours objectAtIndex: i] objectForKey: @"title"] isEqualToString: [currentTime objectForKey:@"title"]]) {
-                
-                self.rowOfCurrentHours = i;
-                foundCurrentHours = YES;
-            }
-        }
-
-    } else {//current time is within 'other hours'
-        self.sectionOfCurrentHours = 1;
-        
-        NSArray* otherHours = [self.hours otherHours];
-        BOOL foundCurrentHours = NO;
-        for (size_t i = 0; i < [otherHours count] && !foundCurrentHours; ++i) {
-            
-            if ([[[otherHours objectAtIndex: i] objectForKey: @"title"] isEqualToString: [currentTime objectForKey:@"title"]]) {
-                
-                self.rowOfCurrentHours = i;
-                foundCurrentHours = YES;
-            }
-        }
-
-    }
-   
-}
-
-- (void) selectCurrentHours {
-    self.rowOfSelectedCell = self.rowOfCurrentHours;
-    self.sectionOfSelectedCell = self.sectionOfCurrentHours;
-    [self.tableView reloadData]; //reload data so that the correct gradients display
-    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow: self.rowOfCurrentHours inSection:self.sectionOfCurrentHours] animated: YES scrollPosition: UITableViewScrollPositionMiddle];
-    //process of selecting
-    NSString* title = [[self.hours hoursForCurrentTime] objectForKey: @"title"];
-    self.titleDisplay.text = title;
-    [self setUpScrollViewWithHoursTitle: title];
-}
 
 - (NSString*) getDateStringWithStartDate: (NSDate*) startDate andEndDate: (NSDate*) endDate {
     
@@ -230,6 +174,90 @@
         }
     }
     return titles;
+}
+
+
+/////////////////////////////////////////
+//methods for current time//
+/////////////////////////////////////////
+- (void) setCurrentHours {
+    NSDictionary* currentTime = [self.hours hoursForCurrentTime];
+    assert([[currentTime objectForKey: @"facilityHours"] boolValue]);
+    if ([[currentTime objectForKey: @"closed"] boolValue]) {
+        self.sectionOfCurrentHours = 2;
+        NSArray* closedHours = [self.hours closedHours];
+        BOOL foundCurrentHours = NO;
+        for (size_t i = 0; i < [closedHours count] && !foundCurrentHours; ++i) {
+            
+            if ([[[closedHours objectAtIndex: i] objectForKey: @"title"] isEqualToString: [currentTime objectForKey:@"title"]]) {
+                
+                self.rowOfCurrentHours = i;
+                foundCurrentHours = YES;
+            }
+        }
+        
+    } else if ([[currentTime objectForKey: @"mainHours"] boolValue]) {
+        self.sectionOfCurrentHours = 0;
+        
+        NSArray* mainHours = [self.hours mainHours];
+        BOOL foundCurrentHours = NO;
+        for (size_t i = 0; i < [mainHours count] && !foundCurrentHours; ++i) {
+            
+            if ([[[mainHours objectAtIndex: i] objectForKey: @"title"] isEqualToString: [currentTime objectForKey:@"title"]]) {
+                
+                self.rowOfCurrentHours = i;
+                foundCurrentHours = YES;
+            }
+        }
+        
+    } else {//current time is within 'other hours'
+        self.sectionOfCurrentHours = 1;
+        
+        NSArray* otherHours = [self.hours otherHours];
+        BOOL foundCurrentHours = NO;
+        for (size_t i = 0; i < [otherHours count] && !foundCurrentHours; ++i) {
+            
+            if ([[[otherHours objectAtIndex: i] objectForKey: @"title"] isEqualToString: [currentTime objectForKey:@"title"]]) {
+                
+                self.rowOfCurrentHours = i;
+                foundCurrentHours = YES;
+            }
+        }
+        
+    }
+    
+}
+
+- (void) selectCurrentHours {
+    self.rowOfSelectedCell = self.rowOfCurrentHours;
+    self.sectionOfSelectedCell = self.sectionOfCurrentHours;
+    [self.tableView reloadData]; //reload data so that the correct gradients display
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow: self.rowOfCurrentHours inSection:self.sectionOfCurrentHours] animated: YES scrollPosition: UITableViewScrollPositionMiddle];
+    //process of selecting
+    NSString* title = [[self.hours hoursForCurrentTime] objectForKey: @"title"];
+    self.titleDisplay.text = title;
+    [self setUpScrollViewWithHoursTitle: title];
+}
+
+//should not call this method when the current hours are not displayed
+- (void) selectCurrentDayOfWeek {
+    assert(self.sectionOfCurrentHours == self.sectionOfSelectedCell && self.rowOfCurrentHours == self.rowOfSelectedCell);
+    NSUInteger indexForCurrentDayOfWeek = [NSDate currentDayOfTheWeekAsInt];
+    NSUInteger indexToScroll;
+    NSArray* hours = [[self.hours hoursForCurrentTime] objectForKey: @"hours"];
+    NSArray *uniqueDaysOfWeek = [self arrayOfUniqueIndices: hours];
+    
+    BOOL foundIndexToScroll = NO;
+    for (size_t i = 0; i < [uniqueDaysOfWeek count] && !foundIndexToScroll; ++i) {
+        if ([[uniqueDaysOfWeek objectAtIndex: i] intValue] == indexForCurrentDayOfWeek) { //found index
+            indexToScroll = i;
+            foundIndexToScroll = YES;
+        } else if ([[uniqueDaysOfWeek objectAtIndex: i] intValue] > indexForCurrentDayOfWeek) { //passed the index
+            indexToScroll = i-1;
+            foundIndexToScroll = YES;
+        }
+    }
+[self.scrollHours setContentOffset:CGPointMake(indexToScroll*WIDTH_OF_PAGE, 0) animated:YES];
 }
 
 - (void) refreshRemainingTime {
@@ -432,7 +460,7 @@
 ////////////////////////
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    self.pageControl.currentPage = scrollView.contentOffset.x / 320;
+    self.pageControl.currentPage = scrollView.contentOffset.x / WIDTH_OF_PAGE;
 }
 
 
