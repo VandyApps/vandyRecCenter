@@ -86,6 +86,8 @@
     self.tableView.dataSource = self;
     self.scrollHours.delegate = self;
     [self setCurrentHours];
+    [self selectCurrentHours];
+    [self selectCurrentDayOfWeek];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -94,9 +96,7 @@
     [self refreshRemainingTime];
     //make the selected cell the current hours
     
-    //TRY TO ADD MORE ABSTRACTION HERE
-    [self selectCurrentHours];
-    [self selectCurrentDayOfWeek];
+    
 }
 
 ///////////
@@ -267,6 +267,7 @@
         }
     }
 [self.scrollHours setContentOffset:CGPointMake(indexToScroll*WIDTH_OF_PAGE, 0) animated:YES];
+    self.pageControl.currentPage = indexToScroll;
 }
 
 - (void) refreshRemainingTime {
