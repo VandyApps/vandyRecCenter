@@ -40,7 +40,7 @@
 @synthesize remainingTime = _remainingTime;
 @synthesize titleDisplay = _titleDisplay;
 @synthesize scrollHours = _scrollHours;
-
+@synthesize pageControl = _pageControl;
 ///////////////////////////////////
 //custom getters and setters///////
 /////////////////////////////////

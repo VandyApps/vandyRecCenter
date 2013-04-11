@@ -97,26 +97,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-Mu-bgP">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="GQp-EG-sS8"/>
+                                </constraints>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="KlX-2R-rxO" secondAttribute="centerX" type="default" id="7RM-qD-Mb4"/>
-                            <constraint firstItem="zhd-eu-bAF" firstAttribute="centerX" secondItem="d36-qw-WAa" secondAttribute="centerX" type="default" id="LPI-tS-79S"/>
+                            <constraint firstItem="dfS-Mu-bgP" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="JFx-hn-lnj"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="LR4-4V-lv2"/>
                             <constraint firstItem="zhd-eu-bAF" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Lam-iM-SCu"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="59" id="QOV-Zh-2G3"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="default" id="R4f-jw-c0q"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="W70-05-lUL"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="centerY" secondItem="T0o-oF-nk5" secondAttribute="centerY" type="default" id="X5B-cI-c4p"/>
-                            <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="154" id="dSU-58-ECQ"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fAQ-aV-0Oh"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fRH-PR-EcC"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="lKA-Pb-S0G"/>
+                            <constraint firstItem="KlX-2R-rxO" firstAttribute="top" secondItem="d36-qw-WAa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oae-Ea-81D"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="bottom" secondItem="xg5-Oj-fz1" secondAttribute="bottom" type="default" id="s0G-B1-oj3"/>
+                            <constraint firstItem="dfS-Mu-bgP" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="132" id="uA2-O6-cFc"/>
+                            <constraint firstItem="zhd-eu-bAF" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" constant="67" id="ylw-RM-FsN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hours" id="Tdd-lq-Ehu"/>
                     <connections>
+                        <outlet property="pageControl" destination="dfS-Mu-bgP" id="oCs-ZX-oJw"/>
                         <outlet property="remainingTime" destination="d36-qw-WAa" id="1RL-zK-B3w"/>
                         <outlet property="scrollHours" destination="jVx-d3-6tx" id="y5N-5F-57u"/>
                         <outlet property="tableView" destination="KlX-2R-rxO" id="BA4-pz-lRq"/>
@@ -484,6 +492,33 @@
         <image name="gradient.png" width="16" height="16"/>
         <image name="imageOfRec.jpeg" width="550" height="323"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="browserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="homeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="hoursViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
