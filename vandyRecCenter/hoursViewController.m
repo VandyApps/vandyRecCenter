@@ -110,11 +110,25 @@
 
 //paging left and right are dynamically created events
 - (void) scrollOnePageLeft {
-
+    
+    NSInteger newOffset;
+    
+    if (self.scrollHours.contentOffset.x == 0.0) {
+        newOffset = self.scrollHours.contentSize.width - WIDTH_OF_PAGE;
+    } else {
+        newOffset = self.scrollHours.contentOffset.x - WIDTH_OF_PAGE;
+    }
+    
+    [self.scrollHours setContentOffset: CGPointMake((CGFloat) newOffset, 0) animated: YES];
+    self.pageControl.currentPage = newOffset / WIDTH_OF_PAGE;
 }
 
 - (void) scrollOnePageRight {
 
+    NSInteger newOffset = (NSInteger) (self.scrollHours.contentOffset.x + WIDTH_OF_PAGE) % (NSInteger) self.scrollHours.contentSize.width;
+    
+    [self.scrollHours setContentOffset: CGPointMake((CGFloat) newOffset, 0) animated: YES];
+    self.pageControl.currentPage = newOffset / WIDTH_OF_PAGE;
 }
 ////////////////////
 //private methods//
@@ -473,12 +487,15 @@
         //left button
         UIButton* leftButton = [[UIButton alloc] initWithFrame: CGRectMake(50 + i *WIDTH_OF_PAGE, 35, 10, 10)];
         [leftButton setImage: [UIImage imageNamed: @"leftArrow.png"] forState: UIControlStateNormal];
+        [leftButton addTarget: self action:@selector(scrollOnePageLeft) forControlEvents: UIControlEventTouchUpInside];
         [self.scrollHours addSubview: leftButton];
         
         //right button
         UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(257.5 + i*WIDTH_OF_PAGE, 35, 10, 10)];
         [rightButton setImage: [UIImage imageNamed: @"rightArrow.png"] forState:UIControlStateNormal];
+        [rightButton addTarget: self action: @selector(scrollOnePageRight) forControlEvents: UIControlEventTouchUpInside];
         [self.scrollHours addSubview: rightButton];
+        
     }
     
 
