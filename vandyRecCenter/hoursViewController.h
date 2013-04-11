@@ -33,7 +33,6 @@
 #define HEIGHT_OF_HOURS_LABEL 35
 #define WIDTH_OF_HOURS_LABEL 250
 
-
 @interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleDisplay;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollHours;
