@@ -451,7 +451,8 @@
     
     NSDictionary* selectedHours = [self.hours hoursWithTitle: title];
     NSArray* hours = [selectedHours objectForKey: @"hours"];
-    NSArray *scrollTitles = [self titlesForArrayOfUniqueIndices: [self arrayOfUniqueIndices: hours]];
+    NSArray* indicesOfUniqueHours = [self arrayOfUniqueIndices: hours];
+    NSArray *scrollTitles = [self titlesForArrayOfUniqueIndices: indicesOfUniqueHours];
     NSInteger numberOfPages = [scrollTitles count];
     
     //set up the frame and content size of the scroll view
@@ -476,7 +477,7 @@
         
         UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_HOURS_LABEL + i*WIDTH_OF_PAGE, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
         
-        hoursLabel.text = [hours objectAtIndex: i];
+        hoursLabel.text = [hours objectAtIndex: [[indicesOfUniqueHours objectAtIndex: i] intValue]];
         hoursLabel.textColor = [UIColor whiteColor];
         hoursLabel.backgroundColor = [UIColor clearColor];
         hoursLabel.textAlignment = NSTextAlignmentCenter;

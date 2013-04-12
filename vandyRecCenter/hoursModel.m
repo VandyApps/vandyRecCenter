@@ -221,7 +221,6 @@
         
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
         NSDate *closingDate = [currentDate dateBySettingTimeToTime: [self closingTime]];
-        NSLog(@"Closing time is %@", [self closingTime]);
         return [closingDate timeIntervalSinceDate: currentDate];
     }
     return 0;
