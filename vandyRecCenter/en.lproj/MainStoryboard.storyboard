@@ -227,7 +227,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" image="gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="XtL-BW-0RY"/>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" image="blackGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="XtL-BW-0RY"/>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Here is where the text belongs.  This allows for multiple lines to display.  Go to website for more details" translatesAutoresizingMaskIntoConstraints="NO" id="LRU-oN-TlV">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="85" id="PJj-eE-bFW"/>
@@ -495,7 +495,7 @@
         <image name="83-calendar.png" width="23" height="25"/>
         <image name="89-dumbells.png" width="28" height="10"/>
         <image name="black-goldGradient.png" width="200" height="100"/>
-        <image name="gradient.png" width="16" height="16"/>
+        <image name="blackGradient.png" width="200" height="100"/>
         <image name="imageOfRec.jpeg" width="550" height="323"/>
     </resources>
     <classes>

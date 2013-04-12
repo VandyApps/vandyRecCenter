@@ -114,6 +114,7 @@
 }
 
 //private methods here
+//represents midnight as 24 hours instead of 0 hours
 + (NSUInteger) timeInMinutes: (NSString*) time { //time must be in format 12:00am
    
     NSUInteger timeInHours;
@@ -131,6 +132,7 @@
    // NSLog(@"Time in hours is %u, time in minutes is %u, and isPM is %i", timeInHours, timeInMinutes, isPM);
     
     NSUInteger totalMinutes = 60 * timeInHours + timeInMinutes;
+    totalMinutes += (!isPM && timeInHours == 12) ? (12*60): 0;
     totalMinutes += (isPM && timeInHours != 12) ? (12*60) : 0;
     return totalMinutes;
 }
