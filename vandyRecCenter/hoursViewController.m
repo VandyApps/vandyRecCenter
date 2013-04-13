@@ -110,7 +110,7 @@
 }
 
 //paging left and right are dynamically created events
-- (void) scrollOnePageLeft {
+- (IBAction)scrollOnePageLeft {
     
     NSInteger newOffset;
     
@@ -125,7 +125,7 @@
    
 }
 
-- (void) scrollOnePageRight {
+- (IBAction)scrollOnePageRight {
 
     NSInteger newOffset = (NSInteger) (self.scrollHours.contentOffset.x + WIDTH_OF_PAGE) % (NSInteger) self.scrollHours.contentSize.width;
     
@@ -485,7 +485,7 @@
         hoursLabel.textAlignment = NSTextAlignmentCenter;
         [self.scrollHours addSubview: hoursLabel];
         [self viewWasAddedToScrollView: hoursLabel]; //need to keep track of added views to remove later
-        
+        /*
         //create buttons
         //left button
         UIButton* leftButton = [[UIButton alloc] initWithFrame: CGRectMake(X_COOR_OF_LEFT_BUTTON + i *WIDTH_OF_PAGE, Y_COOR_OF_BUTTON, WIDTH_OF_BUTTON, HEIGHT_OF_BUTTON)];
@@ -498,7 +498,7 @@
         [rightButton setImage: [UIImage imageNamed: @"rightArrow.png"] forState:UIControlStateNormal];
         [rightButton addTarget: self action: @selector(scrollOnePageRight) forControlEvents: UIControlEventTouchUpInside];
         [self.scrollHours addSubview: rightButton];
-        
+        */
     }
     
 
