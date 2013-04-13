@@ -151,16 +151,65 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="blackGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="qCA-T1-9sc"/>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Yw-bC-Z3V"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Jff-2m-kG8">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="x4m-Xf-wDp"/>
+                                </constraints>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLE-nP-Q8U">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="gya-DC-TVn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="rightArrow.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTw-96-p3Z">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Jdu-un-fcc"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZbN-n5-3Hl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="leftArrow.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJC-Qa-nyy">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="a2D-w9-k5R"/>
+                                    <constraint firstAttribute="height" constant="27" id="b1w-x0-sM7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tLE-nP-Q8U" secondAttribute="bottom" constant="46" id="1SU-qV-F7q"/>
+                            <constraint firstItem="2Yw-bC-Z3V" firstAttribute="centerX" secondItem="sJC-Qa-nyy" secondAttribute="centerX" type="default" id="1vJ-2p-ODo"/>
+                            <constraint firstItem="sJC-Qa-nyy" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" constant="14" id="47c-m0-PGj"/>
+                            <constraint firstItem="Jff-2m-kG8" firstAttribute="centerX" secondItem="2Yw-bC-Z3V" secondAttribute="centerX" type="default" id="BIf-fh-YI5"/>
+                            <constraint firstItem="tLE-nP-Q8U" firstAttribute="bottom" secondItem="fTw-96-p3Z" secondAttribute="bottom" type="default" id="BQU-MT-Fra"/>
                             <constraint firstItem="qCA-T1-9sc" firstAttribute="trailing" secondItem="rpB-57-BEu" secondAttribute="trailing" type="default" id="Gml-Bf-QbI"/>
+                            <constraint firstItem="fTw-96-p3Z" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" constant="61" id="KtJ-Ca-cOh"/>
+                            <constraint firstAttribute="bottom" secondItem="Jff-2m-kG8" secondAttribute="bottom" constant="47" id="SKK-Vq-1pV"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" constant="58" id="SxG-Yu-YgK"/>
-                            <constraint firstAttribute="bottom" secondItem="2Yw-bC-Z3V" secondAttribute="bottom" constant="91" id="U7L-kw-OBg"/>
+                            <constraint firstItem="Jff-2m-kG8" firstAttribute="top" secondItem="2Yw-bC-Z3V" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bqP-ww-Dho"/>
                             <constraint firstItem="qCA-T1-9sc" firstAttribute="bottom" secondItem="rpB-57-BEu" secondAttribute="bottom" type="default" id="c3s-X5-4mE"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" type="default" id="cZy-IQ-uhT"/>
+                            <constraint firstItem="fTw-96-p3Z" firstAttribute="top" secondItem="tLE-nP-Q8U" secondAttribute="top" type="default" id="hz7-7I-E9e"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="trailing" secondItem="rpB-57-BEu" secondAttribute="trailing" type="default" id="iRV-Xc-Zc4"/>
                             <constraint firstItem="qCA-T1-9sc" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" type="default" id="jtn-rd-nZG"/>
+                            <constraint firstAttribute="trailing" secondItem="tLE-nP-Q8U" secondAttribute="trailing" constant="61" id="pZa-g2-s15"/>
                             <constraint firstItem="qCA-T1-9sc" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" type="default" id="x5p-Du-Eto"/>
                         </constraints>
                     </view>
@@ -511,7 +560,37 @@
         <image name="black-goldGradient.png" width="200" height="100"/>
         <image name="blackGradient.png" width="200" height="100"/>
         <image name="imageOfRec.jpeg" width="550" height="323"/>
+        <image name="leftArrow.png" width="16" height="16"/>
+        <image name="rightArrow.png" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="browserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="homeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="hoursViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="current:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
