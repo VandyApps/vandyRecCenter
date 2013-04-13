@@ -51,7 +51,7 @@
             return nil;
     }
 }
-+ (NSString*) weekDayAbreviationForIndex: (NSUInteger) index {
++ (NSString*) dayOfTheWeekAbreviationForIndex: (NSUInteger) index {
     switch (index) {
         case 0:
             return @"Sun";

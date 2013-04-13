@@ -8,7 +8,7 @@
 - (NSUInteger) dayOfTheWeekAsInt;
 - (NSString*) dayOfTheWeekAsString;
 
-+ (NSString*) weekDayAbreviationForIndex: (NSUInteger) index;
++ (NSString*) dayOfTheWeekAbreviationForIndex: (NSUInteger) index;
 + (NSString*) dayOfTheWeekForIndex: (NSInteger) index;
 + (NSUInteger) currentDayOfTheWeekAsInt;
 + (NSString*) currentDayOfTheWeekAsString;
