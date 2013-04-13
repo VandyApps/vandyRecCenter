@@ -296,23 +296,22 @@
 - (void) selectCurrentDayOfWeek {
     assert(self.sectionOfCurrentHours == self.sectionOfSelectedCell && self.rowOfCurrentHours == self.rowOfSelectedCell);
     NSUInteger indexForCurrentDayOfWeek = [NSDate currentDayOfTheWeekAsInt];
-    NSUInteger indexToScroll;
     NSArray* hours = [[self.hours hoursForCurrentTime] objectForKey: @"hours"];
     NSArray *uniqueDaysOfWeek = [self arrayOfUniqueIndices: hours];
     
     BOOL foundIndexToScroll = NO;
     for (size_t i = 0; i < [uniqueDaysOfWeek count] && !foundIndexToScroll; ++i) {
         if ([[uniqueDaysOfWeek objectAtIndex: i] intValue] == indexForCurrentDayOfWeek) { //found index
-            indexToScroll = i;
+            self.indexOfScroll = i;
             foundIndexToScroll = YES;
         } else if ([[uniqueDaysOfWeek objectAtIndex: i] intValue] > indexForCurrentDayOfWeek) { //passed the index
-            indexToScroll = i-1;
+            self.indexOfScroll = i-1;
             foundIndexToScroll = YES;
         }
     }
-    [self.scrollHours setContentOffset:CGPointMake(indexToScroll*WIDTH_OF_PAGE, 0) animated:YES];
-    self.pageControl.currentPage = indexToScroll;
-    self.indexOfScroll = indexToScroll;
+    [self.scrollHours setContentOffset:CGPointMake(self.indexOfScroll*WIDTH_OF_PAGE, 0) animated:YES];
+    self.pageControl.currentPage = self.indexOfScroll;
+    
 }
 
 - (void) refreshRemainingTime {
@@ -460,7 +459,7 @@
     
     //move the scroll view offset
     [self.scrollHours setContentOffset: CGPointMake(0, 0) animated:YES];
-    self.indexOfScroll = 0;
+    self.indexOfScroll = 0; //reset the page back to the start
     self.pageControl.currentPage = self.indexOfScroll;
 }
 
@@ -531,7 +530,7 @@
 ////////////////////////
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    if (scrollView == self.scrollHours) {
+    if (scrollView == self.scrollHours) { //make sure that the correct scroll view is called, not table view
         self.indexOfScroll = scrollView.contentOffset.x / WIDTH_OF_PAGE;
         self.pageControl.currentPage = self.indexOfScroll;
     }
