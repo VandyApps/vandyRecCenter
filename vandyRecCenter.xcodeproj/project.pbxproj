@@ -42,6 +42,7 @@
 		21DCF7CD17184E840013E6D5 /* black-goldGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DCF7CC17184E840013E6D5 /* black-goldGradient.png */; };
 		21DCF7CF1718569A0013E6D5 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DCF7CE1718569A0013E6D5 /* gradient.png */; };
 		21E40A1C1719C1530045451F /* NSDate-WeekDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */; };
+		21E40A221719CA530045451F /* trafficViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A211719CA530045451F /* trafficViewController.m */; };
 		21E9C957170DFE230079BC75 /* hoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E9C956170DFE230079BC75 /* hoursModel.m */; };
 		21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */; };
 		21EB34F317177B0D0015AD77 /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34EF17177B0D0015AD77 /* leftArrow.png */; };
@@ -94,6 +95,8 @@
 		21DCF7CE1718569A0013E6D5 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
 		21E40A1A1719C1530045451F /* NSDate-WeekDateClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-WeekDateClass.h"; sourceTree = "<group>"; };
 		21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-WeekDateClass.m"; sourceTree = "<group>"; };
+		21E40A201719CA530045451F /* trafficViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trafficViewController.h; sourceTree = "<group>"; };
+		21E40A211719CA530045451F /* trafficViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trafficViewController.m; sourceTree = "<group>"; };
 		21E9C955170DFE230079BC75 /* hoursModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hoursModel.h; sourceTree = "<group>"; };
 		21E9C956170DFE230079BC75 /* hoursModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hoursModel.m; sourceTree = "<group>"; };
 		21EAD7E6170E883900449EA3 /* NSDate-MyDateClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-MyDateClass.h"; sourceTree = "<group>"; };
@@ -172,11 +175,10 @@
 				2170328216FE96D900A43833 /* AppDelegate.h */,
 				2170328316FE96D900A43833 /* AppDelegate.m */,
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
-				2137613D1702895D008B3FBD /* hours.plist */,
-				21E9C955170DFE230079BC75 /* hoursModel.h */,
-				21E9C956170DFE230079BC75 /* hoursModel.m */,
 				21EAD7E2170E81B600449EA3 /* Date Category */,
-				21FC9F9017025F1B0065EEC2 /* view controllers */,
+				21E40A1F1719C7380045451F /* home */,
+				21E40A1D1719C7270045451F /* hours */,
+				21E40A1E1719C7310045451F /* traffic */,
 				212DECD01700965A0041498E /* Images */,
 				2170327A16FE96D900A43833 /* Supporting Files */,
 			);
@@ -218,6 +220,38 @@
 			name = icons;
 			sourceTree = "<group>";
 		};
+		21E40A1D1719C7270045451F /* hours */ = {
+			isa = PBXGroup;
+			children = (
+				2137613D1702895D008B3FBD /* hours.plist */,
+				21E9C955170DFE230079BC75 /* hoursModel.h */,
+				21E9C956170DFE230079BC75 /* hoursModel.m */,
+				215D04D0170D0AF8008D8277 /* hoursViewController.h */,
+				215D04D1170D0AF8008D8277 /* hoursViewController.m */,
+			);
+			name = hours;
+			sourceTree = "<group>";
+		};
+		21E40A1E1719C7310045451F /* traffic */ = {
+			isa = PBXGroup;
+			children = (
+				21E40A201719CA530045451F /* trafficViewController.h */,
+				21E40A211719CA530045451F /* trafficViewController.m */,
+			);
+			name = traffic;
+			sourceTree = "<group>";
+		};
+		21E40A1F1719C7380045451F /* home */ = {
+			isa = PBXGroup;
+			children = (
+				212DECD517009AC60041498E /* homeViewController.h */,
+				212DECD617009AC60041498E /* homeViewController.m */,
+				21FC9F8D17025F160065EEC2 /* browserViewController.h */,
+				21FC9F8E17025F160065EEC2 /* browserViewController.m */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
 		21EAD7E2170E81B600449EA3 /* Date Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,19 +261,6 @@
 				21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */,
 			);
 			name = "Date Category";
-			sourceTree = "<group>";
-		};
-		21FC9F9017025F1B0065EEC2 /* view controllers */ = {
-			isa = PBXGroup;
-			children = (
-				212DECD517009AC60041498E /* homeViewController.h */,
-				212DECD617009AC60041498E /* homeViewController.m */,
-				21FC9F8D17025F160065EEC2 /* browserViewController.h */,
-				21FC9F8E17025F160065EEC2 /* browserViewController.m */,
-				215D04D0170D0AF8008D8277 /* hoursViewController.h */,
-				215D04D1170D0AF8008D8277 /* hoursViewController.m */,
-			);
-			name = "view controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +363,7 @@
 				21E9C957170DFE230079BC75 /* hoursModel.m in Sources */,
 				21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */,
 				21E40A1C1719C1530045451F /* NSDate-WeekDateClass.m in Sources */,
+				21E40A221719CA530045451F /* trafficViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
