@@ -17,7 +17,7 @@
                                     <constraint firstAttribute="height" constant="198" id="xTo-cy-Rlz"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-eu-bAF">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="a16-Oo-LH2"/>
@@ -148,7 +148,21 @@
                     <view key="view" contentMode="scaleToFill" id="rpB-57-BEu">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="blackGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="qCA-T1-9sc"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Yw-bC-Z3V"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qCA-T1-9sc" firstAttribute="trailing" secondItem="rpB-57-BEu" secondAttribute="trailing" type="default" id="Gml-Bf-QbI"/>
+                            <constraint firstItem="2Yw-bC-Z3V" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" constant="58" id="SxG-Yu-YgK"/>
+                            <constraint firstAttribute="bottom" secondItem="2Yw-bC-Z3V" secondAttribute="bottom" constant="160" id="T9L-fd-yPM"/>
+                            <constraint firstItem="qCA-T1-9sc" firstAttribute="bottom" secondItem="rpB-57-BEu" secondAttribute="bottom" type="default" id="c3s-X5-4mE"/>
+                            <constraint firstItem="2Yw-bC-Z3V" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" type="default" id="cZy-IQ-uhT"/>
+                            <constraint firstItem="2Yw-bC-Z3V" firstAttribute="trailing" secondItem="rpB-57-BEu" secondAttribute="trailing" type="default" id="iRV-Xc-Zc4"/>
+                            <constraint firstItem="qCA-T1-9sc" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" type="default" id="jtn-rd-nZG"/>
+                            <constraint firstItem="qCA-T1-9sc" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" type="default" id="x5p-Du-Eto"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Traffic" id="uKl-fF-WQp"/>
                 </viewController>
