@@ -88,6 +88,7 @@
     [self setCurrentHours];
     [self selectCurrentHours];
     [self selectCurrentDayOfWeek];
+    self.pageControl.hidesForSinglePage = YES;
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -121,6 +122,7 @@
     
     [self.scrollHours setContentOffset: CGPointMake((CGFloat) newOffset, 0) animated: YES];
     self.pageControl.currentPage = newOffset / WIDTH_OF_PAGE;
+   
 }
 
 - (void) scrollOnePageRight {
@@ -288,7 +290,7 @@
             foundIndexToScroll = YES;
         }
     }
-[self.scrollHours setContentOffset:CGPointMake(indexToScroll*WIDTH_OF_PAGE, 0) animated:YES];
+    [self.scrollHours setContentOffset:CGPointMake(indexToScroll*WIDTH_OF_PAGE, 0) animated:YES];
     self.pageControl.currentPage = indexToScroll;
 }
 
@@ -396,7 +398,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"goldGradient.png"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"gradient.png"]];
     UILabel* title = [[UILabel alloc] initWithFrame: CGRectMake(10, 2, 320, 20)];
     title.backgroundColor = [UIColor clearColor];
     if (section == 0) {
@@ -507,7 +509,9 @@
 ////////////////////////
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    self.pageControl.currentPage = scrollView.contentOffset.x / WIDTH_OF_PAGE;
+    if (scrollView == self.scrollHours) {
+        self.pageControl.currentPage = scrollView.contentOffset.x / WIDTH_OF_PAGE;
+    }
 }
 
 
