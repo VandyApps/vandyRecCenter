@@ -376,9 +376,15 @@
     
     if (indexPath.section == self.sectionOfSelectedCell && indexPath.row == self.rowOfSelectedCell) {
         
-        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"brownGradient.png"]];
+        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"black-goldGradient.png"]];
     } else {
         [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"blackGradient.png"]];
+    }
+    
+    if (indexPath.section == self.sectionOfCurrentHours && indexPath.row == self.rowOfCurrentHours) {
+        [(UILabel*) [cell viewWithTag: 4] setText: @"Current"];
+    } else {
+        [(UILabel*) [cell viewWithTag: 4] setText: @""];
     }
     return cell;
 }
@@ -418,7 +424,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"gradient.png"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"brownGradient.png"]];
     UILabel* title = [[UILabel alloc] initWithFrame: CGRectMake(10, 2, 320, 20)];
     title.backgroundColor = [UIColor clearColor];
     if (section == 0) {
@@ -506,20 +512,6 @@
         hoursLabel.textAlignment = NSTextAlignmentCenter;
         [self.scrollHours addSubview: hoursLabel];
         [self viewWasAddedToScrollView: hoursLabel]; //need to keep track of added views to remove later
-        /*
-        //create buttons
-        //left button
-        UIButton* leftButton = [[UIButton alloc] initWithFrame: CGRectMake(X_COOR_OF_LEFT_BUTTON + i *WIDTH_OF_PAGE, Y_COOR_OF_BUTTON, WIDTH_OF_BUTTON, HEIGHT_OF_BUTTON)];
-        [leftButton setImage: [UIImage imageNamed: @"leftArrow.png"] forState: UIControlStateNormal];
-        [leftButton addTarget: self action:@selector(scrollOnePageLeft) forControlEvents: UIControlEventTouchUpInside];
-        [self.scrollHours addSubview: leftButton];
-        
-        //right button
-        UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(X_COOR_OF_RIGHT_BUTTON + i*WIDTH_OF_PAGE, Y_COOR_OF_BUTTON, WIDTH_OF_BUTTON, HEIGHT_OF_BUTTON)];
-        [rightButton setImage: [UIImage imageNamed: @"rightArrow.png"] forState:UIControlStateNormal];
-        [rightButton addTarget: self action: @selector(scrollOnePageRight) forControlEvents: UIControlEventTouchUpInside];
-        [self.scrollHours addSubview: rightButton];
-        */
     }
     
 
