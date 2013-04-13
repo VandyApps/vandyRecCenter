@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "hoursModel.h"
-#import "NSDate-MyDateClass.h"
 
 
 //macros

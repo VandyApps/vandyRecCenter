@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NSDate-MyDateClass.h"
+#import "NSDate-WeekDateClass.h"
 
 @interface hoursModel : NSObject
 

@@ -1,10 +1,4 @@
-//
-//  NSDate-MyDateClass.h
-//  vandyRecCenter
-//
-//  Created by Brendan McNamara on 4/4/13.
-//  Copyright (c) 2013 Brendan McNamara. All rights reserved.
-//
+//contains general extension to the NSDate class
 
 #import <Foundation/Foundation.h>
 
@@ -13,15 +7,9 @@
 //make this negative to subtract time
 + (NSDate*) dateByAddingTimeCurrentTime: (NSTimeInterval) addedTime;
 
-+ (NSString*) weekDayAbreviationForIndex: (NSUInteger) index;
-+ (NSString*) dayOfTheWeekForIndex: (NSInteger) index;
-+ (NSUInteger) currentDayOfTheWeekAsInt;
-+ (NSString*) currentDayOfTheWeekAsString;
 + (NSComparisonResult) compareTime: (NSString*) time1 withTime: (NSString*) time2;
 
 - (NSDate*) dateBySettingTimeToTime: (NSString*) time; //accepts string in format: 12:00am or 12:00 AM
-- (NSUInteger) dayOfTheWeekAsInt;
-- (NSString*) dayOfTheWeekAsString;
 
 
 

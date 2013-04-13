@@ -8,6 +8,7 @@
 
 #import "hoursModel.h"
 
+
 @interface  hoursModel()
 
 @property (nonatomic, strong) NSArray* allHours;
