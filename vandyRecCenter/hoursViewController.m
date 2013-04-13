@@ -10,14 +10,13 @@
 
 @interface hoursViewController()
 
-
-//should this be a strong pointer?
 @property (nonatomic, strong) NSDictionary* currentHoursToDisplay;
 @property (nonatomic) NSInteger sectionOfSelectedCell;
 @property (nonatomic) NSInteger rowOfSelectedCell;
 @property (nonatomic) NSInteger sectionOfCurrentHours;
 @property (nonatomic) NSInteger rowOfCurrentHours;
 @property (nonatomic, strong, readonly) NSArray* subviewsInScrollView;
+@property (nonatomic) NSUInteger indexOfScroll; //used to keep the scroll at discrete values
 @end
 
 
@@ -30,7 +29,7 @@
 @synthesize rowOfSelectedCell = _rowOfSelectedCell;
 @synthesize sectionOfSelectedCell = _sectionOfSelectedCell;
 @synthesize subviewsInScrollView = _subviewsInScrollView;
-
+@synthesize indexOfScroll = _indexOfScroll;
 //public properties
 @synthesize hours = _hours;
 
@@ -75,6 +74,29 @@
     }
 }
 
+- (void) incrementIndexOfScroll {
+    NSUInteger numberOfPages = self.scrollHours.contentSize.width / WIDTH_OF_PAGE;
+    _indexOfScroll = (_indexOfScroll + 1) % numberOfPages;
+}
+
+- (void) decrementIndexOfScroll {
+    NSUInteger numberOfPages = self.scrollHours.contentSize.width / WIDTH_OF_PAGE;
+    if (_indexOfScroll == 0) {
+        _indexOfScroll = numberOfPages - 1;
+    } else {
+        _indexOfScroll--;
+    }
+}
+
+
+//only sets the value if it is a valid index
+- (void) setIndexOfScroll:(NSUInteger)indexOfScroll {
+    NSUInteger numberOfPages = self.scrollHours.contentSize.width / WIDTH_OF_PAGE;
+    if (indexOfScroll < numberOfPages) {
+        _indexOfScroll = indexOfScroll;
+    }
+}
+
 /////////////////////
 //loading the view///
 ////////////////////
@@ -112,25 +134,23 @@
 //paging left and right are dynamically created events
 - (IBAction)scrollOnePageLeft {
     
-    NSInteger newOffset;
+    [self decrementIndexOfScroll];
+    self.pageControl.currentPage = self.indexOfScroll;
     
-    if (self.scrollHours.contentOffset.x == 0.0) {
-        newOffset = self.scrollHours.contentSize.width - WIDTH_OF_PAGE;
-    } else {
-        newOffset = self.scrollHours.contentOffset.x - WIDTH_OF_PAGE;
-    }
-    
+    NSInteger newOffset = self.indexOfScroll * WIDTH_OF_PAGE;
     [self.scrollHours setContentOffset: CGPointMake((CGFloat) newOffset, 0) animated: YES];
-    self.pageControl.currentPage = newOffset / WIDTH_OF_PAGE;
-   
+    
 }
 
 - (IBAction)scrollOnePageRight {
 
-    NSInteger newOffset = (NSInteger) (self.scrollHours.contentOffset.x + WIDTH_OF_PAGE) % (NSInteger) self.scrollHours.contentSize.width;
+    
+    [self incrementIndexOfScroll];
+    self.pageControl.currentPage = self.indexOfScroll;
+    NSInteger newOffset = self.indexOfScroll * WIDTH_OF_PAGE;
     
     [self.scrollHours setContentOffset: CGPointMake((CGFloat) newOffset, 0) animated: YES];
-    self.pageControl.currentPage = newOffset / WIDTH_OF_PAGE;
+    
 }
 ////////////////////
 //private methods//
@@ -292,6 +312,7 @@
     }
     [self.scrollHours setContentOffset:CGPointMake(indexToScroll*WIDTH_OF_PAGE, 0) animated:YES];
     self.pageControl.currentPage = indexToScroll;
+    self.indexOfScroll = indexToScroll;
 }
 
 - (void) refreshRemainingTime {
@@ -439,7 +460,8 @@
     
     //move the scroll view offset
     [self.scrollHours setContentOffset: CGPointMake(0, 0) animated:YES];
-    self.pageControl.currentPage = 0;
+    self.indexOfScroll = 0;
+    self.pageControl.currentPage = self.indexOfScroll;
 }
 
 /////////////////////
@@ -510,7 +532,8 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     if (scrollView == self.scrollHours) {
-        self.pageControl.currentPage = scrollView.contentOffset.x / WIDTH_OF_PAGE;
+        self.indexOfScroll = scrollView.contentOffset.x / WIDTH_OF_PAGE;
+        self.pageControl.currentPage = self.indexOfScroll;
     }
 }
 
