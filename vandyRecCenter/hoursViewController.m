@@ -109,7 +109,7 @@
     self.scrollHours.delegate = self;
     [self setCurrentHours];
     [self selectCurrentHours];
-    [self selectCurrentDayOfWeek];
+    [self selectCurrentDayOfTheWeek];
     self.pageControl.hidesForSinglePage = YES;
 }
 
@@ -128,7 +128,7 @@
 
 - (IBAction)current:(UIBarButtonItem *)sender {
     [self selectCurrentHours];
-    [self selectCurrentDayOfWeek];
+    [self selectCurrentDayOfTheWeek];
 }
 
 //paging left and right are dynamically created events
@@ -293,7 +293,7 @@
 }
 
 //should not call this method when the current hours are not displayed
-- (void) selectCurrentDayOfWeek {
+- (void) selectCurrentDayOfTheWeek {
     assert(self.sectionOfCurrentHours == self.sectionOfSelectedCell && self.rowOfCurrentHours == self.rowOfSelectedCell);
     NSUInteger indexForCurrentDayOfWeek = [NSDate currentDayOfTheWeekAsInt];
     NSArray* hours = [[self.hours hoursForCurrentTime] objectForKey: @"hours"];
