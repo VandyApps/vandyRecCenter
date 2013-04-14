@@ -441,6 +441,9 @@
      return imageView;
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 25;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *title;
@@ -468,6 +471,8 @@
     self.indexOfScroll = 0; //reset the page back to the start
     self.pageControl.currentPage = self.indexOfScroll;
 }
+
+
 
 /////////////////////
 //scroll view stuff//
