@@ -601,36 +601,6 @@
         <image name="leftArrow.png" width="16" height="16"/>
         <image name="rightArrow.png" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="browserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="homeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="hoursViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="current:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="scrollOnePageLeft"/>
-                <relationship kind="action" name="scrollOnePageRight"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="titleDisplay" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

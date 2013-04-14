@@ -46,10 +46,10 @@
 /////////////////////////////////
 
 
-- (hoursModel*) hours {
+- (HoursModel*) hours {
     if (!_hours) {
         NSString *path = [[NSBundle mainBundle] pathForResource: @"hours" ofType:@"plist"];
-        _hours = [[hoursModel alloc] initWithPathToPList: path];
+        _hours = [[HoursModel alloc] initWithPathToPList: path];
     }
     return _hours;
 }

@@ -1,20 +1,20 @@
 //
-//  hoursModel.m
+//  HoursModel.m
 //  vandyRecCenter
 //
-//  Created by Brendan McNamara on 4/4/13.
+//  Created by Brendan McNamara on 4/14/13.
 //  Copyright (c) 2013 Brendan McNamara. All rights reserved.
 //
 
-#import "hoursModel.h"
 
+#import "HoursModel.h"
 
-@interface  hoursModel()
+@interface HoursModel()
 
 @property (nonatomic, strong) NSArray* allHours;
 
 @end
-@implementation hoursModel
+@implementation HoursModel
 
 @synthesize allHours = _allHours;
 
@@ -112,7 +112,7 @@
 
 
 - (NSDictionary*) hoursForCurrentTime {
-
+    
     NSEnumerator *hoursEnum = [self.allHours objectEnumerator];
     NSDictionary* nextHours;
     NSDictionary * currentHours;
@@ -121,7 +121,7 @@
     NSDate *currentDate = [[NSDate alloc] init];
     while (nextHours = [hoursEnum nextObject]) {
         if (![[nextHours objectForKey: @"closed"] boolValue]) {
-        
+            
             if ([[nextHours objectForKey: @"facilityHours"] boolValue]) {
                 if ([currentDate compare: [nextHours objectForKey: @"beginningDate"]] == NSOrderedDescending && [currentDate compare: [nextHours objectForKey: @"endDate"]] == NSOrderedAscending) {
                     currentHours = nextHours;
@@ -175,14 +175,14 @@
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
     
     if ( ([NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending || [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedSame) && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending) {
-    
+        
         return YES;
     }
     return NO;
 }
 
 - (BOOL) willOpenLaterToday {
-
+    
     NSDate *currentDate = [[NSDate alloc] init];
     
     NSDateFormatter *getTimeFormat = [[NSDateFormatter alloc] init];
@@ -216,9 +216,9 @@
 
 
 - (NSTimeInterval) timeUntilClosed {
-
-    if ([self isOpen]) {
     
+    if ([self isOpen]) {
+        
         
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
         NSDate *closingDate = [currentDate dateBySettingTimeToTime: [self closingTime]];
@@ -238,5 +238,6 @@
     return 0;
 }
 //private methods
+
 
 @end

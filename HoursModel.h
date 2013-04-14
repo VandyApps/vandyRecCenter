@@ -1,8 +1,8 @@
 //
-//  hoursModel.h
+//  HoursModel.h
 //  vandyRecCenter
 //
-//  Created by Brendan McNamara on 4/4/13.
+//  Created by Brendan McNamara on 4/14/13.
 //  Copyright (c) 2013 Brendan McNamara. All rights reserved.
 //
 
@@ -10,9 +10,7 @@
 #import "NSDate-MyDateClass.h"
 #import "NSDate-WeekDateClass.h"
 
-@interface hoursModel : NSObject
-
-
+@interface HoursModel : NSObject
 
 //this is the default initializer
 //sets selected hours to the first intance of hours that it sees in the pList
@@ -40,5 +38,4 @@
 
 - (NSTimeInterval) timeUntilOpen; //returns 0 when the rec center is open
 - (NSTimeInterval) timeUntilClosed;//returns 0 when the rec center is closed
-
 @end

@@ -47,7 +47,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
-@property (nonatomic, strong) hoursModel* hours;
+@property (nonatomic, strong) HoursModel* hours;
 
 - (IBAction)current:(UIBarButtonItem *)sender;
 - (IBAction) scrollOnePageLeft;
