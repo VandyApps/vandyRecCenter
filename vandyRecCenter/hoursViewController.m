@@ -1,4 +1,4 @@
-//
+ //
 //  hoursViewController.m
 //  vandyRecCenter
 //
@@ -485,38 +485,60 @@
     
     NSDictionary* selectedHours = [self.hours hoursWithTitle: title];
     NSArray* hours = [selectedHours objectForKey: @"hours"];
-    NSArray* indicesOfUniqueHours = [self arrayOfUniqueIndices: hours];
-    NSArray *scrollTitles = [self titlesForArrayOfUniqueIndices: indicesOfUniqueHours];
-    NSInteger numberOfPages = [scrollTitles count];
-    
-    //set up the frame and content size of the scroll view
     self.scrollHours.frame = CGRectMake(X_COOR_OF_PAGE, Y_COOR_OF_PAGE, WIDTH_OF_PAGE, HEIGHT_OF_PAGE);
-    self.scrollHours.contentSize = CGSizeMake(WIDTH_OF_PAGE * numberOfPages, HEIGHT_OF_PAGE);
     
-    //set up the page controls for the scroll view
-    self.pageControl.numberOfPages = numberOfPages;
-    
-    //add the subviews to the scroll view
-    for (size_t i = 0; i < [scrollTitles count]; ++i) {
-    
+    if (hours) {
+        self.scrollHours.bounces = YES;
+        NSArray* indicesOfUniqueHours = [self arrayOfUniqueIndices: hours];
+        NSArray *scrollTitles = [self titlesForArrayOfUniqueIndices: indicesOfUniqueHours];
+        NSInteger numberOfPages = [scrollTitles count];
         
-        UILabel* titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL + i*WIDTH_OF_PAGE, Y_COOR_OF_TITLE_LABEL , WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+        //set up the frame and content size of the scroll view
         
-        titleLabel.text = [scrollTitles objectAtIndex: i];
-        titleLabel.textColor = [UIColor whiteColor];
-        titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.scrollHours addSubview: titleLabel];
-        [self viewWasAddedToScrollView: titleLabel]; //need to keep track of added views to remove later
+        self.scrollHours.contentSize = CGSizeMake(WIDTH_OF_PAGE * numberOfPages, HEIGHT_OF_PAGE);
         
-        UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_HOURS_LABEL + i*WIDTH_OF_PAGE, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
+        //set up the page controls for the scroll view
+        self.pageControl.numberOfPages = numberOfPages;
         
-        hoursLabel.text = [hours objectAtIndex: [[indicesOfUniqueHours objectAtIndex: i] intValue]];
-        hoursLabel.textColor = [UIColor whiteColor];
-        hoursLabel.backgroundColor = [UIColor clearColor];
-        hoursLabel.textAlignment = NSTextAlignmentCenter;
-        [self.scrollHours addSubview: hoursLabel];
-        [self viewWasAddedToScrollView: hoursLabel]; //need to keep track of added views to remove later
+        //add the subviews to the scroll view
+        for (size_t i = 0; i < [scrollTitles count]; ++i) {
+        
+            
+            UILabel* titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL + i*WIDTH_OF_PAGE, Y_COOR_OF_TITLE_LABEL , WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+            
+            titleLabel.text = [scrollTitles objectAtIndex: i];
+            titleLabel.textColor = [UIColor whiteColor];
+            titleLabel.backgroundColor = [UIColor clearColor];
+            titleLabel.textAlignment = NSTextAlignmentCenter;
+            [self.scrollHours addSubview: titleLabel];
+            [self viewWasAddedToScrollView: titleLabel]; //need to keep track of added views to remove later
+            
+            UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_HOURS_LABEL + i*WIDTH_OF_PAGE, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
+            
+            hoursLabel.text = [hours objectAtIndex: [[indicesOfUniqueHours objectAtIndex: i] intValue]];
+            hoursLabel.textColor = [UIColor whiteColor];
+            hoursLabel.backgroundColor = [UIColor clearColor];
+            hoursLabel.textAlignment = NSTextAlignmentCenter;
+            [self.scrollHours addSubview: hoursLabel];
+            [self viewWasAddedToScrollView: hoursLabel]; //need to keep track of added views to remove later
+        }
+    } else { //could not find hours
+        
+        self.scrollHours.contentSize = self.scrollHours.frame.size;
+        self.scrollHours.bounces = NO;
+        UILabel *errorLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL, Y_COOR_OF_TITLE_LABEL, WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+        errorLabel.textColor = [UIColor whiteColor];
+        errorLabel.backgroundColor = [UIColor clearColor];
+        errorLabel.textAlignment = NSTextAlignmentCenter;
+        if ([[selectedHours objectForKey: @"closed"] boolValue]) { //currently closed
+            errorLabel.text = @"CLOSED";
+        } else { //hours not added to the plist
+            errorLabel.text = @"Hours Not Available";
+        }
+        
+        [self.scrollHours addSubview: errorLabel];
+        [self viewWasAddedToScrollView: errorLabel];
+        self.pageControl.numberOfPages = 1;
     }
     
 
