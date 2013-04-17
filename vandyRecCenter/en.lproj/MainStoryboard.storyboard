@@ -34,6 +34,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="time remaining here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d36-qw-WAa">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="173" id="Rf6-pc-8HD"/>
+                                    <constraint firstAttribute="height" constant="21" id="h8Y-ty-S0z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,9 +43,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-2R-rxO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="325" id="5p2-rt-3L7"/>
-                                    <constraint firstAttribute="height" priority="800" constant="188" type="user" id="PwC-lL-qeK"/>
-                                    <constraint firstAttribute="height" constant="224" type="user" id="ZAH-Ce-OfS"/>
+                                    <constraint firstAttribute="width" constant="325" id="iI6-Mi-2n3"/>
+                                    <constraint firstAttribute="height" priority="600" constant="224" type="user" id="mEM-Dh-Hi4"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="hoursCell" rowHeight="51" id="zcg-PI-WmN">
@@ -145,26 +145,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="168" id="1CL-3Q-jhN"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="65" id="6PT-I8-NE1"/>
-                            <constraint firstItem="KlX-2R-rxO" firstAttribute="top" secondItem="T0o-oF-nk5" secondAttribute="bottom" type="user" id="8qY-od-jU7"/>
-                            <constraint firstItem="KlX-2R-rxO" firstAttribute="top" secondItem="d36-qw-WAa" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="G9x-j5-uBf"/>
+                            <constraint firstItem="zhd-eu-bAF" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="7" id="GgI-V0-tfR"/>
                             <constraint firstItem="dfS-Mu-bgP" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="JFx-hn-lnj"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="LR4-4V-lv2"/>
                             <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="KlX-2R-rxO" secondAttribute="centerX" type="default" id="N2y-wP-g4B"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="W70-05-lUL"/>
                             <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="top" secondItem="dfS-Mu-bgP" secondAttribute="top" type="default" id="YhP-oL-Drh"/>
-                            <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="dfS-Mu-bgP" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="cls-Sr-UF5"/>
+                            <constraint firstItem="KlX-2R-rxO" firstAttribute="top" secondItem="T0o-oF-nk5" secondAttribute="bottom" type="user" id="ZmI-Kb-gso" userLabel="scroll-to-table space"/>
                             <constraint firstItem="V1Z-Sr-lTU" firstAttribute="top" secondItem="dfS-Mu-bgP" secondAttribute="top" type="default" id="dIv-sP-COs"/>
-                            <constraint firstItem="T0o-oF-nk5" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="user" id="ejy-o9-bqb"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fAQ-aV-0Oh"/>
+                            <constraint firstItem="T0o-oF-nk5" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="user" id="fIb-F2-Wfw"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fRH-PR-EcC"/>
+                            <constraint firstItem="KlX-2R-rxO" firstAttribute="bottom" secondItem="xg5-Oj-fz1" secondAttribute="bottom" type="user" id="fdH-9O-nwN"/>
                             <constraint firstItem="zhd-eu-bAF" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="h2e-Te-3M1"/>
                             <constraint firstItem="V1Z-Sr-lTU" firstAttribute="bottom" secondItem="4Jk-Pz-FRQ" secondAttribute="bottom" type="default" id="he5-SK-htH"/>
+                            <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="dfS-Mu-bgP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="k2z-vP-seU"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="lKA-Pb-S0G"/>
                             <constraint firstAttribute="trailing" secondItem="V1Z-Sr-lTU" secondAttribute="trailing" constant="56" id="m5U-5d-oKo"/>
-                            <constraint firstItem="zhd-eu-bAF" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="7" type="user" id="rNw-uE-3K1"/>
                             <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" constant="57" id="raI-YO-7W9"/>
+                            <constraint firstItem="KlX-2R-rxO" firstAttribute="top" secondItem="d36-qw-WAa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vzJ-Vh-124"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hours" id="Tdd-lq-Ehu">
