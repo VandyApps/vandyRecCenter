@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="911" y="-716"/>
         </scene>
-        <!--View Controller - Traffic-->
+        <!--Traffic View Controller - Traffic-->
         <scene sceneID="o2e-LL-kN8">
             <objects>
-                <viewController id="HZ8-9J-cNb" sceneMemberID="viewController">
+                <viewController id="HZ8-9J-cNb" customClass="trafficViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rpB-57-BEu">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -243,9 +243,9 @@
                             <constraint firstItem="fTw-96-p3Z" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" constant="61" id="KtJ-Ca-cOh"/>
                             <constraint firstAttribute="bottom" secondItem="Jff-2m-kG8" secondAttribute="bottom" constant="47" id="SKK-Vq-1pV"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" constant="58" id="SxG-Yu-YgK"/>
-                            <constraint firstItem="Jff-2m-kG8" firstAttribute="top" secondItem="2Yw-bC-Z3V" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bqP-ww-Dho"/>
                             <constraint firstItem="qCA-T1-9sc" firstAttribute="bottom" secondItem="rpB-57-BEu" secondAttribute="bottom" type="default" id="c3s-X5-4mE"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" type="default" id="cZy-IQ-uhT"/>
+                            <constraint firstAttribute="bottom" secondItem="2Yw-bC-Z3V" secondAttribute="bottom" constant="89" id="gjC-Kc-jTS"/>
                             <constraint firstItem="fTw-96-p3Z" firstAttribute="top" secondItem="tLE-nP-Q8U" secondAttribute="top" type="default" id="hz7-7I-E9e"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="trailing" secondItem="rpB-57-BEu" secondAttribute="trailing" type="default" id="iRV-Xc-Zc4"/>
                             <constraint firstItem="qCA-T1-9sc" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" type="default" id="jtn-rd-nZG"/>
@@ -254,6 +254,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Traffic" id="uKl-fF-WQp"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="sJC-Qa-nyy" id="rFL-xY-Qlk"/>
+                        <outlet property="pageControl" destination="Jff-2m-kG8" id="tvJ-Ct-ofG"/>
+                        <outlet property="scrollGraphs" destination="2Yw-bC-Z3V" id="AeP-Ks-neg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4K-mP-QHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -603,36 +608,6 @@
         <image name="leftArrow.png" width="16" height="16"/>
         <image name="rightArrow.png" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="browserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="homeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="hoursViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="current:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="scrollOnePageLeft"/>
-                <relationship kind="action" name="scrollOnePageRight"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="titleDisplay" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
