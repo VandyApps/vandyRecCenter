@@ -485,7 +485,7 @@
     
     NSDictionary* selectedHours = [self.hours hoursWithTitle: title];
     NSArray* hours = [selectedHours objectForKey: @"hours"];
-    self.scrollHours.frame = CGRectMake(X_COOR_OF_PAGE, Y_COOR_OF_PAGE, WIDTH_OF_PAGE, HEIGHT_OF_PAGE);
+    //self.scrollHours.frame = CGRectMake(X_COOR_OF_PAGE, Y_COOR_OF_PAGE, WIDTH_OF_PAGE, HEIGHT_OF_PAGE);
     
     if (hours) {
         self.scrollHours.bounces = YES;

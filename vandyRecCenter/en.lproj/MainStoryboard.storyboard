@@ -18,13 +18,13 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" type="user" id="Dfa-99-gD1"/>
+                                    <constraint firstAttribute="height" constant="80" type="user" id="ij5-Rv-MmS"/>
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-eu-bAF">
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="WD9-mr-oKy"/>
                                     <constraint firstAttribute="width" constant="215" id="w5b-Ka-DVc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -34,7 +34,6 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="time remaining here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d36-qw-WAa">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="173" id="Rf6-pc-8HD"/>
-                                    <constraint firstAttribute="height" constant="21" id="hZG-US-eM7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,17 +145,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="V1Z-Sr-lTU" firstAttribute="top" secondItem="jVx-d3-6tx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2Po-hT-pTs"/>
-                            <constraint firstItem="dfS-Mu-bgP" firstAttribute="top" secondItem="jVx-d3-6tx" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="32k-J1-x3q"/>
+                            <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="168" id="1CL-3Q-jhN"/>
+                            <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="65" id="6PT-I8-NE1"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="top" secondItem="T0o-oF-nk5" secondAttribute="bottom" type="user" id="8qY-od-jU7"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="top" secondItem="d36-qw-WAa" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="G9x-j5-uBf"/>
                             <constraint firstItem="dfS-Mu-bgP" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="JFx-hn-lnj"/>
-                            <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="zhd-eu-bAF" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="JyP-6K-z2C"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="LR4-4V-lv2"/>
                             <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="KlX-2R-rxO" secondAttribute="centerX" type="default" id="N2y-wP-g4B"/>
-                            <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="top" secondItem="jVx-d3-6tx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TTH-be-WP0"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="W70-05-lUL"/>
+                            <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="top" secondItem="dfS-Mu-bgP" secondAttribute="top" type="default" id="YhP-oL-Drh"/>
                             <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="dfS-Mu-bgP" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="cls-Sr-UF5"/>
+                            <constraint firstItem="V1Z-Sr-lTU" firstAttribute="top" secondItem="dfS-Mu-bgP" secondAttribute="top" type="default" id="dIv-sP-COs"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="user" id="ejy-o9-bqb"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fAQ-aV-0Oh"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fRH-PR-EcC"/>
