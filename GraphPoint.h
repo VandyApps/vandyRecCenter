@@ -10,9 +10,15 @@
 
 @interface GraphPoint : NSObject
 
-@property (nonatomic) NSUInteger X;
-@property (nonatomic) NSUInteger Y;
+@property (nonatomic) CGFloat x;
+@property (nonatomic) CGFloat y;
+//default constructor
 
-- (id) initWithXValue: (NSUInteger) X andYValue: (NSUInteger) Y;
+- (id) initWithPoint: (CGPoint) point;
 - (id) init;
+
+- (BOOL) isEqualToPoint: (GraphPoint*) point;
+- (BOOL) isEqualToCGPoint: (CGPoint) point;
+
+- (CGFloat) distanceFromPoint: (GraphPoint*) point;
 @end
