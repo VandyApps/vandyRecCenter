@@ -20,7 +20,7 @@
 }
 
 - (id) init {
-    self = [self initWithPoint: nil];
+    self = [self initWithPoint: CGPointZero];
     return self;
 }
 

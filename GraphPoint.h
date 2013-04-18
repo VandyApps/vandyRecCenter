@@ -15,7 +15,7 @@
 //default constructor
 
 - (id) initWithPoint: (CGPoint) point;
-- (id) init;
+- (id) init; //creates the point (0,0)
 
 - (BOOL) isEqualToPoint: (GraphPoint*) point;
 - (BOOL) isEqualToCGPoint: (CGPoint) point;
