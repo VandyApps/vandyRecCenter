@@ -172,12 +172,12 @@
     getTimeFormat.timeStyle = NSDateFormatterShortStyle;
     getTimeFormat.dateStyle = NSDateFormatterNoStyle;
     //set time to Nashville time
-    getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
+    getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
     
     NSDateFormatter* debugDate = [[NSDateFormatter alloc] init];
     debugDate.timeStyle = NSDateFormatterFullStyle;
     debugDate.dateStyle = NSDateFormatterFullStyle;
-    debugDate.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
+    debugDate.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
      NSLog(@"Current time is %@", [debugDate stringFromDate: currentDate]);
     if ( ([NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate] withEarlyMidnight: YES] == NSOrderedAscending || [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate] withEarlyMidnight: YES] == NSOrderedSame) && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate] withEarlyMidnight: NO] == NSOrderedDescending) {
         
@@ -194,7 +194,7 @@
     getTimeFormat.timeStyle = NSDateFormatterShortStyle;
     getTimeFormat.dateStyle = NSDateFormatterNoStyle;
     //set time to Nashville time
-    getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
+    getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
     
     if ([self openingTime] && [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate] withEarlyMidnight: YES] == NSOrderedDescending) {
         

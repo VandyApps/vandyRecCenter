@@ -23,7 +23,7 @@
     return dayOfWeek;
 }
 
-- (NSUInteger) dayOfTheWeekAsIntWithinTimeZone:(NSTimeZone *)timeZone {
+- (NSUInteger) dayOfTheWeekAsIntWithTimeZone:(NSTimeZone *)timeZone {
     NSDate *adjustedDate = [[NSDate alloc] initWithTimeIntervalSinceNow: [timeZone secondsFromGMT]];
     return [adjustedDate dayOfTheWeekAsInt];
 }
@@ -33,8 +33,8 @@
     return [NSDate dayOfTheWeekForIndex: [self dayOfTheWeekAsInt]];
 }
 
-- (NSString*) dayOfTheWeekAsStringWithinTimeZone:(NSTimeZone *)timeZone {
-    NSUInteger indexOfDayOfWeek = [self dayOfTheWeekAsIntWithinTimeZone: timeZone];
+- (NSString*) dayOfTheWeekAsStringWithTimeZone:(NSTimeZone *)timeZone {
+    NSUInteger indexOfDayOfWeek = [self dayOfTheWeekAsIntWithTimeZone: timeZone];
     return [NSDate dayOfTheWeekForIndex: indexOfDayOfWeek];
 }
 //index-based retrieval of the day of the week as a string
@@ -88,8 +88,16 @@
     NSDate* currentDate = [[NSDate alloc] init];
     return [currentDate dayOfTheWeekAsInt];
 }
+
++ (NSUInteger) currentDayOfTheWeekAsIntWithTimeZone:(NSTimeZone *)timeZone {
+    NSDate *currentDate = [[NSDate alloc] init];
+    return [currentDate dayOfTheWeekAsIntWithTimeZone: timeZone];
+}
 + (NSString*) currentDayOfTheWeekAsString {
     return [NSDate dayOfTheWeekForIndex: [NSDate currentDayOfTheWeekAsInt]];
+}
++ (NSString*) currentDayOfTheWeekAsStringWithTimeZone:(NSTimeZone *)timeZone {
+    return [NSDate dayOfTheWeekForIndex: [NSDate currentDayOfTheWeekAsIntWithTimeZone: timeZone]];
 }
 
 

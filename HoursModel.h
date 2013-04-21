@@ -10,6 +10,8 @@
 #import "NSDate-MyDateClass.h"
 #import "NSDate-WeekDateClass.h"
 
+#define NASHVILLE_TIMEZONE @"Central Time (US & Canada)"
+
 @interface HoursModel : NSObject
 
 //this is the default initializer

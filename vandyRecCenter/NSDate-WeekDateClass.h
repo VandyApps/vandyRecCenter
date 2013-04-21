@@ -6,14 +6,16 @@
 @interface NSDate(WeekDateClass)
 
 - (NSUInteger) dayOfTheWeekAsInt;
-- (NSUInteger) dayOfTheWeekAsIntWithinTimeZone: (NSTimeZone*) timeZone;
+- (NSUInteger) dayOfTheWeekAsIntWithTimeZone: (NSTimeZone*) timeZone;
 - (NSString*) dayOfTheWeekAsString;
-- (NSString*) dayOfTheWeekAsStringWithinTimeZone: (NSTimeZone*) timeZone;
+- (NSString*) dayOfTheWeekAsStringWithTimeZone: (NSTimeZone*) timeZone;
 
 + (NSString*) dayOfTheWeekAbreviationForIndex: (NSUInteger) index;
 + (NSString*) dayOfTheWeekForIndex: (NSInteger) index;
 
 + (NSUInteger) currentDayOfTheWeekAsInt;
++ (NSUInteger) currentDayOfTheWeekAsIntWithTimeZone: (NSTimeZone*) timeZone;
 + (NSString*) currentDayOfTheWeekAsString;
++ (NSString*) currentDayOfTheWeekAsStringWithTimeZone: (NSTimeZone*) timeZone;
 
 @end
