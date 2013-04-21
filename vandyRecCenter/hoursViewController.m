@@ -118,7 +118,7 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
-    
+    [self refreshRemainingTime];
     //set the remaining time label
     //make the selected cell the current hours
     
@@ -317,7 +317,7 @@
     
 }
 
-- (void) refreshRemainingTime: (NSTimer*) timer {
+- (void) refreshRemainingTime {
     NSString *displayTime;
     if ([self.hours isOpen]) {
         displayTime = [self displayTimeInterval: [self.hours timeUntilClosed] untilClosing: YES];

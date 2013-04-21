@@ -134,7 +134,7 @@
         }
         
     }
-    NSLog(@"Could not find current hours");
+    
     return  currentHours;
 }
 
@@ -173,12 +173,6 @@
     getTimeFormat.dateStyle = NSDateFormatterNoStyle;
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
-    
-    NSDateFormatter* debugDate = [[NSDateFormatter alloc] init];
-    debugDate.timeStyle = NSDateFormatterFullStyle;
-    debugDate.dateStyle = NSDateFormatterFullStyle;
-    debugDate.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
-     NSLog(@"Current time is %@", [debugDate stringFromDate: currentDate]);
     if ( ([NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate] withEarlyMidnight: YES] == NSOrderedAscending || [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate] withEarlyMidnight: YES] == NSOrderedSame) && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate] withEarlyMidnight: NO] == NSOrderedDescending) {
         
         return YES;
@@ -187,7 +181,6 @@
 }
 
 - (BOOL) willOpenLaterToday {
-    NSLog(@"Checking if will be open later today");
     NSDate *currentDate = [[NSDate alloc] init];
     
     NSDateFormatter *getTimeFormat = [[NSDateFormatter alloc] init];
@@ -197,7 +190,6 @@
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
     
     if ([self openingTime] && [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate] withEarlyMidnight: YES] == NSOrderedDescending) {
-        NSLog(@"This will open later today");
         return YES;
     }
     return NO;
@@ -211,7 +203,7 @@
     getTimeFormat.dateStyle = NSDateFormatterNoStyle;
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
-    NSLog(@"Current time is %@", [getTimeFormat stringFromDate: currentDate]);
+   
     if ([self closingTime] && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate] withEarlyMidnight: NO] == NSOrderedAscending) {
         
         return YES;
