@@ -237,7 +237,7 @@
         
         
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
-        NSDate *openingDate = [currentDate dateBySettingTimeToTime: [self closingTime]];
+        NSDate *openingDate = [currentDate dateBySettingTimeToTime: [self openingTime]];
         return [openingDate timeIntervalSinceDate: currentDate];
     }
     return 0;
