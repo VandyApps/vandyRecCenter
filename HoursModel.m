@@ -141,7 +141,7 @@
 
 - (NSString*) openingTime {
     NSArray* arrayOfHours = [[self hoursForCurrentTime] objectForKey: @"hours"];
-    NSString* hours = [arrayOfHours objectAtIndex: [NSDate currentDayOfTheWeekAsInt]];
+    NSString* hours = [arrayOfHours objectAtIndex: [NSDate currentDayOfTheWeekAsIntWithTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]]];
     //get the string up until the space
     for (size_t i = 0; i < [hours length]; ++i) {
         if ([hours characterAtIndex: i] == ' ') {
@@ -153,7 +153,7 @@
 
 - (NSString*) closingTime {
     NSArray* arrayOfHours = [[self hoursForCurrentTime] objectForKey: @"hours"];
-    NSString* hours = [arrayOfHours objectAtIndex: [NSDate currentDayOfTheWeekAsInt]];
+    NSString* hours = [arrayOfHours objectAtIndex: [NSDate currentDayOfTheWeekAsIntWithTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]]];
     //get the string up until the space
     for (size_t i = 0; i < [hours length]; ++i) {
         if ([hours characterAtIndex: i] == '-') {
