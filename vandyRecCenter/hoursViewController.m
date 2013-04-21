@@ -17,6 +17,8 @@
 @property (nonatomic) NSInteger rowOfCurrentHours;
 @property (nonatomic, strong, readonly) NSArray* subviewsInScrollView;
 @property (nonatomic) NSUInteger indexOfScroll; //used to keep the scroll at discrete values
+
+
 @end
 
 
@@ -30,6 +32,7 @@
 @synthesize sectionOfSelectedCell = _sectionOfSelectedCell;
 @synthesize subviewsInScrollView = _subviewsInScrollView;
 @synthesize indexOfScroll = _indexOfScroll;
+
 //public properties
 @synthesize hours = _hours;
 
@@ -102,7 +105,7 @@
 ////////////////////
 
 - (void) viewDidLoad {
-    
+    [super viewDidLoad];
     //setting the delegates
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -114,9 +117,9 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-  
+    [super viewDidAppear: animated];
+    
     //set the remaining time label
-    [self refreshRemainingTime];
     //make the selected cell the current hours
     
     
@@ -314,7 +317,7 @@
     
 }
 
-- (void) refreshRemainingTime {
+- (void) refreshRemainingTime: (NSTimer*) timer {
     NSString *displayTime;
     if ([self.hours isOpen]) {
         displayTime = [self displayTimeInterval: [self.hours timeUntilClosed] untilClosing: YES];
