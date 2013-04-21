@@ -17,11 +17,15 @@
     //represent Sunday as 0 and Saturday as 6
     
     NSUInteger secondsSince1970 = (NSUInteger) [self timeIntervalSince1970];
-    NSTimeInterval adjustForTimeZone = -1 * 5 * 60 * 60;
-    NSUInteger daysSince1970 = (secondsSince1970 + adjustForTimeZone )/ (60 * 60 * 24);
+    NSUInteger daysSince1970 = secondsSince1970/ (60 * 60 * 24);
     NSUInteger dayOfWeek =  (4 + daysSince1970) % 7;
     
     return dayOfWeek;
+}
+
+- (NSUInteger) dayOfTheWeekAsIntWithinTimeZone:(NSTimeZone *)timeZone {
+    NSDate *adjustedDate = [[NSDate alloc] initWithTimeIntervalSinceNow: [timeZone secondsFromGMT]];
+    return [adjustedDate dayOfTheWeekAsInt];
 }
 
 - (NSString*) dayOfTheWeekAsString {
@@ -29,6 +33,10 @@
     return [NSDate dayOfTheWeekForIndex: [self dayOfTheWeekAsInt]];
 }
 
+- (NSString*) dayOfTheWeekAsStringWithinTimeZone:(NSTimeZone *)timeZone {
+    NSUInteger indexOfDayOfWeek = [self dayOfTheWeekAsIntWithinTimeZone: timeZone];
+    return [NSDate dayOfTheWeekForIndex: indexOfDayOfWeek];
+}
 //index-based retrieval of the day of the week as a string
 //0 is Sunday and 6 is Saturday, other days fall in between
 //used to help simplify iterations through arrays and other
