@@ -15,9 +15,12 @@
     
     //January, 1970 was a Thursday, so add 4
     //represent Sunday as 0 and Saturday as 6
+    
     NSUInteger secondsSince1970 = (NSUInteger) [self timeIntervalSince1970];
-    NSUInteger daysSince1970 = secondsSince1970 / (60 * 60 * 24);
+    NSTimeInterval adjustForTimeZone = -1 * 5 * 60 * 60;
+    NSUInteger daysSince1970 = (secondsSince1970 + adjustForTimeZone )/ (60 * 60 * 24);
     NSUInteger dayOfWeek =  (4 + daysSince1970) % 7;
+    
     return dayOfWeek;
 }
 
