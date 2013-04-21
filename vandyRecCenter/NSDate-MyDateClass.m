@@ -71,10 +71,8 @@
             return 24 * 60;
         }
     }
-   // NSLog(@"Time in hours is %u, time in minutes is %u, and isPM is %i", timeInHours, timeInMinutes, isPM);
     
-    NSUInteger totalMinutes = 60 * timeInHours + timeInMinutes;
-    
+    NSUInteger totalMinutes = (!isPM && timeInHours == 12) ? timeInMinutes : 60 * timeInHours + timeInMinutes;
     totalMinutes += (isPM && timeInHours != 12) ? (12*60) : 0;
     return totalMinutes;
 }

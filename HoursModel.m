@@ -187,7 +187,7 @@
 }
 
 - (BOOL) willOpenLaterToday {
-    
+    NSLog(@"Checking if will be open later today");
     NSDate *currentDate = [[NSDate alloc] init];
     
     NSDateFormatter *getTimeFormat = [[NSDateFormatter alloc] init];
@@ -197,7 +197,7 @@
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
     
     if ([self openingTime] && [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate] withEarlyMidnight: YES] == NSOrderedDescending) {
-        
+        NSLog(@"This will open later today");
         return YES;
     }
     return NO;
