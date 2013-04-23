@@ -1,18 +1,18 @@
 //
-//  testViewController1ViewController.m
+//  testViewController1.m
 //  vandyRecCenter
 //
 //  Created by Brendan McNamara on 4/23/13.
 //  Copyright (c) 2013 Brendan McNamara. All rights reserved.
 //
 
-#import "testViewController1ViewController.h"
+#import "testViewController1.h"
 
-@interface testViewController1ViewController ()
+@interface testViewController1 ()
 
 @end
 
-@implementation testViewController1ViewController
+@implementation testViewController1
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

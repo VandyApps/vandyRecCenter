@@ -1,5 +1,5 @@
 //
-//  testViewController1ViewController.h
+//  testViewController1.h
 //  vandyRecCenter
 //
 //  Created by Brendan McNamara on 4/23/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface testViewController1ViewController : UIViewController
+@interface testViewController1 : UIViewController
 
 @end
