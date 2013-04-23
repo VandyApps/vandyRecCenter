@@ -7,9 +7,12 @@
 //
 
 #import "NGTabBarController.h"
+#import "NGTabBarControllerDelegate.h"
+#import "testViewController1.h"
+#import "testViewController2.h"
 
 //view controllers
 
-@interface CustomTabBarController : NGTabBarController
+@interface CustomTabBarController : NGTabBarController <NGTabBarControllerDelegate>
 
 @end

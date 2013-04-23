@@ -15,6 +15,32 @@
     // Override point for customization after application launch.
     
     [[UINavigationBar appearance] setTintColor: [UIColor blackColor]];
+    
+    /*
+    UIViewController *v1 = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+    UIViewController *v2 = [[UIViewController alloc] initWithNibName:nil bundle:nil];
+    //UIViewController *v3 = [[UIViewController alloc] init];
+    //UIViewController *v4 = [[UIViewController alloc] init];
+    //UIViewController *v5 = [[UIViewController alloc] init];
+    //UIViewController *v6 = [[UIViewController alloc] init];
+    NGTabBarController *customTBController = [[NGTabBarController alloc] initWithDelegate:self];
+    customTBController.viewControllers = [[NSArray alloc] initWithObjects: v1, v2, nil];
+    v1.ng_tabBarItem = [NGTabBarItem itemWithTitle:@"Home" image: [UIImage imageNamed: @"house.png"]];
+    v2.ng_tabBarItem = [NGTabBarItem itemWithTitle:@"Images" image:[UIImage imageNamed: @"group.png"]];
+    //v3.ng_tabBarItem = [NGTabBarItem itemWithTitle:@"Live" image:image3];
+    //v4.ng_tabBarItem = [NGTabBarItem itemWithTitle:@"Contact" image:image4];
+    //v5.ng_tabBarItem = [NGTabBarItem itemWithTitle:@"Settings" image:image5];
+    customTBController.tabBar.position = NGTabBarPositionLeft;
+    
+    customTBController.animation = NGTabBarControllerAnimationMoveAndScale;
+    //customTBController.layoutStrategy = $isPhone() ? NGTabBarLayoutStrategyEvenlyDistributed : NGTabBarLayoutStrategyCentered;
+    //customTBController.itemPadding = 10.f;
+    //customTBController.showsItemHighlight = NO;
+    //customTBController.tintColor = [UIColor redColor];
+    //customTBController.viewControllers = viewController;
+    self.window.rootViewController = customTBController;
+    */
+    
     return YES;
 }
 							
@@ -43,6 +69,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+//delegate methods for NGTabBarController
+- (CGSize) tabBarController:(NGTabBarController *)tabBarController sizeOfItemForViewController:(UIViewController *)viewController atIndex:(NSUInteger)index position:(NGTabBarPosition)position {
+    return CGSizeMake(320, 480);
 }
 
 @end
