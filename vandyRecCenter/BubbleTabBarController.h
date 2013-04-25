@@ -19,4 +19,5 @@
 @interface BubbleTabBarController : NGTabBarController <NGTabBarControllerDelegate>
 
 @property (nonatomic, strong) BubbleTabBar *tabBar;
+
 @end

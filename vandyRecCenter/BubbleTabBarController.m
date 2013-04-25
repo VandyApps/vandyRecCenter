@@ -17,6 +17,7 @@
 
 @synthesize tabBar = _tabBar;
 
+
 - (BubbleTabBar*) tabBar {
     if (!_tabBar) {
         _tabBar = [[BubbleTabBar alloc] init];

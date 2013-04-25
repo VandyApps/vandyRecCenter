@@ -19,7 +19,7 @@
     BubbleTabBarController* customTBController = [[BubbleTabBarController alloc] init];
     
     
-    
+    //set up the views in the tab bar
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName: @"MainStoryboard" bundle:[NSBundle mainBundle]];
     homeViewController *homeController = [mainStoryboard instantiateInitialViewController];
     hoursViewController *hoursController = [mainStoryboard instantiateViewControllerWithIdentifier:@"hours"];
