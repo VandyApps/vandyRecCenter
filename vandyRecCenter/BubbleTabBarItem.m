@@ -36,11 +36,14 @@
     BubbleTabBarItem *item = [[BubbleTabBarItem alloc] initWithFrame:CGRectZero];
     
     item.title = title;
+    
     item.titleColor = [UIColor blackColor];
     item.image = image;
-    
+    item.layer.cornerRadius = 20;
     return item;
 }
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
