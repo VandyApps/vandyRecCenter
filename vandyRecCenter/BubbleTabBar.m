@@ -19,6 +19,11 @@
 
 - (id) init {
     self = [self initWithFrame: CGRectZero];
+    if (self) {
+        self.layer.borderWidth = 2;
+        self.layer.borderColor = [[UIColor blackColor] CGColor];
+        self.layer.frame = CGRectMake(self.frame.origin.x - 5, self.frame.origin.y + 5, self.frame.size.width + 10, self.frame.size.height);
+    }
     return self;
 }
 
