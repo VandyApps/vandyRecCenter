@@ -41,8 +41,8 @@
     item.image = image;
     item.layer.cornerRadius = 25;
     item.layer.borderWidth = 3;
-    item.layer.borderColor = [[UIColor clearColor] CGColor];
-    item.layer.backgroundColor = [[UIColor greenColor] CGColor];
+    item.layer.borderColor = [[UIColor whiteColor] CGColor];
+    item.layer.backgroundColor = [[UIColor blackColor] CGColor];
     return item;
 }
 

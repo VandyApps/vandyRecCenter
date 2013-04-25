@@ -76,7 +76,7 @@
     self.tabBar.tintColor = [UIColor colorWithRed: 169.f/255.f green: 149.f/255.f blue:90.f/255.f alpha: 1.f];
     
     self.tabBar.itemPadding = 10.f;
-    self.tabBar.showsItemHighlight = YES;
+    self.tabBar.showsItemHighlight = NO;
     
 }
 

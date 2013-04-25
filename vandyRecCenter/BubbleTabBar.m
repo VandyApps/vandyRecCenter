@@ -16,7 +16,7 @@
     if (self) {
         //maybe add a border, on the top or right, depending on the orientation
         NSLog(@"In here");
-        self.showsItemHighlight = NO;
+        
     }
     return self;
 }
