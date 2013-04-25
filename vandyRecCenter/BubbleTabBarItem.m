@@ -14,12 +14,7 @@
 
 #pragma - getters and setters
 
-- (CGFloat) radius {
-    if (_radius == 0) {
-        _radius = DEFAULT_RADIUS;
-    }
-    return DEFAULT_RADIUS;
-}
+
 
 #pragma - initializers
 
@@ -37,9 +32,9 @@
     
     item.title = title;
     
-    item.titleColor = [UIColor blackColor];
+    item.titleColor = [UIColor whiteColor];
     item.image = image;
-    item.layer.cornerRadius = 25;
+    //item.layer.cornerRadius = 25;
     item.layer.borderWidth = 3;
     item.layer.borderColor = [[UIColor whiteColor] CGColor];
     item.layer.backgroundColor = [[UIColor blackColor] CGColor];

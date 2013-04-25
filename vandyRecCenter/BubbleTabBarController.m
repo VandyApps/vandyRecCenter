@@ -52,7 +52,7 @@
     self = [super initWithDelegate: self];
     if (self) {
         self.animation = NGTabBarControllerAnimationMoveAndScale;
-        self.animationDuration = .6;
+        self.animationDuration = .4;
         
         [self setupForInterfaceOrientation: [UIApplication sharedApplication].statusBarOrientation];
         [self setUpTabBar];
@@ -75,17 +75,25 @@
     self.tabBar.layoutStrategy = NGTabBarLayoutStrategyStrungTogether;
     self.tabBar.tintColor = [UIColor colorWithRed: 169.f/255.f green: 149.f/255.f blue:90.f/255.f alpha: 1.f];
     
-    self.tabBar.itemPadding = 10.f;
     self.tabBar.showsItemHighlight = NO;
-    
+    if (NGTabBarIsVertical(self.tabBarPosition)) {
+        self.tabBar.itemPadding = ITEM_PADDING_VERTICAL;
+    } else {
+        self.tabBar.itemPadding = ITEM_PADDING_HORIZONTAL;
+    }
 }
 
 - (void) setUpTabBarItems {
-    for (NGTabBarItem *item in self.tabBar.items) {
-        NSLog(@"Change in color");
-        item.titleColor = [UIColor blackColor];
-        
+    if (NGTabBarIsVertical(self.tabBarPosition)) {
+        for (BubbleTabBarItem *item in self.tabBar.items) {
+            item.layer.cornerRadius = DEFAULT_CORNER_RADIUS_FOR_VERTICAL;
+        }
+    } else {
+        for (BubbleTabBarItem *item in self.tabBar.items) {
+            item.layer.cornerRadius = DEFAULT_CORNER_RADIUS_FOR_HORIZONTAL;
+        }
     }
+    
 }
 
 
@@ -116,9 +124,15 @@
     
     if (NGTabBarIsVertical(position)) {
     
-        return CGSizeMake(130, 75);
+        
+        [self setUpTabBar];
+        [self setUpTabBarItems];
+        return CGSizeMake(SIZE_OF_ITEM_VERTICAL, SIZE_OF_ITEM_VERTICAL);
     } else {
-        return CGSizeMake(75, 55);
+        
+        [self setUpTabBar];
+        [self setUpTabBarItems];
+        return CGSizeMake(SIZE_OF_ITEM_HORIZONTAL, SIZE_OF_ITEM_HORIZONTAL);
     }
     
 }

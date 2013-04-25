@@ -42,7 +42,7 @@
     hoursController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Clock" image: image2];
     trafficController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Traffic" image: image3];
     classController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Classes" image: image4];
-    intramuralsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Intramurals" image:image5];
+    intramuralsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"I.M." image:image5];
     programsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Programs" image: image6];
     mapController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Map" image: image7];
     

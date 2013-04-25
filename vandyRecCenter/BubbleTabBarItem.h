@@ -10,7 +10,10 @@
 #import "NGTabBarItem.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define DEFAULT_RADIUS 10
+#define SIZE_OF_ITEM_VERTICAL 100
+#define SIZE_OF_ITEM_HORIZONTAL 70
+#define DEFAULT_CORNER_RADIUS_FOR_VERTICAL 50
+#define DEFAULT_CORNER_RADIUS_FOR_HORIZONTAL 35
 @interface BubbleTabBarItem : NGTabBarItem
 
 //radius of the item

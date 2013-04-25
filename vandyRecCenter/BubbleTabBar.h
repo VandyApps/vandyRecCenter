@@ -9,6 +9,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "NGTabBar.h"
 
+#define ITEM_PADDING_VERTICAL 12.f
+#define ITEM_PADDING_HORIZONTAL 10.f
+
 @interface BubbleTabBar : NGTabBar
 
 @end

@@ -191,7 +191,7 @@
 				21201EC11702177D00E89605 /* blackGradient.png */,
 				212DECD1170096C40041498E /* imageOfRec.jpeg */,
 				21352DC01729CA5C006D5E64 /* icons-white */,
-				217032AE16FE990600A43833 /* icons-black */,
+				217032AE16FE990600A43833 /* icons-gray */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		217032AE16FE990600A43833 /* icons-black */ = {
+		217032AE16FE990600A43833 /* icons-gray */ = {
 			isa = PBXGroup;
 			children = (
 				210E354816FF979B00180CB2 /* 89-dumbells-gray.png */,
@@ -297,7 +297,7 @@
 				217032A016FE990300A43833 /* 112-group-gray.png */,
 				217032A116FE990300A43833 /* 112-group-gray@2x.png */,
 			);
-			name = "icons-black";
+			name = "icons-gray";
 			sourceTree = "<group>";
 		};
 		21BC797D171F8387008B776A /* Graph */ = {
