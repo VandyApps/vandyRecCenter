@@ -29,28 +29,19 @@
     UIViewController* programsController = [mainStoryboard instantiateViewControllerWithIdentifier:@"programs"];
     UIViewController* mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"map"];
     
-    UIImage* image1 = [UIImage imageNamed: @"53-house.png"];
-    UIImage* image2 = [UIImage imageNamed: @"11-clock.png"];
-    UIImage* image3 = [UIImage imageNamed: @"112-group.png"];
-    UIImage* image4 = [UIImage imageNamed: @"89-dumbells.png"];
-    UIImage* image5 = [UIImage imageNamed: @"63-runner.png"];
-    UIImage* image6 = [UIImage imageNamed: @"83-calendar.png"];
-    UIImage* image7 = [UIImage imageNamed: @"103-map.png"];
-    
     //must set this property before adding view controllers to the array in the tab bar
-    homeController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Home" image: image1];
-    hoursController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Clock" image: image2];
-    trafficController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Traffic" image: image3];
-    classController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Classes" image: image4];
-    intramuralsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"I.M." image:image5];
-    programsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Programs" image: image6];
-    mapController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Map" image: image7];
+    homeController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Home" image: [UIImage imageNamed: @"53-house.png"]];
+    hoursController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Clock" image: [UIImage imageNamed: @"11-clock.png"]];
+    trafficController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Traffic" image: [UIImage imageNamed: @"112-group.png"]];
+    classController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Classes" image: [UIImage imageNamed: @"89-dumbells.png"]];
+    intramuralsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"I.M." image:[UIImage imageNamed: @"63-runner.png"]];
+    programsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Programs" image: [UIImage imageNamed: @"83-calendar.png"]];
+    mapController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Map" image: [UIImage imageNamed: @"103-map.png"]];
     
     
     customTBController.viewControllers = [[NSArray alloc] initWithObjects: homeController, hoursController, trafficController, classController, intramuralsController, programsController, mapController, nil];
   
     customTBController.selectedViewController = homeController;
-    //customTBController.tabBar.position = NGTabBarPositionBottom;
     
     
     self.window.rootViewController = customTBController;
