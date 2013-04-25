@@ -10,6 +10,8 @@
 
 @interface homeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+//@property (strong, nonatomic) IBOutlet UIImageView *imageOfRec;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end

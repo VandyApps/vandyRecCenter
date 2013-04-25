@@ -14,18 +14,38 @@
 
 @implementation homeViewController
 
+//@synthesize imageOfRec = _imageOfRec;
 @synthesize tableView = _tableView;
+
+#pragma - Getters and Setters
+/*
+- (UIImageView*) imageOfRec {
+    if (!_imageOfRec || _imageOfRec.image == nil) {
+        NSLog(@"calling getter");
+       // _imageOfRec = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"imageOfRec.jpeg"]];
+       // _imageOfRec.frame = CGRectMake(0, 0, 320, 243);
+        //_imageOfRec.contentMode = UIViewContentModeScaleToFill;
+        
+    }
+    if (_imageOfRec.contentMode != UIViewContentModeScaleToFill) {
+        NSLog(@"Not equal to scale to fill");
+    }
+    return _imageOfRec;
+    
+}
+ */
+
+#pragma - LifeCycle
 
 - (void) viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
 }
 
-//////////////////////////
-////Table View Protocol///
-///////////////////////////
+#pragma - Table View Data Source and Delegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -63,9 +83,13 @@
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     NSLog(@"Change in orientation was called");
     if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-        NSLog(@"This is landscape");
-        self.navigationController.navigationBar.frame = CGRectMake(0,0,self.navigationController.navigationBar.frame.size.width,  60) ;
+        
+        //[self.imageOfRec removeFromSuperview];
+        
        
+    } else {
+        
+       // [self.view addSubview: self.imageOfRec];
     }
 }
 

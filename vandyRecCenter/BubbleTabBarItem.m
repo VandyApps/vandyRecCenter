@@ -10,6 +10,19 @@
 
 @implementation BubbleTabBarItem
 
+@synthesize radius = _radius;
+
+#pragma - getters and setters
+
+- (CGFloat) radius {
+    if (_radius == 0) {
+        _radius = DEFAULT_RADIUS;
+    }
+    return DEFAULT_RADIUS;
+}
+
+#pragma - initializers
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -19,13 +32,24 @@
     return self;
 }
 
++ (BubbleTabBarItem *)itemWithTitle:(NSString *)title image:(UIImage *)image {
+    BubbleTabBarItem *item = [[BubbleTabBarItem alloc] initWithFrame:CGRectZero];
+    
+    item.title = title;
+    item.titleColor = [UIColor blackColor];
+    item.image = image;
+    
+    return item;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+
 }
-*/
+ */
+
 
 @end
