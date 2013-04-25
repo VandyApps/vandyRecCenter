@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "NGTabBarController.h"
 #import "NGTabBarControllerDelegate.h"
-@interface AppDelegate : UIResponder <UIApplicationDelegate, NGTabBarControllerDelegate>
+#import "BubbleTabBarController.h"
+#import "testViewController1.h"
+#import "homeViewController.h"
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

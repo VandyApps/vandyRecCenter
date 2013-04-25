@@ -6,13 +6,14 @@
 //  Copyright (c) 2013 Brendan McNamara. All rights reserved.
 //
 
+
+#import <QuartzCore/QuartzCore.h>
 #import "NGTabBarController.h"
 #import "NGTabBarControllerDelegate.h"
-#import "testViewController1.h"
-#import "testViewController2.h"
+#import "NGTabBar.h"
 
 //view controllers
 
-@interface CustomTabBarController : NGTabBarController <NGTabBarControllerDelegate>
+@interface BubbleTabBarController : NGTabBarController <NGTabBarControllerDelegate>
 
 @end

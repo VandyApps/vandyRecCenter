@@ -46,7 +46,7 @@
 		21DCF7CF1718569A0013E6D5 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DCF7CE1718569A0013E6D5 /* gradient.png */; };
 		21E40A1C1719C1530045451F /* NSDate-WeekDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */; };
 		21E40A221719CA530045451F /* trafficViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A211719CA530045451F /* trafficViewController.m */; };
-		21E90A381726E26000356E54 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E90A371726E26000356E54 /* CustomTabBarController.m */; };
+		21E90A381726E26000356E54 /* BubbleTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E90A371726E26000356E54 /* BubbleTabBarController.m */; };
 		21E90A3E1726E54000356E54 /* testViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E90A3D1726E54000356E54 /* testViewController2.m */; };
 		21E90A421726E60700356E54 /* testViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E90A411726E60700356E54 /* testViewController1.m */; };
 		21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */; };
@@ -109,8 +109,8 @@
 		21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-WeekDateClass.m"; sourceTree = "<group>"; };
 		21E40A201719CA530045451F /* trafficViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trafficViewController.h; sourceTree = "<group>"; };
 		21E40A211719CA530045451F /* trafficViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trafficViewController.m; sourceTree = "<group>"; };
-		21E90A361726E26000356E54 /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
-		21E90A371726E26000356E54 /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
+		21E90A361726E26000356E54 /* BubbleTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTabBarController.h; sourceTree = "<group>"; };
+		21E90A371726E26000356E54 /* BubbleTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBarController.m; sourceTree = "<group>"; };
 		21E90A3C1726E54000356E54 /* testViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController2.h; sourceTree = "<group>"; };
 		21E90A3D1726E54000356E54 /* testViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController2.m; sourceTree = "<group>"; };
 		21E90A401726E60700356E54 /* testViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController1.h; sourceTree = "<group>"; };
@@ -196,8 +196,8 @@
 				2170328216FE96D900A43833 /* AppDelegate.h */,
 				2170328316FE96D900A43833 /* AppDelegate.m */,
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
-				21E90A361726E26000356E54 /* CustomTabBarController.h */,
-				21E90A371726E26000356E54 /* CustomTabBarController.m */,
+				21E90A361726E26000356E54 /* BubbleTabBarController.h */,
+				21E90A371726E26000356E54 /* BubbleTabBarController.m */,
 				21E90A3F1726E54400356E54 /* test */,
 				21BC797D171F8387008B776A /* Graph */,
 				21EAD7E2170E81B600449EA3 /* Date Category */,
@@ -431,7 +431,7 @@
 				21A37AC0171B34F1008990C5 /* HoursModel.m in Sources */,
 				21BC7980171F839B008B776A /* GraphModel.m in Sources */,
 				21BC7986171F855A008B776A /* GraphPoint.m in Sources */,
-				21E90A381726E26000356E54 /* CustomTabBarController.m in Sources */,
+				21E90A381726E26000356E54 /* BubbleTabBarController.m in Sources */,
 				21E90A3E1726E54000356E54 /* testViewController2.m in Sources */,
 				21E90A421726E60700356E54 /* testViewController1.m in Sources */,
 			);

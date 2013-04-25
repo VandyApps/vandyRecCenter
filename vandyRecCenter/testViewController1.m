@@ -26,6 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    UILabel* aLabel = [[UILabel alloc] initWithFrame: CGRectMake(140, 20, 100, 50)];
+    aLabel.text = @"I am a label";
+    [self.view addSubview: aLabel];
 	// Do any additional setup after loading the view.
 }
 
