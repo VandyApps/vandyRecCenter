@@ -26,8 +26,12 @@
     UIImage* image1 = [UIImage imageNamed: @"53-house.png"];
     UIImage* image2 = [UIImage imageNamed: @"11-clock.png"];
     
+    //must set this property before adding view controllers to the array in the tab bar
     homeController.ng_tabBarItem = [NGTabBarItem itemWithTitle:@"Home" image: image1];
+    homeController.ng_tabBarItem.titleColor = [UIColor blackColor];
+    
     v2.ng_tabBarItem = [NGTabBarItem itemWithTitle:@"Clock" image: image2];
+    v2.ng_tabBarItem.titleColor = [UIColor blackColor];
     
     customTBController.viewControllers = [[NSArray alloc] initWithObjects: homeController, v2, nil];
   

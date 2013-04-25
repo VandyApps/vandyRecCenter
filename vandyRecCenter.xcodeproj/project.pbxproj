@@ -54,6 +54,7 @@
 		21EB34F417177B0D0015AD77 /* leftArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F017177B0D0015AD77 /* leftArrow@2x.png */; };
 		21EB34F517177B0D0015AD77 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F117177B0D0015AD77 /* rightArrow.png */; };
 		21EB34F617177B0D0015AD77 /* rightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F217177B0D0015AD77 /* rightArrow@2x.png */; };
+		21F1EA621728F15A00AB17DB /* BubbleTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */; };
 		21FC9F8F17025F160065EEC2 /* browserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC9F8E17025F160065EEC2 /* browserViewController.m */; };
 		72BDC83298C84A3BA251BD88 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F05CAACB8DC475199BF9CA1 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,8 @@
 		21EB34F017177B0D0015AD77 /* leftArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leftArrow@2x.png"; sourceTree = "<group>"; };
 		21EB34F117177B0D0015AD77 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		21EB34F217177B0D0015AD77 /* rightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightArrow@2x.png"; sourceTree = "<group>"; };
+		21F1EA601728F15A00AB17DB /* BubbleTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTabBarItem.h; sourceTree = "<group>"; };
+		21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBarItem.m; sourceTree = "<group>"; };
 		21FC9F8D17025F160065EEC2 /* browserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = browserViewController.h; sourceTree = "<group>"; };
 		21FC9F8E17025F160065EEC2 /* browserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = browserViewController.m; sourceTree = "<group>"; };
 		4F05CAACB8DC475199BF9CA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,8 +199,7 @@
 				2170328216FE96D900A43833 /* AppDelegate.h */,
 				2170328316FE96D900A43833 /* AppDelegate.m */,
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
-				21E90A361726E26000356E54 /* BubbleTabBarController.h */,
-				21E90A371726E26000356E54 /* BubbleTabBarController.m */,
+				21F1EA631728F17000AB17DB /* Custom Tab Bar */,
 				21E90A3F1726E54400356E54 /* test */,
 				21BC797D171F8387008B776A /* Graph */,
 				21EAD7E2170E81B600449EA3 /* Date Category */,
@@ -308,6 +310,17 @@
 				21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */,
 			);
 			name = "Date Category";
+			sourceTree = "<group>";
+		};
+		21F1EA631728F17000AB17DB /* Custom Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				21E90A361726E26000356E54 /* BubbleTabBarController.h */,
+				21E90A371726E26000356E54 /* BubbleTabBarController.m */,
+				21F1EA601728F15A00AB17DB /* BubbleTabBarItem.h */,
+				21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */,
+			);
+			name = "Custom Tab Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +447,7 @@
 				21E90A381726E26000356E54 /* BubbleTabBarController.m in Sources */,
 				21E90A3E1726E54000356E54 /* testViewController2.m in Sources */,
 				21E90A421726E60700356E54 /* testViewController1.m in Sources */,
+				21F1EA621728F15A00AB17DB /* BubbleTabBarItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
