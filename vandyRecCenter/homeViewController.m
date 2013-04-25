@@ -60,5 +60,13 @@
     [self performSegueWithIdentifier:@"recCenterHomePage" sender: self];
 }
 
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    NSLog(@"Change in orientation was called");
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+        NSLog(@"This is landscape");
+        self.navigationController.navigationBar.frame = CGRectMake(0,0,self.navigationController.navigationBar.frame.size.width,  60) ;
+       
+    }
+}
 
 @end
