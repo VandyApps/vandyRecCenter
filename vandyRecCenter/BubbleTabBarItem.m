@@ -39,7 +39,10 @@
     
     item.titleColor = [UIColor blackColor];
     item.image = image;
-    item.layer.cornerRadius = 20;
+    item.layer.cornerRadius = 25;
+    item.layer.borderWidth = 3;
+    item.layer.borderColor = [[UIColor clearColor] CGColor];
+    item.layer.backgroundColor = [[UIColor greenColor] CGColor];
     return item;
 }
 

@@ -15,7 +15,14 @@
 
 @implementation BubbleTabBarController
 
+@synthesize tabBar = _tabBar;
 
+- (BubbleTabBar*) tabBar {
+    if (!_tabBar) {
+        _tabBar = [[BubbleTabBar alloc] init];
+    }
+    return _tabBar;
+}
 #pragma - Getters and Setters
 
 - (void) setViewControllers:(NSArray *)viewControllers {
@@ -111,7 +118,7 @@
     
         return CGSizeMake(130, 75);
     } else {
-        return CGSizeMake(75, 50);
+        return CGSizeMake(75, 55);
     }
     
 }

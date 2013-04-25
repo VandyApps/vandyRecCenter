@@ -9,11 +9,14 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "NGTabBarController.h"
-#import "NGTabBarControllerDelegate.h"
-#import "NGTabBar.h"
+#import "BubbleTabBar.h"
+#import "BubbleTabBarItem.h"
+
+
 
 //view controllers
 
 @interface BubbleTabBarController : NGTabBarController <NGTabBarControllerDelegate>
 
+@property (nonatomic, strong) BubbleTabBar *tabBar;
 @end

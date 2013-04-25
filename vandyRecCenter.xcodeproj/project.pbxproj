@@ -38,6 +38,7 @@
 		217032AB16FE990300A43833 /* 103-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329F16FE990300A43833 /* 103-map@2x.png */; };
 		217032AC16FE990300A43833 /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = 217032A016FE990300A43833 /* 112-group.png */; };
 		217032AD16FE990300A43833 /* 112-group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217032A116FE990300A43833 /* 112-group@2x.png */; };
+		2177D0CC1729BE85001DA4B3 /* BubbleTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2177D0CB1729BE85001DA4B3 /* BubbleTabBar.m */; };
 		21A37AC0171B34F1008990C5 /* HoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A37ABF171B34F1008990C5 /* HoursModel.m */; };
 		21BC7980171F839B008B776A /* GraphModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC797F171F839B008B776A /* GraphModel.m */; };
 		21BC7986171F855A008B776A /* GraphPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC7985171F855A008B776A /* GraphPoint.m */; };
@@ -97,6 +98,8 @@
 		2170329F16FE990300A43833 /* 103-map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map@2x.png"; sourceTree = "<group>"; };
 		217032A016FE990300A43833 /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		217032A116FE990300A43833 /* 112-group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group@2x.png"; sourceTree = "<group>"; };
+		2177D0CA1729BE85001DA4B3 /* BubbleTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTabBar.h; sourceTree = "<group>"; };
+		2177D0CB1729BE85001DA4B3 /* BubbleTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBar.m; sourceTree = "<group>"; };
 		21A37ABE171B34F1008990C5 /* HoursModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HoursModel.h; path = ../HoursModel.h; sourceTree = "<group>"; };
 		21A37ABF171B34F1008990C5 /* HoursModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HoursModel.m; path = ../HoursModel.m; sourceTree = "<group>"; };
 		21BC797E171F839B008B776A /* GraphModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphModel.h; path = ../GraphModel.h; sourceTree = "<group>"; };
@@ -317,6 +320,8 @@
 			children = (
 				21E90A361726E26000356E54 /* BubbleTabBarController.h */,
 				21E90A371726E26000356E54 /* BubbleTabBarController.m */,
+				2177D0CA1729BE85001DA4B3 /* BubbleTabBar.h */,
+				2177D0CB1729BE85001DA4B3 /* BubbleTabBar.m */,
 				21F1EA601728F15A00AB17DB /* BubbleTabBarItem.h */,
 				21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */,
 			);
@@ -448,6 +453,7 @@
 				21E90A3E1726E54000356E54 /* testViewController2.m in Sources */,
 				21E90A421726E60700356E54 /* testViewController1.m in Sources */,
 				21F1EA621728F15A00AB17DB /* BubbleTabBarItem.m in Sources */,
+				2177D0CC1729BE85001DA4B3 /* BubbleTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
