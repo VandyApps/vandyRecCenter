@@ -18,22 +18,36 @@
     
     BubbleTabBarController* customTBController = [[BubbleTabBarController alloc] init];
     
-    testViewController1 *v2 = [[testViewController1 alloc] init];
+    
     
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName: @"MainStoryboard" bundle:[NSBundle mainBundle]];
     homeViewController *homeController = [mainStoryboard instantiateInitialViewController];
+    hoursViewController *hoursController = [mainStoryboard instantiateViewControllerWithIdentifier:@"hours"];
+    trafficViewController *trafficController = [mainStoryboard instantiateViewControllerWithIdentifier: @"traffic"];
+    UIViewController* classController = [mainStoryboard instantiateViewControllerWithIdentifier:@"classes"];
+    UIViewController* intramuralsController = [mainStoryboard instantiateViewControllerWithIdentifier: @"intramurals"];
+    UIViewController* programsController = [mainStoryboard instantiateViewControllerWithIdentifier:@"programs"];
+    UIViewController* mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"map"];
     
     UIImage* image1 = [UIImage imageNamed: @"53-house.png"];
     UIImage* image2 = [UIImage imageNamed: @"11-clock.png"];
+    UIImage* image3 = [UIImage imageNamed: @"112-group.png"];
+    UIImage* image4 = [UIImage imageNamed: @"89-dumbells.png"];
+    UIImage* image5 = [UIImage imageNamed: @"63-runner.png"];
+    UIImage* image6 = [UIImage imageNamed: @"83-calendar.png"];
+    UIImage* image7 = [UIImage imageNamed: @"103-map.png"];
     
     //must set this property before adding view controllers to the array in the tab bar
     homeController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Home" image: image1];
-    homeController.ng_tabBarItem.titleColor = [UIColor blackColor];
+    hoursController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Clock" image: image2];
+    trafficController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Traffic" image: image3];
+    classController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Classes" image: image4];
+    intramuralsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Intramurals" image:image5];
+    programsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Programs" image: image6];
+    mapController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Map" image: image7];
     
-    v2.ng_tabBarItem = [NGTabBarItem itemWithTitle:@"Clock" image: image2];
-    v2.ng_tabBarItem.titleColor = [UIColor blackColor];
     
-    customTBController.viewControllers = [[NSArray alloc] initWithObjects: homeController, v2, nil];
+    customTBController.viewControllers = [[NSArray alloc] initWithObjects: homeController, hoursController, trafficController, classController, intramuralsController, programsController, mapController, nil];
   
     customTBController.selectedViewController = homeController;
     //customTBController.tabBar.position = NGTabBarPositionBottom;

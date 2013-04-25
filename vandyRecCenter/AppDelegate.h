@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NGTabBarController.h"
-#import "NGTabBarControllerDelegate.h"
+
 #import "BubbleTabBarController.h"
 #import "BubbleTabBarItem.h"
+
 #import "testViewController1.h"
+
 #import "homeViewController.h"
+#import "hoursViewController.h"
+#import "trafficViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
