@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		210E354A16FF979B00180CB2 /* 89-dumbells-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 210E354816FF979B00180CB2 /* 89-dumbells-gray.png */; };
-		210E354B16FF979B00180CB2 /* 89-dumbells-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 210E354916FF979B00180CB2 /* 89-dumbells-gray@2x.png */; };
 		21201EC21702177D00E89605 /* blackGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC11702177D00E89605 /* blackGradient.png */; };
 		21201EC41702199B00E89605 /* vandyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC31702199B00E89605 /* vandyLogo.png */; };
 		212DECD2170096C40041498E /* imageOfRec.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 212DECD1170096C40041498E /* imageOfRec.jpeg */; };
@@ -40,18 +38,6 @@
 		2170328816FE96D900A43833 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170328716FE96D900A43833 /* Default@2x.png */; };
 		2170328A16FE96D900A43833 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170328916FE96D900A43833 /* Default-568h@2x.png */; };
 		2170328D16FE96D900A43833 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2170328B16FE96D900A43833 /* MainStoryboard.storyboard */; };
-		217032A216FE990300A43833 /* 11-clock-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329616FE990300A43833 /* 11-clock-gray.png */; };
-		217032A316FE990300A43833 /* 11-clock-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329716FE990300A43833 /* 11-clock-gray@2x.png */; };
-		217032A416FE990300A43833 /* 53-house-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329816FE990300A43833 /* 53-house-gray.png */; };
-		217032A516FE990300A43833 /* 53-house-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329916FE990300A43833 /* 53-house-gray@2x.png */; };
-		217032A616FE990300A43833 /* 63-runner-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329A16FE990300A43833 /* 63-runner-gray.png */; };
-		217032A716FE990300A43833 /* 63-runner-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329B16FE990300A43833 /* 63-runner-gray@2x.png */; };
-		217032A816FE990300A43833 /* 83-calendar-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329C16FE990300A43833 /* 83-calendar-gray.png */; };
-		217032A916FE990300A43833 /* 83-calendar-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329D16FE990300A43833 /* 83-calendar-gray@2x.png */; };
-		217032AA16FE990300A43833 /* 103-map-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329E16FE990300A43833 /* 103-map-gray.png */; };
-		217032AB16FE990300A43833 /* 103-map-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170329F16FE990300A43833 /* 103-map-gray@2x.png */; };
-		217032AC16FE990300A43833 /* 112-group-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 217032A016FE990300A43833 /* 112-group-gray.png */; };
-		217032AD16FE990300A43833 /* 112-group-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217032A116FE990300A43833 /* 112-group-gray@2x.png */; };
 		2177D0CC1729BE85001DA4B3 /* BubbleTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2177D0CB1729BE85001DA4B3 /* BubbleTabBar.m */; };
 		21A37AC0171B34F1008990C5 /* HoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A37ABF171B34F1008990C5 /* HoursModel.m */; };
 		21BC7980171F839B008B776A /* GraphModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC797F171F839B008B776A /* GraphModel.m */; };
@@ -75,8 +61,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		210E354816FF979B00180CB2 /* 89-dumbells-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "89-dumbells-gray.png"; sourceTree = "<group>"; };
-		210E354916FF979B00180CB2 /* 89-dumbells-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "89-dumbells-gray@2x.png"; sourceTree = "<group>"; };
 		21201EC11702177D00E89605 /* blackGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackGradient.png; path = ../blackGradient.png; sourceTree = "<group>"; };
 		21201EC31702199B00E89605 /* vandyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vandyLogo.png; sourceTree = "<group>"; };
 		212DECD1170096C40041498E /* imageOfRec.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imageOfRec.jpeg; path = ../imageOfRec.jpeg; sourceTree = "<group>"; };
@@ -114,18 +98,6 @@
 		2170328716FE96D900A43833 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2170328916FE96D900A43833 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2170328C16FE96D900A43833 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		2170329616FE990300A43833 /* 11-clock-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock-gray.png"; sourceTree = "<group>"; };
-		2170329716FE990300A43833 /* 11-clock-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock-gray@2x.png"; sourceTree = "<group>"; };
-		2170329816FE990300A43833 /* 53-house-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house-gray.png"; sourceTree = "<group>"; };
-		2170329916FE990300A43833 /* 53-house-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house-gray@2x.png"; sourceTree = "<group>"; };
-		2170329A16FE990300A43833 /* 63-runner-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "63-runner-gray.png"; sourceTree = "<group>"; };
-		2170329B16FE990300A43833 /* 63-runner-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "63-runner-gray@2x.png"; sourceTree = "<group>"; };
-		2170329C16FE990300A43833 /* 83-calendar-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar-gray.png"; sourceTree = "<group>"; };
-		2170329D16FE990300A43833 /* 83-calendar-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar-gray@2x.png"; sourceTree = "<group>"; };
-		2170329E16FE990300A43833 /* 103-map-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map-gray.png"; sourceTree = "<group>"; };
-		2170329F16FE990300A43833 /* 103-map-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map-gray@2x.png"; sourceTree = "<group>"; };
-		217032A016FE990300A43833 /* 112-group-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group-gray.png"; sourceTree = "<group>"; };
-		217032A116FE990300A43833 /* 112-group-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group-gray@2x.png"; sourceTree = "<group>"; };
 		2177D0CA1729BE85001DA4B3 /* BubbleTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTabBar.h; sourceTree = "<group>"; };
 		2177D0CB1729BE85001DA4B3 /* BubbleTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBar.m; sourceTree = "<group>"; };
 		21A37ABE171B34F1008990C5 /* HoursModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HoursModel.h; path = ../HoursModel.h; sourceTree = "<group>"; };
@@ -191,7 +163,6 @@
 				21201EC11702177D00E89605 /* blackGradient.png */,
 				212DECD1170096C40041498E /* imageOfRec.jpeg */,
 				21352DC01729CA5C006D5E64 /* icons-white */,
-				217032AE16FE990600A43833 /* icons-gray */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -277,27 +248,6 @@
 				2170328916FE96D900A43833 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		217032AE16FE990600A43833 /* icons-gray */ = {
-			isa = PBXGroup;
-			children = (
-				210E354816FF979B00180CB2 /* 89-dumbells-gray.png */,
-				210E354916FF979B00180CB2 /* 89-dumbells-gray@2x.png */,
-				2170329616FE990300A43833 /* 11-clock-gray.png */,
-				2170329716FE990300A43833 /* 11-clock-gray@2x.png */,
-				2170329816FE990300A43833 /* 53-house-gray.png */,
-				2170329916FE990300A43833 /* 53-house-gray@2x.png */,
-				2170329A16FE990300A43833 /* 63-runner-gray.png */,
-				2170329B16FE990300A43833 /* 63-runner-gray@2x.png */,
-				2170329C16FE990300A43833 /* 83-calendar-gray.png */,
-				2170329D16FE990300A43833 /* 83-calendar-gray@2x.png */,
-				2170329E16FE990300A43833 /* 103-map-gray.png */,
-				2170329F16FE990300A43833 /* 103-map-gray@2x.png */,
-				217032A016FE990300A43833 /* 112-group-gray.png */,
-				217032A116FE990300A43833 /* 112-group-gray@2x.png */,
-			);
-			name = "icons-gray";
 			sourceTree = "<group>";
 		};
 		21BC797D171F8387008B776A /* Graph */ = {
@@ -435,20 +385,6 @@
 				2170328816FE96D900A43833 /* Default@2x.png in Resources */,
 				2170328A16FE96D900A43833 /* Default-568h@2x.png in Resources */,
 				2170328D16FE96D900A43833 /* MainStoryboard.storyboard in Resources */,
-				217032A216FE990300A43833 /* 11-clock-gray.png in Resources */,
-				217032A316FE990300A43833 /* 11-clock-gray@2x.png in Resources */,
-				217032A416FE990300A43833 /* 53-house-gray.png in Resources */,
-				217032A516FE990300A43833 /* 53-house-gray@2x.png in Resources */,
-				217032A616FE990300A43833 /* 63-runner-gray.png in Resources */,
-				217032A716FE990300A43833 /* 63-runner-gray@2x.png in Resources */,
-				217032A816FE990300A43833 /* 83-calendar-gray.png in Resources */,
-				217032A916FE990300A43833 /* 83-calendar-gray@2x.png in Resources */,
-				217032AA16FE990300A43833 /* 103-map-gray.png in Resources */,
-				217032AB16FE990300A43833 /* 103-map-gray@2x.png in Resources */,
-				217032AC16FE990300A43833 /* 112-group-gray.png in Resources */,
-				217032AD16FE990300A43833 /* 112-group-gray@2x.png in Resources */,
-				210E354A16FF979B00180CB2 /* 89-dumbells-gray.png in Resources */,
-				210E354B16FF979B00180CB2 /* 89-dumbells-gray@2x.png in Resources */,
 				212DECD2170096C40041498E /* imageOfRec.jpeg in Resources */,
 				21201EC21702177D00E89605 /* blackGradient.png in Resources */,
 				21201EC41702199B00E89605 /* vandyLogo.png in Resources */,
