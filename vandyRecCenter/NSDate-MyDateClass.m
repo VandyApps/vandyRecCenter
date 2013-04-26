@@ -23,15 +23,15 @@
     NSDate *newDate = [[NSDate alloc] initWithTimeIntervalSince1970: newInterval];
     
     //midnight does not add any time to the current date
-    newDate = [newDate dateByAddingTimeInterval: [NSDate timeInMinutes: time withEarlyMidnight: YES] * 60];
+    newDate = [newDate dateByAddingTimeInterval: [NSDate timeInMinutes: time ] * 60];
     return newDate;
 }
 
 
-+ (NSComparisonResult) compareTime:(NSString *)time1 withTime:(NSString *)time2 withEarlyMidnight: (BOOL) earlyMidnight{
++ (NSComparisonResult) compareTime:(NSString *)time1 withTime:(NSString *)time2 {
     //convert to military time in minutes for ease of comparison
-    NSUInteger time1InMinutes = [NSDate timeInMinutes: time1 withEarlyMidnight:earlyMidnight];
-    NSUInteger time2InMinutes = [NSDate timeInMinutes: time2 withEarlyMidnight: earlyMidnight];
+    NSUInteger time1InMinutes = [NSDate timeInMinutes: time1];
+    NSUInteger time2InMinutes = [NSDate timeInMinutes: time2];
     
     if (time1InMinutes > time2InMinutes) {
         return NSOrderedDescending;
@@ -48,7 +48,7 @@
 //if earlyMidnight is true, midnight is represented as 0 hours
 //if early midnight is false, midnight is represent as 24 hours
 //regardless of how midnight is represented a minute after midnight will return 1 minute
-+ (NSUInteger) timeInMinutes: (NSString*) time withEarlyMidnight: (BOOL) earlyMidnight{ //time must be in format 12:00am
++ (NSUInteger) timeInMinutes: (NSString*) time { //time must be in format 12:00am
    
     NSUInteger timeInHours;
     NSUInteger timeInMinutes;
@@ -63,13 +63,9 @@
         }
     }
     
-    //check if it is midnight
+    //if it is midnight, just return 0 minutes
     if (timeInHours == 12 && timeInMinutes == 0 && !isPM) {
-        if (earlyMidnight) {
-            return 0;
-        } else {
-            return 24 * 60;
-        }
+        return 0;
     }
     
     NSUInteger totalMinutes = (!isPM && timeInHours == 12) ? timeInMinutes : 60 * timeInHours + timeInMinutes;
