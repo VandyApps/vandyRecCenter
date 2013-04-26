@@ -48,7 +48,6 @@
 		21E40A1C1719C1530045451F /* NSDate-WeekDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */; };
 		21E40A221719CA530045451F /* trafficViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A211719CA530045451F /* trafficViewController.m */; };
 		21E90A381726E26000356E54 /* BubbleTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E90A371726E26000356E54 /* BubbleTabBarController.m */; };
-		21E90A3E1726E54000356E54 /* testViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E90A3D1726E54000356E54 /* testViewController2.m */; };
 		21E90A421726E60700356E54 /* testViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E90A411726E60700356E54 /* testViewController1.m */; };
 		21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */; };
 		21EB34F317177B0D0015AD77 /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34EF17177B0D0015AD77 /* leftArrow.png */; };
@@ -115,8 +114,6 @@
 		21E40A211719CA530045451F /* trafficViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trafficViewController.m; sourceTree = "<group>"; };
 		21E90A361726E26000356E54 /* BubbleTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTabBarController.h; sourceTree = "<group>"; };
 		21E90A371726E26000356E54 /* BubbleTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBarController.m; sourceTree = "<group>"; };
-		21E90A3C1726E54000356E54 /* testViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController2.h; sourceTree = "<group>"; };
-		21E90A3D1726E54000356E54 /* testViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController2.m; sourceTree = "<group>"; };
 		21E90A401726E60700356E54 /* testViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController1.h; sourceTree = "<group>"; };
 		21E90A411726E60700356E54 /* testViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController1.m; sourceTree = "<group>"; };
 		21EAD7E6170E883900449EA3 /* NSDate-MyDateClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-MyDateClass.h"; sourceTree = "<group>"; };
@@ -298,8 +295,6 @@
 			children = (
 				21E90A401726E60700356E54 /* testViewController1.h */,
 				21E90A411726E60700356E54 /* testViewController1.m */,
-				21E90A3C1726E54000356E54 /* testViewController2.h */,
-				21E90A3D1726E54000356E54 /* testViewController2.m */,
 			);
 			name = test;
 			sourceTree = "<group>";
@@ -450,7 +445,6 @@
 				21BC7980171F839B008B776A /* GraphModel.m in Sources */,
 				21BC7986171F855A008B776A /* GraphPoint.m in Sources */,
 				21E90A381726E26000356E54 /* BubbleTabBarController.m in Sources */,
-				21E90A3E1726E54000356E54 /* testViewController2.m in Sources */,
 				21E90A421726E60700356E54 /* testViewController1.m in Sources */,
 				21F1EA621728F15A00AB17DB /* BubbleTabBarItem.m in Sources */,
 				2177D0CC1729BE85001DA4B3 /* BubbleTabBar.m in Sources */,

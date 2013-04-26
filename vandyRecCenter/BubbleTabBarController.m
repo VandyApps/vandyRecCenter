@@ -70,7 +70,7 @@
 - (id) init {
     self = [super initWithDelegate: self];
     if (self) {
-        self.animation = NGTabBarControllerAnimationMoveAndScale;
+        self.animation = NGTabBarControllerAnimationFade;
         self.animationDuration = .4;
         
         [self setupForInterfaceOrientation: [UIApplication sharedApplication].statusBarOrientation];
