@@ -173,9 +173,21 @@
     getTimeFormat.dateStyle = NSDateFormatterNoStyle;
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
-    if ( ([NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending || [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedSame) && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending) {
+    
+    
+    //if the current time is after the opening time
+    if ( [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending || [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedSame) {
         
-        return YES;
+        //if it is closing at midnight, then it must be currently open
+        if ([NSDate compareTime: @"12:00AM" withTime: [self closingTime]] == NSOrderedSame) {
+            return YES;
+        }
+        else if ([NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending)
+        {
+            return YES;
+        }
+        
+        
     }
     return NO;
 }
@@ -202,7 +214,7 @@
     getTimeFormat.timeStyle = NSDateFormatterShortStyle;
     getTimeFormat.dateStyle = NSDateFormatterNoStyle;
     //set time to Nashville time
-    getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: @"Central Time (US & Canada)"];
+    getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
    
     if ([self closingTime] && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending) {
         
@@ -217,7 +229,7 @@
     if ([self isOpen]) {
         
         
-        NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
+        NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: [[NSTimeZone timeZoneWithName:NASHVILLE_TIMEZONE] secondsFromGMT]]; //adjust to nashville time
         NSDate *closingDate = [currentDate dateBySettingTimeToTime: [self closingTime]];
         return [closingDate timeIntervalSinceDate: currentDate];
     }
@@ -228,7 +240,7 @@
     if ([self willOpenLaterToday]) {
         
         
-        NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: -1* (5*60*60)]; //adjust to nashville time
+       NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: [[NSTimeZone timeZoneWithName:NASHVILLE_TIMEZONE] secondsFromGMT]]; //adjust to nashville time
         NSDate *openingDate = [currentDate dateBySettingTimeToTime: [self openingTime]];
         return [openingDate timeIntervalSinceDate: currentDate];
     }
