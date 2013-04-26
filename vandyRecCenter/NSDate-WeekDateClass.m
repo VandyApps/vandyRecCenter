@@ -23,8 +23,11 @@
     return dayOfWeek;
 }
 
+//this method does not work
+//while debugging, make change for just nashville time
 - (NSUInteger) dayOfTheWeekAsIntWithTimeZone:(NSTimeZone *)timeZone {
     NSDate *adjustedDate = [[NSDate alloc] initWithTimeIntervalSinceNow: [timeZone secondsFromGMT]];
+    
     return [adjustedDate dayOfTheWeekAsInt];
 }
 

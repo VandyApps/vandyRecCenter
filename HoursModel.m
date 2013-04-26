@@ -115,7 +115,7 @@
     
     NSEnumerator *hoursEnum = [self.allHours objectEnumerator];
     NSDictionary* nextHours;
-    NSDictionary * currentHours;
+    NSDictionary* currentHours;
     nextHours = [hoursEnum nextObject];
     
     NSDate *currentDate = [[NSDate alloc] init];

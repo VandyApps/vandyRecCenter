@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface NSDate(WeekDateClass)
 
 - (NSUInteger) dayOfTheWeekAsInt;
