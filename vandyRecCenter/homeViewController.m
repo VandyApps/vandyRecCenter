@@ -81,7 +81,7 @@
 }
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    NSLog(@"Change in orientation was called");
+    
     if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
         
         //[self.imageOfRec removeFromSuperview];

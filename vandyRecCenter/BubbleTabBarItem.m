@@ -46,7 +46,6 @@
 - (void) setSelected:(BOOL)selected {
     [super setSelected: selected];
     if (selected) {
-    
         self.layer.backgroundColor = [[UIColor blueColor] CGColor];
     } else {
         self.layer.backgroundColor = [[UIColor blackColor] CGColor];
