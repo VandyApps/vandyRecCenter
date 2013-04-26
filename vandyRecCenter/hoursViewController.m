@@ -39,10 +39,9 @@
 //UI properties
 @synthesize tableView = _tableView;
 @synthesize remainingTime = _remainingTime;
-@synthesize titleDisplay = _titleDisplay;
 @synthesize scrollHours = _scrollHours;
 @synthesize pageControl = _pageControl;
-@synthesize navigationBar = _navigationBar;
+
 
 #pragma - Getters and Setters
 

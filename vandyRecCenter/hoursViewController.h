@@ -47,12 +47,11 @@
 @interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 
-@property (weak, nonatomic) IBOutlet UILabel *titleDisplay;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollHours;
 @property (weak, nonatomic) IBOutlet UILabel *remainingTime;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+
 @property (nonatomic, strong) HoursModel* hours;
 
 - (IBAction)current:(UIBarButtonItem *)sender;
