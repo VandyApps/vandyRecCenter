@@ -87,11 +87,11 @@
 - (void) setUpTabBarItems {
     if (NGTabBarIsVertical(self.tabBarPosition)) {
         for (BubbleTabBarItem *item in self.tabBar.items) {
-            item.layer.cornerRadius = DEFAULT_CORNER_RADIUS_FOR_VERTICAL;
+            item.layer.cornerRadius = item.radiusWithVerticalTabBar;
         }
     } else {
         for (BubbleTabBarItem *item in self.tabBar.items) {
-            item.layer.cornerRadius = DEFAULT_CORNER_RADIUS_FOR_HORIZONTAL;
+            item.layer.cornerRadius = item.radiusWithHorizontalTabBar;
         }
     }
     
@@ -124,16 +124,17 @@
 - (CGSize) tabBarController:(NGTabBarController *)tabBarController sizeOfItemForViewController:(UIViewController *)viewController atIndex:(NSUInteger)index position:(NGTabBarPosition)position {
     
     if (NGTabBarIsVertical(position)) {
-    
+        CGFloat dimension = [(BubbleTabBarItem*) [self.tabBar.items objectAtIndex: index] heightOfItemForVerticalTabBar];
         
         [self setUpTabBar];
         [self setUpTabBarItems];
-        return CGSizeMake(SIZE_OF_ITEM_VERTICAL, SIZE_OF_ITEM_VERTICAL);
+        
+        return CGSizeMake(dimension, dimension);
     } else {
-        
+        CGFloat dimension = [(BubbleTabBarItem*) [self.tabBar.items objectAtIndex: index] heightOfItemForHorizontalTabBar];
         [self setUpTabBar];
         [self setUpTabBarItems];
-        return CGSizeMake(SIZE_OF_ITEM_HORIZONTAL, SIZE_OF_ITEM_HORIZONTAL);
+                return CGSizeMake(dimension, dimension);
     }
     
 }

@@ -12,15 +12,19 @@
 
 #define BACKGROUND_COLOR_DEFAULT    [UIColor blackColor]
 #define SELECTED_BACKGROUND_COLOR_DEFAULT   [UIColor blueColor]
-#define SIZE_OF_ITEM_VERTICAL 90
-#define SIZE_OF_ITEM_HORIZONTAL 78
-#define DEFAULT_CORNER_RADIUS_FOR_VERTICAL 45
-#define DEFAULT_CORNER_RADIUS_FOR_HORIZONTAL 39
+#define SIZE_OF_ITEM_VERTICAL_DEFAULT 90
+#define SIZE_OF_ITEM_HORIZONTAL_DEFAULT 78
+
 
 @interface BubbleTabBarItem : NGTabBarItem
 
-//radius of the item
-@property (nonatomic, assign) CGFloat radius;
+
+//setting this property determines the values of the radius 
+@property (nonatomic, assign) CGFloat heightOfItemForHorizontalTabBar;
+@property (nonatomic, assign) CGFloat heightOfItemForVerticalTabBar;
+@property (nonatomic, readonly) CGFloat radiusWithHorizontalTabBar;
+@property (nonatomic, readonly) CGFloat radiusWithVerticalTabBar;
+
 @property (nonatomic, strong) UIColor* backgroundColorForItem;
 @property (nonatomic, strong) UIColor* selectedBackgroundColorForItem;
 

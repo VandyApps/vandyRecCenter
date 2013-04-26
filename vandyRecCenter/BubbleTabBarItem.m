@@ -8,14 +8,47 @@
 
 #import "BubbleTabBarItem.h"
 
+
+
 @implementation BubbleTabBarItem
 
-@synthesize radius = _radius;
+@synthesize radiusWithHorizontalTabBar = _radiusWithHorizontalTabBar;
+@synthesize radiusWithVerticalTabBar = _radiusWithVerticalTabBar;
+@synthesize heightOfItemForHorizontalTabBar = _heightOfItemForHorizontalTabBar;
+@synthesize heightOfItemForVerticalTabBar = _heightOfItemForVerticalTabBar;
+
 @synthesize backgroundColorForItem = _backgroundColorForItem;
 @synthesize selectedBackgroundColorForItem = _selectedBackgroundColorForItem;
 
-
 #pragma - Getters
+
+- (CGFloat) radiusWithHorizontalTabBar {
+    if (_radiusWithHorizontalTabBar == 0) {
+        _radiusWithHorizontalTabBar = self.heightOfItemForHorizontalTabBar/2;
+    }
+    return _radiusWithHorizontalTabBar;
+}
+
+- (CGFloat) radiusWithVerticalTabBar {
+    if (_radiusWithVerticalTabBar == 0) {
+        _radiusWithVerticalTabBar = self.heightOfItemForVerticalTabBar/2;
+    }
+    return _radiusWithVerticalTabBar;
+}
+
+- (CGFloat) heightOfItemForHorizontalTabBar {
+    if (_heightOfItemForHorizontalTabBar == 0) {
+        _heightOfItemForHorizontalTabBar = SIZE_OF_ITEM_HORIZONTAL_DEFAULT;
+    }
+    return _heightOfItemForHorizontalTabBar;
+}
+
+- (CGFloat) heightOfItemForVerticalTabBar {
+    if (_heightOfItemForVerticalTabBar == 0){
+        _heightOfItemForVerticalTabBar = SIZE_OF_ITEM_VERTICAL_DEFAULT;
+    }
+    return _heightOfItemForVerticalTabBar;
+}
 
 - (UIColor*) backgroundColorForItem {
     if (!_backgroundColorForItem) {
