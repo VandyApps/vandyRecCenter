@@ -171,8 +171,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="leftScroll" destination="4Jk-Pz-FRQ" id="0tJ-p1-kUI"/>
                         <outlet property="pageControl" destination="dfS-Mu-bgP" id="oCs-ZX-oJw"/>
                         <outlet property="remainingTime" destination="d36-qw-WAa" id="1RL-zK-B3w"/>
+                        <outlet property="rightScroll" destination="V1Z-Sr-lTU" id="hwe-iX-W0S"/>
                         <outlet property="scrollHours" destination="jVx-d3-6tx" id="y5N-5F-57u"/>
                         <outlet property="tableView" destination="KlX-2R-rxO" id="BA4-pz-lRq"/>
                     </connections>

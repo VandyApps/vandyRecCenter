@@ -41,7 +41,8 @@
 @synthesize remainingTime = _remainingTime;
 @synthesize scrollHours = _scrollHours;
 @synthesize pageControl = _pageControl;
-
+@synthesize leftScroll = _leftScroll;
+@synthesize rightScroll = _rightScroll;
 
 #pragma - Getters and Setters
 
@@ -442,6 +443,7 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 25;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *title;
@@ -491,6 +493,9 @@
         NSArray *scrollTitles = [self titlesForArrayOfUniqueIndices: indicesOfUniqueHours];
         NSInteger numberOfPages = [scrollTitles count];
         
+        //show scrolling
+        self.leftScroll.hidden = NO;
+        self.rightScroll.hidden = NO;
         //set up the frame and content size of the scroll view
         
         self.scrollHours.contentSize = CGSizeMake(WIDTH_OF_PAGE * numberOfPages, HEIGHT_OF_PAGE);
@@ -521,6 +526,10 @@
             [self viewWasAddedToScrollView: hoursLabel]; //need to keep track of added views to remove later
         }
     } else { //could not find hours
+        
+        //hide scrolling
+        self.rightScroll.hidden = YES;
+        self.leftScroll.hidden = YES;
         
         self.scrollHours.contentSize = self.scrollHours.frame.size;
         self.scrollHours.bounces = NO;

@@ -51,6 +51,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *remainingTime;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIButton* leftScroll;
+@property (weak, nonatomic) IBOutlet UIButton* rightScroll;
 
 @property (nonatomic, strong) HoursModel* hours;
 
