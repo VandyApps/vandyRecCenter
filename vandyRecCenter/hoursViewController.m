@@ -42,11 +42,9 @@
 @synthesize titleDisplay = _titleDisplay;
 @synthesize scrollHours = _scrollHours;
 @synthesize pageControl = _pageControl;
+@synthesize navigationBar = _navigationBar;
 
-
-///////////////////////////////////
-//custom getters and setters///////
-/////////////////////////////////
+#pragma - Getters and Setters
 
 
 - (HoursModel*) hours {
@@ -100,9 +98,7 @@
     }
 }
 
-/////////////////////
-//loading the view///
-////////////////////
+#pragma - Lifecycle
 
 - (void) viewDidLoad {
     [super viewDidLoad];
@@ -114,6 +110,7 @@
     [self selectCurrentHours];
     [self selectCurrentDayOfTheWeek];
     self.pageControl.hidesForSinglePage = YES;
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -291,7 +288,8 @@
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow: self.rowOfCurrentHours inSection:self.sectionOfCurrentHours] animated: YES scrollPosition: UITableViewScrollPositionMiddle];
     //process of selecting
     NSString* title = [[self.hours hoursForCurrentTime] objectForKey: @"title"];
-    self.titleDisplay.text = title;
+    self.title = title;
+    NSLog(@"%@", self.navigationBar.topItem.title);
     [self setUpScrollViewWithHoursTitle: title];
 }
 
@@ -460,8 +458,8 @@
     
         title = [[[self.hours closedHours] objectAtIndex: indexPath.row] objectForKey: @"title"];
     }
-    //set the title in the view
-    self.titleDisplay.text = title; 
+    //set the title in the navigation bar
+    self.title = title;
     //get the array for the hours
     //change color of gradient here
     self.sectionOfSelectedCell = indexPath.section;
