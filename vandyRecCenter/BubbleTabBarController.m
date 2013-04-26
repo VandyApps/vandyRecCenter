@@ -49,7 +49,7 @@
     [self setUpTabBarItems];
 }
 
-#pragma - LifeCycle
+#pragma - Initializers
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,9 +58,6 @@
     }
     return self;
 }
-
- 
-
 
 - (id)initWithDelegate:(id<NGTabBarControllerDelegate>)delegate {
     //need to keep this from getting called somehow
@@ -80,6 +77,9 @@
     }
     return self;
 }
+
+#pragma - Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -87,7 +87,7 @@
     
 }
 
-
+#pragma - TabBarSetUp
 
 - (void) setUpTabBar {
     
