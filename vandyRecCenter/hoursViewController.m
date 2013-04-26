@@ -122,9 +122,7 @@
     
 }
 
-///////////
-//events///
-//////////
+#pragma - EventHandler
 
 - (IBAction)current:(UIBarButtonItem *)sender {
     [self selectCurrentHours];
@@ -152,9 +150,9 @@
     [self.scrollHours setContentOffset: CGPointMake((CGFloat) newOffset, 0) animated: YES];
     
 }
-////////////////////
-//private methods//
-///////////////////
+
+
+#pragma - Private
 
 - (NSString*) displayTimeInterval: (NSTimeInterval) timeInterval untilClosing: (BOOL) isClosing {
     
@@ -229,9 +227,7 @@
 }
 
 
-/////////////////////////////
-//methods for current time//
-////////////////////////////
+#pragma - CurrentTime
 
 - (void) setCurrentHours {
     NSDictionary* currentTime = [self.hours hoursForCurrentTime];
@@ -327,9 +323,7 @@
 }
 
 
-////////////////////
-//table view stuff//
-////////////////////
+#pragma - TableView
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString* cellIdentifier = @"hoursCell";
@@ -474,9 +468,7 @@
 
 
 
-/////////////////////
-//scroll view stuff//
-/////////////////////
+#pragma - ScrollView
  
 - (void) setUpScrollViewWithHoursTitle: (NSString*) title {
     
