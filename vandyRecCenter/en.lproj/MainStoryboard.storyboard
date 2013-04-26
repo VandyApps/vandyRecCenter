@@ -34,9 +34,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-2R-rxO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="327" type="user" id="RfU-WI-Mw7"/>
+                                    <constraint firstAttribute="height" priority="334" constant="327" type="user" id="RfU-WI-Mw7"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" priority="998" constant="327" type="user" id="e5H-X1-r15"/>
-                                    <constraint firstAttribute="width" constant="325" id="iI6-Mi-2n3"/>
+                                    <constraint firstAttribute="width" priority="180" constant="325" type="user" id="hvW-vu-NEd"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="325" type="user" id="iI6-Mi-2n3"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="hoursCell" rowHeight="51" id="zcg-PI-WmN">

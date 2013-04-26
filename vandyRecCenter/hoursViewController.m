@@ -289,7 +289,6 @@
     //process of selecting
     NSString* title = [[self.hours hoursForCurrentTime] objectForKey: @"title"];
     self.title = title;
-    NSLog(@"%@", self.navigationBar.topItem.title);
     [self setUpScrollViewWithHoursTitle: title];
 }
 
