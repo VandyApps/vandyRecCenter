@@ -239,7 +239,7 @@
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: [[NSTimeZone timeZoneWithName:NASHVILLE_TIMEZONE] secondsFromGMT]]; //adjust to nashville time
         NSDate *closingDate = [currentDate dateBySettingTimeToTime: [self closingTime]];
         if ([NSDate compareTime: @"12:00AM" withTime: [self closingTime]] == NSOrderedSame) {
-            currentDate = [currentDate dateByAddingTimeInterval: 24*60*60]; //add a day
+            closingDate = [closingDate dateByAddingTimeInterval: 24*60*60]; //add a day
         }
         return [closingDate timeIntervalSinceDate: currentDate];
     }
