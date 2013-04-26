@@ -14,7 +14,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="black-goldGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="T0o-oF-nk5">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="217" type="user" id="EIn-HB-N1H"/>
+                                    <constraint firstAttribute="height" constant="177" type="user" id="vMT-Mw-fwb"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx">
@@ -22,19 +22,10 @@
                                     <constraint firstAttribute="height" constant="80" type="user" id="ij5-Rv-MmS"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-eu-bAF">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="WD9-mr-oKy"/>
-                                    <constraint firstAttribute="width" constant="215" id="w5b-Ka-DVc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="time remaining here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d36-qw-WAa">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="173" id="Rf6-pc-8HD"/>
-                                    <constraint firstAttribute="height" constant="21" id="h8Y-ty-S0z"/>
+                                    <constraint firstAttribute="height" constant="21" id="len-eK-gpC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,7 +34,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-2R-rxO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" priority="800" constant="240" type="user" id="7qQ-q3-amg"/>
+                                    <constraint firstAttribute="height" constant="327" type="user" id="RfU-WI-Mw7"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" priority="998" constant="327" type="user" id="e5H-X1-r15"/>
                                     <constraint firstAttribute="width" constant="325" id="iI6-Mi-2n3"/>
                                 </constraints>
                                 <prototypes>
@@ -145,26 +137,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="191" id="4DQ-uI-bzx"/>
-                            <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="65" id="6PT-I8-NE1"/>
-                            <constraint firstItem="zhd-eu-bAF" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="7" id="GgI-V0-tfR"/>
+                            <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="top" secondItem="jVx-d3-6tx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3BN-s0-T2P"/>
+                            <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="d36-qw-WAa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3Fy-Ge-IsN"/>
+                            <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="3vY-JE-Jtm"/>
+                            <constraint firstItem="V1Z-Sr-lTU" firstAttribute="top" secondItem="jVx-d3-6tx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="DEh-4Z-YF7"/>
                             <constraint firstItem="dfS-Mu-bgP" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="JFx-hn-lnj"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="LR4-4V-lv2"/>
-                            <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="KlX-2R-rxO" secondAttribute="centerX" type="default" id="N2y-wP-g4B"/>
-                            <constraint firstItem="T0o-oF-nk5" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="user" id="OkN-SI-Tkz"/>
+                            <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="OtW-ju-LnO"/>
+                            <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="leading" secondItem="d36-qw-WAa" secondAttribute="leading" type="default" id="SKb-WQ-rgj"/>
+                            <constraint firstItem="KlX-2R-rxO" firstAttribute="top" secondItem="T0o-oF-nk5" secondAttribute="bottom" type="user" id="Uex-5G-J2a"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="W70-05-lUL"/>
-                            <constraint firstItem="dfS-Mu-bgP" firstAttribute="centerY" secondItem="4Jk-Pz-FRQ" secondAttribute="centerY" type="default" id="eLw-R5-jMb"/>
+                            <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="centerY" secondItem="dfS-Mu-bgP" secondAttribute="centerY" type="default" id="X1Q-Qj-TSl"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fAQ-aV-0Oh"/>
                             <constraint firstItem="jVx-d3-6tx" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="fRH-PR-EcC"/>
-                            <constraint firstItem="KlX-2R-rxO" firstAttribute="top" secondItem="T0o-oF-nk5" secondAttribute="bottom" type="user" id="fWG-JR-dE0"/>
-                            <constraint firstItem="KlX-2R-rxO" firstAttribute="bottom" secondItem="xg5-Oj-fz1" secondAttribute="bottom" type="user" id="fdH-9O-nwN"/>
-                            <constraint firstItem="zhd-eu-bAF" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="h2e-Te-3M1"/>
-                            <constraint firstItem="V1Z-Sr-lTU" firstAttribute="bottom" secondItem="4Jk-Pz-FRQ" secondAttribute="bottom" type="default" id="he5-SK-htH"/>
+                            <constraint firstItem="T0o-oF-nk5" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="user" id="hWz-aQ-HhM"/>
+                            <constraint firstItem="V1Z-Sr-lTU" firstAttribute="trailing" secondItem="d36-qw-WAa" secondAttribute="trailing" type="default" id="hZy-de-Ycj"/>
+                            <constraint firstItem="V1Z-Sr-lTU" firstAttribute="bottom" secondItem="4Jk-Pz-FRQ" secondAttribute="bottom" type="default" id="jas-k2-FWK"/>
                             <constraint firstItem="T0o-oF-nk5" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="lKA-Pb-S0G"/>
-                            <constraint firstAttribute="trailing" secondItem="V1Z-Sr-lTU" secondAttribute="trailing" constant="56" id="m5U-5d-oKo"/>
-                            <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" constant="57" id="raI-YO-7W9"/>
-                            <constraint firstItem="V1Z-Sr-lTU" firstAttribute="top" secondItem="4Jk-Pz-FRQ" secondAttribute="top" type="default" id="uGd-x1-y8p"/>
-                            <constraint firstItem="dfS-Mu-bgP" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="161" id="uT3-aa-hcD"/>
+                            <constraint firstItem="KlX-2R-rxO" firstAttribute="bottom" secondItem="xg5-Oj-fz1" secondAttribute="bottom" type="user" id="uWD-TW-9Sj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hours" id="Tdd-lq-Ehu">
@@ -179,7 +169,6 @@
                         <outlet property="remainingTime" destination="d36-qw-WAa" id="1RL-zK-B3w"/>
                         <outlet property="scrollHours" destination="jVx-d3-6tx" id="y5N-5F-57u"/>
                         <outlet property="tableView" destination="KlX-2R-rxO" id="BA4-pz-lRq"/>
-                        <outlet property="titleDisplay" destination="zhd-eu-bAF" id="IRm-Y0-dlI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvl-4L-vfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -623,6 +612,50 @@
         <image name="leftArrow.png" width="16" height="16"/>
         <image name="rightArrow.png" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="NGTabBarController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NGTabBarController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="browserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="homeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="hoursViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="current:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="scrollOnePageLeft"/>
+                <relationship kind="action" name="scrollOnePageRight"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="trafficViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/trafficViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="scrollOnePageLeft"/>
+                <relationship kind="action" name="scrollOnePageRight"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="scrollGraphs" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
