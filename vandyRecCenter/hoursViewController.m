@@ -376,7 +376,7 @@
     
     if (indexPath.section == self.sectionOfSelectedCell && indexPath.row == self.rowOfSelectedCell) {
         
-        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"black-goldGradient.png"]];
+        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"blue.png"]];
     } else {
         [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"blackGradient.png"]];
     }
@@ -420,11 +420,10 @@
     }
 }
 
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"brownGradient.png"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"test2.png"]];
     UILabel* title = [[UILabel alloc] initWithFrame: CGRectMake(10, 2, 320, 20)];
     title.backgroundColor = [UIColor clearColor];
     if (section == 0) {

@@ -13,8 +13,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
-    [[UINavigationBar appearance] setTintColor: [UIColor blackColor]];
+    [[UINavigationBar appearance] setTintColor: [UIColor colorWithRed:169.f/255.f green: 149.f/255.f blue: 90.f/255.f alpha: 1]];
     
     BubbleTabBarController* customTBController = [[BubbleTabBarController alloc] init];
     
