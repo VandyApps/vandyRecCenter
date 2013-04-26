@@ -11,8 +11,25 @@
 @implementation BubbleTabBarItem
 
 @synthesize radius = _radius;
+@synthesize backgroundColorForItem = _backgroundColorForItem;
+@synthesize selectedBackgroundColorForItem = _selectedBackgroundColorForItem;
 
-#pragma - getters and setters
+
+#pragma - Getters
+
+- (UIColor*) backgroundColorForItem {
+    if (!_backgroundColorForItem) {
+        _backgroundColorForItem = BACKGROUND_COLOR_DEFAULT;
+    }
+    return _backgroundColorForItem;
+}
+
+- (UIColor*) selectedBackgroundColorForItem {
+    if (!_selectedBackgroundColorForItem) {
+        _selectedBackgroundColorForItem = SELECTED_BACKGROUND_COLOR_DEFAULT;
+    }
+    return _selectedBackgroundColorForItem;
+}
 
 
 
@@ -37,7 +54,7 @@
     //item.layer.cornerRadius = 25;
     item.layer.borderWidth = 4;
     item.layer.borderColor = [[UIColor whiteColor] CGColor];
-    item.layer.backgroundColor = [[UIColor blackColor] CGColor];
+    item.layer.backgroundColor = [item.backgroundColorForItem CGColor];
     return item;
 }
 
@@ -46,9 +63,9 @@
 - (void) setSelected:(BOOL)selected {
     [super setSelected: selected];
     if (selected) {
-        self.layer.backgroundColor = [[UIColor blueColor] CGColor];
+        self.layer.backgroundColor = [self.selectedBackgroundColorForItem CGColor];
     } else {
-        self.layer.backgroundColor = [[UIColor blackColor] CGColor];
+        self.layer.backgroundColor = [self.backgroundColorForItem CGColor];
     }
 }
 @end

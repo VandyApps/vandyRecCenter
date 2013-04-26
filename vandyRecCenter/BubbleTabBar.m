@@ -10,6 +10,9 @@
 
 @implementation BubbleTabBar
 
+
+#pragma - Initializer
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
