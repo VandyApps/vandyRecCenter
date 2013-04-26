@@ -376,9 +376,9 @@
     
     if (indexPath.section == self.sectionOfSelectedCell && indexPath.row == self.rowOfSelectedCell) {
         
-        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"blue.png"]];
+        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: IMAGE_CELL_SELECTED]];
     } else {
-        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: @"blackGradient.png"]];
+        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed:IMAGE_CELL_NORMAL]];
     }
     
     if (indexPath.section == self.sectionOfCurrentHours && indexPath.row == self.rowOfCurrentHours) {
@@ -423,7 +423,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"test2.png"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: IMAGE_SECTION_HEAD]];
     UILabel* title = [[UILabel alloc] initWithFrame: CGRectMake(10, 2, 320, 20)];
     title.backgroundColor = [UIColor clearColor];
     if (section == 0) {
