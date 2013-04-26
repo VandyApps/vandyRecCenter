@@ -533,7 +533,7 @@
         
         self.scrollHours.contentSize = self.scrollHours.frame.size;
         self.scrollHours.bounces = NO;
-        UILabel *errorLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL, Y_COOR_OF_TITLE_LABEL, WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+        UILabel *errorLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL_ERROR, Y_COOR_OF_TITLE_LABEL_ERROR, WIDTH_OF_TITLE_LABEL_ERROR, HEIGHT_OF_TITLE_LABEL_ERROR)];
         errorLabel.textColor = [UIColor whiteColor];
         errorLabel.backgroundColor = [UIColor clearColor];
         errorLabel.textAlignment = NSTextAlignmentCenter;
