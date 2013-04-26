@@ -68,7 +68,7 @@
     self = [super initWithDelegate: self];
     if (self) {
         self.animation = NGTabBarControllerAnimationFade;
-        self.animationDuration = .4;
+        self.animationDuration = .2;
         
         [self setupForInterfaceOrientation: [UIApplication sharedApplication].statusBarOrientation];
         [self setUpTabBar];
