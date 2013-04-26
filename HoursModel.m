@@ -216,10 +216,17 @@
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
    
-    if ([self closingTime] && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending) {
-        
-        return YES;
+    if ([self closingTime]) {
+        //if the closing time is midnight, it is either still open or did not open yet
+        if ([NSDate compareTime: @"12:00AM" withTime: [self closingTime]] == NSOrderedSame) {
+            return NO;
+        }
+        else if ([self closingTime] && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending) {
+            
+            return YES;
+        }
     }
+    
     return NO;
 }
 
