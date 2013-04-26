@@ -16,7 +16,10 @@
 @implementation BubbleTabBarController
 
 @synthesize tabBar = _tabBar;
+@synthesize paddingForHorizontalBar = _paddingForHorizontalBar;
+@synthesize paddingForVerticalBar = _paddingForVerticalBar;
 
+#pragma - Getters
 
 - (BubbleTabBar*) tabBar {
     if (!_tabBar) {
@@ -24,7 +27,22 @@
     }
     return _tabBar;
 }
-#pragma - Getters and Setters
+
+- (CGFloat) paddingForVerticalBar {
+    if (_paddingForVerticalBar == 0) {
+        _paddingForVerticalBar = ITEM_PADDING_VERTICAL;
+    }
+    return _paddingForVerticalBar;
+}
+
+- (CGFloat) paddingForHorizontalBar {
+    if (_paddingForHorizontalBar == 0) {
+        _paddingForHorizontalBar = ITEM_PADDING_HORIZONTAL;
+    }
+    return _paddingForHorizontalBar;
+}
+
+#pragma - Setters
 
 - (void) setViewControllers:(NSArray *)viewControllers {
     [super setViewControllers: viewControllers];
@@ -78,9 +96,9 @@
     
     self.tabBar.showsItemHighlight = NO;
     if (NGTabBarIsVertical(self.tabBarPosition)) {
-        self.tabBar.itemPadding = ITEM_PADDING_VERTICAL;
+        self.tabBar.itemPadding = self.paddingForVerticalBar;
     } else {
-        self.tabBar.itemPadding = ITEM_PADDING_HORIZONTAL;
+        self.tabBar.itemPadding = self.paddingForHorizontalBar;
     }
 }
 

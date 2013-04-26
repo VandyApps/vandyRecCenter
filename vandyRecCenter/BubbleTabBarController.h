@@ -19,5 +19,6 @@
 @interface BubbleTabBarController : NGTabBarController <NGTabBarControllerDelegate>
 
 @property (nonatomic, strong) BubbleTabBar *tabBar;
-
+@property (nonatomic, assign) CGFloat paddingForHorizontalBar;
+@property (nonatomic, assign) CGFloat paddingForVerticalBar;
 @end
