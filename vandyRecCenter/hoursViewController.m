@@ -498,8 +498,9 @@
         //add the subviews to the scroll view
         for (size_t i = 0; i < [scrollTitles count]; ++i) {
         
+            CGFloat xValueForTitleLabel = (self.view.frame.size.width - WIDTH_OF_TITLE_LABEL) / 2.0;
             
-            UILabel* titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL + i*WIDTH_OF_PAGE, Y_COOR_OF_TITLE_LABEL , WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+            UILabel* titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForTitleLabel + i*WIDTH_OF_PAGE, Y_COOR_OF_TITLE_LABEL , WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
             
             titleLabel.text = [scrollTitles objectAtIndex: i];
             titleLabel.textColor = [UIColor whiteColor];
@@ -508,7 +509,8 @@
             [self.scrollHours addSubview: titleLabel];
             [self viewWasAddedToScrollView: titleLabel]; //need to keep track of added views to remove later
             
-            UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_HOURS_LABEL + i* WIDTH_OF_PAGE, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
+            CGFloat xValueForLabel = (self.view.frame.size.width - WIDTH_OF_HOURS_LABEL) / 2.0;
+            UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForLabel + i* WIDTH_OF_PAGE, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
             
             hoursLabel.text = [hours objectAtIndex: [[indicesOfUniqueHours objectAtIndex: i] intValue]];
             hoursLabel.textColor = [UIColor whiteColor];
@@ -525,7 +527,10 @@
         
         self.scrollHours.contentSize = self.scrollHours.frame.size;
         self.scrollHours.bounces = NO;
-        UILabel *errorLabel = [[UILabel alloc] initWithFrame: CGRectMake(X_COOR_OF_TITLE_LABEL_ERROR, Y_COOR_OF_TITLE_LABEL_ERROR, WIDTH_OF_TITLE_LABEL_ERROR, HEIGHT_OF_TITLE_LABEL_ERROR)];
+        
+        //set up the x coordinate
+        CGFloat xValueForErrorLabel = (self.view.frame.size.width - WIDTH_OF_ERROR_LABEL) / 2.0;
+        UILabel *errorLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForErrorLabel, Y_COOR_OF_ERROR_LABEL, WIDTH_OF_ERROR_LABEL, HEIGHT_OF_ERROR_LABEL)];
         errorLabel.textColor = [UIColor whiteColor];
         errorLabel.backgroundColor = [UIColor clearColor];
         errorLabel.textAlignment = NSTextAlignmentCenter;
@@ -543,9 +548,7 @@
 
 }
 
-/////////////////////////
-//scroll view delegate//
-////////////////////////
+#pragma - ScrollDelegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     if (scrollView == self.scrollHours) { //make sure that the correct scroll view is called, not table view

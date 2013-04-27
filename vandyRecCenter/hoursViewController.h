@@ -22,12 +22,11 @@
 //macros for elements inside a single page
 
 //title label
-#define X_COOR_OF_TITLE_LABEL 35
+
 #define Y_COOR_OF_TITLE_LABEL 10
 #define HEIGHT_OF_TITLE_LABEL 25
 #define WIDTH_OF_TITLE_LABEL 250
 //hours label
-#define X_COOR_OF_HOURS_LABEL 35
 #define Y_COOR_OF_HOURS_LABEL 40
 #define HEIGHT_OF_HOURS_LABEL 35
 #define WIDTH_OF_HOURS_LABEL 250
@@ -38,10 +37,10 @@
 #define HEIGHT_OF_BUTTON 10
 #define WIDTH_OF_BUTTON 10
 //error label
-#define X_COOR_OF_TITLE_LABEL_ERROR 35
-#define Y_COOR_OF_TITLE_LABEL_ERROR 35
-#define HEIGHT_OF_TITLE_LABEL_ERROR 25
-#define WIDTH_OF_TITLE_LABEL_ERROR 250
+
+#define Y_COOR_OF_ERROR_LABEL 35
+#define HEIGHT_OF_ERROR_LABEL 25
+#define WIDTH_OF_ERROR_LABEL 250
 
 //images
 #define IMAGE_CELL_SELECTED @"blue.png"
