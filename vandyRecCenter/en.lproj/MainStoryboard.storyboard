@@ -95,13 +95,13 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2l-72-IWG">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="320" type="user" id="Gtn-M8-4Yt"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" type="user" id="Gtn-M8-4Yt"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD2-5q-eZT">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="FTV-vP-ceB"/>
-                                                        <constraint firstAttribute="width" constant="173" type="user" id="cZg-t7-mHX"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="173" type="user" id="cZg-t7-mHX"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
