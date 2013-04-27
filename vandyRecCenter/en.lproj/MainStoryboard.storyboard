@@ -15,6 +15,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbw-54-eK0">
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx">
+                                        <color key="backgroundColor" red="0.15679655095808365" green="0.22368015718003043" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" type="user" id="ij5-Rv-MmS"/>
                                         </constraints>
@@ -32,11 +33,11 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="800" constant="177" type="user" id="06w-gI-sG0"/>
-                                    <constraint firstItem="jVx-d3-6tx" firstAttribute="trailing" secondItem="wbw-54-eK0" secondAttribute="trailing" type="default" id="33B-EJ-sbF"/>
                                     <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="d36-qw-WAa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PFZ-S2-0mc"/>
-                                    <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="jVx-d3-6tx" secondAttribute="centerX" type="default" id="S2p-DB-cZ7"/>
-                                    <constraint firstItem="jVx-d3-6tx" firstAttribute="leading" secondItem="wbw-54-eK0" secondAttribute="leading" type="default" id="Zgs-ec-nD4"/>
+                                    <constraint firstItem="jVx-d3-6tx" firstAttribute="centerX" secondItem="d36-qw-WAa" secondAttribute="centerX" type="default" id="VTo-35-DXz"/>
                                     <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="wbw-54-eK0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="nD1-ie-QQJ"/>
+                                    <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="wbw-54-eK0" secondAttribute="centerX" type="default" id="wMh-bD-9Yv"/>
+                                    <constraint firstItem="jVx-d3-6tx" firstAttribute="leading" secondItem="wbw-54-eK0" secondAttribute="leading" constant="40" id="yHP-iS-31m"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-2R-rxO">
