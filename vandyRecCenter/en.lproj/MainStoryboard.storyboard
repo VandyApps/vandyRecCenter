@@ -15,7 +15,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbw-54-eK0">
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx">
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.15679655100000001" green="0.22368015720000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" type="user" id="ij5-Rv-MmS"/>
                                         </constraints>
@@ -68,14 +68,14 @@
                                     <constraint firstAttribute="height" priority="800" constant="177" type="user" id="06w-gI-sG0"/>
                                     <constraint firstAttribute="trailing" secondItem="V1Z-Sr-lTU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9Fk-t2-YCF"/>
                                     <constraint firstItem="jVx-d3-6tx" firstAttribute="top" secondItem="d36-qw-WAa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PFZ-S2-0mc"/>
-                                    <constraint firstItem="V1Z-Sr-lTU" firstAttribute="centerY" secondItem="wbw-54-eK0" secondAttribute="centerY" type="default" id="TlZ-Ci-HvR"/>
                                     <constraint firstItem="jVx-d3-6tx" firstAttribute="centerX" secondItem="d36-qw-WAa" secondAttribute="centerX" type="default" id="VTo-35-DXz"/>
+                                    <constraint firstItem="jVx-d3-6tx" firstAttribute="centerX" secondItem="wbw-54-eK0" secondAttribute="centerX" type="default" id="VTu-Tn-4iC"/>
+                                    <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="centerY" secondItem="wbw-54-eK0" secondAttribute="centerY" type="default" id="XCT-7I-yom"/>
                                     <constraint firstItem="jVx-d3-6tx" firstAttribute="leading" secondItem="wbw-54-eK0" secondAttribute="leading" constant="50" id="ZiA-rI-Keq"/>
                                     <constraint firstItem="d36-qw-WAa" firstAttribute="top" secondItem="wbw-54-eK0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="nD1-ie-QQJ"/>
+                                    <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="leading" secondItem="wbw-54-eK0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pnz-JZ-qKh"/>
                                     <constraint firstItem="V1Z-Sr-lTU" firstAttribute="bottom" secondItem="4Jk-Pz-FRQ" secondAttribute="bottom" type="default" id="qBr-G3-a98"/>
                                     <constraint firstItem="V1Z-Sr-lTU" firstAttribute="top" secondItem="4Jk-Pz-FRQ" secondAttribute="top" type="default" id="udJ-0C-vnw"/>
-                                    <constraint firstItem="d36-qw-WAa" firstAttribute="centerX" secondItem="wbw-54-eK0" secondAttribute="centerX" type="default" id="wMh-bD-9Yv"/>
-                                    <constraint firstItem="4Jk-Pz-FRQ" firstAttribute="leading" secondItem="wbw-54-eK0" secondAttribute="leading" constant="17" id="xV5-v3-PaT"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-2R-rxO">
@@ -618,50 +618,6 @@
         <image name="leftArrow.png" width="16" height="16"/>
         <image name="rightArrow.png" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="NGTabBarController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NGTabBarController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="browserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="homeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="hoursViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="current:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="scrollOnePageLeft"/>
-                <relationship kind="action" name="scrollOnePageRight"/>
-                <relationship kind="outlet" name="leftScroll" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightScroll" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="trafficViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/trafficViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="scrollOnePageLeft"/>
-                <relationship kind="action" name="scrollOnePageRight"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollGraphs" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
