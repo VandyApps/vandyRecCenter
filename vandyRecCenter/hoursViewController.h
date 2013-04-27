@@ -21,7 +21,7 @@
 //macros for elements inside a single page
 
 //changes to scroll view width are updated here for now
-#define WIDTH_OF_SCROLL_VIEW 240
+#define WIDTH_OF_SCROLL_VIEW 220
 //title label
 
 #define Y_COOR_OF_TITLE_LABEL 10
