@@ -15,7 +15,6 @@
 //macros for scroll view
 #define DEFAULT_NUM_OF_PAGES 7 
 #define HEIGHT_OF_PAGE 80
-#define WIDTH_OF_PAGE 320
 #define X_COOR_OF_PAGE 0
 #define Y_COOR_OF_PAGE 59
 
