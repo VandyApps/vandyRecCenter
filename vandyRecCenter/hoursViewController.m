@@ -337,7 +337,6 @@
             foundIndexToScroll = YES;
         }
     }
-    NSLog(@"%g", self.widthOfScrollView);
     [self.scrollHours setContentOffset:CGPointMake(self.indexOfScroll*self.widthOfScrollView, 0) animated:YES];
     self.pageControl.currentPage = self.indexOfScroll;
     
