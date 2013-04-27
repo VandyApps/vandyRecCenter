@@ -81,28 +81,27 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-2R-rxO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="325" type="user" id="Nb5-ce-teX"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" priority="800" constant="327" type="user" id="RfU-WI-Mw7"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" type="user" id="tGb-pS-kd4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" type="user" id="xiB-6t-giq"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="hoursCell" rowHeight="51" id="zcg-PI-WmN">
-                                        <rect key="frame" x="0.0" y="22" width="325" height="51"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="325" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2l-72-IWG">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="325" type="user" id="Qxg-Vi-x8s"/>
-                                                        <constraint firstAttribute="width" constant="325" type="user" id="Zug-f0-rga"/>
+                                                        <constraint firstAttribute="width" constant="320" type="user" id="Gtn-M8-4Yt"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD2-5q-eZT">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="173" id="Aiq-B8-4qJ"/>
                                                         <constraint firstAttribute="height" constant="21" id="FTV-vP-ceB"/>
+                                                        <constraint firstAttribute="width" constant="173" type="user" id="cZg-t7-mHX"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,7 +109,7 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLP-17-vJM">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="104" id="VcU-eR-Dxr"/>
+                                                        <constraint firstAttribute="width" constant="104" type="user" id="VcU-eR-Dxr"/>
                                                         <constraint firstAttribute="height" constant="21" id="y9Z-YP-MEW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -132,13 +131,16 @@
                                         <constraints>
                                             <constraint firstItem="pCJ-tg-Qt8" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="9" id="00S-0k-cyg"/>
                                             <constraint firstItem="dLP-17-vJM" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="24" id="0YT-I4-56L"/>
-                                            <constraint firstItem="W2l-72-IWG" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" type="default" id="EeB-bl-i01"/>
-                                            <constraint firstItem="W2l-72-IWG" firstAttribute="bottom" secondItem="zcg-PI-WmN" secondAttribute="bottom" type="default" id="Ja1-6p-swL"/>
-                                            <constraint firstItem="VD2-5q-eZT" firstAttribute="leading" secondItem="zcg-PI-WmN" secondAttribute="leading" constant="20" type="default" id="LDQ-4Z-QV3"/>
-                                            <constraint firstItem="VD2-5q-eZT" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="14" id="TZp-Ga-RtY"/>
-                                            <constraint firstItem="pCJ-tg-Qt8" firstAttribute="trailing" secondItem="dLP-17-vJM" secondAttribute="trailing" type="default" id="XTw-nx-Vj1"/>
-                                            <constraint firstItem="dLP-17-vJM" firstAttribute="leading" secondItem="VD2-5q-eZT" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ybz-XJ-Zh8"/>
-                                            <constraint firstItem="W2l-72-IWG" firstAttribute="leading" secondItem="zcg-PI-WmN" secondAttribute="leading" constant="-5" id="sR0-Uc-Ofe"/>
+                                            <constraint firstAttribute="trailing" secondItem="dLP-17-vJM" secondAttribute="trailing" constant="15" type="user" id="0gs-eQ-4i8"/>
+                                            <constraint firstItem="W2l-72-IWG" firstAttribute="leading" secondItem="zcg-PI-WmN" secondAttribute="leading" type="user" id="2qg-A1-eHR"/>
+                                            <constraint firstItem="W2l-72-IWG" firstAttribute="bottom" secondItem="zcg-PI-WmN" secondAttribute="bottom" type="default" id="ChV-TJ-wU4"/>
+                                            <constraint firstItem="VD2-5q-eZT" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" constant="14" id="DdQ-yU-IFn"/>
+                                            <constraint firstItem="W2l-72-IWG" firstAttribute="trailing" secondItem="zcg-PI-WmN" secondAttribute="trailing" type="user" id="G8s-Dr-KHP"/>
+                                            <constraint firstItem="VD2-5q-eZT" firstAttribute="leading" secondItem="zcg-PI-WmN" secondAttribute="leading" constant="20" type="user" id="LDQ-4Z-QV3"/>
+                                            <constraint firstItem="W2l-72-IWG" firstAttribute="top" secondItem="zcg-PI-WmN" secondAttribute="top" type="default" id="PdQ-F7-cIP"/>
+                                            <constraint firstItem="dLP-17-vJM" firstAttribute="leading" secondItem="VD2-5q-eZT" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="Ybz-XJ-Zh8"/>
+                                            <constraint firstAttribute="trailing" secondItem="pCJ-tg-Qt8" secondAttribute="trailing" constant="15" type="user" id="oi2-LD-PUU"/>
+                                            <constraint firstItem="dLP-17-vJM" firstAttribute="trailing" secondItem="pCJ-tg-Qt8" secondAttribute="trailing" type="user" id="yow-NK-RRY"/>
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>
@@ -153,13 +155,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wbw-54-eK0" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" type="user" id="9Hw-Mb-dPV"/>
-                            <constraint firstItem="KlX-2R-rxO" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="user" id="FFH-Rs-8rb"/>
-                            <constraint firstItem="wbw-54-eK0" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="default" id="MsQ-7o-KhS"/>
-                            <constraint firstItem="dfS-Mu-bgP" firstAttribute="centerX" secondItem="wbw-54-eK0" secondAttribute="centerX" type="default" id="Rlx-8P-D7n"/>
-                            <constraint firstItem="wbw-54-eK0" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="default" id="rJG-Wr-1sJ"/>
+                            <constraint firstItem="KlX-2R-rxO" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="user" id="Ahl-q5-OnU"/>
+                            <constraint firstItem="wbw-54-eK0" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="user" id="MsQ-7o-KhS"/>
+                            <constraint firstItem="dfS-Mu-bgP" firstAttribute="centerX" secondItem="wbw-54-eK0" secondAttribute="centerX" type="user" id="Rlx-8P-D7n"/>
+                            <constraint firstItem="KlX-2R-rxO" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="user" id="oPO-Xi-lTF"/>
+                            <constraint firstItem="wbw-54-eK0" firstAttribute="leading" secondItem="xg5-Oj-fz1" secondAttribute="leading" type="user" id="rJG-Wr-1sJ"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="top" secondItem="wbw-54-eK0" secondAttribute="bottom" type="user" id="sXS-TT-3tO"/>
                             <constraint firstItem="KlX-2R-rxO" firstAttribute="bottom" secondItem="xg5-Oj-fz1" secondAttribute="bottom" type="user" id="uWD-TW-9Sj"/>
                             <constraint firstItem="dfS-Mu-bgP" firstAttribute="top" secondItem="xg5-Oj-fz1" secondAttribute="top" constant="130" id="w4x-Ra-bZA"/>
+                            <constraint firstItem="KlX-2R-rxO" firstAttribute="trailing" secondItem="xg5-Oj-fz1" secondAttribute="trailing" type="user" id="ydd-Ww-0SE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hours" id="Tdd-lq-Ehu">
@@ -618,6 +622,50 @@
         <image name="leftArrow.png" width="16" height="16"/>
         <image name="rightArrow.png" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="NGTabBarController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NGTabBarController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="browserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="homeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="hoursViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="current:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="scrollOnePageLeft"/>
+                <relationship kind="action" name="scrollOnePageRight"/>
+                <relationship kind="outlet" name="leftScroll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightScroll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="trafficViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/trafficViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="scrollOnePageLeft"/>
+                <relationship kind="action" name="scrollOnePageRight"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="scrollGraphs" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

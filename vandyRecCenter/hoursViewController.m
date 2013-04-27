@@ -598,10 +598,10 @@
     if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
         
         self.pageControl.hidden = NO;
-        NSLog(@"%g", self.scrollHours.frame.size.width);
+        
     } else {
         self.pageControl.hidden = YES;
-        NSLog(@"%g", self.scrollHours.frame.size.width);
+        
     }
     [self setUpScrollViewWithHoursTitle: self.title];
     [self resetScroll];
