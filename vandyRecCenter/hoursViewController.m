@@ -561,9 +561,11 @@
 
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
-    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
         
-        
+        self.pageControl.hidden = NO;
+    } else {
+        self.pageControl.hidden = YES;
     }
 }
 
