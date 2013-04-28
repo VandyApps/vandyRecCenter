@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import "UIColor-BMColors.h"
 #import "BubbleTabBarController.h"
 #import "BubbleTabBarItem.h"
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+#import "UIColor-BMColors.h"
 
 //parent scroll view of graph view has width of 320 and height of 220
 #define X_COOR_OF_GRAPH 30

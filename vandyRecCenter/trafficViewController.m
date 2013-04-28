@@ -28,6 +28,8 @@
     self.scrollGraphs.contentSize = self.scrollGraphs.frame.size;
     UIView* graphView = [[UIView alloc] initWithFrame: CGRectMake(X_COOR_OF_GRAPH, Y_COOR_OF_GRAPH, WIDTH_OF_GRAPH, HEIGHT_OF_GRAPH)];
     graphView.layer.cornerRadius = 5;
+    graphView.layer.borderWidth = 5;
+    graphView.layer.borderColor = [[UIColor vanderbiltGold] CGColor];
     graphView.backgroundColor = [UIColor whiteColor];
     [self.scrollGraphs addSubview: graphView];
 

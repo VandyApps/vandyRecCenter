@@ -57,6 +57,7 @@
 		21EB34F617177B0D0015AD77 /* rightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F217177B0D0015AD77 /* rightArrow@2x.png */; };
 		21F1EA621728F15A00AB17DB /* BubbleTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */; };
 		21FA94B8172D91A30016918B /* RushHoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FA94B7172D91A30016918B /* RushHoursViewController.m */; };
+		21FA94BB172D95120016918B /* UIColor-BMColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FA94BA172D95120016918B /* UIColor-BMColors.m */; };
 		21FC9F8F17025F160065EEC2 /* browserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC9F8E17025F160065EEC2 /* browserViewController.m */; };
 		72BDC83298C84A3BA251BD88 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F05CAACB8DC475199BF9CA1 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -129,6 +130,8 @@
 		21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBarItem.m; sourceTree = "<group>"; };
 		21FA94B6172D91A30016918B /* RushHoursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RushHoursViewController.h; sourceTree = "<group>"; };
 		21FA94B7172D91A30016918B /* RushHoursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RushHoursViewController.m; sourceTree = "<group>"; };
+		21FA94B9172D95120016918B /* UIColor-BMColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-BMColors.h"; sourceTree = "<group>"; };
+		21FA94BA172D95120016918B /* UIColor-BMColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-BMColors.m"; sourceTree = "<group>"; };
 		21FC9F8D17025F160065EEC2 /* browserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = browserViewController.h; sourceTree = "<group>"; };
 		21FC9F8E17025F160065EEC2 /* browserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = browserViewController.m; sourceTree = "<group>"; };
 		4F05CAACB8DC475199BF9CA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,7 +240,7 @@
 				21F1EA631728F17000AB17DB /* Custom Tab Bar */,
 				21E90A3F1726E54400356E54 /* test */,
 				21BC797D171F8387008B776A /* Graph */,
-				21EAD7E2170E81B600449EA3 /* Date Category */,
+				21FA94BC172D951D0016918B /* Categories */,
 				21E40A1F1719C7380045451F /* home */,
 				21E40A1D1719C7270045451F /* hours */,
 				21E40A1E1719C7310045451F /* traffic */,
@@ -337,6 +340,16 @@
 				21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */,
 			);
 			name = "Custom Tab Bar";
+			sourceTree = "<group>";
+		};
+		21FA94BC172D951D0016918B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				21FA94B9172D95120016918B /* UIColor-BMColors.h */,
+				21FA94BA172D95120016918B /* UIColor-BMColors.m */,
+				21EAD7E2170E81B600449EA3 /* Date Category */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +479,7 @@
 				21F1EA621728F15A00AB17DB /* BubbleTabBarItem.m in Sources */,
 				2177D0CC1729BE85001DA4B3 /* BubbleTabBar.m in Sources */,
 				21FA94B8172D91A30016918B /* RushHoursViewController.m in Sources */,
+				21FA94BB172D95120016918B /* UIColor-BMColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
