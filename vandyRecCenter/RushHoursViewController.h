@@ -10,4 +10,5 @@
 
 @interface RushHoursViewController : UIViewController
 
+- (IBAction) exit;
 @end
