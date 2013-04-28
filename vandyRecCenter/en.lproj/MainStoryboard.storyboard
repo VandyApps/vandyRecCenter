@@ -253,7 +253,13 @@
                             <constraint firstAttribute="trailing" secondItem="tLE-nP-Q8U" secondAttribute="trailing" constant="61" id="pZa-g2-s15"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Traffic" id="uKl-fF-WQp"/>
+                    <navigationItem key="navigationItem" title="Traffic" id="uKl-fF-WQp">
+                        <barButtonItem key="rightBarButtonItem" title="Rush Hours" id="SYb-FT-UgC">
+                            <connections>
+                                <segue destination="J5n-6e-VWj" kind="modal" identifier="rushHours" modalTransitionStyle="coverVertical" id="e0d-wf-mGJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="sJC-Qa-nyy" id="rFL-xY-Qlk"/>
                         <outlet property="pageControl" destination="Jff-2m-kG8" id="tvJ-Ct-ofG"/>
@@ -263,6 +269,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4K-mP-QHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="911" y="-17"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="l4T-Au-euj">
+            <objects>
+                <viewController id="J5n-6e-VWj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EQ4-kI-Gdu">
+                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twk-1u-ZYl">
+                                <items>
+                                    <navigationItem title="Title" id="wb3-Ue-8q2">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="xxv-xE-VUy"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="twk-1u-ZYl" firstAttribute="leading" secondItem="EQ4-kI-Gdu" secondAttribute="leading" type="default" id="Glr-Xz-mKN"/>
+                            <constraint firstItem="twk-1u-ZYl" firstAttribute="top" secondItem="EQ4-kI-Gdu" secondAttribute="top" type="default" id="jYa-Jb-IAM"/>
+                            <constraint firstItem="twk-1u-ZYl" firstAttribute="trailing" secondItem="EQ4-kI-Gdu" secondAttribute="trailing" type="default" id="wTx-eN-fsV"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="bbI-Kz-OQP"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="cK2-hF-RSB"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7tZ-4x-A5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1331" y="-17"/>
         </scene>
         <!--View Controller - Programs-->
         <scene sceneID="7hF-mO-Cpy">
