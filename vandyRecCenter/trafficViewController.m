@@ -19,20 +19,30 @@
 
 - (void) viewDidLoad {
     //temp set up of scroll view here
-    [self scrollViewSetUp];
-        
+    [self.view addSubview: [self graphOuterView]];
 }
 
 //setting up the scroll view
-- (void) scrollViewSetUp {
+- (UIView*) graphOuterView {
+    
     self.scrollGraphs.contentSize = self.scrollGraphs.frame.size;
-    UIView* graphView = [[UIView alloc] initWithFrame: CGRectMake(X_COOR_OF_GRAPH, Y_COOR_OF_GRAPH, WIDTH_OF_GRAPH, HEIGHT_OF_GRAPH)];
-    graphView.layer.cornerRadius = 5;
-    graphView.layer.borderWidth = 5;
-    graphView.layer.borderColor = [[UIColor vanderbiltGold] CGColor];
-    graphView.backgroundColor = [UIColor whiteColor];
-    [self.scrollGraphs addSubview: graphView];
+    CGFloat xValueOfGraphView = (self.view.frame.size.width - WIDTH_OF_GRAPH_VIEW) / 2.0;
+    UIView* graphOuterView = [[UIView alloc] initWithFrame: CGRectMake(xValueOfGraphView, Y_COOR_OF_GRAPH_VIEW, WIDTH_OF_GRAPH_VIEW, HEIGHT_OF_GRAPH_VIEW)];
+    graphOuterView.layer.cornerRadius = 5;
+    graphOuterView.layer.borderWidth = 5;
+    graphOuterView.layer.borderColor = [[UIColor vanderbiltGold] CGColor];
+    graphOuterView.backgroundColor = [UIColor whiteColor];
+    
+    //[graphOuterView addSubview: [self graphInnerView]];
+    return graphOuterView;
 
+}
+
+- (UIView*) graphInnerView {
+
+    UIView* graphInnerView;
+    
+    return graphInnerView;
 }
 
 //setting up the graph (within the scroll view)
