@@ -56,6 +56,7 @@
 		21EB34F517177B0D0015AD77 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F117177B0D0015AD77 /* rightArrow.png */; };
 		21EB34F617177B0D0015AD77 /* rightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F217177B0D0015AD77 /* rightArrow@2x.png */; };
 		21F1EA621728F15A00AB17DB /* BubbleTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */; };
+		21FA94B8172D91A30016918B /* RushHoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FA94B7172D91A30016918B /* RushHoursViewController.m */; };
 		21FC9F8F17025F160065EEC2 /* browserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC9F8E17025F160065EEC2 /* browserViewController.m */; };
 		72BDC83298C84A3BA251BD88 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F05CAACB8DC475199BF9CA1 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -126,6 +127,8 @@
 		21EB34F217177B0D0015AD77 /* rightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightArrow@2x.png"; sourceTree = "<group>"; };
 		21F1EA601728F15A00AB17DB /* BubbleTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTabBarItem.h; sourceTree = "<group>"; };
 		21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBarItem.m; sourceTree = "<group>"; };
+		21FA94B6172D91A30016918B /* RushHoursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RushHoursViewController.h; sourceTree = "<group>"; };
+		21FA94B7172D91A30016918B /* RushHoursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RushHoursViewController.m; sourceTree = "<group>"; };
 		21FC9F8D17025F160065EEC2 /* browserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = browserViewController.h; sourceTree = "<group>"; };
 		21FC9F8E17025F160065EEC2 /* browserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = browserViewController.m; sourceTree = "<group>"; };
 		4F05CAACB8DC475199BF9CA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,6 +289,8 @@
 			children = (
 				21E40A201719CA530045451F /* trafficViewController.h */,
 				21E40A211719CA530045451F /* trafficViewController.m */,
+				21FA94B6172D91A30016918B /* RushHoursViewController.h */,
+				21FA94B7172D91A30016918B /* RushHoursViewController.m */,
 			);
 			name = traffic;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 				21E90A421726E60700356E54 /* testViewController1.m in Sources */,
 				21F1EA621728F15A00AB17DB /* BubbleTabBarItem.m in Sources */,
 				2177D0CC1729BE85001DA4B3 /* BubbleTabBar.m in Sources */,
+				21FA94B8172D91A30016918B /* RushHoursViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
