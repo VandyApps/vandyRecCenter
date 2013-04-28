@@ -58,6 +58,7 @@
 		21F1EA621728F15A00AB17DB /* BubbleTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */; };
 		21FA94B8172D91A30016918B /* RushHoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FA94B7172D91A30016918B /* RushHoursViewController.m */; };
 		21FA94BB172D95120016918B /* UIColor-BMColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FA94BA172D95120016918B /* UIColor-BMColors.m */; };
+		21FA94BF172D977C0016918B /* trafficModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FA94BE172D977C0016918B /* trafficModel.m */; };
 		21FC9F8F17025F160065EEC2 /* browserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC9F8E17025F160065EEC2 /* browserViewController.m */; };
 		72BDC83298C84A3BA251BD88 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F05CAACB8DC475199BF9CA1 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -132,6 +133,8 @@
 		21FA94B7172D91A30016918B /* RushHoursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RushHoursViewController.m; sourceTree = "<group>"; };
 		21FA94B9172D95120016918B /* UIColor-BMColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-BMColors.h"; sourceTree = "<group>"; };
 		21FA94BA172D95120016918B /* UIColor-BMColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-BMColors.m"; sourceTree = "<group>"; };
+		21FA94BD172D977C0016918B /* trafficModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trafficModel.h; sourceTree = "<group>"; };
+		21FA94BE172D977C0016918B /* trafficModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trafficModel.m; sourceTree = "<group>"; };
 		21FC9F8D17025F160065EEC2 /* browserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = browserViewController.h; sourceTree = "<group>"; };
 		21FC9F8E17025F160065EEC2 /* browserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = browserViewController.m; sourceTree = "<group>"; };
 		4F05CAACB8DC475199BF9CA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +293,8 @@
 		21E40A1E1719C7310045451F /* traffic */ = {
 			isa = PBXGroup;
 			children = (
+				21FA94BD172D977C0016918B /* trafficModel.h */,
+				21FA94BE172D977C0016918B /* trafficModel.m */,
 				21E40A201719CA530045451F /* trafficViewController.h */,
 				21E40A211719CA530045451F /* trafficViewController.m */,
 				21FA94B6172D91A30016918B /* RushHoursViewController.h */,
@@ -480,6 +485,7 @@
 				2177D0CC1729BE85001DA4B3 /* BubbleTabBar.m in Sources */,
 				21FA94B8172D91A30016918B /* RushHoursViewController.m in Sources */,
 				21FA94BB172D95120016918B /* UIColor-BMColors.m in Sources */,
+				21FA94BF172D977C0016918B /* trafficModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
