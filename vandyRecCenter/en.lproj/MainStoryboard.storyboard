@@ -194,7 +194,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="blackGradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="qCA-T1-9sc"/>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Yw-bC-Z3V"/>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Jff-2m-kG8">
                                 <constraints>
@@ -237,25 +236,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="tLE-nP-Q8U" secondAttribute="bottom" constant="46" id="1SU-qV-F7q"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="centerX" secondItem="sJC-Qa-nyy" secondAttribute="centerX" type="default" id="1vJ-2p-ODo"/>
                             <constraint firstItem="sJC-Qa-nyy" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" constant="14" id="47c-m0-PGj"/>
                             <constraint firstItem="Jff-2m-kG8" firstAttribute="centerX" secondItem="2Yw-bC-Z3V" secondAttribute="centerX" type="default" id="BIf-fh-YI5"/>
                             <constraint firstItem="tLE-nP-Q8U" firstAttribute="bottom" secondItem="fTw-96-p3Z" secondAttribute="bottom" type="default" id="BQU-MT-Fra"/>
-                            <constraint firstItem="qCA-T1-9sc" firstAttribute="trailing" secondItem="rpB-57-BEu" secondAttribute="trailing" type="default" id="Gml-Bf-QbI"/>
                             <constraint firstItem="fTw-96-p3Z" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" constant="61" id="KtJ-Ca-cOh"/>
                             <constraint firstAttribute="bottom" secondItem="Jff-2m-kG8" secondAttribute="bottom" constant="47" id="SKK-Vq-1pV"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" constant="58" id="SxG-Yu-YgK"/>
-                            <constraint firstItem="qCA-T1-9sc" firstAttribute="bottom" secondItem="rpB-57-BEu" secondAttribute="bottom" type="default" id="c3s-X5-4mE"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" type="default" id="cZy-IQ-uhT"/>
                             <constraint firstAttribute="bottom" secondItem="2Yw-bC-Z3V" secondAttribute="bottom" constant="89" id="gjC-Kc-jTS"/>
                             <constraint firstItem="fTw-96-p3Z" firstAttribute="top" secondItem="tLE-nP-Q8U" secondAttribute="top" type="default" id="hz7-7I-E9e"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="trailing" secondItem="rpB-57-BEu" secondAttribute="trailing" type="default" id="iRV-Xc-Zc4"/>
-                            <constraint firstItem="qCA-T1-9sc" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" type="default" id="jtn-rd-nZG"/>
                             <constraint firstAttribute="trailing" secondItem="tLE-nP-Q8U" secondAttribute="trailing" constant="61" id="pZa-g2-s15"/>
-                            <constraint firstItem="qCA-T1-9sc" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" type="default" id="x5p-Du-Eto"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Traffic" id="uKl-fF-WQp"/>
@@ -622,6 +617,50 @@
         <image name="leftArrow.png" width="16" height="16"/>
         <image name="rightArrow.png" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="NGTabBarController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NGTabBarController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="browserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="homeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="hoursViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="current:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="scrollOnePageLeft"/>
+                <relationship kind="action" name="scrollOnePageRight"/>
+                <relationship kind="outlet" name="leftScroll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightScroll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="trafficViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/trafficViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="scrollOnePageLeft"/>
+                <relationship kind="action" name="scrollOnePageRight"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="scrollGraphs" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
