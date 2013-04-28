@@ -30,7 +30,7 @@
     
     //must set this property before adding view controllers to the array in the tab bar
     homeController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Home" image: [UIImage imageNamed: @"53-house.png"]];
-    hoursController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Clock" image: [UIImage imageNamed: @"11-clock.png"]];
+    hoursController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Hours" image: [UIImage imageNamed: @"11-clock.png"]];
     trafficController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Traffic" image: [UIImage imageNamed: @"112-group.png"]];
     classController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Classes" image: [UIImage imageNamed: @"89-dumbells.png"]];
     intramuralsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"I.M." image:[UIImage imageNamed: @"63-runner.png"]];
