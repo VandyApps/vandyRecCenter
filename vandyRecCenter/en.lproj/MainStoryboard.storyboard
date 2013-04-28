@@ -202,7 +202,7 @@
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLE-nP-Q8U">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="gya-DC-TVn"/>
+                                    <constraint firstAttribute="width" constant="20" id="J2Y-m0-HxI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="rightArrow.png">
@@ -215,8 +215,8 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTw-96-p3Z">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Jdu-un-fcc"/>
-                                    <constraint firstAttribute="height" constant="30" id="ZbN-n5-3Hl"/>
+                                    <constraint firstAttribute="height" constant="20" id="18l-T9-Sv2"/>
+                                    <constraint firstAttribute="width" constant="20" id="Db2-Kf-B4c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="leftArrow.png">
@@ -238,19 +238,19 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="tLE-nP-Q8U" secondAttribute="bottom" constant="46" id="1SU-qV-F7q"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="centerX" secondItem="sJC-Qa-nyy" secondAttribute="centerX" type="default" id="1vJ-2p-ODo"/>
+                            <constraint firstItem="tLE-nP-Q8U" firstAttribute="bottom" secondItem="fTw-96-p3Z" secondAttribute="bottom" type="default" id="2OU-QL-OYM"/>
                             <constraint firstItem="sJC-Qa-nyy" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" constant="14" id="47c-m0-PGj"/>
+                            <constraint firstAttribute="bottom" secondItem="tLE-nP-Q8U" secondAttribute="bottom" constant="51" id="5j1-Ej-Sfm"/>
                             <constraint firstItem="Jff-2m-kG8" firstAttribute="centerX" secondItem="2Yw-bC-Z3V" secondAttribute="centerX" type="default" id="BIf-fh-YI5"/>
-                            <constraint firstItem="tLE-nP-Q8U" firstAttribute="bottom" secondItem="fTw-96-p3Z" secondAttribute="bottom" type="default" id="BQU-MT-Fra"/>
-                            <constraint firstItem="fTw-96-p3Z" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" constant="61" id="KtJ-Ca-cOh"/>
                             <constraint firstAttribute="bottom" secondItem="Jff-2m-kG8" secondAttribute="bottom" constant="47" id="SKK-Vq-1pV"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="top" secondItem="rpB-57-BEu" secondAttribute="top" constant="58" id="SxG-Yu-YgK"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" type="default" id="cZy-IQ-uhT"/>
                             <constraint firstAttribute="bottom" secondItem="2Yw-bC-Z3V" secondAttribute="bottom" constant="89" id="gjC-Kc-jTS"/>
-                            <constraint firstItem="fTw-96-p3Z" firstAttribute="top" secondItem="tLE-nP-Q8U" secondAttribute="top" type="default" id="hz7-7I-E9e"/>
                             <constraint firstItem="2Yw-bC-Z3V" firstAttribute="trailing" secondItem="rpB-57-BEu" secondAttribute="trailing" type="default" id="iRV-Xc-Zc4"/>
-                            <constraint firstAttribute="trailing" secondItem="tLE-nP-Q8U" secondAttribute="trailing" constant="61" id="pZa-g2-s15"/>
+                            <constraint firstAttribute="trailing" secondItem="tLE-nP-Q8U" secondAttribute="trailing" constant="66" id="mDk-6N-jYE"/>
+                            <constraint firstItem="tLE-nP-Q8U" firstAttribute="top" secondItem="fTw-96-p3Z" secondAttribute="top" type="default" id="oqR-CM-ufp"/>
+                            <constraint firstItem="fTw-96-p3Z" firstAttribute="leading" secondItem="rpB-57-BEu" secondAttribute="leading" constant="66" id="rdW-bJ-AYq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Traffic" id="uKl-fF-WQp">
