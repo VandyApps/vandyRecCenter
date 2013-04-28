@@ -45,8 +45,5 @@
     return graphInnerView;
 }
 
-//setting up the graph (within the scroll view)
-- (void) graphViewSetUp {
 
-}
 @end
