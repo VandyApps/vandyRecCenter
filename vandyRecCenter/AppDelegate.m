@@ -28,6 +28,7 @@
     TabBarNavigationController* programsNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier:@"programs"];
     TabBarNavigationController* mapNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier:@"map"];
     
+    
     //must set this property before adding view controllers to the array in the tab bar
     homeNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Home" image: [UIImage imageNamed: @"53-house.png"]];
     hoursNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Hours" image: [UIImage imageNamed: @"11-clock.png"]];
@@ -37,6 +38,14 @@
     programsNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Programs" image: [UIImage imageNamed: @"83-calendar.png"]];
     mapNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Map" image: [UIImage imageNamed: @"103-map.png"]];
     
+    
+    //set tab bar delegation for all view controllers to be displayed by the custom tab bar
+    homeNavigationController.tabBarDelegate = customTBController;
+    hoursNavigationController.tabBarDelegate = customTBController;
+    trafficNavigationController.tabBarDelegate = customTBController;
+    groupFitnessNavigationController.tabBarDelegate = customTBController;
+    programsNavigationController.tabBarDelegate = customTBController;
+    mapNavigationController.tabBarDelegate = customTBController;
     
     customTBController.viewControllers = [[NSArray alloc] initWithObjects: homeNavigationController, hoursNavigationController, trafficNavigationController, groupFitnessNavigationController, intramuralsNavigationController, programsNavigationController, mapNavigationController, nil];
   
