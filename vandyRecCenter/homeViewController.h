@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "UIColor-BMColors.h"
 
 @interface homeViewController : UIViewController
 

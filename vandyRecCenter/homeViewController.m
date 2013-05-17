@@ -77,15 +77,20 @@
         }
         
     } else {
-        
+        NSLog(@"Landscape is called");
         //for now, add height translation in landscape orientation
         frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + (index *self.view.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + 10, DIMENSIONS_OF_PAGE_LANDSCAPE, DIMENSIONS_OF_PAGE_LANDSCAPE);
+        
         self.leftScroller.hidden = YES;
         self.rightScroller.hidden = YES;
         
     }
     UIView* page = [[UIView alloc] initWithFrame: frameOfPage];
-    page.backgroundColor = [UIColor whiteColor];
+    page.backgroundColor = [UIColor vanderbiltGold];
+    page.layer.borderWidth = 2.f;
+    page.layer.borderColor = [[UIColor whiteColor] CGColor];
+    page.layer.cornerRadius = 5.f;
+    
     [self.scrollView addSubview: page];
     self.pagesInScrollView = [self.pagesInScrollView arrayByAddingObject: page];
 }
@@ -101,14 +106,6 @@
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 
     NSLog(@"This method is called");
-    //also need to reset content size of the scroll view
-    
-    //remove the existing scroll views for the new ones
-    
-    
-    //recreate the pages in the scroll view
-    //[self addPageToScrollViewAtIndex: 0 withInterfaceOrientation: toInterfaceOrientation];
-   // [self addPageToScrollViewAtIndex: 1 withInterfaceOrientation: toInterfaceOrientation];
 
 }
 
