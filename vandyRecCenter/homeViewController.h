@@ -10,6 +10,8 @@
 
 @interface homeViewController : UIViewController
 
+#define DIMENSIONS_OF_PAGE 220
+
 @property (nonatomic, weak) IBOutlet UIScrollView* scrollView;
 
 @property (nonatomic, weak) IBOutlet UIButton *leftScroller;
