@@ -22,10 +22,6 @@
 
 - (id) init {
     self = [self initWithFrame: CGRectZero];
-    if (self) {
-        self.layer.borderWidth = 2;
-        
-    }
     return self;
 }
 
