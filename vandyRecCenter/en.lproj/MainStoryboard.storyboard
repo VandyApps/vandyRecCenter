@@ -361,10 +361,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="The Rec" id="Pm6-lV-RIf"/>
-                    <connections>
-                        <segue destination="Ckq-7B-Edj" kind="push" identifier="recCenterHomePage" id="eHM-7z-o1b"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="The Rec" id="Pm6-lV-RIf">
+                        <barButtonItem key="rightBarButtonItem" image="402-globe2.png" id="17d-7h-aeX">
+                            <connections>
+                                <segue destination="Ckq-7B-Edj" kind="push" id="Mh3-fO-ZB3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYZ-6n-kAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -594,6 +597,7 @@
         <image name="103-map.png" width="26" height="21"/>
         <image name="11-clock.png" width="25" height="25"/>
         <image name="112-group.png" width="32" height="21"/>
+        <image name="402-globe2.png" width="28" height="28"/>
         <image name="53-house.png" width="22" height="22"/>
         <image name="63-runner.png" width="18" height="25"/>
         <image name="83-calendar.png" width="23" height="25"/>
