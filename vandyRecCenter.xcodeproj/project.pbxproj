@@ -55,6 +55,7 @@
 		21EB34F417177B0D0015AD77 /* leftArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F017177B0D0015AD77 /* leftArrow@2x.png */; };
 		21EB34F517177B0D0015AD77 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F117177B0D0015AD77 /* rightArrow.png */; };
 		21EB34F617177B0D0015AD77 /* rightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EB34F217177B0D0015AD77 /* rightArrow@2x.png */; };
+		21EB57BF1745D1B900DC7C2E /* TabBarNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB57BE1745D1B900DC7C2E /* TabBarNavigationController.m */; };
 		21F1EA621728F15A00AB17DB /* BubbleTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */; };
 		21FA94B8172D91A30016918B /* RushHoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FA94B7172D91A30016918B /* RushHoursViewController.m */; };
 		21FA94BB172D95120016918B /* UIColor-BMColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FA94BA172D95120016918B /* UIColor-BMColors.m */; };
@@ -127,6 +128,8 @@
 		21EB34F017177B0D0015AD77 /* leftArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leftArrow@2x.png"; sourceTree = "<group>"; };
 		21EB34F117177B0D0015AD77 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		21EB34F217177B0D0015AD77 /* rightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightArrow@2x.png"; sourceTree = "<group>"; };
+		21EB57BD1745D1B900DC7C2E /* TabBarNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarNavigationController.h; sourceTree = "<group>"; };
+		21EB57BE1745D1B900DC7C2E /* TabBarNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarNavigationController.m; sourceTree = "<group>"; };
 		21F1EA601728F15A00AB17DB /* BubbleTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTabBarItem.h; sourceTree = "<group>"; };
 		21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBarItem.m; sourceTree = "<group>"; };
 		21FA94B6172D91A30016918B /* RushHoursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RushHoursViewController.h; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 				2177D0CB1729BE85001DA4B3 /* BubbleTabBar.m */,
 				21F1EA601728F15A00AB17DB /* BubbleTabBarItem.h */,
 				21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */,
+				21EB57BD1745D1B900DC7C2E /* TabBarNavigationController.h */,
+				21EB57BE1745D1B900DC7C2E /* TabBarNavigationController.m */,
 			);
 			name = "Custom Tab Bar";
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 				21FA94B8172D91A30016918B /* RushHoursViewController.m in Sources */,
 				21FA94BB172D95120016918B /* UIColor-BMColors.m in Sources */,
 				21FA94BF172D977C0016918B /* trafficModel.m in Sources */,
+				21EB57BF1745D1B900DC7C2E /* TabBarNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
