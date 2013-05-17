@@ -14,7 +14,14 @@
 
 @implementation homeViewController
 
+@synthesize scrollView = _scrollView;
+@synthesize leftScroller = _leftScroller;
+@synthesize rightScroller = _rightScroller;
 
+#pragma - events
+
+- (IBAction) scrollLeft {}
+- (IBAction) scrollRight {}
 
 
 - (void) viewDidLoad {

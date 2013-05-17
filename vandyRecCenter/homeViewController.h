@@ -10,5 +10,12 @@
 
 @interface homeViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UIScrollView* scrollView;
+
+@property (nonatomic, weak) IBOutlet UIButton *leftScroller;
+@property (nonatomic, weak) IBOutlet UIButton *rightScroller;
+
+- (IBAction) scrollLeft;
+- (IBAction) scrollRight;
 
 @end
