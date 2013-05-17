@@ -10,7 +10,8 @@
 
 @interface homeViewController : UIViewController
 
-#define DIMENSIONS_OF_PAGE 220
+#define DIMENSIONS_OF_PAGE_PORTRAIT 220
+#define DIMENSIONS_OF_PAGE_LANDSCAPE 180
 
 @property (nonatomic, weak) IBOutlet UIScrollView* scrollView;
 
