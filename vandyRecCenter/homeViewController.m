@@ -59,6 +59,9 @@
     [self removeAllViewsFromScrollView];
     [self addPageToScrollViewAtIndex: 0 hideScrollersInPortraitOrientation: NO];
     [self addPageToScrollViewAtIndex: 1 hideScrollersInPortraitOrientation: NO];
+    
+    //set up offset
+    [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.view.frame.size.width, 0) animated: YES];
 }
 
 
@@ -109,14 +112,6 @@
 
 - (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     self.indexOfScroll = self.view.frame.size.width / self.scrollView.contentOffset.x;
-    NSLog(@"%u", self.indexOfScroll);
-}
-
-
-
-#pragma mark - manage rotations
-
-- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    [self.scrollView setContentOffset: CGPointZero animated: YES];
+    
 }
 @end
