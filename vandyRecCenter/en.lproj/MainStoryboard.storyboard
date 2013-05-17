@@ -167,7 +167,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hours" id="Tdd-lq-Ehu">
-                        <barButtonItem key="leftBarButtonItem" title="Current" id="FFC-FB-jBw">
+                        <barButtonItem key="rightBarButtonItem" title="Current" id="FFC-FB-jBw">
                             <connections>
                                 <action selector="current:" destination="gCv-Nj-e3x" id="TA5-ah-PFG"/>
                             </connections>
@@ -399,10 +399,10 @@
             </objects>
             <point key="canvasLocation" x="1331" y="-1384"/>
         </scene>
-        <!--Navigation Controller - Home-->
+        <!--Tab Bar Navigation Controller - Home-->
         <scene sceneID="5C5-2t-edS">
             <objects>
-                <navigationController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oI7-ZR-dPW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oI7-ZR-dPW" customClass="TabBarNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="53-house.png" id="sqX-Sr-7r7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f2d-Xv-i63">
@@ -446,10 +446,10 @@
             </objects>
             <point key="canvasLocation" x="-237" y="-1023"/>
         </scene>
-        <!--Navigation Controller - Hours-->
+        <!--Tab Bar Navigation Controller - Hours-->
         <scene sceneID="i0V-9l-9bX">
             <objects>
-                <navigationController storyboardIdentifier="hours" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U2g-yw-rgC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="hours" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U2g-yw-rgC" customClass="TabBarNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Hours" image="11-clock.png" id="eec-GJ-Oyu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RqK-Vd-zvR">
@@ -479,10 +479,10 @@
             </objects>
             <point key="canvasLocation" x="-175" y="-261"/>
         </scene>
-        <!--Navigation Controller - Traffic-->
+        <!--Tab Bar Navigation Controller - Traffic-->
         <scene sceneID="Tfv-Dq-o5X">
             <objects>
-                <navigationController storyboardIdentifier="traffic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h77-Ar-zoT" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="traffic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h77-Ar-zoT" customClass="TabBarNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Traffic" image="112-group.png" id="jpo-KG-2B2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sul-ey-eSP">
@@ -513,10 +513,10 @@
             </objects>
             <point key="canvasLocation" x="915" y="785"/>
         </scene>
-        <!--Navigation Controller - Intramurals-->
+        <!--Tab Bar Navigation Controller - Intramurals-->
         <scene sceneID="48O-jf-Tue">
             <objects>
-                <navigationController storyboardIdentifier="intramurals" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hJQ-9W-oaB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="intramurals" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hJQ-9W-oaB" customClass="TabBarNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Intramurals" image="63-runner.png" id="RiE-31-ECd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9hc-DA-gaL">
@@ -532,10 +532,10 @@
             </objects>
             <point key="canvasLocation" x="385" y="1581"/>
         </scene>
-        <!--Navigation Controller - Programs-->
+        <!--Tab Bar Navigation Controller - Programs-->
         <scene sceneID="K5Y-M0-n0T">
             <objects>
-                <navigationController storyboardIdentifier="programs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2PB-Kj-I9s" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="programs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2PB-Kj-I9s" customClass="TabBarNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Programs" image="83-calendar.png" id="F7K-gx-0Ak"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Q9-br-lGH">
@@ -551,10 +551,10 @@
             </objects>
             <point key="canvasLocation" x="385" y="2287"/>
         </scene>
-        <!--Navigation Controller - Map-->
+        <!--Tab Bar Navigation Controller - Map-->
         <scene sceneID="Aon-yH-6xm">
             <objects>
-                <navigationController storyboardIdentifier="map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qJy-U6-XwR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qJy-U6-XwR" customClass="TabBarNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="103-map.png" id="iOd-tE-7cJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R7M-P6-2TB">
@@ -570,10 +570,10 @@
             </objects>
             <point key="canvasLocation" x="385" y="2969"/>
         </scene>
-        <!--Navigation Controller - Classes-->
+        <!--Tab Bar Navigation Controller - Classes-->
         <scene sceneID="L6y-mq-b3k">
             <objects>
-                <navigationController storyboardIdentifier="classes" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y4P-dD-9qX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="classes" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y4P-dD-9qX" customClass="TabBarNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Classes" image="89-dumbells.png" id="uz4-5A-fFL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ALc-yJ-tYZ">
@@ -613,6 +613,9 @@
             <relationships>
                 <relationship kind="action" name="exit"/>
             </relationships>
+        </class>
+        <class className="TabBarNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarNavigationController.h"/>
         </class>
         <class className="browserViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
