@@ -397,15 +397,15 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HFx-Wv-o36" firstAttribute="top" secondItem="ggF-6m-yoO" secondAttribute="top" type="default" id="2w1-Z7-ZqU"/>
                             <constraint firstItem="nVh-wL-WLE" firstAttribute="leading" secondItem="9DO-eE-itp" secondAttribute="leading" type="default" id="4mv-pq-eYX"/>
                             <constraint firstItem="ggF-6m-yoO" firstAttribute="leading" secondItem="9DO-eE-itp" secondAttribute="leading" constant="81" id="9Ny-dr-toI"/>
-                            <constraint firstAttribute="trailing" secondItem="HFx-Wv-o36" secondAttribute="trailing" constant="78" id="eEb-Th-hk8"/>
-                            <constraint firstAttribute="bottom" secondItem="ggF-6m-yoO" secondAttribute="bottom" constant="44" id="eUQ-wQ-gkp"/>
-                            <constraint firstItem="ggF-6m-yoO" firstAttribute="top" secondItem="nVh-wL-WLE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="k7j-eU-kGH"/>
+                            <constraint firstAttribute="bottom" secondItem="ggF-6m-yoO" secondAttribute="bottom" constant="33" id="R3W-gb-Jjv"/>
+                            <constraint firstItem="HFx-Wv-o36" firstAttribute="bottom" secondItem="ggF-6m-yoO" secondAttribute="bottom" type="default" id="SqS-pP-mPl"/>
+                            <constraint firstAttribute="trailing" secondItem="HFx-Wv-o36" secondAttribute="trailing" constant="77" id="l1t-8Q-A57"/>
                             <constraint firstItem="nVh-wL-WLE" firstAttribute="top" secondItem="9DO-eE-itp" secondAttribute="top" type="default" id="ofa-hU-rRX"/>
-                            <constraint firstItem="HFx-Wv-o36" firstAttribute="top" secondItem="nVh-wL-WLE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pVJ-qr-8cU"/>
+                            <constraint firstAttribute="bottom" secondItem="nVh-wL-WLE" secondAttribute="bottom" constant="66" id="rsT-id-4Hz"/>
                             <constraint firstItem="nVh-wL-WLE" firstAttribute="trailing" secondItem="9DO-eE-itp" secondAttribute="trailing" type="default" id="tmT-aO-zSa"/>
-                            <constraint firstItem="HFx-Wv-o36" firstAttribute="bottom" secondItem="ggF-6m-yoO" secondAttribute="bottom" type="default" id="ypB-I2-lge"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="The Rec" id="Pm6-lV-RIf">
