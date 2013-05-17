@@ -10,4 +10,5 @@
 
 @protocol TabBarNavigationDelegate <NSObject>
 
+- (void) toggleTabBar;
 @end

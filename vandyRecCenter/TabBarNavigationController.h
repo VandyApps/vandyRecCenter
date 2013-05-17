@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TabBarNavigationDelegate.h"
 
 @interface TabBarNavigationController : UINavigationController
+
+@property (nonatomic, weak) id<TabBarNavigationDelegate> tabBarDelegate;
 
 @end

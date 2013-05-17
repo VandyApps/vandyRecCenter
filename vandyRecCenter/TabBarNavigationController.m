@@ -27,12 +27,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [(UIViewController*) [self.viewControllers objectAtIndex: 0] navigationItem].leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage: [UIImage imageNamed: @"400-list2.png"] style: UIBarButtonItemStyleBordered target: self action: @selector(leftBarButtonClicked)];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) leftBarButtonClicked {
+
+    NSLog(@"Button clicked");
+    //[self.tabBarDelegate toggleTabBar];
 }
 
 @end
