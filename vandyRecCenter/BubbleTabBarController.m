@@ -136,7 +136,7 @@
 }
 
 
-#pragma - Delegate
+#pragma - NGTabBarControllerDelegate
 
 //this method is automatically called when there is a change in orientation
 - (CGSize) tabBarController:(NGTabBarController *)tabBarController sizeOfItemForViewController:(UIViewController *)viewController atIndex:(NSUInteger)index position:(NGTabBarPosition)position {
@@ -155,6 +155,16 @@
                 return CGSizeMake(dimension, dimension);
     }
     
+}
+
+#pragma - TabBarNavigationDelegate
+
+- (void) toggleTabBar {
+    if (self.tabBarHidden== YES) {
+        [self setTabBarHidden: NO animated: YES];
+    } else {
+        [self setTabBarHidden: YES animated: YES];
+    }
 }
 
 @end

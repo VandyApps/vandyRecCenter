@@ -39,8 +39,7 @@
 
 - (void) leftBarButtonClicked {
 
-    NSLog(@"Button clicked");
-    //[self.tabBarDelegate toggleTabBar];
+    [self.tabBarDelegate toggleTabBar];
 }
 
 @end
