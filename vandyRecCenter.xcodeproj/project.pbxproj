@@ -13,8 +13,6 @@
 		212DECD717009AC60041498E /* homeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212DECD617009AC60041498E /* homeViewController.m */; };
 		21352DCF1729CB73006D5E64 /* 11-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 21352DC11729CB73006D5E64 /* 11-clock.png */; };
 		21352DD01729CB73006D5E64 /* 11-clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21352DC21729CB73006D5E64 /* 11-clock@2x.png */; };
-		21352DD11729CB73006D5E64 /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 21352DC31729CB73006D5E64 /* 53-house.png */; };
-		21352DD21729CB73006D5E64 /* 53-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21352DC41729CB73006D5E64 /* 53-house@2x.png */; };
 		21352DD31729CB73006D5E64 /* 63-runner.png in Resources */ = {isa = PBXBuildFile; fileRef = 21352DC51729CB73006D5E64 /* 63-runner.png */; };
 		21352DD41729CB73006D5E64 /* 63-runner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21352DC61729CB73006D5E64 /* 63-runner@2x.png */; };
 		21352DD51729CB73006D5E64 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 21352DC71729CB73006D5E64 /* 83-calendar.png */; };
@@ -45,6 +43,8 @@
 		21A37AC0171B34F1008990C5 /* HoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A37ABF171B34F1008990C5 /* HoursModel.m */; };
 		21BC7980171F839B008B776A /* GraphModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC797F171F839B008B776A /* GraphModel.m */; };
 		21BC7986171F855A008B776A /* GraphPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC7985171F855A008B776A /* GraphPoint.m */; };
+		21C2C2C91745C8B8006A97DC /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 21C2C2C71745C8B8006A97DC /* 53-house.png */; };
+		21C2C2CA1745C8B8006A97DC /* 53-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21C2C2C81745C8B8006A97DC /* 53-house@2x.png */; };
 		21DBAFC117108C1C00C7C34D /* brownGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DBAFC017108C1C00C7C34D /* brownGradient.png */; };
 		21E40A1C1719C1530045451F /* NSDate-WeekDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */; };
 		21E40A221719CA530045451F /* trafficViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A211719CA530045451F /* trafficViewController.m */; };
@@ -71,8 +71,6 @@
 		212DECD617009AC60041498E /* homeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeViewController.m; sourceTree = "<group>"; };
 		21352DC11729CB73006D5E64 /* 11-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock.png"; sourceTree = "<group>"; };
 		21352DC21729CB73006D5E64 /* 11-clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock@2x.png"; sourceTree = "<group>"; };
-		21352DC31729CB73006D5E64 /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
-		21352DC41729CB73006D5E64 /* 53-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house@2x.png"; sourceTree = "<group>"; };
 		21352DC51729CB73006D5E64 /* 63-runner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "63-runner.png"; sourceTree = "<group>"; };
 		21352DC61729CB73006D5E64 /* 63-runner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "63-runner@2x.png"; sourceTree = "<group>"; };
 		21352DC71729CB73006D5E64 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
@@ -112,6 +110,8 @@
 		21BC797F171F839B008B776A /* GraphModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphModel.m; path = ../GraphModel.m; sourceTree = "<group>"; };
 		21BC7984171F855A008B776A /* GraphPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphPoint.h; path = ../GraphPoint.h; sourceTree = "<group>"; };
 		21BC7985171F855A008B776A /* GraphPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphPoint.m; path = ../GraphPoint.m; sourceTree = "<group>"; };
+		21C2C2C71745C8B8006A97DC /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
+		21C2C2C81745C8B8006A97DC /* 53-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house@2x.png"; sourceTree = "<group>"; };
 		21DBAFC017108C1C00C7C34D /* brownGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brownGradient.png; sourceTree = "<group>"; };
 		21E40A1A1719C1530045451F /* NSDate-WeekDateClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-WeekDateClass.h"; sourceTree = "<group>"; };
 		21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-WeekDateClass.m"; sourceTree = "<group>"; };
@@ -176,8 +176,8 @@
 			children = (
 				21352DC11729CB73006D5E64 /* 11-clock.png */,
 				21352DC21729CB73006D5E64 /* 11-clock@2x.png */,
-				21352DC31729CB73006D5E64 /* 53-house.png */,
-				21352DC41729CB73006D5E64 /* 53-house@2x.png */,
+				21C2C2C71745C8B8006A97DC /* 53-house.png */,
+				21C2C2C81745C8B8006A97DC /* 53-house@2x.png */,
 				21352DC51729CB73006D5E64 /* 63-runner.png */,
 				21352DC61729CB73006D5E64 /* 63-runner@2x.png */,
 				21352DC71729CB73006D5E64 /* 83-calendar.png */,
@@ -426,8 +426,6 @@
 				21EB34F617177B0D0015AD77 /* rightArrow@2x.png in Resources */,
 				21352DCF1729CB73006D5E64 /* 11-clock.png in Resources */,
 				21352DD01729CB73006D5E64 /* 11-clock@2x.png in Resources */,
-				21352DD11729CB73006D5E64 /* 53-house.png in Resources */,
-				21352DD21729CB73006D5E64 /* 53-house@2x.png in Resources */,
 				21352DD31729CB73006D5E64 /* 63-runner.png in Resources */,
 				21352DD41729CB73006D5E64 /* 63-runner@2x.png in Resources */,
 				21352DD51729CB73006D5E64 /* 83-calendar.png in Resources */,
@@ -441,6 +439,8 @@
 				21457163172AFD5F0004AC64 /* blue.png in Resources */,
 				21457165172AFDE20004AC64 /* black.png in Resources */,
 				21457167172AFF2C0004AC64 /* goldTint.png in Resources */,
+				21C2C2C91745C8B8006A97DC /* 53-house.png in Resources */,
+				21C2C2CA1745C8B8006A97DC /* 53-house@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

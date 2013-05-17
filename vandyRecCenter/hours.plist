@@ -83,6 +83,16 @@
 		<true/>
 		<key>title</key>
 		<string>Summer Hours</string>
+		<key>hours</key>
+		<array>
+			<string>12:00pm - 9:00pm</string>
+			<string>5:30am - 9:00pm</string>
+			<string>5:30am - 9:00pm</string>
+			<string>5:30am - 9:00pm</string>
+			<string>5:30am - 9:00pm</string>
+			<string>5:30am - 5:00pm</string>
+			<string>10:00am - 5:00pm</string>
+		</array>
 		<key>beginningDate</key>
 		<date>2013-05-02T05:00:00Z</date>
 		<key>endDate</key>
