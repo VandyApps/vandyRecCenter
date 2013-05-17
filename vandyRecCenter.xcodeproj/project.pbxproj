@@ -130,6 +130,7 @@
 		21EB34F217177B0D0015AD77 /* rightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightArrow@2x.png"; sourceTree = "<group>"; };
 		21EB57BD1745D1B900DC7C2E /* TabBarNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarNavigationController.h; sourceTree = "<group>"; };
 		21EB57BE1745D1B900DC7C2E /* TabBarNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarNavigationController.m; sourceTree = "<group>"; };
+		21EB57C01745D21300DC7C2E /* TabBarNavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarNavigationDelegate.h; sourceTree = "<group>"; };
 		21F1EA601728F15A00AB17DB /* BubbleTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTabBarItem.h; sourceTree = "<group>"; };
 		21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBarItem.m; sourceTree = "<group>"; };
 		21FA94B6172D91A30016918B /* RushHoursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RushHoursViewController.h; sourceTree = "<group>"; };
@@ -346,6 +347,7 @@
 				2177D0CB1729BE85001DA4B3 /* BubbleTabBar.m */,
 				21F1EA601728F15A00AB17DB /* BubbleTabBarItem.h */,
 				21F1EA611728F15A00AB17DB /* BubbleTabBarItem.m */,
+				21EB57C01745D21300DC7C2E /* TabBarNavigationDelegate.h */,
 				21EB57BD1745D1B900DC7C2E /* TabBarNavigationController.h */,
 				21EB57BE1745D1B900DC7C2E /* TabBarNavigationController.m */,
 			);
