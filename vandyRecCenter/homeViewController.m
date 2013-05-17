@@ -11,9 +11,12 @@
 @interface homeViewController ()
 
 @property (nonatomic, strong) NSArray* pagesInScrollView;
+@property (nonatomic, assign) NSUInteger indexOfScroll;
 @end
 
 @implementation homeViewController
+
+@synthesize indexOfScroll = _indexOfScroll;
 
 @synthesize scrollView = _scrollView;
 @synthesize leftScroller = _leftScroller;
@@ -39,6 +42,7 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    self.scrollView.delegate = self;
 }
 
 - (void) viewDidLayoutSubviews {
@@ -100,6 +104,15 @@
     }
     self.pagesInScrollView = [[NSArray alloc] init];
 }
+
+#pragma mark - scroll delegate
+
+- (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    self.indexOfScroll = self.view.frame.size.width / self.scrollView.contentOffset.x;
+    NSLog(@"%u", self.indexOfScroll);
+}
+
+
 
 #pragma mark - manage rotations
 

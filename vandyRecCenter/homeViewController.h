@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor-BMColors.h"
 
-@interface homeViewController : UIViewController
+@interface homeViewController : UIViewController <UIScrollViewDelegate>
 
 #define DIMENSIONS_OF_PAGE_PORTRAIT 220
 #define DIMENSIONS_OF_PAGE_LANDSCAPE 180
