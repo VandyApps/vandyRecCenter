@@ -31,17 +31,27 @@
 - (void) viewDidLayoutSubviews {
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * 2, self.scrollView.frame.size.height);
     
-    [self addPageToScrollViewAtIndex: 0];
-    [self addPageToScrollViewAtIndex: 1];
+    [self addPageToScrollViewAtIndex: 0 withInterfaceOrientation: nil];
+    [self addPageToScrollViewAtIndex: 1 withInterfaceOrientation: nil];
 }
 
-- (void) addPageToScrollViewAtIndex: (NSUInteger) index {
+
+#pragma mark - set up views
+
+- (void) addPageToScrollViewAtIndex: (NSUInteger) index withInterfaceOrientation: (UIInterfaceOrientation) orientation {
     
     CGRect frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE)/2.0 + (index *self.view.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE)/2.0, DIMENSIONS_OF_PAGE, DIMENSIONS_OF_PAGE);
     
     UIView* page = [[UIView alloc] initWithFrame: frameOfPage];
     page.backgroundColor = [UIColor whiteColor];
     [self.scrollView addSubview: page];
+}
+
+#pragma mark - manage rotations
+
+- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+
+
 }
 
 @end
