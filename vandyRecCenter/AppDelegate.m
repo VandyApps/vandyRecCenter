@@ -20,27 +20,36 @@
     
     //set up the views in the tab bar
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName: @"MainStoryboard" bundle:[NSBundle mainBundle]];
-    homeViewController *homeController = [mainStoryboard instantiateInitialViewController];
-    hoursViewController *hoursController = [mainStoryboard instantiateViewControllerWithIdentifier:@"hours"];
-    trafficViewController *trafficController = [mainStoryboard instantiateViewControllerWithIdentifier: @"traffic"];
-    UIViewController* classController = [mainStoryboard instantiateViewControllerWithIdentifier:@"classes"];
-    UIViewController* intramuralsController = [mainStoryboard instantiateViewControllerWithIdentifier: @"intramurals"];
-    UIViewController* programsController = [mainStoryboard instantiateViewControllerWithIdentifier:@"programs"];
-    UIViewController* mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"map"];
+    TabBarNavigationController *homeNavigationController = [mainStoryboard instantiateInitialViewController];
+    TabBarNavigationController *hoursNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier:@"hours"];
+    TabBarNavigationController *trafficNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier: @"traffic"];
+    TabBarNavigationController* groupFitnessNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier:@"classes"];
+    TabBarNavigationController* intramuralsNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier: @"intramurals"];
+    TabBarNavigationController* programsNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier:@"programs"];
+    TabBarNavigationController* mapNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier:@"map"];
+    
     
     //must set this property before adding view controllers to the array in the tab bar
-    homeController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Home" image: [UIImage imageNamed: @"53-house.png"]];
-    hoursController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Hours" image: [UIImage imageNamed: @"11-clock.png"]];
-    trafficController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Traffic" image: [UIImage imageNamed: @"112-group.png"]];
-    classController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Classes" image: [UIImage imageNamed: @"89-dumbells.png"]];
-    intramuralsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"I.M." image:[UIImage imageNamed: @"63-runner.png"]];
-    programsController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Programs" image: [UIImage imageNamed: @"83-calendar.png"]];
-    mapController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Map" image: [UIImage imageNamed: @"103-map.png"]];
+    homeNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Home" image: [UIImage imageNamed: @"53-house.png"]];
+    hoursNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Hours" image: [UIImage imageNamed: @"11-clock.png"]];
+    trafficNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Traffic" image: [UIImage imageNamed: @"112-group.png"]];
+    groupFitnessNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Classes" image: [UIImage imageNamed: @"89-dumbells.png"]];
+    intramuralsNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"I.M." image:[UIImage imageNamed: @"63-runner.png"]];
+    programsNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Programs" image: [UIImage imageNamed: @"83-calendar.png"]];
+    mapNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Map" image: [UIImage imageNamed: @"103-map.png"]];
     
     
-    customTBController.viewControllers = [[NSArray alloc] initWithObjects: homeController, hoursController, trafficController, classController, intramuralsController, programsController, mapController, nil];
+    //set tab bar delegation for all view controllers to be displayed by the custom tab bar
+    homeNavigationController.tabBarDelegate = customTBController;
+    hoursNavigationController.tabBarDelegate = customTBController;
+    trafficNavigationController.tabBarDelegate = customTBController;
+    groupFitnessNavigationController.tabBarDelegate = customTBController;
+    programsNavigationController.tabBarDelegate = customTBController;
+    mapNavigationController.tabBarDelegate = customTBController;
+    
+    customTBController.viewControllers = [[NSArray alloc] initWithObjects: homeNavigationController, hoursNavigationController, trafficNavigationController, groupFitnessNavigationController, intramuralsNavigationController, programsNavigationController, mapNavigationController, nil];
   
-    customTBController.selectedViewController = homeController;
+    customTBController.selectedViewController = homeNavigationController;
     
     
     self.window.rootViewController = customTBController;

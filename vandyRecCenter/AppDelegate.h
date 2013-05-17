@@ -12,11 +12,7 @@
 #import "BubbleTabBarController.h"
 #import "BubbleTabBarItem.h"
 
-#import "testViewController1.h"
-
-#import "homeViewController.h"
-#import "hoursViewController.h"
-#import "trafficViewController.h"
+#import "TabBarNavigationController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

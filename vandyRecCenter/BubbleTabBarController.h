@@ -11,12 +11,13 @@
 #import "NGTabBarController.h"
 #import "BubbleTabBar.h"
 #import "BubbleTabBarItem.h"
+#import "TabBarNavigationDelegate.h"
 
 
 
 //view controllers
 
-@interface BubbleTabBarController : NGTabBarController <NGTabBarControllerDelegate>
+@interface BubbleTabBarController : NGTabBarController <NGTabBarControllerDelegate, TabBarNavigationDelegate>
 
 @property (nonatomic, strong) BubbleTabBar *tabBar;
 @property (nonatomic, assign) CGFloat paddingForHorizontalBar;
