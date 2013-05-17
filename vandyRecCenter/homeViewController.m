@@ -67,7 +67,7 @@
     if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
         
         frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_PORTRAIT)/2.0 + (index *self.view.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_PORTRAIT)/2.0, DIMENSIONS_OF_PAGE_PORTRAIT, DIMENSIONS_OF_PAGE_PORTRAIT);
-        NSLog(@"In portrait mode");
+        
         if (hideScrollers) {
             self.leftScroller.hidden = YES;
             self.rightScroller.hidden = YES;
@@ -77,7 +77,7 @@
         }
         
     } else {
-        NSLog(@"Landscape is called");
+        
         //for now, add height translation in landscape orientation
         frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + (index *self.view.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + 10, DIMENSIONS_OF_PAGE_LANDSCAPE, DIMENSIONS_OF_PAGE_LANDSCAPE);
         
@@ -103,10 +103,7 @@
 
 #pragma mark - manage rotations
 
-- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-
-    NSLog(@"This method is called");
-
+- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [self.scrollView setContentOffset: CGPointZero animated: YES];
 }
-
 @end
