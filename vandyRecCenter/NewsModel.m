@@ -34,7 +34,23 @@
             if (error) {
                 NSLog(@"There was an error");
             } else {
+                
+                //maje sure the data is in the correct order
+                jsonData = [jsonData sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                    NSUInteger priority1 = [[obj1 objectForKey: @"priorityNumber"] intValue];
+                    NSUInteger priority2 = [[obj2 objectForKey: @"priorityNumber"] intValue];
+                    if (priority1 > priority2) {
+                        return NSOrderedDescending;
+                    } else if (priority1 < priority2) {
+                        return NSOrderedAscending;
+                    } else {
+                        return NSOrderedSame;
+                    }
+                }];
+                
+                
                 for (NSDictionary* event in jsonData) {
+                    
                     self.news = [self.news arrayByAddingObject: [event objectForKey: @"description" ]];
                 }
             }

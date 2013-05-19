@@ -272,6 +272,7 @@
 				21F1EA631728F17000AB17DB /* Custom Tab Bar */,
 				21E677C91749753400719EA7 /* Web Client */,
 				21E90A3F1726E54400356E54 /* test */,
+				21FA94BC172D951D0016918B /* Categories */,
 				21BC797D171F8387008B776A /* Graph */,
 				21E40A1F1719C7380045451F /* home */,
 				21E40A1D1719C7270045451F /* hours */,
@@ -303,7 +304,6 @@
 				21BC7985171F855A008B776A /* GraphPoint.m */,
 				21BC797E171F839B008B776A /* GraphModel.h */,
 				21BC797F171F839B008B776A /* GraphModel.m */,
-				21FA94BC172D951D0016918B /* Categories */,
 			);
 			name = Graph;
 			sourceTree = "<group>";
