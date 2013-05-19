@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSArray* pagesInScrollView;
 @property (nonatomic, assign) NSUInteger indexOfScroll;
+@property (nonatomic, strong) NewsModel* newsModel;
 @end
 
 @implementation homeViewController
@@ -23,6 +24,7 @@
 @synthesize rightScroller = _rightScroller;
 
 @synthesize pagesInScrollView = _pagesInScrollView;
+@synthesize newsModel = _newsModel;
 
 #pragma - getters
 
