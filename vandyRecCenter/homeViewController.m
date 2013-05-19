@@ -51,9 +51,6 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.scrollView.delegate = self;
-    
-    //test
-    self.newsModel = [[NewsModel alloc] init];
 }
 
 - (void) viewDidLayoutSubviews {
@@ -68,11 +65,22 @@
 
 - (void) setScrollViewSubviews {
     [self removeAllViewsFromScrollView];
-    [self addPageToScrollViewAtIndex: 0 hideScrollersInPortraitOrientation: NO];
-    [self addPageToScrollViewAtIndex: 1 hideScrollersInPortraitOrientation: NO];
+    [self.newsModel loadData:^(NSError *error) {
+        
+        if (error) {
+            NSLog(@"There was an error");
+        } else {
+            NSLog(@"There are %u models in the news array", self.newsModel.news.count);
+            for (NSUInteger i = 0; i < self.newsModel.news.count; ++i) {
+                [self addPageToScrollViewAtIndex: i hideScrollersInPortraitOrientation: YES];
+            }
+            
+            //set up offset
+            [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.view.frame.size.width, 0) animated: YES];
+        }
+       
+    }];
     
-    //set up offset
-    [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.view.frame.size.width, 0) animated: YES];
 }
 
 
@@ -124,7 +132,7 @@
     page.layer.cornerRadius = 5.f;
     
     UILabel* descriptionLabel = [[UILabel alloc] initWithFrame: frameOfLabel];
-    descriptionLabel.text = @"Here is where the text goes. If someone wanted to write something very long, this should be taking up to about three lines of space.  No one should type more than that";
+    descriptionLabel.text = [self.newsModel.news objectAtIndex: index];
     descriptionLabel.backgroundColor = [UIColor clearColor];
     descriptionLabel.textColor = [UIColor whiteColor];
     descriptionLabel.numberOfLines = 8;
@@ -134,6 +142,7 @@
     
     
     [self.scrollView addSubview: page];
+    //keep track of pages so they may be removed when needed
     self.pagesInScrollView = [self.pagesInScrollView arrayByAddingObject: page];
 }
 - (void) removeAllViewsFromScrollView {

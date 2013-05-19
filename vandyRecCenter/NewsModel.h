@@ -14,4 +14,5 @@
 @property (nonatomic, strong) NSArray* news;
 
 - (id) init;
+- (void) loadData: (void (^)(NSError *error)) completion;
 @end
