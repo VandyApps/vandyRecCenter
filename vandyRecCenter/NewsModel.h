@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VandyRecClient.h"
 
 @interface NewsModel : NSObject
 
+@property (nonatomic, strong) NSArray* news;
+
+- (id) init;
 @end

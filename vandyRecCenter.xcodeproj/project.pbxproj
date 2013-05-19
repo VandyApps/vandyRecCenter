@@ -336,12 +336,12 @@
 		21E40A1F1719C7380045451F /* home */ = {
 			isa = PBXGroup;
 			children = (
+				21E677CD17497E3400719EA7 /* NewsModel.h */,
+				21E677CE17497E3400719EA7 /* NewsModel.m */,
 				212DECD517009AC60041498E /* homeViewController.h */,
 				212DECD617009AC60041498E /* homeViewController.m */,
 				21FC9F8D17025F160065EEC2 /* browserViewController.h */,
 				21FC9F8E17025F160065EEC2 /* browserViewController.m */,
-				21E677CD17497E3400719EA7 /* NewsModel.h */,
-				21E677CE17497E3400719EA7 /* NewsModel.m */,
 			);
 			name = home;
 			sourceTree = "<group>";

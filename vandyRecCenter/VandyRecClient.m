@@ -15,8 +15,18 @@
     return self;
 }
 
-- (void) getJSONFromNewsTab:(void (^)(NSError *, NSData *))block {
-
+- (void) JSONFromNewsTab:(void (^)(NSError *, NSArray *))block {
+    NSLog(@"JSON method was called");
+    NSURLRequest *newsRequest = [self requestWithMethod: @"GET" path: @"news" parameters:nil];
     
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: newsRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"Success");
+        block(nil, JSON);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Failure");
+        block(error, JSON);
+    }];
+    
+    [operation start];
 }
 @end

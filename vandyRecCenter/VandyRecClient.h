@@ -7,6 +7,7 @@
 //
 
 #import "AFHTTPClient.h"
+#import "AFJSONRequestOperation.h"
 
 @interface VandyRecClient : AFHTTPClient
 
@@ -19,5 +20,5 @@
 //needs callback block to manage data that has been retrieved from the page
 //can return an error if either the page could not be reached or something
 //else has happenned
-- (void) getJSONFromNewsTab: (void (^)(NSError* error, NSData* jsonData)) block;
+- (void) JSONFromNewsTab: (void (^)(NSError* error, NSArray* jsonData)) block;
 @end

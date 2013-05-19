@@ -35,6 +35,12 @@
     return _pagesInScrollView;
 }
 
+- (NewsModel*) newsModel {
+    if (_newsModel == nil) {
+        _newsModel = [[NewsModel alloc] init];
+    }
+    return _newsModel;
+}
 
 #pragma - events
 
@@ -45,6 +51,9 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.scrollView.delegate = self;
+    
+    //test
+    self.newsModel = [[NewsModel alloc] init];
 }
 
 - (void) viewDidLayoutSubviews {
