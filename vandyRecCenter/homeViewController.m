@@ -68,15 +68,19 @@
 //hideScrollers determines if the scrollers are to be hidden when in portriat orientation
 //scrollers are always hidden in landscape orientation and should be hidden
 //in portrait orientation only when there is only a single page to display
-- (void) addPageToScrollViewAtIndex: (NSUInteger) index hideScrollersInPortraitOrientation: (BOOL) hideScrollers{
+- (void) addPageToScrollViewAtIndex: (NSUInteger) index hideScrollersInPortraitOrientation: (BOOL) hideScrollers {
     
     CGRect frameOfPage;
     CGRect frameOfLabel;
+   // CGRect frameOfLogo;
     if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
         
         frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_PORTRAIT)/2.0 + (index *self.view.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_PORTRAIT)/2.0, DIMENSIONS_OF_PAGE_PORTRAIT, DIMENSIONS_OF_PAGE_PORTRAIT);
         
         frameOfLabel = CGRectMake((DIMENSIONS_OF_PAGE_PORTRAIT - LABEL_DIMENSIONS_PORTRAIT)/2.0, (DIMENSIONS_OF_PAGE_PORTRAIT - LABEL_DIMENSIONS_PORTRAIT)/2.0, LABEL_DIMENSIONS_PORTRAIT, LABEL_DIMENSIONS_PORTRAIT);
+        
+        /*
+         frameOfLogo = CGRectMake((DIMENSIONS_OF_PAGE_PORTRAIT - LOGO_DIMENSIONS_PORTRAIT)/2.0, LOGO_Y_COOR_PORTRAIT, LOGO_DIMENSIONS_PORTRAIT, LOGO_DIMENSIONS_PORTRAIT);*/
         
         if (hideScrollers) {
             self.leftScroller.hidden = YES;
@@ -93,6 +97,10 @@
         
         frameOfLabel = CGRectMake((DIMENSIONS_OF_PAGE_LANDSCAPE - LABEL_DIMENSIONS_LANDSCAPE)/2.0, (DIMENSIONS_OF_PAGE_LANDSCAPE - LABEL_DIMENSIONS_LANDSCAPE)/2.0, LABEL_DIMENSIONS_LANDSCAPE, LABEL_DIMENSIONS_LANDSCAPE);
         
+        /*
+        frameOfLogo = CGRectMake((DIMENSIONS_OF_PAGE_LANDSCAPE - LOGO_DIMENSIONS_LANDSCAPE)/2.0, LOGO_Y_COOR_LANDSCAPE, LOGO_DIMENSIONS_LANDSCAPE, LOGO_DIMENSIONS_LANDSCAPE);
+        */
+        
         self.leftScroller.hidden = YES;
         self.rightScroller.hidden = YES;
         
@@ -108,9 +116,12 @@
     descriptionLabel.text = @"Here is where the text goes. If someone wanted to write something very long, this should be taking up to about three lines of space.  No one should type more than that";
     descriptionLabel.backgroundColor = [UIColor clearColor];
     descriptionLabel.textColor = [UIColor whiteColor];
-    descriptionLabel.numberOfLines = 7;
+    descriptionLabel.numberOfLines = 8;
     descriptionLabel.font = [UIFont systemFontOfSize: 15];
+    
     [page addSubview: descriptionLabel];
+    
+    
     [self.scrollView addSubview: page];
     self.pagesInScrollView = [self.pagesInScrollView arrayByAddingObject: page];
 }

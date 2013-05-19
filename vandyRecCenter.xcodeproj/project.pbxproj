@@ -46,6 +46,8 @@
 		21DBAFC117108C1C00C7C34D /* brownGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DBAFC017108C1C00C7C34D /* brownGradient.png */; };
 		21E40A1C1719C1530045451F /* NSDate-WeekDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */; };
 		21E40A221719CA530045451F /* trafficViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A211719CA530045451F /* trafficViewController.m */; };
+		21E677C8174971B300719EA7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 21E677C7174971B300719EA7 /* logo.png */; };
+		21E677CC1749754B00719EA7 /* VandyRecClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E677CB1749754B00719EA7 /* VandyRecClient.m */; };
 		21E90A381726E26000356E54 /* BubbleTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E90A371726E26000356E54 /* BubbleTabBarController.m */; };
 		21E90A421726E60700356E54 /* testViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E90A411726E60700356E54 /* testViewController1.m */; };
 		21EAD7E8170E883900449EA3 /* NSDate-MyDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */; };
@@ -122,6 +124,9 @@
 		21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-WeekDateClass.m"; sourceTree = "<group>"; };
 		21E40A201719CA530045451F /* trafficViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trafficViewController.h; sourceTree = "<group>"; };
 		21E40A211719CA530045451F /* trafficViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trafficViewController.m; sourceTree = "<group>"; };
+		21E677C7174971B300719EA7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		21E677CA1749754B00719EA7 /* VandyRecClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VandyRecClient.h; sourceTree = "<group>"; };
+		21E677CB1749754B00719EA7 /* VandyRecClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VandyRecClient.m; sourceTree = "<group>"; };
 		21E90A361726E26000356E54 /* BubbleTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTabBarController.h; sourceTree = "<group>"; };
 		21E90A371726E26000356E54 /* BubbleTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBarController.m; sourceTree = "<group>"; };
 		21E90A401726E60700356E54 /* testViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController1.h; sourceTree = "<group>"; };
@@ -173,6 +178,7 @@
 		212DECD01700965A0041498E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				21E677C7174971B300719EA7 /* logo.png */,
 				21457168172B01310004AC64 /* background */,
 				21EB34EF17177B0D0015AD77 /* leftArrow.png */,
 				21EB34F017177B0D0015AD77 /* leftArrow@2x.png */,
@@ -261,6 +267,7 @@
 				2170328316FE96D900A43833 /* AppDelegate.m */,
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
 				21F1EA631728F17000AB17DB /* Custom Tab Bar */,
+				21E677C91749753400719EA7 /* Web Client */,
 				21E90A3F1726E54400356E54 /* test */,
 				21BC797D171F8387008B776A /* Graph */,
 				21E40A1F1719C7380045451F /* home */,
@@ -332,6 +339,15 @@
 				21FC9F8E17025F160065EEC2 /* browserViewController.m */,
 			);
 			name = home;
+			sourceTree = "<group>";
+		};
+		21E677C91749753400719EA7 /* Web Client */ = {
+			isa = PBXGroup;
+			children = (
+				21E677CA1749754B00719EA7 /* VandyRecClient.h */,
+				21E677CB1749754B00719EA7 /* VandyRecClient.m */,
+			);
+			name = "Web Client";
 			sourceTree = "<group>";
 		};
 		21E90A3F1726E54400356E54 /* test */ = {
@@ -468,6 +484,7 @@
 				21EB57C81745D4CE00DC7C2E /* 400-list2@2x.png in Resources */,
 				21EB57CB1745DB2F00DC7C2E /* 402-globe2.png in Resources */,
 				21EB57CC1745DB2F00DC7C2E /* 402-globe2@2x.png in Resources */,
+				21E677C8174971B300719EA7 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +531,7 @@
 				21FA94BB172D95120016918B /* UIColor-BMColors.m in Sources */,
 				21FA94BF172D977C0016918B /* trafficModel.m in Sources */,
 				21EB57BF1745D1B900DC7C2E /* TabBarNavigationController.m in Sources */,
+				21E677CC1749754B00719EA7 /* VandyRecClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
