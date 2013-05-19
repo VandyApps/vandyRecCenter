@@ -64,15 +64,24 @@
 #pragma mark - manage views
 
 - (void) setScrollViewSubviews {
+    //hide scrollers at the start
+    self.leftScroller.hidden = YES;
+    self.rightScroller.hidden = YES;
+    
     [self removeAllViewsFromScrollView];
+    
     [self.newsModel loadData:^(NSError *error) {
         
         if (error) {
-            NSLog(@"There was an error");
+            UIAlertView *connectionAlert = [[UIAlertView alloc] initWithTitle: @"Error With Internet Connection" message: [error localizedDescription] delegate: nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
+            [connectionAlert show];
         } else {
-            NSLog(@"There are %u models in the news array", self.newsModel.news.count);
+            BOOL hideScroller = NO;
+            if (self.newsModel.news.count == 1) {
+                hideScroller = YES;
+            }
             for (NSUInteger i = 0; i < self.newsModel.news.count; ++i) {
-                [self addPageToScrollViewAtIndex: i hideScrollersInPortraitOrientation: YES];
+                [self addPageToScrollViewAtIndex: i hideScrollersInPortraitOrientation: hideScroller];
             }
             
             //set up offset
