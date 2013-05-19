@@ -14,6 +14,8 @@
 
 #define DIMENSIONS_OF_PAGE_PORTRAIT 220
 #define DIMENSIONS_OF_PAGE_LANDSCAPE 180
+#define LABEL_DIMENSIONS_PORTRAIT 190
+#define LABEL_DIMENSIONS_LANDSCAPE 130
 
 @property (nonatomic, weak) IBOutlet UIScrollView* scrollView;
 
