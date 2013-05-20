@@ -107,7 +107,8 @@
                 if (self.newsModel.news.count == 1) {
                     hideScroller = YES;
                 }
-                self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.newsModel.news.count, self.scrollView.frame.size.height);
+                NSLog(@"There are %u event descriptions", self.newsModel.news.count);
+                self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.newsModel.news.count, self.scrollView.frame.size.height);
                 
                 for (NSUInteger i = 0; i < self.newsModel.news.count; ++i) {
                     [self addPageToScrollViewAtIndex: i hideScrollersInPortraitOrientation: hideScroller];
@@ -127,7 +128,7 @@
         if (self.newsModel.news.count == 1) {
             hideScroller = YES;
         }
-        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.newsModel.news.count, self.scrollView.frame.size.height);
+        self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.newsModel.news.count, self.scrollView.frame.size.height);
         
         for (NSUInteger i = 0; i < self.newsModel.news.count; ++i) {
             [self addPageToScrollViewAtIndex: i hideScrollersInPortraitOrientation: hideScroller];
