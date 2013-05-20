@@ -54,6 +54,7 @@
 }
 
 - (void) viewDidLayoutSubviews {
+    NSLog(@"Layout the subviews");
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * 2, self.scrollView.frame.size.height);
     
     [self setScrollViewSubviews];
@@ -63,6 +64,7 @@
 
 #pragma mark - manage views
 
+//NOTE THAT CALLING REMOVEFROMSUPERVIEW METHOD ON SELF.VIEWS CAUSES THIS METHOD TO AUTOMATICALLY BE CALLED
 - (void) setScrollViewSubviews {
     //hide scrollers at the start
     self.leftScroller.hidden = YES;
@@ -70,11 +72,18 @@
     
     [self removeAllViewsFromScrollView];
     
+    UIActivityIndicatorView *connectionIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
+    connectionIndicator.center = self.view.center;
+    [connectionIndicator startAnimating];
+    [self.view addSubview: connectionIndicator];
+    
     [self.newsModel loadData:^(NSError *error) {
         
         if (error) {
+            //should make sure the error message is readable
             UIAlertView *connectionAlert = [[UIAlertView alloc] initWithTitle: @"Error With Internet Connection" message: [error localizedDescription] delegate: nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
             [connectionAlert show];
+           
         } else {
             BOOL hideScroller = NO;
             if (self.newsModel.news.count == 1) {
@@ -87,6 +96,8 @@
             //set up offset
             [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.view.frame.size.width, 0) animated: YES];
         }
+        [connectionIndicator stopAnimating];
+        
        
     }];
     

@@ -34,7 +34,7 @@
 }
 
 - (void) loadData:(void (^)(NSError*))completion {
-
+    NSLog(@"LOAD DATA WAS CALLED");
     VandyRecClient* webClient = [[VandyRecClient alloc] init];
     
     [webClient JSONFromNewsTab:^(NSError *error, NSArray *jsonData) {
