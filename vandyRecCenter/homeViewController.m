@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSArray* pagesInScrollView;
 @property (nonatomic, assign) NSUInteger indexOfScroll;
 @property (nonatomic, strong) NewsModel* newsModel;
+@property (nonatomic, assign) BOOL dataLoaded;
 @end
 
 @implementation homeViewController
@@ -72,36 +73,57 @@
     
     [self removeAllViewsFromScrollView];
     
-    UIActivityIndicatorView *connectionIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
-    connectionIndicator.center = self.view.center;
-    [connectionIndicator startAnimating];
-    [self.view addSubview: connectionIndicator];
     
-    [self.newsModel loadData:^(NSError *error) {
+    
+    if (!self.dataLoaded) {
         
-        if (error) {
-            //should make sure the error message is readable
-            UIAlertView *connectionAlert = [[UIAlertView alloc] initWithTitle: @"Error With Internet Connection" message: [error localizedDescription] delegate: nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
-            [connectionAlert show];
+        UIActivityIndicatorView *connectionIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
+        connectionIndicator.center = self.view.center;
+        [connectionIndicator startAnimating];
+        [self.view addSubview: connectionIndicator];
+    
+        [self.newsModel loadData:^(NSError *error) {
+            
+            if (error) {
+                //should make sure the error message is readable
+                UIAlertView *connectionAlert = [[UIAlertView alloc] initWithTitle: @"Error With Internet Connection" message: [error localizedDescription] delegate: nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
+                [connectionAlert show];
+               
+            } else {
+                BOOL hideScroller = NO;
+                if (self.newsModel.news.count == 1) {
+                    hideScroller = YES;
+                }
+                self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.newsModel.news.count, self.scrollView.frame.size.height);
+                
+                for (NSUInteger i = 0; i < self.newsModel.news.count; ++i) {
+                    [self addPageToScrollViewAtIndex: i hideScrollersInPortraitOrientation: hideScroller];
+                }
+                
+                //set up offset
+                [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.view.frame.size.width, 0) animated: YES];
+                self.dataLoaded = YES;
+            }
+            [connectionIndicator stopAnimating];
+            
            
-        } else {
-            BOOL hideScroller = NO;
-            if (self.newsModel.news.count == 1) {
-                hideScroller = YES;
-            }
-            self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.newsModel.news.count, self.scrollView.frame.size.height);
-            
-            for (NSUInteger i = 0; i < self.newsModel.news.count; ++i) {
-                [self addPageToScrollViewAtIndex: i hideScrollersInPortraitOrientation: hideScroller];
-            }
-            
-            //set up offset
-            [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.view.frame.size.width, 0) animated: YES];
+        }];
+    } else {
+        //use existing data to layout subviews and scroll view
+        BOOL hideScroller = NO;
+        if (self.newsModel.news.count == 1) {
+            hideScroller = YES;
         }
-        [connectionIndicator stopAnimating];
+        self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.newsModel.news.count, self.scrollView.frame.size.height);
         
-       
-    }];
+        for (NSUInteger i = 0; i < self.newsModel.news.count; ++i) {
+            [self addPageToScrollViewAtIndex: i hideScrollersInPortraitOrientation: hideScroller];
+        }
+        
+        //set up offset
+        [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.view.frame.size.width, 0) animated: YES];
+        
+    }
     
 }
 
@@ -111,17 +133,22 @@
 //in portrait orientation only when there is only a single page to display
 - (void) addPageToScrollViewAtIndex: (NSUInteger) index hideScrollersInPortraitOrientation: (BOOL) hideScrollers {
     
+    //define variables that are dependent on device orientation here
+    //so that they may be set in the below conditional statement
     CGRect frameOfPage;
     CGRect frameOfLabel;
-   // CGRect frameOfLogo;
+    CGRect frameOfLogo;
+    CGFloat fontSize;
     if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
         
         frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_PORTRAIT)/2.0 + (index *self.view.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_PORTRAIT)/2.0, DIMENSIONS_OF_PAGE_PORTRAIT, DIMENSIONS_OF_PAGE_PORTRAIT);
         
         frameOfLabel = CGRectMake((DIMENSIONS_OF_PAGE_PORTRAIT - LABEL_DIMENSIONS_PORTRAIT)/2.0, (DIMENSIONS_OF_PAGE_PORTRAIT - LABEL_DIMENSIONS_PORTRAIT)/2.0, LABEL_DIMENSIONS_PORTRAIT, LABEL_DIMENSIONS_PORTRAIT);
         
-        /*
-         frameOfLogo = CGRectMake((DIMENSIONS_OF_PAGE_PORTRAIT - LOGO_DIMENSIONS_PORTRAIT)/2.0, LOGO_Y_COOR_PORTRAIT, LOGO_DIMENSIONS_PORTRAIT, LOGO_DIMENSIONS_PORTRAIT);*/
+        
+        frameOfLogo = CGRectMake((DIMENSIONS_OF_PAGE_PORTRAIT - LOGO_DIMENSIONS_PORTRAIT)/2.0, LOGO_Y_COOR_PORTRAIT, LOGO_DIMENSIONS_PORTRAIT, LOGO_DIMENSIONS_PORTRAIT);
+        
+        fontSize = DESCRIPTION_FONT_SIZE_PORTRAIT;
         
         if (hideScrollers) {
             self.leftScroller.hidden = YES;
@@ -138,9 +165,10 @@
         
         frameOfLabel = CGRectMake((DIMENSIONS_OF_PAGE_LANDSCAPE - LABEL_DIMENSIONS_LANDSCAPE)/2.0, (DIMENSIONS_OF_PAGE_LANDSCAPE - LABEL_DIMENSIONS_LANDSCAPE)/2.0, LABEL_DIMENSIONS_LANDSCAPE, LABEL_DIMENSIONS_LANDSCAPE);
         
-        /*
+        
         frameOfLogo = CGRectMake((DIMENSIONS_OF_PAGE_LANDSCAPE - LOGO_DIMENSIONS_LANDSCAPE)/2.0, LOGO_Y_COOR_LANDSCAPE, LOGO_DIMENSIONS_LANDSCAPE, LOGO_DIMENSIONS_LANDSCAPE);
-        */
+        
+        fontSize = DESCRIPTION_FONT_SIZE_LANDSCAPE;
         
         self.leftScroller.hidden = YES;
         self.rightScroller.hidden = YES;
@@ -158,7 +186,8 @@
     descriptionLabel.backgroundColor = [UIColor clearColor];
     descriptionLabel.textColor = [UIColor whiteColor];
     descriptionLabel.numberOfLines = 8;
-    descriptionLabel.font = [UIFont systemFontOfSize: 15];
+    descriptionLabel.textAlignment = NSTextAlignmentCenter;
+    descriptionLabel.font = [UIFont systemFontOfSize: fontSize];
     
     [page addSubview: descriptionLabel];
     
