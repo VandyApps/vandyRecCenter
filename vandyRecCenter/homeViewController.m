@@ -55,7 +55,7 @@
 
 - (void) viewDidLayoutSubviews {
     NSLog(@"Layout the subviews");
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * 2, self.scrollView.frame.size.height);
+    
     
     [self setScrollViewSubviews];
     
@@ -89,6 +89,8 @@
             if (self.newsModel.news.count == 1) {
                 hideScroller = YES;
             }
+            self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.newsModel.news.count, self.scrollView.frame.size.height);
+            
             for (NSUInteger i = 0; i < self.newsModel.news.count; ++i) {
                 [self addPageToScrollViewAtIndex: i hideScrollersInPortraitOrientation: hideScroller];
             }
