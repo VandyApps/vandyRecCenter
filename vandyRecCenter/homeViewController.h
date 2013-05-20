@@ -13,6 +13,9 @@
 
 @interface homeViewController : UIViewController <UIScrollViewDelegate>
 
+#define ARROW_BORDER_PADDING 10
+#define ARROW_DIMENSIONS 20
+
 #define DIMENSIONS_OF_PAGE_PORTRAIT 220
 #define DIMENSIONS_OF_PAGE_LANDSCAPE 180
 
@@ -28,8 +31,8 @@
 
 @property (nonatomic, weak) IBOutlet UIScrollView* scrollView;
 
-@property (nonatomic, weak) IBOutlet UIButton *leftScroller;
-@property (nonatomic, weak) IBOutlet UIButton *rightScroller;
+@property (nonatomic, strong) UIButton *leftScroller;
+@property (nonatomic, strong) UIButton *rightScroller;
 
 - (IBAction) scrollLeft;
 - (IBAction) scrollRight;

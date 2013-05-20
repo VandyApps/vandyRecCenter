@@ -45,8 +45,8 @@
 
 #pragma - events
 
-- (IBAction) scrollLeft {}
-- (IBAction) scrollRight {}
+- (IBAction) scrollLeft {NSLog(@"scrolling left");}
+- (IBAction) scrollRight {NSLog(@"scrolling right");}
 
 
 - (void) viewDidLoad {
@@ -67,15 +67,15 @@
 
 //NOTE THAT CALLING REMOVEFROMSUPERVIEW METHOD ON SELF.VIEWS CAUSES THIS METHOD TO AUTOMATICALLY BE CALLED
 - (void) setScrollViewSubviews {
-    //hide scrollers at the start
-    self.leftScroller.hidden = YES;
-    self.rightScroller.hidden = YES;
     
     [self removeAllViewsFromScrollView];
     
     
+    CGRect frameOfLeftScroller = CGRectMake(ARROW_BORDER_PADDING, (self.view.frame.size.height - ARROW_DIMENSIONS)/2.0, ARROW_DIMENSIONS, ARROW_DIMENSIONS);
+    CGRect frameOfRightScroller = CGRectMake(self.view.frame.size.width - ARROW_BORDER_PADDING - ARROW_DIMENSIONS, (self.view.frame.size.height - ARROW_DIMENSIONS)/2.0, ARROW_DIMENSIONS, ARROW_DIMENSIONS);
     
     if (!self.dataLoaded) {
+        
         
         UIActivityIndicatorView *connectionIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
         connectionIndicator.center = self.view.center;
@@ -90,6 +90,19 @@
                 [connectionAlert show];
                
             } else {
+                
+                
+                self.leftScroller = [[UIButton alloc] init];
+                self.rightScroller = [[UIButton alloc] init];
+                
+                [self.leftScroller setImage: [UIImage imageNamed:@"leftArrow.png"] forState: UIControlStateNormal];
+                [self.rightScroller setImage: [UIImage imageNamed: @"rightArrow.png"] forState: UIControlStateNormal];
+                [self.view addSubview: self.leftScroller];
+                [self.view addSubview: self.rightScroller];
+                
+                [self.leftScroller addTarget: self action: @selector(scrollLeft) forControlEvents:UIControlEventTouchUpInside];
+                [self.rightScroller addTarget: self action: @selector(scrollRight) forControlEvents:UIControlEventTouchUpInside];
+
                 BOOL hideScroller = NO;
                 if (self.newsModel.news.count == 1) {
                     hideScroller = YES;
@@ -101,7 +114,7 @@
                 }
                 
                 //set up offset
-                [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.view.frame.size.width, 0) animated: YES];
+                [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.scrollView.frame.size.width, 0) animated: YES];
                 self.dataLoaded = YES;
             }
             [connectionIndicator stopAnimating];
@@ -121,9 +134,11 @@
         }
         
         //set up offset
-        [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.view.frame.size.width, 0) animated: YES];
+        [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.scrollView.frame.size.width, 0) animated: YES];
         
     }
+    self.leftScroller.frame = frameOfLeftScroller;
+    self.rightScroller.frame = frameOfRightScroller;
     
 }
 
@@ -141,7 +156,7 @@
     CGFloat fontSize;
     if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
         
-        frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_PORTRAIT)/2.0 + (index *self.view.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_PORTRAIT)/2.0, DIMENSIONS_OF_PAGE_PORTRAIT, DIMENSIONS_OF_PAGE_PORTRAIT);
+        frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_PORTRAIT)/2.0 + (index *self.scrollView.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_PORTRAIT)/2.0, DIMENSIONS_OF_PAGE_PORTRAIT, DIMENSIONS_OF_PAGE_PORTRAIT);
         
         frameOfLabel = CGRectMake((DIMENSIONS_OF_PAGE_PORTRAIT - LABEL_DIMENSIONS_PORTRAIT)/2.0, (DIMENSIONS_OF_PAGE_PORTRAIT - LABEL_DIMENSIONS_PORTRAIT)/2.0, LABEL_DIMENSIONS_PORTRAIT, LABEL_DIMENSIONS_PORTRAIT);
         
@@ -161,7 +176,7 @@
     } else {
         
         //for now, add height translation in landscape orientation
-        frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + (index *self.view.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + 10, DIMENSIONS_OF_PAGE_LANDSCAPE, DIMENSIONS_OF_PAGE_LANDSCAPE);
+        frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + (index *self.scrollView.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + 10, DIMENSIONS_OF_PAGE_LANDSCAPE, DIMENSIONS_OF_PAGE_LANDSCAPE);
         
         frameOfLabel = CGRectMake((DIMENSIONS_OF_PAGE_LANDSCAPE - LABEL_DIMENSIONS_LANDSCAPE)/2.0, (DIMENSIONS_OF_PAGE_LANDSCAPE - LABEL_DIMENSIONS_LANDSCAPE)/2.0, LABEL_DIMENSIONS_LANDSCAPE, LABEL_DIMENSIONS_LANDSCAPE);
         
