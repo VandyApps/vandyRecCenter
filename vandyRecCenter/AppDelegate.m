@@ -22,7 +22,7 @@
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName: @"MainStoryboard" bundle:[NSBundle mainBundle]];
     TabBarNavigationController *homeNavigationController = [mainStoryboard instantiateInitialViewController];
     TabBarNavigationController *hoursNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier:@"hours"];
-    TabBarNavigationController *trafficNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier: @"traffic"];
+    //TabBarNavigationController *trafficNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier: @"traffic"];
     TabBarNavigationController* groupFitnessNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier:@"classes"];
     TabBarNavigationController* intramuralsNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier: @"intramurals"];
     TabBarNavigationController* programsNavigationController = [mainStoryboard instantiateViewControllerWithIdentifier:@"programs"];
@@ -32,7 +32,7 @@
     //must set this property before adding view controllers to the array in the tab bar
     homeNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Home" image: [UIImage imageNamed: @"53-house.png"]];
     hoursNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle:@"Hours" image: [UIImage imageNamed: @"11-clock.png"]];
-    trafficNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Traffic" image: [UIImage imageNamed: @"112-group.png"]];
+    //trafficNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Traffic" image: [UIImage imageNamed: @"112-group.png"]];
     groupFitnessNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Classes" image: [UIImage imageNamed: @"89-dumbells.png"]];
     intramuralsNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"I.M." image:[UIImage imageNamed: @"63-runner.png"]];
     programsNavigationController.ng_tabBarItem = [BubbleTabBarItem itemWithTitle: @"Programs" image: [UIImage imageNamed: @"83-calendar.png"]];
@@ -42,12 +42,12 @@
     //set tab bar delegation for all view controllers to be displayed by the custom tab bar
     homeNavigationController.tabBarDelegate = customTBController;
     hoursNavigationController.tabBarDelegate = customTBController;
-    trafficNavigationController.tabBarDelegate = customTBController;
+    //trafficNavigationController.tabBarDelegate = customTBController;
     groupFitnessNavigationController.tabBarDelegate = customTBController;
     programsNavigationController.tabBarDelegate = customTBController;
     mapNavigationController.tabBarDelegate = customTBController;
     
-    customTBController.viewControllers = [[NSArray alloc] initWithObjects: homeNavigationController, hoursNavigationController, trafficNavigationController, groupFitnessNavigationController, intramuralsNavigationController, programsNavigationController, mapNavigationController, nil];
+    customTBController.viewControllers = [[NSArray alloc] initWithObjects: homeNavigationController, hoursNavigationController, groupFitnessNavigationController, intramuralsNavigationController, programsNavigationController, mapNavigationController, nil];
   
     customTBController.selectedViewController = homeNavigationController;
     
