@@ -11,7 +11,7 @@
 @interface homeViewController ()
 
 @property (nonatomic, strong) NSArray* pagesInScrollView;
-@property (nonatomic, assign) NSUInteger indexOfScroll;
+@property (nonatomic, assign) NSInteger indexOfScroll;
 @property (nonatomic, strong) NewsModel* newsModel;
 @property (nonatomic, assign) BOOL dataLoaded;
 @end
@@ -27,7 +27,7 @@
 @synthesize pagesInScrollView = _pagesInScrollView;
 @synthesize newsModel = _newsModel;
 
-#pragma - getters
+#pragma marks getters
 
 - (NSArray*) pagesInScrollView {
     if (_pagesInScrollView == nil) {
@@ -43,11 +43,22 @@
     return _newsModel;
 }
 
-#pragma - events
+#pragma mark - events
 
-- (IBAction) scrollLeft {NSLog(@"scrolling left");}
-- (IBAction) scrollRight {NSLog(@"scrolling right");}
+- (void) scrollLeft {
+    self.indexOfScroll--;
+    if (self.indexOfScroll < 0) {
+        self.indexOfScroll = self.newsModel.news.count - 1;
+    }
+    [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.scrollView.frame.size.width, 0) animated: YES];
+    
+}
+- (void) scrollRight {
+    self.indexOfScroll = (self.indexOfScroll + 1) % self.newsModel.news.count;
+    [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.scrollView.frame.size.width, 0) animated:YES];
+}
 
+#pragma mark - lifecycle
 
 - (void) viewDidLoad {
     [super viewDidLoad];

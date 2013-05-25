@@ -149,7 +149,7 @@
     
 }
 
-#pragma - EventHandler
+#pragma mark - EventHandler
 
 - (IBAction)current:(UIBarButtonItem *)sender {
     [self selectCurrentHours];
