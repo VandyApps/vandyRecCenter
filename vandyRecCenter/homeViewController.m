@@ -104,7 +104,11 @@
                 [self.rightScroller addTarget: self action: @selector(scrollRight) forControlEvents:UIControlEventTouchUpInside];
 
                 BOOL hideScroller = NO;
+                if (self.newsModel.news.count == 0) {
+                    self.newsModel.news = [[NSArray alloc] initWithObjects:@"There is currently no important news for the recreation center.", nil];
+                }
                 if (self.newsModel.news.count == 1) {
+                    self.scrollView.bounces = NO;
                     hideScroller = YES;
                 }
                 NSLog(@"There are %u event descriptions", self.newsModel.news.count);
@@ -126,6 +130,7 @@
         //use existing data to layout subviews and scroll view
         BOOL hideScroller = NO;
         if (self.newsModel.news.count == 1) {
+            self.scrollView.bounces = NO;
             hideScroller = YES;
         }
         self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.newsModel.news.count, self.scrollView.frame.size.height);
