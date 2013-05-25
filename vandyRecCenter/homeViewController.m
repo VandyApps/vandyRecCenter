@@ -210,8 +210,13 @@
         
         fontSize = DESCRIPTION_FONT_SIZE_LANDSCAPE;
         
-        self.leftScroller.hidden = NO;
-        self.rightScroller.hidden = NO;
+        if (hideScrollers) {
+            self.leftScroller.hidden = YES;
+            self.rightScroller.hidden = YES;
+        } else {
+            self.leftScroller.hidden = NO;
+            self.rightScroller.hidden = NO;
+        }
         
     }
     
