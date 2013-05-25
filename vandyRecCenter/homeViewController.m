@@ -27,7 +27,7 @@
 @synthesize pagesInScrollView = _pagesInScrollView;
 @synthesize newsModel = _newsModel;
 
-#pragma marks getters
+#pragma mark - getters
 
 - (NSArray*) pagesInScrollView {
     if (_pagesInScrollView == nil) {
@@ -66,7 +66,6 @@
 }
 
 - (void) viewDidLayoutSubviews {
-    NSLog(@"Layout the subviews");
     
     
     [self setScrollViewSubviews];
@@ -81,9 +80,18 @@
     
     [self removeAllViewsFromScrollView];
     
+    CGRect frameOfLeftScroller;
+    CGRect frameOfRightScroller;
+    if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
+        frameOfLeftScroller = CGRectMake(ARROW_BORDER_PADDING_PORTRAIT, (self.view.frame.size.height - ARROW_DIMENSIONS_PORTRAIT)/2.0, ARROW_DIMENSIONS_PORTRAIT, ARROW_DIMENSIONS_PORTRAIT);
+        frameOfRightScroller = CGRectMake(self.view.frame.size.width - ARROW_BORDER_PADDING_PORTRAIT - ARROW_DIMENSIONS_PORTRAIT, (self.view.frame.size.height - ARROW_DIMENSIONS_PORTRAIT)/2.0, ARROW_DIMENSIONS_PORTRAIT, ARROW_DIMENSIONS_PORTRAIT);
+    } else {
+        NSLog(@"This method is being called");
+        frameOfLeftScroller = CGRectMake(ARROW_BORDER_PADDING_LANDSCAPE, (self.view.frame.size.height - ARROW_DIMENSIONS_LANDSCAPE)/2.0, ARROW_DIMENSIONS_LANDSCAPE, ARROW_DIMENSIONS_LANDSCAPE);
+        frameOfRightScroller = CGRectMake(self.view.frame.size.width - ARROW_BORDER_PADDING_LANDSCAPE - ARROW_DIMENSIONS_LANDSCAPE, (self.view.frame.size.height - ARROW_DIMENSIONS_LANDSCAPE)/2.0, ARROW_DIMENSIONS_LANDSCAPE, ARROW_DIMENSIONS_LANDSCAPE);
     
-    CGRect frameOfLeftScroller = CGRectMake(ARROW_BORDER_PADDING, (self.view.frame.size.height - ARROW_DIMENSIONS)/2.0, ARROW_DIMENSIONS, ARROW_DIMENSIONS);
-    CGRect frameOfRightScroller = CGRectMake(self.view.frame.size.width - ARROW_BORDER_PADDING - ARROW_DIMENSIONS, (self.view.frame.size.height - ARROW_DIMENSIONS)/2.0, ARROW_DIMENSIONS, ARROW_DIMENSIONS);
+    }
+   
     
     if (!self.dataLoaded) {
         
@@ -193,7 +201,7 @@
     } else {
         
         //for now, add height translation in landscape orientation
-        frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + (index *self.scrollView.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + 10, DIMENSIONS_OF_PAGE_LANDSCAPE, DIMENSIONS_OF_PAGE_LANDSCAPE);
+        frameOfPage = CGRectMake((self.scrollView.frame.size.width - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0 + (index *self.scrollView.frame.size.width), (self.scrollView.frame.size.height - DIMENSIONS_OF_PAGE_LANDSCAPE)/2.0, DIMENSIONS_OF_PAGE_LANDSCAPE, DIMENSIONS_OF_PAGE_LANDSCAPE);
         
         frameOfLabel = CGRectMake((DIMENSIONS_OF_PAGE_LANDSCAPE - LABEL_DIMENSIONS_LANDSCAPE)/2.0, (DIMENSIONS_OF_PAGE_LANDSCAPE - LABEL_DIMENSIONS_LANDSCAPE)/2.0, LABEL_DIMENSIONS_LANDSCAPE, LABEL_DIMENSIONS_LANDSCAPE);
         
@@ -202,8 +210,8 @@
         
         fontSize = DESCRIPTION_FONT_SIZE_LANDSCAPE;
         
-        self.leftScroller.hidden = YES;
-        self.rightScroller.hidden = YES;
+        self.leftScroller.hidden = NO;
+        self.rightScroller.hidden = NO;
         
     }
     
