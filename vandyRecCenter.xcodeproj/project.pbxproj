@@ -256,10 +256,10 @@
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
 				21F1EA631728F17000AB17DB /* Custom Tab Bar */,
 				21E677C91749753400719EA7 /* Web Client */,
-				21E90A3F1726E54400356E54 /* test */,
+				21E90A3F1726E54400356E54 /* Test */,
 				21FA94BC172D951D0016918B /* Categories */,
-				21E40A1F1719C7380045451F /* home */,
-				21E40A1D1719C7270045451F /* hours */,
+				21E40A1F1719C7380045451F /* Home */,
+				21E40A1D1719C7270045451F /* Hours */,
 				212DECD01700965A0041498E /* Images */,
 				2170327A16FE96D900A43833 /* Supporting Files */,
 			);
@@ -280,7 +280,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		21E40A1D1719C7270045451F /* hours */ = {
+		21E40A1D1719C7270045451F /* Hours */ = {
 			isa = PBXGroup;
 			children = (
 				2137613D1702895D008B3FBD /* hours.plist */,
@@ -289,10 +289,10 @@
 				215D04D0170D0AF8008D8277 /* hoursViewController.h */,
 				215D04D1170D0AF8008D8277 /* hoursViewController.m */,
 			);
-			name = hours;
+			name = Hours;
 			sourceTree = "<group>";
 		};
-		21E40A1F1719C7380045451F /* home */ = {
+		21E40A1F1719C7380045451F /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				21E677CD17497E3400719EA7 /* NewsModel.h */,
@@ -302,7 +302,7 @@
 				21FC9F8D17025F160065EEC2 /* browserViewController.h */,
 				21FC9F8E17025F160065EEC2 /* browserViewController.m */,
 			);
-			name = home;
+			name = Home;
 			sourceTree = "<group>";
 		};
 		21E677C91749753400719EA7 /* Web Client */ = {
@@ -314,13 +314,13 @@
 			name = "Web Client";
 			sourceTree = "<group>";
 		};
-		21E90A3F1726E54400356E54 /* test */ = {
+		21E90A3F1726E54400356E54 /* Test */ = {
 			isa = PBXGroup;
 			children = (
 				21E90A401726E60700356E54 /* testViewController1.h */,
 				21E90A411726E60700356E54 /* testViewController1.m */,
 			);
-			name = test;
+			name = Test;
 			sourceTree = "<group>";
 		};
 		21EAD7E2170E81B600449EA3 /* Date Category */ = {

@@ -17,7 +17,6 @@
 @property (nonatomic) NSInteger rowOfCurrentHours;
 @property (nonatomic, strong, readonly) NSArray* subviewsInScrollView;
 @property (nonatomic) NSUInteger indexOfScroll; //used to keep the scroll at discrete values
-@property (nonatomic, assign) CGFloat widthOfScrollView;
 
 @end
 
@@ -32,7 +31,6 @@
 @synthesize sectionOfSelectedCell = _sectionOfSelectedCell;
 @synthesize subviewsInScrollView = _subviewsInScrollView;
 @synthesize indexOfScroll = _indexOfScroll;
-@synthesize widthOfScrollView = _widthOfScrollView;
 
 //public properties
 @synthesize hours = _hours;
@@ -45,7 +43,7 @@
 @synthesize leftScroll = _leftScroll;
 @synthesize rightScroll = _rightScroll;
 
-#pragma - Getters and Setters
+#pragma mark - Getters and Setters
 
 
 
@@ -57,25 +55,6 @@
     return _hours;
 }
 
-- (CGFloat) widthOfScrollView {
-    
-    if (_widthOfScrollView == 0) {
-        if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
-            _widthOfScrollView = WIDTH_OF_SCROLL_VIEW_PORTRAIT;
-        } else {
-            _widthOfScrollView = WIDTH_OF_SCROLL_VIEW_LANDSCAPE;
-        }
-    }
-    return _widthOfScrollView;
-}
-
-- (void) setWidthOfScrollViewforOrientation: (UIInterfaceOrientation*) newOrientation {
-    if (UIInterfaceOrientationIsPortrait(*newOrientation)) {
-        _widthOfScrollView = WIDTH_OF_SCROLL_VIEW_PORTRAIT;
-    } else {
-        _widthOfScrollView = WIDTH_OF_SCROLL_VIEW_LANDSCAPE;
-    }
-}
 
 - (void) viewWasAddedToScrollView: (UIView*) addedView {
     if (!_subviewsInScrollView) {
@@ -98,14 +77,14 @@
 }
 
 - (void) incrementIndexOfScroll {
-    NSUInteger numberOfPages = self.scrollHours.contentSize.width / self.widthOfScrollView;
+    NSUInteger numberOfPages = self.scrollHours.contentSize.width / self.scrollHours.frame.size.width;
     _indexOfScroll = (_indexOfScroll + 1) % numberOfPages;
 }
 
 - (void) decrementIndexOfScroll {
     
     
-    NSUInteger numberOfPages = self.scrollHours.contentSize.width / self.widthOfScrollView;
+    NSUInteger numberOfPages = self.scrollHours.contentSize.width / self.scrollHours.frame.size.width;
     if (_indexOfScroll == 0) {
         _indexOfScroll = numberOfPages - 1;
     } else {
@@ -118,14 +97,14 @@
 - (void) setIndexOfScroll:(NSUInteger)indexOfScroll {
     
     
-    NSUInteger numberOfPages = self.scrollHours.contentSize.width / self.widthOfScrollView;
+    NSUInteger numberOfPages = self.scrollHours.contentSize.width / self.scrollHours.frame.size.width;
     if (indexOfScroll < numberOfPages) {
         _indexOfScroll = indexOfScroll;
     }
 }
 
 
-#pragma - Lifecycle
+#pragma mark - Lifecycle
 
 - (void) viewDidLoad {
     [super viewDidLoad];
@@ -133,20 +112,32 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.scrollHours.delegate = self;
+   
+    self.pageControl.hidesForSinglePage = YES;
     [self setCurrentHours];
     [self selectCurrentHours];
     [self selectCurrentDayOfTheWeek];
-    self.pageControl.hidesForSinglePage = YES;
-    
 }
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear: animated];
-    [self refreshRemainingTime];
+    
     //set the remaining time label
     //make the selected cell the current hours
     
+    [self refreshRemainingTime];
+}
+
+- (void) viewDidLayoutSubviews {
+    NSLog(@"redoing the layout %g", self.scrollHours.frame.size.width);
+    if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
+        self.pageControl.hidden = NO;
+    } else {
+        self.pageControl.hidden = YES;
+    }
     
+    [self setUpScrollViewWithHoursTitle: self.title];
+    [self resetScroll];
 }
 
 #pragma mark - EventHandler
@@ -162,8 +153,8 @@
     [self decrementIndexOfScroll];
     self.pageControl.currentPage = self.indexOfScroll;
     
-    
-    NSInteger newOffset = self.indexOfScroll * self.widthOfScrollView;
+    NSLog(@"%f", self.scrollHours.frame.size.width);
+    NSInteger newOffset = self.indexOfScroll * self.scrollHours.frame.size.width;
     
     [self.scrollHours setContentOffset: CGPointMake((CGFloat) newOffset, 0) animated: YES];
     
@@ -177,14 +168,14 @@
     
     //set up the frame and content size of the scroll view
     
-    NSInteger newOffset = self.indexOfScroll * self.widthOfScrollView;
+    NSInteger newOffset = self.indexOfScroll * self.scrollHours.frame.size.width;
     
     [self.scrollHours setContentOffset: CGPointMake((CGFloat) newOffset, 0) animated: YES];
     
 }
 
 
-#pragma - Private
+#pragma mark - Private
 
 - (NSString*) displayTimeInterval: (NSTimeInterval) timeInterval untilClosing: (BOOL) isClosing {
     
@@ -259,11 +250,17 @@
 }
 
 
-#pragma - CurrentTime
+#pragma mark - CurrentTime
 
+//this method does not do anything involving views or UI elements
+//it is used to prep the setup of the table view
 - (void) setCurrentHours {
     NSDictionary* currentTime = [self.hours hoursForCurrentTime];
+    
+    //the method hoursForCurrentTime should always return hours that are
+    //considered facility hours
     assert([[currentTime objectForKey: @"facilityHours"] boolValue]);
+    
     if ([[currentTime objectForKey: @"closed"] boolValue]) {
         self.sectionOfCurrentHours = 2;
         NSArray* closedHours = [self.hours closedHours];
@@ -312,8 +309,10 @@
 - (void) selectCurrentHours {
     self.rowOfSelectedCell = self.rowOfCurrentHours;
     self.sectionOfSelectedCell = self.sectionOfCurrentHours;
-    [self.tableView reloadData]; //reload data so that the correct gradients display
+     //reload data so that the correct colors of table cells display
+    [self.tableView reloadData];
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow: self.rowOfCurrentHours inSection:self.sectionOfCurrentHours] animated: YES scrollPosition: UITableViewScrollPositionMiddle];
+    
     //process of selecting
     NSString* title = [[self.hours hoursForCurrentTime] objectForKey: @"title"];
     self.title = title;
@@ -337,7 +336,7 @@
             foundIndexToScroll = YES;
         }
     }
-    [self.scrollHours setContentOffset:CGPointMake(self.indexOfScroll*self.widthOfScrollView, 0) animated:YES];
+    [self.scrollHours setContentOffset:CGPointMake(self.indexOfScroll*self.scrollHours.frame.size.width, 0) animated:YES];
     self.pageControl.currentPage = self.indexOfScroll;
     
 }
@@ -355,7 +354,7 @@
 }
 
 
-#pragma - TableView
+#pragma mark - TableView
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString* cellIdentifier = @"hoursCell";
@@ -500,10 +499,10 @@
 
 
 
-#pragma - ScrollView
- 
+#pragma mark - ScrollView
+
 - (void) setUpScrollViewWithHoursTitle: (NSString*) title {
-    
+    NSLog(@"This is called");
     //clear any existing subviews in the scroll view before adding new stuff
     [self removeAllSubviewsInScrollView];
     
@@ -520,8 +519,8 @@
         //show scrolling
         self.leftScroll.hidden = NO;
         self.rightScroll.hidden = NO;
-        
-        self.scrollHours.contentSize = CGSizeMake(self.widthOfScrollView * numberOfPages, HEIGHT_OF_PAGE);
+        NSLog(@"%f from hour selection", self.scrollHours.frame.size.width);
+        self.scrollHours.contentSize = CGSizeMake(self.scrollHours.frame.size.width * numberOfPages, self.scrollHours.frame.size.height);
         
         //set up the page controls for the scroll view
         self.pageControl.numberOfPages = numberOfPages;
@@ -529,9 +528,9 @@
         //add the subviews to the scroll view
         for (size_t i = 0; i < [scrollTitles count]; ++i) {
         
-            CGFloat xValueForTitleLabel = (self.widthOfScrollView - WIDTH_OF_TITLE_LABEL) / 2.0;
+            CGFloat xValueForTitleLabel = (self.scrollHours.frame.size.width - WIDTH_OF_TITLE_LABEL) / 2.0;
             
-            UILabel* titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForTitleLabel + i*self.widthOfScrollView, Y_COOR_OF_TITLE_LABEL , WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
+            UILabel* titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForTitleLabel + i* self.scrollHours.frame.size.width, Y_COOR_OF_TITLE_LABEL , WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
             
             titleLabel.text = [scrollTitles objectAtIndex: i];
             titleLabel.textColor = [UIColor whiteColor];
@@ -540,8 +539,8 @@
             [self.scrollHours addSubview: titleLabel];
             [self viewWasAddedToScrollView: titleLabel]; //need to keep track of added views to remove later
             
-            CGFloat xValueForHoursLabel = (self.widthOfScrollView - WIDTH_OF_HOURS_LABEL) / 2.0;
-            UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForHoursLabel + i* self.widthOfScrollView, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
+            CGFloat xValueForHoursLabel = (self.scrollHours.frame.size.width - WIDTH_OF_HOURS_LABEL) / 2.0;
+            UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForHoursLabel + i* self.scrollHours.frame.size.width, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
             
             hoursLabel.text = [hours objectAtIndex: [[indicesOfUniqueHours objectAtIndex: i] intValue]];
             hoursLabel.textColor = [UIColor whiteColor];
@@ -560,7 +559,7 @@
         self.scrollHours.bounces = NO;
         
         //set up the x coordinate
-        CGFloat xValueForErrorLabel = (self.widthOfScrollView - WIDTH_OF_ERROR_LABEL) / 2.0;
+        CGFloat xValueForErrorLabel = (self.scrollHours.frame.size.width - WIDTH_OF_ERROR_LABEL) / 2.0;
         UILabel *errorLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForErrorLabel, Y_COOR_OF_ERROR_LABEL, WIDTH_OF_ERROR_LABEL, HEIGHT_OF_ERROR_LABEL)];
         errorLabel.textColor = [UIColor whiteColor];
         errorLabel.backgroundColor = [UIColor clearColor];
@@ -579,36 +578,20 @@
 
 }
 
-#pragma - ScrollDelegate
+#pragma mark - ScrollDelegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     if (scrollView == self.scrollHours) {
         //make sure that the correct scroll view is called, not table view
         
-        self.indexOfScroll = scrollView.contentOffset.x / self.widthOfScrollView;
+        self.indexOfScroll = scrollView.contentOffset.x / self.scrollHours.frame.size.width;
         self.pageControl.currentPage = self.indexOfScroll;
     }
-}
-
-
-- (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    
-    [self setWidthOfScrollViewforOrientation: &toInterfaceOrientation];
-    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
-        
-        self.pageControl.hidden = NO;
-        
-    } else {
-        self.pageControl.hidden = YES;
-        
-    }
-    [self setUpScrollViewWithHoursTitle: self.title];
-    [self resetScroll];
 }
 
 //resets the scroll to the the intended value
 //use this when orientation is changed
 - (void) resetScroll {
-    [self.scrollHours setContentOffset: CGPointMake(self.indexOfScroll * self.widthOfScrollView, 0) animated: YES];
+    [self.scrollHours setContentOffset: CGPointMake(self.indexOfScroll * self.scrollHours.frame.size.width, 0) animated: YES];
 }
 @end
