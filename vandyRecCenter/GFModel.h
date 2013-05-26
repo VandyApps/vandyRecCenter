@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VandyRecClient.h"
 
 @interface GFModel : NSObject
 
