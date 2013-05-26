@@ -474,80 +474,15 @@
 #pragma mark - ScrollView
 
 - (void) setUpScrollViewWithHoursTitle: (NSString*) title {
-    [self.scrollHours setUpScrollViewWithHours: [self.hours hoursWithTitle: title]];
-    //clear any existing subviews in the scroll view before adding new stuff
-    [self.scrollHours removeAllSubviews];
-    
-    NSDictionary* selectedHours = [self.hours hoursWithTitle: title];
-    NSArray* hours = [selectedHours objectForKey: @"hours"];
-    //self.scrollHours.frame = CGRectMake(X_COOR_OF_PAGE, Y_COOR_OF_PAGE, self.widthOfScrollView, HEIGHT_OF_PAGE);
-    
-    if (hours) {
-        self.scrollHours.bounces = YES;
-        NSArray* indicesOfUniqueHours = [self.scrollHours arrayOfUniqueIndices: hours];
-        NSArray *scrollTitles = [self titlesForArrayOfUniqueIndices: indicesOfUniqueHours];
-        NSInteger numberOfPages = [scrollTitles count];
-        
-        //show scrolling
+    NSUInteger pageCount = [self.scrollHours setUpScrollViewWithHours: [self.hours hoursWithTitle: title]];
+    if (pageCount == 1) {
+        self.leftScroll.hidden = YES;
+        self.rightScroll.hidden = YES;
+    } else {
         self.leftScroll.hidden = NO;
         self.rightScroll.hidden = NO;
-        NSLog(@"%f from hour selection", self.scrollHours.frame.size.width);
-        self.scrollHours.contentSize = CGSizeMake(self.scrollHours.frame.size.width * numberOfPages, self.scrollHours.frame.size.height);
-        
-        //set up the page controls for the scroll view
-        self.pageControl.numberOfPages = numberOfPages;
-        
-        //add the subviews to the scroll view
-        for (size_t i = 0; i < [scrollTitles count]; ++i) {
-        
-            CGFloat xValueForTitleLabel = (self.scrollHours.frame.size.width - WIDTH_OF_TITLE_LABEL) / 2.0;
-            
-            UILabel* titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForTitleLabel + i* self.scrollHours.frame.size.width, Y_COOR_OF_TITLE_LABEL , WIDTH_OF_TITLE_LABEL, HEIGHT_OF_TITLE_LABEL)];
-            
-            titleLabel.text = [scrollTitles objectAtIndex: i];
-            titleLabel.textColor = [UIColor whiteColor];
-            titleLabel.backgroundColor = [UIColor clearColor];
-            titleLabel.textAlignment = NSTextAlignmentCenter;
-            [self.scrollHours addSubview: titleLabel];
-            [self viewWasAddedToScrollView: titleLabel]; //need to keep track of added views to remove later
-            
-            CGFloat xValueForHoursLabel = (self.scrollHours.frame.size.width - WIDTH_OF_HOURS_LABEL) / 2.0;
-            UILabel* hoursLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForHoursLabel + i* self.scrollHours.frame.size.width, Y_COOR_OF_HOURS_LABEL, WIDTH_OF_HOURS_LABEL, HEIGHT_OF_HOURS_LABEL)];
-            
-            hoursLabel.text = [hours objectAtIndex: [[indicesOfUniqueHours objectAtIndex: i] intValue]];
-            hoursLabel.textColor = [UIColor whiteColor];
-            hoursLabel.backgroundColor = [UIColor clearColor];
-            hoursLabel.textAlignment = NSTextAlignmentCenter;
-            [self.scrollHours addSubview: hoursLabel];
-            [self viewWasAddedToScrollView: hoursLabel]; //need to keep track of added views to remove later
-        }
-    } else { //could not find hours
-        
-        //hide scrolling
-        self.rightScroll.hidden = YES;
-        self.leftScroll.hidden = YES;
-        
-        self.scrollHours.contentSize = self.scrollHours.frame.size;
-        self.scrollHours.bounces = NO;
-        
-        //set up the x coordinate
-        CGFloat xValueForErrorLabel = (self.scrollHours.frame.size.width - WIDTH_OF_ERROR_LABEL) / 2.0;
-        UILabel *errorLabel = [[UILabel alloc] initWithFrame: CGRectMake(xValueForErrorLabel, Y_COOR_OF_ERROR_LABEL, WIDTH_OF_ERROR_LABEL, HEIGHT_OF_ERROR_LABEL)];
-        errorLabel.textColor = [UIColor whiteColor];
-        errorLabel.backgroundColor = [UIColor clearColor];
-        errorLabel.textAlignment = NSTextAlignmentCenter;
-        if ([[selectedHours objectForKey: @"closed"] boolValue]) { //currently closed
-            errorLabel.text = @"CLOSED";
-        } else { //hours not added to the plist
-            errorLabel.text = @"Hours Not Available";
-        }
-        
-        [self.scrollHours addSubview: errorLabel];
-        [self viewWasAddedToScrollView: errorLabel];
-        self.pageControl.numberOfPages = 1;
     }
-    
-
+    self.pageControl.numberOfPages = pageCount;
 }
 
 #pragma mark - ScrollDelegate

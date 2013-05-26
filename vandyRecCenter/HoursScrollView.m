@@ -70,7 +70,7 @@
 //returns true if the scrolling arrows should be shown
 //aka returns true if there is more than one page to display
 - (NSUInteger) setUpScrollViewWithHours:(NSDictionary *)hours {
-    
+    [self removeAllSubviews];
     NSUInteger pageCount = 0;
     //set up the scroll view here
     NSArray* hoursArray = [hours objectForKey: @"hours"];
@@ -132,7 +132,7 @@
         pageCount = 1;
     }
     
-    
+    return pageCount;
 
 }
 
