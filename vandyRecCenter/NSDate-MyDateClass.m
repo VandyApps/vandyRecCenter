@@ -82,7 +82,7 @@
             leapYearCount++;
         }
     }
-    NSLog(@"Leap year count is %i", leapYearCount);
+    
     NSTimeInterval secondsSince1970 = 0;
     //seconds from year
     secondsSince1970 += (year - 1970) * 365 * 24 * 60 * 60;
@@ -119,7 +119,7 @@
                 break;
         }
         secondsSince1970 += (daysInMonth * 24 * 60 * 60);
-        NSLog(@"Month index %i has %i days", index, daysInMonth);
+        
     }
     
     //seconds from days
@@ -134,7 +134,7 @@
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
     NSString* dateString = [formatter stringFromDate: self];
-    NSLog(@"dateString is %@", dateString);
+    
     return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 1] intValue];
 }
 
@@ -143,7 +143,7 @@
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
     NSString* dateString = [formatter stringFromDate: self];
-    NSLog(@"date string is %@", dateString);
+    
     return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 0] intValue] -1;
 }
 
@@ -152,7 +152,7 @@
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
     NSString* dateString = [formatter stringFromDate: self];
-    NSLog(@"date string is %@", dateString);
+   
     
     NSUInteger year = [[[dateString componentsSeparatedByString: @"/"] objectAtIndex:2] intValue];
     if (year < 70) {
