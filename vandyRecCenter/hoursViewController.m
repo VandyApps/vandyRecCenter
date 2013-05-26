@@ -129,6 +129,7 @@
 }
 
 - (void) viewDidLayoutSubviews {
+    NSLog(@"redoing the layout %g", self.view.frame.size.width);
     NSLog(@"redoing the layout %g", self.scrollHours.frame.size.width);
     if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
         self.pageControl.hidden = NO;

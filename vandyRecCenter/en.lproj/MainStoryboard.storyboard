@@ -14,7 +14,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbw-54-eK0">
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-d3-6tx" customClass="HoursScrollView">
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" type="user" id="ij5-Rv-MmS"/>
@@ -576,14 +576,11 @@
         <image name="rightArrow.png" width="16" height="16"/>
     </resources>
     <classes>
+        <class className="HoursScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HoursScrollView.h"/>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RushHoursViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RushHoursViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="exit"/>
-            </relationships>
         </class>
         <class className="TabBarNavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarNavigationController.h"/>
@@ -599,8 +596,6 @@
             <relationships>
                 <relationship kind="action" name="scrollLeft"/>
                 <relationship kind="action" name="scrollRight"/>
-                <relationship kind="outlet" name="leftScroller" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rightScroller" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
@@ -614,18 +609,8 @@
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rightScroll" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollHours" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="scrollHours" candidateClass="HoursScrollView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="trafficViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/trafficViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="scrollOnePageLeft"/>
-                <relationship kind="action" name="scrollOnePageRight"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollGraphs" candidateClass="UIScrollView"/>
             </relationships>
         </class>
     </classes>

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "hoursModel.h"
-
+#import "HoursScrollView.h"
 
 //macros
 #define DEFAULT_HEIGHT_FOR_CELL 51
@@ -50,7 +50,7 @@
 @interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollHours;
+@property (weak, nonatomic) IBOutlet HoursScrollView *scrollHours;
 @property (weak, nonatomic) IBOutlet UILabel *remainingTime;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
