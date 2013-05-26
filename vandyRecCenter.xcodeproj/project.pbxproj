@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211B16EA1752B4C800180E3D /* TimeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 211B16E91752B4C800180E3D /* TimeString.m */; };
 		21201EC21702177D00E89605 /* blackGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC11702177D00E89605 /* blackGradient.png */; };
 		21201EC41702199B00E89605 /* vandyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC31702199B00E89605 /* vandyLogo.png */; };
 		212DECD2170096C40041498E /* imageOfRec.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 212DECD1170096C40041498E /* imageOfRec.jpeg */; };
@@ -69,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		211B16E81752B4C800180E3D /* TimeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeString.h; sourceTree = "<group>"; };
+		211B16E91752B4C800180E3D /* TimeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeString.m; sourceTree = "<group>"; };
 		21201EC11702177D00E89605 /* blackGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackGradient.png; path = ../blackGradient.png; sourceTree = "<group>"; };
 		21201EC31702199B00E89605 /* vandyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vandyLogo.png; sourceTree = "<group>"; };
 		212DECD1170096C40041498E /* imageOfRec.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imageOfRec.jpeg; path = ../imageOfRec.jpeg; sourceTree = "<group>"; };
@@ -170,6 +173,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211B16E71752B4AB00180E3D /* Time String */ = {
+			isa = PBXGroup;
+			children = (
+				211B16E81752B4C800180E3D /* TimeString.h */,
+				211B16E91752B4C800180E3D /* TimeString.m */,
+			);
+			name = "Time String";
+			sourceTree = "<group>";
+		};
 		212DECD01700965A0041498E /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +276,7 @@
 				21F1EA631728F17000AB17DB /* Custom Tab Bar */,
 				21E677C91749753400719EA7 /* Web Client */,
 				21FA94BC172D951D0016918B /* Categories */,
+				211B16E71752B4AB00180E3D /* Time String */,
 				21E40A1F1719C7380045451F /* Home */,
 				21E40A1D1719C7270045451F /* Hours */,
 				21D303A617526E14007D8247 /* GF */,
@@ -506,6 +519,7 @@
 				21E1A5F61751ADE900442922 /* HoursScrollView.m in Sources */,
 				21D303A917526E46007D8247 /* GFViewController.m in Sources */,
 				21D303AC17527DF8007D8247 /* GFModel.m in Sources */,
+				211B16EA1752B4C800180E3D /* TimeString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
