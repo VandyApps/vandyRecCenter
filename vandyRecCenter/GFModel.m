@@ -113,8 +113,18 @@
     
     return YES;
 }
+#pragma mark Current Time
 
-#pragma mark - Comparison
+- (void) nextClass:(void (^)(NSDictionary *, NSUInteger))block {
+    NSDate *currentDate = [[NSDate alloc] init];
+    
+}
+
+- (NSDictionary*) currentClass {
+    return nil;
+}
+
+#pragma mark  Comparison
 
 +(NSComparisonResult) compareModel1:(GFModel *)model1 model2:(GFModel *)model2 {
     if (model1.year > model2.year) {

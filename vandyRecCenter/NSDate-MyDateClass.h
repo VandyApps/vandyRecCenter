@@ -13,7 +13,9 @@
 
 - (NSDate*) dateBySettingTimeToTime: (NSString*) time; //accepts string in format: 12:00am or 12:00 AM
 
-
+- (NSUInteger) day;
+- (NSUInteger) month;
+- (NSUInteger) year;
 
 
 

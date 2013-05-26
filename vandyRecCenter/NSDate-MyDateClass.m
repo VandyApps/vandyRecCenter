@@ -126,4 +126,40 @@
      
     return [[NSDate alloc] initWithTimeIntervalSince1970: secondsSince1970];
 }
+
+#pragma mark - Getters
+- (NSUInteger) day {
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    NSString* dateString = [formatter stringFromDate: [[NSDate alloc] init] ];
+    NSLog(@"dateString is %@", dateString);
+    return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 1] intValue];
+}
+
+- (NSUInteger) month {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    NSString* dateString = [formatter stringFromDate: [[NSDate alloc] init]];
+    NSLog(@"date string is %@", dateString);
+    return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 0] intValue] -1;
+}
+
+- (NSUInteger) year {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    NSString* dateString = [formatter stringFromDate: [[NSDate alloc] init]];
+    NSLog(@"date string is %@", dateString);
+    
+    NSUInteger year = [[[dateString componentsSeparatedByString: @"/"] objectAtIndex:2] intValue];
+    if (year < 70) {
+        year += 2000;
+    } else {
+        year += 1900;
+    }
+    return year;
+}
+
 @end
