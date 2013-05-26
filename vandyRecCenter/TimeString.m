@@ -112,6 +112,21 @@
     return [self timeInMinutes] * 60;
 }
 
+#pragma mark Comparison
++ (NSComparisonResult) compareTimeString1:(TimeString *)timeString1 timeString2:(TimeString *)timeString2 {
+    if ([timeString1 timeInMinutes] < [timeString2 timeInMinutes]) {
+        return NSOrderedAscending;
+    } else if ([timeString1 timeInMinutes] > [timeString2 timeInMinutes]) {
+        return NSOrderedDescending;
+    } else {
+        return NSOrderedSame;
+    }
+}
+
+- (NSComparisonResult) compareTimeString:(TimeString *)timeString {
+    return [TimeString compareTimeString1: self timeString2: timeString];
+}
+
 #pragma mark  Validation
 + (BOOL) validTimeString:(NSString *)timeString {
     return YES;
