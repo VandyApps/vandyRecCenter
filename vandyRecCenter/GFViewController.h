@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GFModel.h"
-#import "NSDate-MyDateClass.h"
-#import "TimeString.h"
+
 @interface GFViewController : UIViewController
 
 @property (nonatomic, strong) GFModel *model;

@@ -43,9 +43,6 @@
        // NSLog(@"%@", data);
     
     } forMonth: 4 andYear: 2013];
-    TimeString *time = [[TimeString alloc] initWithTimeString: @"12:10 am"];
-    time.style = TimeStringStyleMilitary;
-    NSLog(@"%i", [time timeInSeconds]);
 }
 
 - (void)didReceiveMemoryWarning

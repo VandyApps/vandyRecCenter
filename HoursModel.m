@@ -208,7 +208,7 @@
     TimeString* current = [[TimeString alloc] initWithTimeString:[getTimeFormat stringFromDate: currentDate]];
     TimeString* opening = [[TimeString alloc] initWithTimeString: [self openingTime]];
     if ([self openingTime] && [TimeString compareTimeString1: opening timeString2: current] == NSOrderedDescending) {
-        NSLog(@"opening %i and current %i", [opening timeInMinutes], [current timeInMinutes]);
+        
         return YES;
     }
     return NO;
