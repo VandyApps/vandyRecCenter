@@ -3,5 +3,5 @@
 typedef enum {
     TimeStringStyleMilitary = 0,
     TimeStringStyleAMPM,
-    TIMEStringStyleAMPMSpaced
+    TimeStringStyleAMPMSpaced
 } TimeStringStyle;

@@ -61,7 +61,41 @@
     return self;
 }
 
-#pragma mark -  Validation
+#pragma mark - Public
+- (NSString*) timeString {
+    NSString* returnString = [[NSString alloc] init];
+    
+    if (self.style == TimeStringStyleMilitary && !self.isAM) {
+        returnString = [returnString stringByAppendingFormat: @"%i:%i", (self.hours + 12) % 24, self.minutes];
+    } else {
+        returnString = [returnString stringByAppendingFormat: @"%i:%i", self.hours, self.minutes];
+    }
+    
+    NSString* indicator;
+    if (self.style == TimeStringStyleAMPM) {
+        if (self.isAM) {
+            indicator = @"am";
+        } else {
+            indicator = @"pm";
+        }
+        returnString = [returnString stringByAppendingString: indicator];
+        
+    } else if (self.style == TimeStringStyleAMPMSpaced) {
+        if (self.isAM) {
+            indicator = @" am";
+            
+        } else {
+            indicator = @" pm";
+        }
+        returnString = [returnString stringByAppendingString: indicator];
+    }
+    
+    return returnString;
+}
+- (NSString*) description {
+    return [self timeString];
+}
+#pragma mark  Validation
 + (BOOL) validTimeString:(NSString *)timeString {
     return YES;
 }
