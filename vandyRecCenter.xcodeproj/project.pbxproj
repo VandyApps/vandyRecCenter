@@ -41,6 +41,7 @@
 		2170328D16FE96D900A43833 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2170328B16FE96D900A43833 /* MainStoryboard.storyboard */; };
 		2177D0CC1729BE85001DA4B3 /* BubbleTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2177D0CB1729BE85001DA4B3 /* BubbleTabBar.m */; };
 		21A37AC0171B34F1008990C5 /* HoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A37ABF171B34F1008990C5 /* HoursModel.m */; };
+		21D303A917526E46007D8247 /* GFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D303A817526E46007D8247 /* GFViewController.m */; };
 		21DBAFC117108C1C00C7C34D /* brownGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DBAFC017108C1C00C7C34D /* brownGradient.png */; };
 		21E1A5F61751ADE900442922 /* HoursScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E1A5F51751ADE900442922 /* HoursScrollView.m */; };
 		21E40A1C1719C1530045451F /* NSDate-WeekDateClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */; };
@@ -111,6 +112,8 @@
 		21A37ABF171B34F1008990C5 /* HoursModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HoursModel.m; path = ../HoursModel.m; sourceTree = "<group>"; };
 		21C2C2C71745C8B8006A97DC /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
 		21C2C2C81745C8B8006A97DC /* 53-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house@2x.png"; sourceTree = "<group>"; };
+		21D303A717526E46007D8247 /* GFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFViewController.h; sourceTree = "<group>"; };
+		21D303A817526E46007D8247 /* GFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFViewController.m; sourceTree = "<group>"; };
 		21DBAFC017108C1C00C7C34D /* brownGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brownGradient.png; sourceTree = "<group>"; };
 		21E1A5F41751ADE900442922 /* HoursScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoursScrollView.h; sourceTree = "<group>"; };
 		21E1A5F51751ADE900442922 /* HoursScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoursScrollView.m; sourceTree = "<group>"; };
@@ -260,6 +263,7 @@
 				21FA94BC172D951D0016918B /* Categories */,
 				21E40A1F1719C7380045451F /* Home */,
 				21E40A1D1719C7270045451F /* Hours */,
+				21D303A617526E14007D8247 /* GF */,
 				212DECD01700965A0041498E /* Images */,
 				2170327A16FE96D900A43833 /* Supporting Files */,
 			);
@@ -278,6 +282,15 @@
 				2170328916FE96D900A43833 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21D303A617526E14007D8247 /* GF */ = {
+			isa = PBXGroup;
+			children = (
+				21D303A717526E46007D8247 /* GFViewController.h */,
+				21D303A817526E46007D8247 /* GFViewController.m */,
+			);
+			name = GF;
 			sourceTree = "<group>";
 		};
 		21E40A1D1719C7270045451F /* Hours */ = {
@@ -486,6 +499,7 @@
 				21E677CC1749754B00719EA7 /* VandyRecClient.m in Sources */,
 				21E677CF17497E3400719EA7 /* NewsModel.m in Sources */,
 				21E1A5F61751ADE900442922 /* HoursScrollView.m in Sources */,
+				21D303A917526E46007D8247 /* GFViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
