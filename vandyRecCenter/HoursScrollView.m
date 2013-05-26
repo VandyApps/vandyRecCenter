@@ -11,12 +11,29 @@
 @interface HoursScrollView()
 
 @property (nonatomic, assign) CGRect currentFrame;
-
+@property (nonatomic, strong) NSArray* subviews;
 @end
 @implementation HoursScrollView
 
+#pragma mark - Getters
+- (NSArray*) subviews {
+    if (_subviews == nil) {
+        _subviews = [[NSArray alloc] init];
+    }
+    return  _subviews;
+}
 
+#pragma mark - managing subviews
+- (void) addSubview:(UIView *)view {
+    [super addSubview: view];
+    self.subviews = [self.subviews arrayByAddingObject: view];
+}
 
+- (void) removeAllSubviews {
+    for (UIView* view in self.subviews) {
+        [view removeFromSuperview];
+    }
+}
 #pragma mark - Initializers
 
 - (id)initWithFrame:(CGRect)frame
@@ -48,7 +65,7 @@
 }
 
 
-#pragma mark- Publics
+#pragma mark - Publics
 
 - (void) setUpScrollViewWithHours:(NSDictionary *)hours {
     //set up the scroll view here

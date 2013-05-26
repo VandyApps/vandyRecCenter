@@ -11,4 +11,5 @@
 @interface HoursScrollView : UIScrollView
 
 - (void) setUpScrollViewWithHours: (NSDictionary*) hours;
+- (void) removeAllSubviews;
 @end

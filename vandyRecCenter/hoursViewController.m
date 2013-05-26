@@ -64,17 +64,7 @@
     }
     
 }
-- (void) removeAllSubviewsInScrollView {
-    if (_subviewsInScrollView && [_subviewsInScrollView count] != 0)
-    {
-        NSEnumerator *viewEnum = [_subviewsInScrollView objectEnumerator];
-        UIView *nextView;
-        while (nextView = [viewEnum nextObject]) {
-            [nextView removeFromSuperview];
-        }
-        _subviewsInScrollView = [[NSArray alloc] init];
-    }
-}
+
 
 - (void) incrementIndexOfScroll {
     NSUInteger numberOfPages = self.scrollHours.contentSize.width / self.scrollHours.frame.size.width;
@@ -505,7 +495,7 @@
 - (void) setUpScrollViewWithHoursTitle: (NSString*) title {
     NSLog(@"This is called");
     //clear any existing subviews in the scroll view before adding new stuff
-    [self removeAllSubviewsInScrollView];
+    [self.scrollHours removeAllSubviews];
     
     NSDictionary* selectedHours = [self.hours hoursWithTitle: title];
     NSArray* hours = [selectedHours objectForKey: @"hours"];
