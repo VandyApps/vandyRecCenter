@@ -10,4 +10,10 @@
 
 @implementation TimeString
 
+@synthesize isAM = _isAM;
+@synthesize hours = _hours;
+@synthesize minutes = _minutes;
+@synthesize style = _style;
+
+
 @end

@@ -21,5 +21,21 @@
 
 @interface TimeString : NSObject
 
+@property (nonatomic) BOOL isAM;
+@property (nonatomic) NSUInteger hours;
+@property (nonatomic) NSUInteger minutes;
+@property (nonatomic) TimeStringStyle style;
+
 - (id) initWithTimeString: (NSString*) timeString;
+
+//prints out the string according to the time string style
+- (NSString*) timeString;
+
+- (NSUInteger) timeInMinutes;
+- (NSUInteger) timeInSeconds;
+
++ (NSComparisonResult) compareTimeString1: (TimeString*) timeString1 timeString2: (TimeString*) timeString2;
+- (NSComparisonResult) compareTimeString: (TimeString*) timeString;
+
++ (BOOL) validTimeString: (NSString*) timeString;
 @end
