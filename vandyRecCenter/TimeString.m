@@ -92,9 +92,26 @@
     
     return returnString;
 }
+
 - (NSString*) description {
     return [self stringValue];
 }
+
+- (NSUInteger) timeInMinutes {
+   
+    NSUInteger minutes = 0;
+    minutes += (self.hours * 60);
+    if (!self.isAM) {
+        minutes += (12*60);
+    }
+    minutes += self.minutes;
+    return minutes;
+}
+
+- (NSUInteger) timeInSeconds {
+    return [self timeInMinutes] * 60;
+}
+
 #pragma mark  Validation
 + (BOOL) validTimeString:(NSString *)timeString {
     return YES;
