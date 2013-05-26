@@ -43,7 +43,7 @@
        // NSLog(@"%@", data);
     
     } forMonth: 4 andYear: 2013];
-    NSLog(@"day is %i", [[NSDate dateWithYear: 1986 month: 5 andDay: 22] year]);
+    NSLog(@"day is %i", [[NSDate dateWithYear: 1970 month: 0 andDay: 1] year]);
 }
 
 - (void)didReceiveMemoryWarning

@@ -77,11 +77,12 @@
     
     assert(year >= 1970);
     NSUInteger leapYearCount = 0;
-    for (NSUInteger start = 1970; start < year; start++) {
+    for (NSUInteger start = 1972; start < year; start++) {
         if (start % 4 == 0) {
             leapYearCount++;
         }
     }
+    NSLog(@"Leap year count is %i", leapYearCount);
     NSTimeInterval secondsSince1970 = 0;
     //seconds from year
     secondsSince1970 += (year - 1970) * 365 * 24 * 60 * 60;
@@ -122,7 +123,7 @@
     }
     
     //seconds from days
-    secondsSince1970 += ((day - 1) * 24 * 60 * 60);
+    secondsSince1970 += (day * 24 * 60 * 60);
      
     return [[NSDate alloc] initWithTimeIntervalSince1970: secondsSince1970];
 }
