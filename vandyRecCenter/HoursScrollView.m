@@ -66,6 +66,7 @@
     if (self.frame.size.height != self.currentFrame.size.height || self.frame.size.width != self.currentFrame.size.width || self.frame.origin.x != self.currentFrame.origin.x || self.frame.origin.y != self.currentFrame.origin.y) {
         
         self.currentFrame = self.frame;
+        [self setUpScrollViewWithHours: [self.scrollHoursDelegate hoursForFrameChange: self.currentFrame]];
     }
 }
 
