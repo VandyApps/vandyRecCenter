@@ -16,6 +16,9 @@
 @implementation GFModel
 
 @synthesize webClient = _webClient;
+@synthesize dataLoaded = _dataLoaded;
+@synthesize month = _month;
+@synthesize year = _year;
 
 
 #pragma mark - getters
@@ -43,6 +46,7 @@
             if (error) {
                 block(error, jsonData);
             } else {
+                self.dataLoaded = YES;
                 self.GFClasses = jsonData;
                 block(nil, jsonData);
             }
@@ -54,6 +58,7 @@
             if (error) {
                 block(error, jsonData);
             } else {
+                self.dataLoaded = YES;
                 self.GFClasses = jsonData;
                 block(nil, jsonData);
             }
@@ -62,6 +67,7 @@
     }
     
 }
+
 
 #pragma mark - Public
 
@@ -106,6 +112,32 @@
     
     
     return YES;
-    
+}
+
+#pragma mark - Comparison
+
++(NSComparisonResult) compareModel1:(GFModel *)model1 model2:(GFModel *)model2 {
+    if (model1.year > model2.year) {
+        return NSOrderedDescending;
+    } else if (model1.year < model2.year) {
+        return NSOrderedAscending;
+    } else { //equal years
+        if (model1.month > model2.month) {
+            return NSOrderedDescending;
+        } else if (model1.month < model2.month) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedSame;
+        }
+    }
+}
+
+- (BOOL) precedesModel:(GFModel *)model {
+    if (model.year < self.year) {
+        return YES;
+    } else if (model.year == self.year && model.month < self.month) {
+        return YES;
+    }
+    return NO;
 }
 @end

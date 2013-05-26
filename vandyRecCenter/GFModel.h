@@ -55,4 +55,9 @@
 //the instance of model is not at the current month or
 //year, this will return nil
 - (NSDictionary*) currentClass;
+
+//comparing models for chronological order
++ (NSComparisonResult) compareModel1: (GFModel*) model1 model2: (GFModel*) model2;
+
+- (BOOL) precedesModel: (GFModel*) model;
 @end
