@@ -66,9 +66,18 @@
 #pragma mark - Public
 
 - (NSArray*) GFClassesForDay:(NSUInteger)day {
+    //check if the GFModel instance is for a given
+    //month
     if (self.month >= 0) {
-        
+        NSArray *GFClasses = [[NSArray alloc] init];
+        for (NSDictionary* GFClass in self.GFClasses) {
+            if ([self GFClass: GFClass isOnDay: day]) {
+                GFClasses = [GFClasses arrayByAddingObject: GFClass];
+            }
+        }
+        return GFClasses;
     }
+    return nil;
 }
 
 
