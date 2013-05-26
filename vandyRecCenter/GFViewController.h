@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GFModel.h"
 
 @interface GFViewController : UIViewController
 
+@property (nonatomic, strong) GFModel *model;
 @end

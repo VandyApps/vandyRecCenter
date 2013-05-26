@@ -13,7 +13,18 @@
 @end
 
 @implementation GFViewController
+@synthesize model = _model;
 
+#pragma mark - getters
+
+- (GFModel*) model {
+    if (_model == nil) {
+        _model = [[GFModel alloc] init];
+    }
+    return _model;
+}
+
+#pragma mark - initializers
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -23,10 +34,14 @@
     return self;
 }
 
+#pragma mark - lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.model loadData:^(NSError *error, NSArray *data) {
+        NSLog(@"%@", data);
+    } forMonth: 4 andYear: 2013];
 }
 
 - (void)didReceiveMemoryWarning
