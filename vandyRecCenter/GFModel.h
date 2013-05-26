@@ -37,7 +37,7 @@
 //this returns an array of classes that are on a specific day
 //the array is sorted based on the times the classes are held
 //such that classes that start earlier in the day come first
-- (void) GFClassesForDay: (NSUInteger) day;
+- (NSArray*) GFClassesForDay: (NSUInteger) day;
 
 //the parameters in the block are the class dictionary
 //for the next class and the minutes until the class

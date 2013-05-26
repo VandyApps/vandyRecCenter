@@ -62,4 +62,18 @@
     }
     
 }
+
+#pragma mark - Public
+
+- (NSArray*) GFClassesForDay:(NSUInteger)day {
+    if (self.month >= 0) {
+        
+    }
+}
+
+#pragma mark - Private
+
+- (BOOL) class: (NSDictionary*) class isOnDay: (NSUInteger) day {
+    
+}
 @end

@@ -72,4 +72,58 @@
     totalMinutes += (isPM && timeInHours != 12) ? (12*60) : 0;
     return totalMinutes;
 }
+
++ (NSDate*) dateWithYear:(NSUInteger)year month:(NSUInteger)month andDay:(NSUInteger)day {
+    
+    assert(year >= 1970);
+    NSUInteger leapYearCount = 0;
+    for (NSUInteger start = 1970; start < year; start++) {
+        if (start % 4 == 0) {
+            leapYearCount++;
+        }
+    }
+    NSTimeInterval secondsSince1970 = 0;
+    //seconds from year
+    secondsSince1970 += (year - 1970) * 365 * 24 * 60 * 60;
+    
+    //add missing days from leap years
+    secondsSince1970 += (leapYearCount * 24 * 60 * 60);
+    
+    //seconds from month
+    for (NSInteger index = (NSInteger) month - 1; index >= 0; index--) {
+        NSUInteger daysInMonth = 0;
+        
+        switch (index) {
+            case 0:
+            case 2:
+            case 4:
+            case 7:
+            case 9:
+            case 11:
+                daysInMonth = 31;
+                break;
+            case 3:
+            case 5:
+            case 6:
+            case 8:
+            case 10:
+                daysInMonth = 30;
+                break;
+            default:
+                if (year % 4 == 0) {
+                    daysInMonth = 29;
+                } else {
+                    daysInMonth = 28;
+                }
+                break;
+        }
+        secondsSince1970 += (daysInMonth * 24 * 60 * 60);
+        NSLog(@"Month index %i has %i days", index, daysInMonth);
+    }
+    
+    //seconds from days
+    secondsSince1970 += ((day - 1) * 24 * 60 * 60);
+     
+    return [[NSDate alloc] initWithTimeIntervalSince1970: secondsSince1970];
+}
 @end

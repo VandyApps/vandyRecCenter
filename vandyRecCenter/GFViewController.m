@@ -42,6 +42,8 @@
     [self.model loadData:^(NSError *error, NSArray *data) {
         NSLog(@"%@", data);
     } forMonth: 4 andYear: 2013];
+    
+    NSLog(@"%@", [NSDate dateWithYear: 2013 month: 3 andDay: 2]);
 }
 
 - (void)didReceiveMemoryWarning
