@@ -15,6 +15,11 @@
 @end
 @implementation HoursScrollView
 
+
+@synthesize scrollHoursDelegate = _scrollHoursDelegate;
+@synthesize currentFrame = _currentFrame;
+@synthesize subviews = _subviews;
+
 #pragma mark - Getters
 - (NSArray*) subviews {
     if (_subviews == nil) {

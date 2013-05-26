@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NSDate-MyDateClass.h"
 #import "NSDate-WeekDateClass.h"
-
+#import "ScrollHoursDelegate.h"
 
 //title label
 
@@ -38,6 +38,8 @@
 #define IMAGE_SECTION_HEAD @"goldTint.png"
 
 @interface HoursScrollView : UIScrollView
+
+@property (nonatomic, weak) id<ScrollHoursDelegate> scrollHoursDelegate;
 
 - (NSUInteger) setUpScrollViewWithHours: (NSDictionary*) hours;
 - (NSArray*) arrayOfUniqueIndices: (NSArray*) hours;

@@ -115,6 +115,7 @@
 		21DBAFC017108C1C00C7C34D /* brownGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brownGradient.png; sourceTree = "<group>"; };
 		21E1A5F41751ADE900442922 /* HoursScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoursScrollView.h; sourceTree = "<group>"; };
 		21E1A5F51751ADE900442922 /* HoursScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoursScrollView.m; sourceTree = "<group>"; };
+		21E1A5F81751CF9500442922 /* ScrollHoursDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollHoursDelegate.h; sourceTree = "<group>"; };
 		21E40A1A1719C1530045451F /* NSDate-WeekDateClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-WeekDateClass.h"; sourceTree = "<group>"; };
 		21E40A1B1719C1530045451F /* NSDate-WeekDateClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-WeekDateClass.m"; sourceTree = "<group>"; };
 		21E677C7174971B300719EA7 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -293,6 +294,7 @@
 				215D04D1170D0AF8008D8277 /* hoursViewController.m */,
 				21E1A5F41751ADE900442922 /* HoursScrollView.h */,
 				21E1A5F51751ADE900442922 /* HoursScrollView.m */,
+				21E1A5F81751CF9500442922 /* ScrollHoursDelegate.h */,
 			);
 			name = Hours;
 			sourceTree = "<group>";
