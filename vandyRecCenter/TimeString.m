@@ -62,7 +62,7 @@
 }
 
 #pragma mark - Public
-- (NSString*) timeString {
+- (NSString*) stringValue {
     NSString* returnString = [[NSString alloc] init];
     
     if (self.style == TimeStringStyleMilitary && !self.isAM) {
@@ -93,7 +93,7 @@
     return returnString;
 }
 - (NSString*) description {
-    return [self timeString];
+    return [self stringValue];
 }
 #pragma mark  Validation
 + (BOOL) validTimeString:(NSString *)timeString {

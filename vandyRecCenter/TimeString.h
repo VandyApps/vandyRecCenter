@@ -29,7 +29,7 @@
 - (id) initWithTimeString: (NSString*) timeString;
 
 //prints out the string according to the time string style
-- (NSString*) timeString;
+- (NSString*) stringValue;
 
 - (NSUInteger) timeInMinutes;
 - (NSUInteger) timeInSeconds;
