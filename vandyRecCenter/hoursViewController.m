@@ -179,24 +179,6 @@
     
 }
 
-//this returns an array of all the indices that are totally unique in sequence
-//MORE DETAILED COMMENTS HERE
-- (NSArray*) arrayOfUniqueIndices: (NSArray*) hours {
-    NSArray* arrayOfIndices = [[NSArray alloc] init];
-    for (size_t i =0; i < [hours count]; ++i) {
-        if (i == 0) {
-            arrayOfIndices = [arrayOfIndices arrayByAddingObject: [NSNumber numberWithInt: 0]];
-            
-        } else {
-        
-            if (![[hours objectAtIndex: i] isEqualToString: [hours objectAtIndex: i - 1]]) {
-                arrayOfIndices = [arrayOfIndices arrayByAddingObject: [NSNumber numberWithInt: i]];
-            } 
-        }
-        
-    }
-    return arrayOfIndices;
-}
 
 
 - (NSString*) getDateStringWithStartDate: (NSDate*) startDate andEndDate: (NSDate*) endDate {
@@ -313,7 +295,7 @@
     assert(self.sectionOfCurrentHours == self.sectionOfSelectedCell && self.rowOfCurrentHours == self.rowOfSelectedCell);
     NSUInteger indexForCurrentDayOfWeek = [NSDate currentDayOfTheWeekAsIntWithTimeZone: [NSTimeZone localTimeZone]];
     NSArray* hours = [[self.hours hoursForCurrentTime] objectForKey: @"hours"];
-    NSArray *uniqueDaysOfWeek = [self arrayOfUniqueIndices: hours];
+    NSArray *uniqueDaysOfWeek = [self.scrollHours arrayOfUniqueIndices: hours];
     
     BOOL foundIndexToScroll = NO;
     for (size_t i = 0; i < [uniqueDaysOfWeek count] && !foundIndexToScroll; ++i) {
@@ -325,6 +307,7 @@
             foundIndexToScroll = YES;
         }
     }
+    
     [self.scrollHours setContentOffset:CGPointMake(self.indexOfScroll*self.scrollHours.frame.size.width, 0) animated:YES];
     self.pageControl.currentPage = self.indexOfScroll;
     
@@ -491,7 +474,7 @@
 #pragma mark - ScrollView
 
 - (void) setUpScrollViewWithHoursTitle: (NSString*) title {
-    NSLog(@"This is called");
+    [self.scrollHours setUpScrollViewWithHours: [self.hours hoursWithTitle: title]];
     //clear any existing subviews in the scroll view before adding new stuff
     [self.scrollHours removeAllSubviews];
     
@@ -501,7 +484,7 @@
     
     if (hours) {
         self.scrollHours.bounces = YES;
-        NSArray* indicesOfUniqueHours = [self arrayOfUniqueIndices: hours];
+        NSArray* indicesOfUniqueHours = [self.scrollHours arrayOfUniqueIndices: hours];
         NSArray *scrollTitles = [self titlesForArrayOfUniqueIndices: indicesOfUniqueHours];
         NSInteger numberOfPages = [scrollTitles count];
         
