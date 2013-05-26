@@ -132,7 +132,7 @@
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
-    NSString* dateString = [formatter stringFromDate: [[NSDate alloc] init] ];
+    NSString* dateString = [formatter stringFromDate: self];
     NSLog(@"dateString is %@", dateString);
     return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 1] intValue];
 }
@@ -141,7 +141,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
-    NSString* dateString = [formatter stringFromDate: [[NSDate alloc] init]];
+    NSString* dateString = [formatter stringFromDate: self];
     NSLog(@"date string is %@", dateString);
     return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 0] intValue] -1;
 }
@@ -150,7 +150,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
-    NSString* dateString = [formatter stringFromDate: [[NSDate alloc] init]];
+    NSString* dateString = [formatter stringFromDate: self];
     NSLog(@"date string is %@", dateString);
     
     NSUInteger year = [[[dateString componentsSeparatedByString: @"/"] objectAtIndex:2] intValue];
