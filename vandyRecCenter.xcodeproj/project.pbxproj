@@ -72,6 +72,7 @@
 /* Begin PBXFileReference section */
 		211B16E81752B4C800180E3D /* TimeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeString.h; sourceTree = "<group>"; };
 		211B16E91752B4C800180E3D /* TimeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeString.m; sourceTree = "<group>"; };
+		211B16EB1752B61E00180E3D /* TimeStringStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeStringStyle.h; sourceTree = "<group>"; };
 		21201EC11702177D00E89605 /* blackGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackGradient.png; path = ../blackGradient.png; sourceTree = "<group>"; };
 		21201EC31702199B00E89605 /* vandyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vandyLogo.png; sourceTree = "<group>"; };
 		212DECD1170096C40041498E /* imageOfRec.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imageOfRec.jpeg; path = ../imageOfRec.jpeg; sourceTree = "<group>"; };
@@ -176,6 +177,7 @@
 		211B16E71752B4AB00180E3D /* Time String */ = {
 			isa = PBXGroup;
 			children = (
+				211B16EB1752B61E00180E3D /* TimeStringStyle.h */,
 				211B16E81752B4C800180E3D /* TimeString.h */,
 				211B16E91752B4C800180E3D /* TimeString.m */,
 			);
