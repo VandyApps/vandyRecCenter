@@ -16,7 +16,6 @@
 }
 
 - (void) JSONFromNewsTab:(void (^)(NSError *, NSArray *))block {
-    NSLog(@"JSON method was called");
     NSURLRequest *newsRequest = [self requestWithMethod: @"GET" path: @"news" parameters:nil];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: newsRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -28,5 +27,34 @@
     }];
     
     [operation start];
+}
+
+- (void) JSONFromGFTab: (void (^)(NSError *, NSArray *)) block {
+    NSURLRequest *GFRequest = [self requestWithMethod: @"GET" path: @"GF" parameters: nil];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: GFRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"Success");
+        
+        block(nil, JSON);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Failure");
+        block(error, JSON);
+    }];
+    
+    [operation start];
+}
+
+- (void) JSONFromGFTab: (void (^)(NSError *, NSArray *)) block forMonth: (NSUInteger) monthIndex andYear: (NSUInteger) year {
+    NSDictionary *params = [[NSDictionary alloc] initWithObjects: [[NSArray alloc] initWithObjects: [NSNumber numberWithInt: monthIndex], [NSNumber numberWithInt: year], nil] forKeys: @[@"month", @"year"]];
+    NSURLRequest *GFRequest = [self requestWithMethod: @"GET" path: @"GF" parameters: params];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: GFRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"Success");
+        block(nil, JSON);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Error");
+        block(error, JSON);
+    }];
+    
+    [operation start];
+    
 }
 @end

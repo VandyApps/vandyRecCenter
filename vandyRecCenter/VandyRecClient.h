@@ -21,4 +21,8 @@
 //can return an error if either the page could not be reached or something
 //else has happenned
 - (void) JSONFromNewsTab: (void (^)(NSError* error, NSArray* jsonData)) block;
+
+- (void) JSONFromGFTab: (void (^)(NSError* error, NSArray* jsonData)) block;
+- (void) JSONFromGFTab:(void (^)(NSError *, NSArray *))block forMonth: (NSUInteger) monthIndex andYear: (NSUInteger) year;
+
 @end
