@@ -181,18 +181,17 @@
     
     
     //if the current time is after the opening time
-    if ( [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending || [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedSame) {
-        
-        //if it is closing at midnight, then it must be currently open
-        if ([NSDate compareTime: @"12:00AM" withTime: [self closingTime]] == NSOrderedSame) {
+    TimeString* opening = [[TimeString alloc] initWithTimeString: [self openingTime]];
+    TimeString* current = [[TimeString alloc] initWithTimeString: [getTimeFormat stringFromDate: currentDate]];
+    TimeString* closing = [[TimeString alloc] initWithTimeString: [self closingTime]];
+
+    if ([TimeString compareTimeString1: opening timeString2: current] == NSOrderedAscending || [TimeString compareTimeString1: opening timeString2: current] == NSOrderedSame) {
+        TimeString* twelve = [[TimeString alloc] initWithTimeString: @"12:00AM"];
+        if ([TimeString compareTimeString1: twelve timeString2: closing] == NSOrderedSame) {
+            return YES;
+        } else if ([TimeString compareTimeString1: closing timeString2: current] == NSOrderedDescending) {
             return YES;
         }
-        else if ([NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending)
-        {
-            return YES;
-        }
-        
-        
     }
     return NO;
 }
@@ -206,7 +205,9 @@
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
     
-    if ([self openingTime] && [NSDate compareTime: [self openingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedDescending) {
+    TimeString* current = [[TimeString alloc] initWithTimeString:[getTimeFormat stringFromDate: currentDate]];
+    TimeString* opening = [[TimeString alloc] initWithTimeString: [self openingTime]];
+    if ([self openingTime] && [TimeString compareTimeString1: opening timeString2: current] == NSOrderedDescending) {
         return YES;
     }
     return NO;
@@ -221,18 +222,18 @@
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
    
+    TimeString* twelve = [[TimeString alloc] initWithTimeString: @"12:00AM"];
+    TimeString* closing = [[TimeString alloc] initWithTimeString: [self closingTime]];
+    TimeString* current = [[TimeString alloc] initWithTimeString: [getTimeFormat stringFromDate: currentDate]];
     if ([self closingTime]) {
-        //if the closing time is midnight, it is either still open or did not open yet
-        if ([NSDate compareTime: @"12:00AM" withTime: [self closingTime]] == NSOrderedSame) {
+        if ([TimeString compareTimeString1: twelve timeString2: closing] == NSOrderedSame) {
             return NO;
-        }
-        else if ([self closingTime] && [NSDate compareTime: [self closingTime] withTime: [getTimeFormat stringFromDate: currentDate]] == NSOrderedAscending) {
-            
+        } else if ([TimeString compareTimeString1:closing timeString2: current] == NSOrderedAscending) {
             return YES;
         }
     }
-    
     return NO;
+    
 }
 
 
@@ -243,8 +244,10 @@
         
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: [[NSTimeZone timeZoneWithName:NASHVILLE_TIMEZONE] secondsFromGMT]]; //adjust to nashville time
         NSDate *closingDate = [currentDate dateBySettingTimeToTime: [self closingTime]];
-        if ([NSDate compareTime: @"12:00AM" withTime: [self closingTime]] == NSOrderedSame) {
-            closingDate = [closingDate dateByAddingTimeInterval: 24*60*60]; //add a day
+        TimeString* closing = [[TimeString alloc] initWithTimeString: [self closingTime]];
+        TimeString* twelve = [[TimeString alloc] initWithTimeString: @"12:00AM"];
+        if ([TimeString compareTimeString1: twelve timeString2: closing] == NSOrderedSame) {
+            closingDate = [closingDate dateByAddingTimeInterval: 24*60*60];
         }
         return [closingDate timeIntervalSinceDate: currentDate];
     }

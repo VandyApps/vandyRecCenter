@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NSDate-MyDateClass.h"
 #import "NSDate-WeekDateClass.h"
+#import "TimeString.h"
 
 #define NASHVILLE_TIMEZONE @"America/Chicago"
 

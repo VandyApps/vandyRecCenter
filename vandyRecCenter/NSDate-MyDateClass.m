@@ -28,22 +28,6 @@
 }
 
 
-+ (NSComparisonResult) compareTime:(NSString *)time1 withTime:(NSString *)time2 {
-    //convert to military time in minutes for ease of comparison
-    NSUInteger time1InMinutes = [NSDate timeInMinutes: time1];
-    NSUInteger time2InMinutes = [NSDate timeInMinutes: time2];
-    
-    if (time1InMinutes > time2InMinutes) {
-        return NSOrderedDescending;
-    } else if (time1InMinutes < time2InMinutes) {
-        return NSOrderedAscending;
-    } else {
-        return NSOrderedSame;
-    }
-    
-    
-}
-
 //private methods here
 //if earlyMidnight is true, midnight is represented as 0 hours
 //if early midnight is false, midnight is represent as 24 hours
