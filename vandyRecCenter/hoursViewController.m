@@ -119,8 +119,6 @@
 }
 
 - (void) viewDidLayoutSubviews {
-    NSLog(@"redoing the layout %g", self.view.frame.size.width);
-    NSLog(@"redoing the layout %g", self.scrollHours.frame.size.width);
     if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
         self.pageControl.hidden = NO;
     } else {
@@ -139,7 +137,7 @@
 }
 
 //paging left and right are dynamically created events
-- (IBAction)scrollOnePageLeft {
+- (IBAction)scrollLeft {
     
     [self decrementIndexOfScroll];
     self.pageControl.currentPage = self.indexOfScroll;
@@ -151,7 +149,7 @@
     
 }
 
-- (IBAction)scrollOnePageRight {
+- (IBAction)scrollRight {
 
     
     [self incrementIndexOfScroll];

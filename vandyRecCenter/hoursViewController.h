@@ -60,6 +60,6 @@
 @property (nonatomic, strong) HoursModel* hours;
 
 - (IBAction)current:(UIBarButtonItem *)sender;
-- (IBAction) scrollOnePageLeft;
-- (IBAction) scrollOnePageRight;
+- (IBAction) scrollLeft;
+- (IBAction) scrollRight;
 @end

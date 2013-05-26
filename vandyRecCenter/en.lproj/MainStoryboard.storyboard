@@ -43,7 +43,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="scrollOnePageLeft" destination="gCv-Nj-e3x" eventType="touchUpInside" id="2KY-st-Gvl"/>
+                                            <action selector="scrollLeft" destination="gCv-Nj-e3x" eventType="touchUpInside" id="4K2-0O-i1R"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1Z-Sr-lTU">
@@ -59,7 +59,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="scrollOnePageRight" destination="gCv-Nj-e3x" eventType="touchUpInside" id="gRK-1G-ldI"/>
+                                            <action selector="scrollRight" destination="gCv-Nj-e3x" eventType="touchUpInside" id="CeH-ej-i7U"/>
                                         </connections>
                                     </button>
                                 </subviews>

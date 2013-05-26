@@ -53,7 +53,7 @@
     return self;
 }
 
-#pragma mark -Lifecycle
+#pragma mark - Lifecycle
 
 - (void) layoutSubviews {
     
