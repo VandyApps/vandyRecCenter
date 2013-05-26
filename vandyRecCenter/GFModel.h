@@ -33,6 +33,8 @@
 //will contain ALL of the GF data available with no month or year
 //boundaries
 - (void) loadData: (void (^)(NSError* error, NSArray* data)) block forMonth: (NSInteger) month andYear: (NSInteger) year;
+
+- (BOOL) GFClass: (NSDictionary*) GFClass isOnDay: (NSUInteger) day;
 //this method should only be used when month and year are non-negative numbers
 //and the model represents data that consists of a single month
 //this returns an array of classes that are on a specific day

@@ -71,20 +71,23 @@
     }
 }
 
-#pragma mark - Private
 
-- (BOOL) class: (NSDictionary*) class isOnDay: (NSUInteger) day {
+
+- (BOOL) GFClass: (NSDictionary*) GFClass isOnDay: (NSUInteger) day {
     NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: day];
-    if (![[class objectForKey: @"dayOfWeek"] intValue] == [date dayOfTheWeekAsInt]) {
+    if ([[GFClass objectForKey: @"dayOfWeek"] intValue] != [date dayOfTheWeekAsInt]) {
         return NO;
     }
+    NSLog(@"Start date string %@", [GFClass objectForKey: @"startDate"]);
     
-    NSArray* startDateArray = [[class objectForKey: @"startDate"] componentsSeparatedByString: @"/"];
+    NSArray* startDateArray = [[GFClass objectForKey: @"startDate"] componentsSeparatedByString: @"/"];
+    NSLog(@"Start date array %@", startDateArray);
+    NSLog(@"Year: %i", [[startDateArray objectAtIndex: 2] intValue] );
     NSDate* startDate = [NSDate dateWithYear: [[startDateArray objectAtIndex: 2] intValue]  month:[[startDateArray objectAtIndex: 0] intValue] - 1 andDay:[[startDateArray objectAtIndex: 1] intValue]];
     if ([startDate compare: date] == NSOrderedDescending) {
         return NO;
     }
-    NSString* endDateString = [class objectForKey: @"endDate"];
+    NSString* endDateString = [GFClass objectForKey: @"endDate"];
     if (![endDateString isEqualToString: @"*"]) {
         NSArray* endDateArray = [endDateString componentsSeparatedByString: @"/"];
         NSDate* endDate = [NSDate dateWithYear: [[endDateArray objectAtIndex: 2] intValue] month: [[endDateArray objectAtIndex: 0] intValue] - 1 andDay: [[endDateArray objectAtIndex: 1] intValue] ];
@@ -93,6 +96,7 @@
         }
     }
     
+    NSLog(@"This is a valid date");
     return YES;
     
 }

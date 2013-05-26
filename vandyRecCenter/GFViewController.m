@@ -41,7 +41,9 @@
 	// Do any additional setup after loading the view.
     [self.model loadData:^(NSError *error, NSArray *data) {
         NSLog(@"%@", data);
+    NSLog(@"Bool value %i", [self.model GFClass:[self.model.GFClasses objectAtIndex: 0] isOnDay: 19]);
     } forMonth: 4 andYear: 2013];
+   
 }
 
 - (void)didReceiveMemoryWarning
