@@ -102,7 +102,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.scrollHours.delegate = self;
-   
+    self.scrollHours.scrollHoursDelegate = self;
     self.pageControl.hidesForSinglePage = YES;
     [self setCurrentHours];
     [self selectCurrentHours];
@@ -494,6 +494,12 @@
         self.indexOfScroll = scrollView.contentOffset.x / self.scrollHours.frame.size.width;
         self.pageControl.currentPage = self.indexOfScroll;
     }
+}
+
+#pragma mark ScrollHoursDelegate
+
+- (NSDictionary*) hoursForFrameChange:(CGRect)newFrame {
+    return [self.hours hoursWithTitle: self.title];
 }
 
 //resets the scroll to the the intended value

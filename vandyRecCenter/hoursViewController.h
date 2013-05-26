@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "hoursModel.h"
 #import "HoursScrollView.h"
+#import "ScrollHoursDelegate.h"
 
 //macros
 #define DEFAULT_HEIGHT_FOR_CELL 51
@@ -47,7 +48,7 @@
 #define IMAGE_CELL_NORMAL @"blackGradient.png"
 #define IMAGE_SECTION_HEAD @"goldTint.png"
 
-@interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, ScrollHoursDelegate>
 
 
 @property (weak, nonatomic) IBOutlet HoursScrollView *scrollHours;

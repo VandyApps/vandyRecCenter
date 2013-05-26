@@ -10,4 +10,6 @@
 
 @protocol ScrollHoursDelegate <NSObject>
 
+- (NSDictionary*) hoursForFrameChange: (CGRect) newFrame;
+
 @end

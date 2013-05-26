@@ -292,9 +292,9 @@
 				21A37ABF171B34F1008990C5 /* HoursModel.m */,
 				215D04D0170D0AF8008D8277 /* hoursViewController.h */,
 				215D04D1170D0AF8008D8277 /* hoursViewController.m */,
+				21E1A5F81751CF9500442922 /* ScrollHoursDelegate.h */,
 				21E1A5F41751ADE900442922 /* HoursScrollView.h */,
 				21E1A5F51751ADE900442922 /* HoursScrollView.m */,
-				21E1A5F81751CF9500442922 /* ScrollHoursDelegate.h */,
 			);
 			name = Hours;
 			sourceTree = "<group>";
