@@ -100,8 +100,11 @@
 - (NSUInteger) timeInMinutes {
    
     NSUInteger minutes = 0;
-    minutes += (self.hours * 60);
-    if (!self.isAM) {
+    if (!self.isAM || self.hours != 12) {
+        minutes += (self.hours * 60);
+    }
+    
+    if (!self.isAM && self.hours != 12) {
         minutes += (12*60);
     }
     minutes += self.minutes;
@@ -114,6 +117,7 @@
 
 #pragma mark Comparison
 + (NSComparisonResult) compareTimeString1:(TimeString *)timeString1 timeString2:(TimeString *)timeString2 {
+    
     if ([timeString1 timeInMinutes] < [timeString2 timeInMinutes]) {
         return NSOrderedAscending;
     } else if ([timeString1 timeInMinutes] > [timeString2 timeInMinutes]) {
