@@ -142,7 +142,6 @@
     [self decrementIndexOfScroll];
     self.pageControl.currentPage = self.indexOfScroll;
     
-    NSLog(@"%f", self.scrollHours.frame.size.width);
     NSInteger newOffset = self.indexOfScroll * self.scrollHours.frame.size.width;
     
     [self.scrollHours setContentOffset: CGPointMake((CGFloat) newOffset, 0) animated: YES];

@@ -24,7 +24,7 @@
 
 #pragma - initializer
 - (id) init {
-    NSLog(@"Initializer was called");
+    
     self = [super init];
     if (self) {
         
@@ -34,7 +34,6 @@
 }
 
 - (void) loadData:(void (^)(NSError*))completion {
-    NSLog(@"LOAD DATA WAS CALLED");
     VandyRecClient* webClient = [[VandyRecClient alloc] init];
     
     [webClient JSONFromNewsTab:^(NSError *error, NSArray *jsonData) {
@@ -60,7 +59,7 @@
                 
                 self.news = [self.news arrayByAddingObject: [event objectForKey: @"description" ]];
             }
-            NSLog(@"%@", self.news);
+            
             completion(nil);
         }
     }];

@@ -78,11 +78,10 @@
     if ([[GFClass objectForKey: @"dayOfWeek"] intValue] != [date dayOfTheWeekAsInt]) {
         return NO;
     }
-    NSLog(@"Start date string %@", [GFClass objectForKey: @"startDate"]);
+    
     
     NSArray* startDateArray = [[GFClass objectForKey: @"startDate"] componentsSeparatedByString: @"/"];
-    NSLog(@"Start date array %@", startDateArray);
-    NSLog(@"Year: %i", [[startDateArray objectAtIndex: 2] intValue] );
+
     NSDate* startDate = [NSDate dateWithYear: [[startDateArray objectAtIndex: 2] intValue]  month:[[startDateArray objectAtIndex: 0] intValue] - 1 andDay:[[startDateArray objectAtIndex: 1] intValue]];
     if ([startDate compare: date] == NSOrderedDescending) {
         return NO;
@@ -96,7 +95,7 @@
         }
     }
     
-    NSLog(@"This is a valid date");
+    
     return YES;
     
 }

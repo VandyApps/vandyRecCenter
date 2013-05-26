@@ -86,7 +86,7 @@
         frameOfLeftScroller = CGRectMake(ARROW_BORDER_PADDING_PORTRAIT, (self.view.frame.size.height - ARROW_DIMENSIONS_PORTRAIT)/2.0, ARROW_DIMENSIONS_PORTRAIT, ARROW_DIMENSIONS_PORTRAIT);
         frameOfRightScroller = CGRectMake(self.view.frame.size.width - ARROW_BORDER_PADDING_PORTRAIT - ARROW_DIMENSIONS_PORTRAIT, (self.view.frame.size.height - ARROW_DIMENSIONS_PORTRAIT)/2.0, ARROW_DIMENSIONS_PORTRAIT, ARROW_DIMENSIONS_PORTRAIT);
     } else {
-        NSLog(@"This method is being called");
+       
         frameOfLeftScroller = CGRectMake(ARROW_BORDER_PADDING_LANDSCAPE, (self.view.frame.size.height - ARROW_DIMENSIONS_LANDSCAPE)/2.0, ARROW_DIMENSIONS_LANDSCAPE, ARROW_DIMENSIONS_LANDSCAPE);
         frameOfRightScroller = CGRectMake(self.view.frame.size.width - ARROW_BORDER_PADDING_LANDSCAPE - ARROW_DIMENSIONS_LANDSCAPE, (self.view.frame.size.height - ARROW_DIMENSIONS_LANDSCAPE)/2.0, ARROW_DIMENSIONS_LANDSCAPE, ARROW_DIMENSIONS_LANDSCAPE);
     
@@ -130,7 +130,7 @@
                     self.scrollView.bounces = NO;
                     hideScroller = YES;
                 }
-                NSLog(@"There are %u event descriptions", self.newsModel.news.count);
+                
                 self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.newsModel.news.count, self.scrollView.frame.size.height);
                 
                 for (NSUInteger i = 0; i < self.newsModel.news.count; ++i) {
