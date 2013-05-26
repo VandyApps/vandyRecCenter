@@ -43,7 +43,8 @@
        // NSLog(@"%@", data);
     
     } forMonth: 4 andYear: 2013];
-    NSLog(@"day is %i", [[NSDate dateWithYear: 1970 month: 0 andDay: 1] year]);
+    TimeString *time = [[TimeString alloc] initWithTimeString: @"13:37"];
+    NSLog(@"%i, %i, %i", time.hours, time.minutes, time.isAM);
 }
 
 - (void)didReceiveMemoryWarning
