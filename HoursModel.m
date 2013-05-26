@@ -19,7 +19,8 @@
 @synthesize allHours = _allHours;
 
 
-//getters and setters
+#pragma mark - Getters and Setters
+
 - (id) initWithPathToPList:(NSString *)path {
     
     self = [super init];
@@ -31,12 +32,6 @@
     }
     return self;
     
-}
-
-
-- (id) init {
-    self = [self initWithPathToPList:nil];
-    return self;
 }
 
 - (NSDictionary*) hoursWithTitle:(NSString *)title {
@@ -110,6 +105,16 @@
     return mainHours;
 }
 
+
+
+#pragma mark- Initializers
+
+- (id) init {
+    self = [self initWithPathToPList:nil];
+    return self;
+}
+
+#pragma mark - Current Time
 
 - (NSDictionary*) hoursForCurrentTime {
     
