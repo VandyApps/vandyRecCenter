@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "VandyRecClient.h"
-
+#import "NSDate-MyDateClass.h"
+#import "NSDate-WeekDateClass.h"
 @interface GFModel : NSObject
 
 //YES if data has been successfully loaded

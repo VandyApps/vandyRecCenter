@@ -74,6 +74,26 @@
 #pragma mark - Private
 
 - (BOOL) class: (NSDictionary*) class isOnDay: (NSUInteger) day {
+    NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: day];
+    if (![[class objectForKey: @"dayOfWeek"] intValue] == [date dayOfTheWeekAsInt]) {
+        return NO;
+    }
+    
+    NSArray* startDateArray = [[class objectForKey: @"startDate"] componentsSeparatedByString: @"/"];
+    NSDate* startDate = [NSDate dateWithYear: [[startDateArray objectAtIndex: 2] intValue]  month:[[startDateArray objectAtIndex: 0] intValue] - 1 andDay:[[startDateArray objectAtIndex: 1] intValue]];
+    if ([startDate compare: date] == NSOrderedDescending) {
+        return NO;
+    }
+    NSString* endDateString = [class objectForKey: @"endDate"];
+    if (![endDateString isEqualToString: @"*"]) {
+        NSArray* endDateArray = [endDateString componentsSeparatedByString: @"/"];
+        NSDate* endDate = [NSDate dateWithYear: [[endDateArray objectAtIndex: 2] intValue] month: [[endDateArray objectAtIndex: 0] intValue] - 1 andDay: [[endDateArray objectAtIndex: 1] intValue] ];
+        if ([date compare: endDate] == NSOrderedDescending) {
+            return NO;
+        }
+    }
+    
+    return YES;
     
 }
 @end
