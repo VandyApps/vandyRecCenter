@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "GFModel.h"
+#import "NSDate-MyDateClass.h"
+
+#ifndef NASHVILLE_TIMEZONE
+#define NASHVILLE_TIMEZONE @"America/Chicago"
+#endif
+
 @interface GFCollection : NSObject
 
 @property (nonatomic, strong) NSArray* models;
 
-
-- (id) init;
 
 //loads the collection with a single element
 //in the model array that represents the current date
