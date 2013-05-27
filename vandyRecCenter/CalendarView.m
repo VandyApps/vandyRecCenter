@@ -10,6 +10,15 @@
 
 @implementation CalendarView
 
+#pragma mark - Properties
+@synthesize calendarDelegate = _calendarDelegate;
+@synthesize calendarScroll = _calendarScroll;
+@synthesize decrementButton = _decrementButton;
+@synthesize incrementButton = _incrementButton;
+@synthesize month = _month;
+@synthesize year = _year;
+@synthesize selectedDate = _selectedDate;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
