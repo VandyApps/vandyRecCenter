@@ -16,6 +16,9 @@
 //this is 0-based, so January is 0, December is 11
 - (NSUInteger) month;
 - (NSUInteger) year;
+- (NSUInteger) dayForAdjustedTimeZone: (NSTimeZone*) timeZone;
+- (NSUInteger) monthForAdjustedTimeZone: (NSTimeZone*) timeZone;
+- (NSUInteger) yearForAdjustedTimeZone: (NSTimeZone*) timeZone;
 
 
 

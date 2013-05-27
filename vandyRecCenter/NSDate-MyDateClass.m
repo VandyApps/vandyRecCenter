@@ -122,6 +122,17 @@
     return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 1] intValue];
 }
 
+- (NSUInteger) dayForAdjustedTimeZone:(NSTimeZone*) timeZone {
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = timeZone;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    NSString* dateString = [formatter stringFromDate: self];
+    
+    return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 1] intValue];
+    
+}
+
 - (NSUInteger) month {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.timeStyle = NSDateFormatterNoStyle;
@@ -131,12 +142,40 @@
     return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 0] intValue] -1;
 }
 
+- (NSUInteger) monthForAdjustedTimeZone:(NSTimeZone *)timeZone {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = timeZone;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    NSString* dateString = [formatter stringFromDate: self];
+    
+    return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 0] intValue] -1;
+
+}
+
 - (NSUInteger) year {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
     NSString* dateString = [formatter stringFromDate: self];
    
+    
+    NSUInteger year = [[[dateString componentsSeparatedByString: @"/"] objectAtIndex:2] intValue];
+    if (year < 70) {
+        year += 2000;
+    } else {
+        year += 1900;
+    }
+    return year;
+}
+
+- (NSUInteger) yearForAdjustedTimeZone:(NSTimeZone *)timeZone {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = timeZone;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    NSString* dateString = [formatter stringFromDate: self];
+    
     
     NSUInteger year = [[[dateString componentsSeparatedByString: @"/"] objectAtIndex:2] intValue];
     if (year < 70) {
