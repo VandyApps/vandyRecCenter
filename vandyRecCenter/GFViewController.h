@@ -13,5 +13,8 @@
 @interface GFViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UISegmentedControl* GFTabs;
+@property (nonatomic, weak) IBOutlet UIScrollView *calendarScroll;
+@property (nonatomic, weak) IBOutlet UITableView *GFTableView;
+@property (nonatomic, weak) IBOutlet UIView *monthView;
 @property (nonatomic, strong) GFModel *model;
 @end
