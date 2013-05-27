@@ -61,6 +61,23 @@
     return self;
 }
 
+- (id) init {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateStyle = NSDateFormatterNoStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
+    self = [self initWithTimeString: [formatter stringFromDate: [[NSDate alloc] init]]];
+    return self;
+}
+
+- (id) initWithTimeZone:(NSTimeZone *)timeZone {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = timeZone;
+    formatter.dateStyle = NSDateFormatterNoStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
+    self = [self initWithTimeString: [formatter stringFromDate: [[NSDate alloc] init]]];
+    return self;
+}
+
 #pragma mark - Public
 - (NSString*) stringValue {
     NSString* returnString = [[NSString alloc] init];

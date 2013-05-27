@@ -26,8 +26,12 @@
 @property (nonatomic) NSUInteger minutes;
 @property (nonatomic) TimeStringStyle style;
 
+//default initializer
 - (id) initWithTimeString: (NSString*) timeString;
-
+//initializes with the current time
+- (id) init;
+//intializes with the current time in the passed in time zone
+- (id) initWithTimeZone: (NSTimeZone*) timeZone;
 //prints out the string according to the time string style
 - (NSString*) stringValue;
 
