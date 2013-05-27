@@ -46,13 +46,6 @@
 //such that classes that start earlier in the day come first
 - (NSArray*) GFClassesForDay: (NSUInteger) day;
 
-//the parameters in the block are the class dictionary
-//for the next class and the minutes until the class
-//begins
-//if the month and year are not current years, class
-//NSDictionary will be nil and the minutesToClass will
-//be 0
-- (void) nextClass: (void (^)(NSDictionary* class, NSUInteger minutesToClass)) block;
 
 //returns the current class being held
 //if there are no classes at the moment or if

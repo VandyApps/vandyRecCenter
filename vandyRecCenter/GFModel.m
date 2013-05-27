@@ -129,12 +129,6 @@
 }
 #pragma mark Current Time
 
-- (void) nextClass:(void (^)(NSDictionary *, NSUInteger))block {
-    
-    
-    
-    
-}
 
 - (NSDictionary*) currentGFClass {
     NSDate *currentDate = [[NSDate alloc] init];
