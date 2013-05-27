@@ -175,4 +175,10 @@
     }
     return NO;
 }
+
+#pragma mark - Description
+
+- (NSString*) description {
+    return [NSString stringWithFormat: @"%@", self.GFClasses];
+}
 @end

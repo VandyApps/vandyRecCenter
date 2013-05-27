@@ -123,7 +123,7 @@
 - (void) loadCurrentMonth:(void (^)(NSError *, GFModel *))block {
     NSDate *current = [[NSDate alloc] init];
     NSUInteger month = [current monthForAdjustedTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
-    NSUInteger year = [current monthForAdjustedTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
+    NSUInteger year = [current yearForAdjustedTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
     [self loadMonth: month andYear: year block:^(NSError *error, GFModel *model) {
         if (error) {
             block(error, nil);

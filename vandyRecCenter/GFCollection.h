@@ -21,7 +21,7 @@
 
 //loads the collection with a single element
 //in the model array that represents the current date
-- (void) loadCurrentMonth: (void(^)(NSError*error, GFModel* currentModel)) block;
+- (void) loadCurrentMonth: (void(^)(NSError*error, GFModel* model)) block;
 
 - (void) loadMonth: (NSUInteger) month andYear: (NSUInteger) year block: (void(^)(NSError* error, GFModel* model)) block;
 

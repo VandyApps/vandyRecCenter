@@ -7,7 +7,7 @@
 //
 
 #import "GFViewController.h"
-#import "TimeString.h"
+#import "GFCollection.h"
 @interface GFViewController ()
 
 @end
@@ -38,6 +38,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    GFCollection *coll = [[GFCollection alloc] init];
+    [coll loadCurrentMonth:^(NSError *error, GFModel *model) {
+        NSLog(@"%@", model);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning
