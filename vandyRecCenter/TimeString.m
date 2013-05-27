@@ -159,7 +159,7 @@
 + (BOOL) validTimeString:(NSString *)timeString {
     NSRegularExpression* timeRegex = [[NSRegularExpression alloc] initWithPattern: @"(^([0-1]?\\d|2[0-3]):[0-5]\\d$)|(^0?[1-9]:[0-5]\\d\\x20?[a,A,p,P][m,M]$)|(^1[0-2]:[0-5]\\d\\x20?[A,a,p,P][m,M]$)" options:NSRegularExpressionUseUnixLineSeparators error: nil];
     NSUInteger count = [timeRegex numberOfMatchesInString: timeString options: NSMatchingAnchored range: NSMakeRange(0, timeString.length)];
-    NSLog(@"%i", count);
+    
     if (count == 1) {
         return YES;
     } else {
