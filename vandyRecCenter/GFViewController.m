@@ -41,6 +41,7 @@
     [super viewDidLoad];
     self.GFTabs.layer.cornerRadius = 0;
     
+    
 }
 
 - (void)didReceiveMemoryWarning

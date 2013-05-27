@@ -491,8 +491,8 @@
                                 </segments>
                                 <color key="tintColor" red="0.66274509803921566" green="0.58431372549019611" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZP-sj-GU7">
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZP-sj-GU7" customClass="CalendarView">
+                                <color key="backgroundColor" red="0.41502269619999999" green="0.77080676020000005" blue="0.2981828084" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" type="user" id="ORU-jQ-wnh"/>
                                 </constraints>
@@ -509,16 +509,19 @@
                         <constraints>
                             <constraint firstItem="6BL-lC-Nzx" firstAttribute="leading" secondItem="Pgd-U3-KAp" secondAttribute="leading" type="default" id="6Yg-NE-9bR"/>
                             <constraint firstItem="EZP-sj-GU7" firstAttribute="trailing" secondItem="Pgd-U3-KAp" secondAttribute="trailing" type="default" id="EfV-WB-B1d"/>
+                            <constraint firstItem="4PS-KL-nxb" firstAttribute="top" secondItem="Pgd-U3-KAp" secondAttribute="top" constant="-1" id="OvT-dO-tKD"/>
                             <constraint firstItem="6BL-lC-Nzx" firstAttribute="top" secondItem="EZP-sj-GU7" secondAttribute="bottom" type="user" id="VtB-sS-Z1d"/>
+                            <constraint firstItem="EZP-sj-GU7" firstAttribute="top" secondItem="Pgd-U3-KAp" secondAttribute="top" constant="28" id="chB-qC-Xzc"/>
                             <constraint firstItem="EZP-sj-GU7" firstAttribute="leading" secondItem="Pgd-U3-KAp" secondAttribute="leading" type="default" id="ewI-NT-oai"/>
-                            <constraint firstItem="EZP-sj-GU7" firstAttribute="top" secondItem="4PS-KL-nxb" secondAttribute="bottom" type="user" id="fmm-xk-KFE"/>
-                            <constraint firstItem="4PS-KL-nxb" firstAttribute="top" secondItem="Pgd-U3-KAp" secondAttribute="top" type="user" id="kRC-1I-gXA"/>
                             <constraint firstItem="4PS-KL-nxb" firstAttribute="trailing" secondItem="Pgd-U3-KAp" secondAttribute="trailing" type="default" id="q7n-X6-yUb"/>
                             <constraint firstItem="4PS-KL-nxb" firstAttribute="leading" secondItem="Pgd-U3-KAp" secondAttribute="leading" type="default" id="uMX-jY-iTf"/>
                             <constraint firstItem="6BL-lC-Nzx" firstAttribute="trailing" secondItem="Pgd-U3-KAp" secondAttribute="trailing" type="default" id="vi6-aM-N8s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Classes" id="FCk-t0-Icd"/>
+                    <connections>
+                        <outlet property="calendarView" destination="EZP-sj-GU7" id="q6K-TK-96O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hc7-oA-v3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -614,12 +617,15 @@
         <image name="rightArrow.png" width="16" height="16"/>
     </resources>
     <classes>
+        <class className="CalendarView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarView.h"/>
+        </class>
         <class className="GFViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GFViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="GFTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="GFTabs" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="calendarScroll" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="calendarView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="monthView" candidateClass="UIView"/>
             </relationships>
         </class>
