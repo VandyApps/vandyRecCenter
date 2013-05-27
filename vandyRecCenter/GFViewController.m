@@ -42,6 +42,7 @@
     [self.model loadData:^(NSError *error, NSArray *data) {
         NSLog(@"%@", data);
         [self.model GFClassesForDay: 19];
+        NSLog(@"current class is\n%@", [self.model currentGFClass]);
         
     } forMonth: 4 andYear: 2013];
 }

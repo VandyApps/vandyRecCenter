@@ -93,7 +93,7 @@
             TimeString* time2 = [[TimeString alloc] initWithTimeString: timeString2];
             return [TimeString compareTimeString1: time1 timeString2: time2];
         }];
-        NSLog(@"%@", GFClasses);
+        
         return GFClasses;
     }
     return nil;
@@ -130,12 +130,28 @@
 #pragma mark Current Time
 
 - (void) nextClass:(void (^)(NSDictionary *, NSUInteger))block {
-    NSDate *currentDate = [[NSDate alloc] init];
+    
+    
     
     
 }
 
-- (NSDictionary*) currentClass {
+- (NSDictionary*) currentGFClass {
+    NSDate *currentDate = [[NSDate alloc] init];
+    NSTimeZone* nashville = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
+    if (self.month == [currentDate monthForAdjustedTimeZone: nashville] && self.year == [currentDate yearForAdjustedTimeZone: nashville ]) {
+        
+        NSArray* GFClasses = [self GFClassesForDay: [currentDate dayForAdjustedTimeZone: nashville]];
+        for (NSDictionary* GFClass in GFClasses) {
+            NSArray* arrayOfTimes = [[GFClass objectForKey: @"timeRange"] componentsSeparatedByString: @" - "];
+            TimeString* start = [[TimeString alloc] initWithTimeString: [arrayOfTimes objectAtIndex: 0]];
+            TimeString* end = [[TimeString alloc] initWithTimeString: [arrayOfTimes objectAtIndex: 1]];
+            TimeString* current = [[TimeString alloc] initWithTimeZone: nashville];
+            if ([TimeString compareTimeString1: start timeString2: current] != NSOrderedDescending && [TimeString compareTimeString1: end timeString2: current] != NSOrderedAscending) {
+                return GFClass;
+            }
+        }
+    }
     return nil;
 }
 
