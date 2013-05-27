@@ -42,6 +42,7 @@
 		2170328A16FE96D900A43833 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2170328916FE96D900A43833 /* Default-568h@2x.png */; };
 		2170328D16FE96D900A43833 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2170328B16FE96D900A43833 /* MainStoryboard.storyboard */; };
 		2177D0CC1729BE85001DA4B3 /* BubbleTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2177D0CB1729BE85001DA4B3 /* BubbleTabBar.m */; };
+		21A17F651753DD9E00681749 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A17F641753DD9E00681749 /* CalendarView.m */; };
 		21A37AC0171B34F1008990C5 /* HoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A37ABF171B34F1008990C5 /* HoursModel.m */; };
 		21D303A917526E46007D8247 /* GFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D303A817526E46007D8247 /* GFViewController.m */; };
 		21D303AC17527DF8007D8247 /* GFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D303AB17527DF8007D8247 /* GFModel.m */; };
@@ -116,6 +117,9 @@
 		2170328C16FE96D900A43833 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2177D0CA1729BE85001DA4B3 /* BubbleTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTabBar.h; sourceTree = "<group>"; };
 		2177D0CB1729BE85001DA4B3 /* BubbleTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTabBar.m; sourceTree = "<group>"; };
+		21A17F631753DD9E00681749 /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
+		21A17F641753DD9E00681749 /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
+		21A17F671753DDDC00681749 /* CalendarViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewDelegate.h; sourceTree = "<group>"; };
 		21A37ABE171B34F1008990C5 /* HoursModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HoursModel.h; path = ../HoursModel.h; sourceTree = "<group>"; };
 		21A37ABF171B34F1008990C5 /* HoursModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HoursModel.m; path = ../HoursModel.m; sourceTree = "<group>"; };
 		21C2C2C71745C8B8006A97DC /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 				21E677C91749753400719EA7 /* Web Client */,
 				21FA94BC172D951D0016918B /* Categories */,
 				211B16E71752B4AB00180E3D /* Time String */,
+				21A17F661753DDAC00681749 /* Calendar View */,
 				21E40A1F1719C7380045451F /* Home */,
 				21E40A1D1719C7270045451F /* Hours */,
 				21D303A617526E14007D8247 /* GF */,
@@ -303,6 +308,16 @@
 				2170328916FE96D900A43833 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21A17F661753DDAC00681749 /* Calendar View */ = {
+			isa = PBXGroup;
+			children = (
+				21A17F631753DD9E00681749 /* CalendarView.h */,
+				21A17F641753DD9E00681749 /* CalendarView.m */,
+				21A17F671753DDDC00681749 /* CalendarViewDelegate.h */,
+			);
+			name = "Calendar View";
 			sourceTree = "<group>";
 		};
 		21D303A617526E14007D8247 /* GF */ = {
@@ -528,6 +543,7 @@
 				21D303AC17527DF8007D8247 /* GFModel.m in Sources */,
 				211B16EA1752B4C800180E3D /* TimeString.m in Sources */,
 				211B16EE17530AD900180E3D /* GFCollection.m in Sources */,
+				21A17F651753DD9E00681749 /* CalendarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
