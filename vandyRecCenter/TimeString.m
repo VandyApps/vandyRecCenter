@@ -16,7 +16,7 @@
 @synthesize style = _style;
 
 #pragma mark - Initializer
-- (id) initWithTimeString:(NSString *)timeString {
+- (id) initWithString:(NSString *)timeString {
     self = [super init];
     if (self) {
         if ([TimeString validTimeString:timeString]) {
@@ -65,7 +65,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateStyle = NSDateFormatterNoStyle;
     formatter.timeStyle = NSDateFormatterShortStyle;
-    self = [self initWithTimeString: [formatter stringFromDate: [[NSDate alloc] init]]];
+    self = [self initWithString: [formatter stringFromDate: [[NSDate alloc] init]]];
     return self;
 }
 
@@ -74,7 +74,7 @@
     formatter.timeZone = timeZone;
     formatter.dateStyle = NSDateFormatterNoStyle;
     formatter.timeStyle = NSDateFormatterShortStyle;
-    self = [self initWithTimeString: [formatter stringFromDate: [[NSDate alloc] init]]];
+    self = [self initWithString: [formatter stringFromDate: [[NSDate alloc] init]]];
     return self;
 }
 

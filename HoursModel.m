@@ -181,12 +181,12 @@
     
     
     //if the current time is after the opening time
-    TimeString* opening = [[TimeString alloc] initWithTimeString: [self openingTime]];
-    TimeString* current = [[TimeString alloc] initWithTimeString: [getTimeFormat stringFromDate: currentDate]];
-    TimeString* closing = [[TimeString alloc] initWithTimeString: [self closingTime]];
+    TimeString* opening = [[TimeString alloc] initWithString: [self openingTime]];
+    TimeString* current = [[TimeString alloc] initWithString: [getTimeFormat stringFromDate: currentDate]];
+    TimeString* closing = [[TimeString alloc] initWithString: [self closingTime]];
 
     if ([TimeString compareTimeString1: opening timeString2: current] == NSOrderedAscending || [TimeString compareTimeString1: opening timeString2: current] == NSOrderedSame) {
-        TimeString* twelve = [[TimeString alloc] initWithTimeString: @"12:00AM"];
+        TimeString* twelve = [[TimeString alloc] initWithString: @"12:00AM"];
         if ([TimeString compareTimeString1: twelve timeString2: closing] == NSOrderedSame) {
             return YES;
         } else if ([TimeString compareTimeString1: closing timeString2: current] == NSOrderedDescending) {
@@ -205,8 +205,8 @@
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
     
-    TimeString* current = [[TimeString alloc] initWithTimeString:[getTimeFormat stringFromDate: currentDate]];
-    TimeString* opening = [[TimeString alloc] initWithTimeString: [self openingTime]];
+    TimeString* current = [[TimeString alloc] initWithString:[getTimeFormat stringFromDate: currentDate]];
+    TimeString* opening = [[TimeString alloc] initWithString: [self openingTime]];
     if ([self openingTime] && [TimeString compareTimeString1: opening timeString2: current] == NSOrderedDescending) {
         
         return YES;
@@ -223,9 +223,9 @@
     //set time to Nashville time
     getTimeFormat.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
    
-    TimeString* twelve = [[TimeString alloc] initWithTimeString: @"12:00AM"];
-    TimeString* closing = [[TimeString alloc] initWithTimeString: [self closingTime]];
-    TimeString* current = [[TimeString alloc] initWithTimeString: [getTimeFormat stringFromDate: currentDate]];
+    TimeString* twelve = [[TimeString alloc] initWithString: @"12:00AM"];
+    TimeString* closing = [[TimeString alloc] initWithString: [self closingTime]];
+    TimeString* current = [[TimeString alloc] initWithString: [getTimeFormat stringFromDate: currentDate]];
     if ([self closingTime]) {
         if ([TimeString compareTimeString1: twelve timeString2: closing] == NSOrderedSame) {
             return NO;
@@ -245,8 +245,8 @@
         
         NSDate *currentDate = [NSDate dateByAddingTimeCurrentTime: [[NSTimeZone timeZoneWithName:NASHVILLE_TIMEZONE] secondsFromGMT]]; //adjust to nashville time
         NSDate *closingDate = [currentDate dateBySettingTimeToTime: [self closingTime]];
-        TimeString* closing = [[TimeString alloc] initWithTimeString: [self closingTime]];
-        TimeString* twelve = [[TimeString alloc] initWithTimeString: @"12:00AM"];
+        TimeString* closing = [[TimeString alloc] initWithString: [self closingTime]];
+        TimeString* twelve = [[TimeString alloc] initWithString: @"12:00AM"];
         if ([TimeString compareTimeString1: twelve timeString2: closing] == NSOrderedSame) {
             closingDate = [closingDate dateByAddingTimeInterval: 24*60*60];
         }

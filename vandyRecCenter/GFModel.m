@@ -89,8 +89,8 @@
             
             NSString *timeString2 = [[[obj2 objectForKey: @"timeRange"] componentsSeparatedByString: @" - "] objectAtIndex: 0];
            
-            TimeString* time1 = [[TimeString alloc] initWithTimeString: timeString1];
-            TimeString* time2 = [[TimeString alloc] initWithTimeString: timeString2];
+            TimeString* time1 = [[TimeString alloc] initWithString: timeString1];
+            TimeString* time2 = [[TimeString alloc] initWithString: timeString2];
             return [TimeString compareTimeString1: time1 timeString2: time2];
         }];
         
@@ -138,8 +138,8 @@
         NSArray* GFClasses = [self GFClassesForDay: [currentDate dayForAdjustedTimeZone: nashville]];
         for (NSDictionary* GFClass in GFClasses) {
             NSArray* arrayOfTimes = [[GFClass objectForKey: @"timeRange"] componentsSeparatedByString: @" - "];
-            TimeString* start = [[TimeString alloc] initWithTimeString: [arrayOfTimes objectAtIndex: 0]];
-            TimeString* end = [[TimeString alloc] initWithTimeString: [arrayOfTimes objectAtIndex: 1]];
+            TimeString* start = [[TimeString alloc] initWithString: [arrayOfTimes objectAtIndex: 0]];
+            TimeString* end = [[TimeString alloc] initWithString: [arrayOfTimes objectAtIndex: 1]];
             TimeString* current = [[TimeString alloc] initWithTimeZone: nashville];
             if ([TimeString compareTimeString1: start timeString2: current] != NSOrderedDescending && [TimeString compareTimeString1: end timeString2: current] != NSOrderedAscending) {
                 return GFClass;
