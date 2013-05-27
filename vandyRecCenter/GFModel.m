@@ -79,7 +79,6 @@
         for (NSDictionary* GFClass in self.GFClasses) {
             
             if ([self GFClass: GFClass isOnDay: day]) {
-                NSLog(@"Iteration");
                 GFClasses = [GFClasses arrayByAddingObject: GFClass];
             }
         }
