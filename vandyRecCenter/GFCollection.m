@@ -55,6 +55,30 @@
     
 }
 
+#pragma mark - Sub-model getters
+- (void) GFClassesForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day block:(void (^)(NSError *, NSArray *))block {
+    
+    [self GFModelForYear: year month: month block:^(NSError *error, GFModel *model) {
+        if (error) {
+            block(error, nil);
+        } else {
+            block(nil,[model GFClassesForDay: day]);
+        }
+    }];
+}
+
+- (void) GFClassesForCurrentDay:(void (^)(NSError *, NSArray *))block {
+    [self GFModelForCurrentMonth:^(NSError *error, GFModel *model) {
+        if (error) {
+            block(error, nil);
+        } else {
+            NSDate* current = [[NSDate alloc] init];
+            NSUInteger day = [current dayForAdjustedTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
+            block(nil, [model GFClassesForDay: day]);
+        }
+    }];
+}
+
 #pragma mark - Sorting method
 //sorts the GFModels in the collection so that they are in chronological
 //order
