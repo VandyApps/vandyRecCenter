@@ -38,13 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    [self.model loadData:^(NSError *error, NSArray *data) {
-        NSLog(@"%@", data);
-        [self.model GFClassesForDay: 19];
-        NSLog(@"current class is\n%@", [self.model currentGFClass]);
-        
-    } forMonth: 4 andYear: 2013];
+	
 }
 
 - (void)didReceiveMemoryWarning

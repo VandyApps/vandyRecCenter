@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		211B16EA1752B4C800180E3D /* TimeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 211B16E91752B4C800180E3D /* TimeString.m */; };
+		211B16EE17530AD900180E3D /* GFCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 211B16ED17530AD900180E3D /* GFCollection.m */; };
 		21201EC21702177D00E89605 /* blackGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC11702177D00E89605 /* blackGradient.png */; };
 		21201EC41702199B00E89605 /* vandyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC31702199B00E89605 /* vandyLogo.png */; };
 		212DECD2170096C40041498E /* imageOfRec.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 212DECD1170096C40041498E /* imageOfRec.jpeg */; };
@@ -73,6 +74,8 @@
 		211B16E81752B4C800180E3D /* TimeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeString.h; sourceTree = "<group>"; };
 		211B16E91752B4C800180E3D /* TimeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeString.m; sourceTree = "<group>"; };
 		211B16EB1752B61E00180E3D /* TimeStringStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeStringStyle.h; sourceTree = "<group>"; };
+		211B16EC17530AD900180E3D /* GFCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCollection.h; sourceTree = "<group>"; };
+		211B16ED17530AD900180E3D /* GFCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCollection.m; sourceTree = "<group>"; };
 		21201EC11702177D00E89605 /* blackGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackGradient.png; path = ../blackGradient.png; sourceTree = "<group>"; };
 		21201EC31702199B00E89605 /* vandyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vandyLogo.png; sourceTree = "<group>"; };
 		212DECD1170096C40041498E /* imageOfRec.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imageOfRec.jpeg; path = ../imageOfRec.jpeg; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 			children = (
 				21D303A717526E46007D8247 /* GFViewController.h */,
 				21D303A817526E46007D8247 /* GFViewController.m */,
+				211B16EC17530AD900180E3D /* GFCollection.h */,
+				211B16ED17530AD900180E3D /* GFCollection.m */,
 				21D303AA17527DF8007D8247 /* GFModel.h */,
 				21D303AB17527DF8007D8247 /* GFModel.m */,
 			);
@@ -522,6 +527,7 @@
 				21D303A917526E46007D8247 /* GFViewController.m in Sources */,
 				21D303AC17527DF8007D8247 /* GFModel.m in Sources */,
 				211B16EA1752B4C800180E3D /* TimeString.m in Sources */,
+				211B16EE17530AD900180E3D /* GFCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
