@@ -7,7 +7,7 @@
 //
 
 #import "GFViewController.h"
-
+#import "TimeString.h"
 @interface GFViewController ()
 
 @end
@@ -38,7 +38,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
 }
 
 - (void)didReceiveMemoryWarning
