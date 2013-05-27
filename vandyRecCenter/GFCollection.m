@@ -87,4 +87,61 @@
         return ([GFModel compareModel1:obj1 model2: obj2]);
     }];
 }
+
+#pragma mark - Loading/Reloading
+//loading methods do not need to be called unless a model wants to be
+//reloaded.  Getters will automatically load data
+- (void) loadMonth:(NSUInteger)month andYear:(NSUInteger)year block:(void (^)(NSError *, GFModel *))block {
+    BOOL foundModel = NO;
+    for (GFModel* model in self.models) {
+        if (model.month == month && model.year == year) {
+            foundModel = YES;
+            [model loadData:^(NSError *error, NSArray *data) {
+                if (error) {
+                    block(error, nil);
+                } else {
+                    block(nil, model);
+                }
+            } forMonth: month andYear: year];
+        }
+    }
+    
+    if (!foundModel) {
+        GFModel* newModel = [[GFModel alloc] init];
+        [newModel loadData:^(NSError *error, NSArray *data) {
+            if (error) {
+                block(error, nil);
+            } else {
+                self.models = [self.models arrayByAddingObject: newModel];
+                [self sort];
+                block(nil, newModel);
+            }
+        } forMonth: month andYear: year];
+    }
+}
+
+- (void) loadCurrentMonth:(void (^)(NSError *, GFModel *))block {
+    NSDate *current = [[NSDate alloc] init];
+    NSUInteger month = [current monthForAdjustedTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
+    NSUInteger year = [current monthForAdjustedTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
+    [self loadMonth: month andYear: year block:^(NSError *error, GFModel *model) {
+        if (error) {
+            block(error, nil);
+        } else {
+            block(error, model);
+        }
+    }];
+}
+
+#pragma mark - Validate
+- (BOOL) dataLoadedForYear:(NSUInteger)year month:(NSUInteger)month {
+    for (GFModel* model in self.models) {
+        if (model.year == year && model.month == month) {
+            return [model dataLoaded];
+        } else if (model.year < year || (model.year == year && model.month < month)) {
+            return NO;
+        }
+    }
+    return NO;
+}
 @end

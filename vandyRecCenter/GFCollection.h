@@ -23,7 +23,7 @@
 //in the model array that represents the current date
 - (void) loadCurrentMonth: (void(^)(NSError*error, GFModel* currentModel)) block;
 
-- (void) loadMonth: (NSUInteger) month andYear: (NSUInteger) year block: (void(^)(NSError* error, NSDictionary* json)) block;
+- (void) loadMonth: (NSUInteger) month andYear: (NSUInteger) year block: (void(^)(NSError* error, GFModel* model)) block;
 
 
 - (BOOL) dataLoadedForYear: (NSUInteger) year month: (NSUInteger) month;
