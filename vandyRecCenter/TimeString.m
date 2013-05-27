@@ -83,10 +83,14 @@
     NSString* returnString = [[NSString alloc] init];
     
     if (self.style == TimeStringStyleMilitary && !self.isAM) {
-        returnString = [returnString stringByAppendingFormat: @"%i:%i", (self.hours + 12) % 24, self.minutes];
+        returnString = [returnString stringByAppendingFormat: @"%i:", (self.hours + 12) % 24];
     } else {
-        returnString = [returnString stringByAppendingFormat: @"%i:%i", self.hours, self.minutes];
+        returnString = [returnString stringByAppendingFormat: @"%i:", self.hours];
     }
+    if (self.minutes < 10) {
+        returnString = [returnString stringByAppendingString: @"0"];
+    }
+    returnString = [returnString stringByAppendingFormat: @"%i", self.minutes];
     
     NSString* indicator;
     if (self.style == TimeStringStyleAMPM) {
@@ -136,10 +140,13 @@
 + (NSComparisonResult) compareTimeString1:(TimeString *)timeString1 timeString2:(TimeString *)timeString2 {
     
     if ([timeString1 timeInMinutes] < [timeString2 timeInMinutes]) {
+        
         return NSOrderedAscending;
     } else if ([timeString1 timeInMinutes] > [timeString2 timeInMinutes]) {
+        
         return NSOrderedDescending;
     } else {
+        
         return NSOrderedSame;
     }
 }

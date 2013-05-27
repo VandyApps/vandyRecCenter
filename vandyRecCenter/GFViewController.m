@@ -40,8 +40,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.model loadData:^(NSError *error, NSArray *data) {
-       // NSLog(@"%@", data);
-    
+        NSLog(@"%@", data);
+        [self.model GFClassesForDay: 19];
+        
     } forMonth: 4 andYear: 2013];
 }
 

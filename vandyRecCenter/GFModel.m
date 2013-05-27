@@ -77,10 +77,23 @@
     if (self.month >= 0) {
         NSArray *GFClasses = [[NSArray alloc] init];
         for (NSDictionary* GFClass in self.GFClasses) {
+            
             if ([self GFClass: GFClass isOnDay: day]) {
+                NSLog(@"Iteration");
                 GFClasses = [GFClasses arrayByAddingObject: GFClass];
             }
         }
+        
+        GFClasses = [GFClasses sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            NSString* timeString1 = [[[obj1 objectForKey: @"timeRange"] componentsSeparatedByString: @" - "] objectAtIndex: 0];
+            
+            NSString *timeString2 = [[[obj2 objectForKey: @"timeRange"] componentsSeparatedByString: @" - "] objectAtIndex: 0];
+           
+            TimeString* time1 = [[TimeString alloc] initWithTimeString: timeString1];
+            TimeString* time2 = [[TimeString alloc] initWithTimeString: timeString2];
+            return [TimeString compareTimeString1: time1 timeString2: time2];
+        }];
+        NSLog(@"%@", GFClasses);
         return GFClasses;
     }
     return nil;
@@ -91,6 +104,7 @@
 - (BOOL) GFClass: (NSDictionary*) GFClass isOnDay: (NSUInteger) day {
     NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: day];
     if ([[GFClass objectForKey: @"dayOfWeek"] intValue] != [date dayOfTheWeekAsInt]) {
+       
         return NO;
     }
     

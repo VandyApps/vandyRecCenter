@@ -107,7 +107,7 @@
     }
     
     //seconds from days
-    secondsSince1970 += (day * 24 * 60 * 60);
+    secondsSince1970 += ((day-1) * 24 * 60 * 60);
      
     return [[NSDate alloc] initWithTimeIntervalSince1970: secondsSince1970];
 }

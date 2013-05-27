@@ -10,6 +10,10 @@
 #import "VandyRecClient.h"
 #import "NSDate-MyDateClass.h"
 #import "NSDate-WeekDateClass.h"
+#import "TimeString.h"
+
+#define NASHVILLE_TIMEZONE @"America/Chicago"
+
 @interface GFModel : NSObject
 
 //YES if data has been successfully loaded
