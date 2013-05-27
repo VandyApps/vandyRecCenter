@@ -13,6 +13,7 @@
 @end
 
 @implementation GFViewController
+@synthesize GFTabs = _GFTabs;
 @synthesize model = _model;
 
 #pragma mark - getters
@@ -38,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.GFTabs.layer.cornerRadius = 0;
     
 }
 

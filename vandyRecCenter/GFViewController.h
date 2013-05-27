@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "GFModel.h"
 
 @interface GFViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UISegmentedControl* GFTabs;
 @property (nonatomic, strong) GFModel *model;
 @end

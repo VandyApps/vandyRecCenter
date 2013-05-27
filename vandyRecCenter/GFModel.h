@@ -38,7 +38,12 @@
 //boundaries
 - (void) loadData: (void (^)(NSError* error, NSArray* data)) block forMonth: (NSInteger) month andYear: (NSInteger) year;
 
+
+//returns true if the class is on the day for the month and year
+//of this GFModel instance.  Does not take into account whether
+//the class is marked as canceled or not
 - (BOOL) GFClass: (NSDictionary*) GFClass isOnDay: (NSUInteger) day;
+
 //this method should only be used when month and year are non-negative numbers
 //and the model represents data that consists of a single month
 //this returns an array of classes that are on a specific day
