@@ -31,13 +31,19 @@
         self.month = [date month];
         self.year = [date year];
         self.weekDay = [date dayOfTheWeekAsInt];
+        [self sendActionsForControlEvents: UIControlEventTouchUpInside];
+       
     }
     return self;
 }
 
+
 - (void) layoutSubviews {
+    [super layoutSubviews];
     self.backgroundColor = [UIColor clearColor];
+    
     [self addView];
+    
 }
 
 - (void) addView {
@@ -46,25 +52,26 @@
     view.layer.borderColor = [[UIColor vanderbiltGold] CGColor];
     view.layer.borderWidth = BORDER_WIDTH;
     view.layer.cornerRadius = CORNER_RADIUS;
+    view.userInteractionEnabled = NO;
     
     UILabel *weekDay = [[UILabel alloc] initWithFrame: CGRectMake(SUBVIEW_PADDING, SUBVIEW_PADDING, view.frame.size.width - 2* SUBVIEW_PADDING, 20)];
     weekDay.text = [self.date dayOfTheWeekAsString];
     weekDay.font = [UIFont fontWithName: @"TrebuchetMS" size: 10];
     weekDay.textAlignment = NSTextAlignmentCenter;
-    
+    weekDay.userInteractionEnabled = NO;
 
     UILabel *dayLabel = [[UILabel alloc] initWithFrame: CGRectMake( (view.frame.size.width - DAY_LABEL_WIDTH) / 2.0, (view.frame.size.height - DAY_LABEL_HEIGHT) / 2.0, DAY_LABEL_WIDTH, DAY_LABEL_HEIGHT)];
     dayLabel.textAlignment = NSTextAlignmentCenter;
     dayLabel.text = [NSString stringWithFormat: @"%i", self.day];
     dayLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 30];
-   
+    dayLabel.userInteractionEnabled = NO;
     
        
     UILabel *yearLabel = [[UILabel alloc] initWithFrame: CGRectMake( SUBVIEW_PADDING, view.frame.size.height - 20 - SUBVIEW_PADDING, view.frame.size.width - 2 * SUBVIEW_PADDING,  YEAR_LABEL_HEIGHT)];
     yearLabel.text = [NSString stringWithFormat: @"%i",self.year ];
     yearLabel.font = [UIFont fontWithName: @"TrebuchetMS" size: 10];
     yearLabel.textAlignment = NSTextAlignmentCenter;
-   
+    yearLabel.userInteractionEnabled = NO;
     
     [view addSubview: weekDay];
     [view addSubview: dayLabel];
@@ -73,6 +80,10 @@
     [self addSubview: view];
     
 }
+
+
+
+
 
 
 

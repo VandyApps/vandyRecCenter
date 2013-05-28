@@ -43,6 +43,21 @@
     return self;
 }
 
+#pragma mark - Lifecycle
+
+
+
+
+- (void) layoutSubviews {
+    [super layoutSubviews];
+    
+    [self setUpScrollView];
+    [self addButtons];
+    
+}
+
+
+
 #pragma mark - View Setup
 
 - (void) setUpScrollView {
@@ -69,6 +84,8 @@
     while ([date month] != 5) {
         DayButton* button = [[DayButton alloc] initWithDate: date andPadding: 0];
         //add day
+        
+        [button addTarget: self action: @selector(clicked:) forControlEvents: UIControlEventTouchUpInside];
         date = [date dateByAddingTimeInterval: 24 * 60 * 60];
         [self.calendarScroll addSubview: button];
     }
@@ -87,14 +104,13 @@
     [self addSubview: rightButton];
 }
 
-- (void) layoutSubviews {
-    [super layoutSubviews];
-    
-    [self setUpScrollView];
-    [self addButtons];
-    
-}
+#pragma mark - Events
 
+- (void) clicked: (id) sender {
+    NSLog(@"Clicked");
+}
+ 
+#pragma mark - Helpers 
 
 - (NSUInteger) daysForMonth: (NSUInteger) month year: (NSUInteger) year {
     switch (month) {
