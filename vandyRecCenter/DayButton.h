@@ -33,6 +33,10 @@
 
 #define YEAR_LABEL_HEIGHT 20
 
+#define YEAR_LABEL_FONT_SIZE 12
+#define WEEK_DAY_FONT_SIZE 12
+#define DAY_FONT_SIZE 40
+
 @property (nonatomic) CGFloat dayWidth;
 @property (nonatomic) CGFloat dayHeight;
 @property (nonatomic) CGFloat dayPadding;
