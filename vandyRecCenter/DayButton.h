@@ -15,8 +15,8 @@
 
 @interface DayButton : UIControl
 
-#define DEFAULT_HEIGHT 100
-#define DEFAULT_WIDTH 75
+#define DEFAULT_CONTROL_HEIGHT 100
+#define DEFAULT_CONTROL_WIDTH 75
 
 #define DEFAULT_DAY_WIDTH 65
 #define DEFAULT_DAY_HEIGHT 85

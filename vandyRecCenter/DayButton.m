@@ -24,7 +24,7 @@
 - (id) initWithDate: (NSDate*) date andPadding: (CGFloat) buttonPadding {
     
     NSUInteger dayIndex = [date day] - 1;
-    self = [self initWithFrame: CGRectMake(buttonPadding + ((buttonPadding+DEFAULT_WIDTH)*dayIndex), 0, DEFAULT_WIDTH, DEFAULT_HEIGHT)];
+    self = [self initWithFrame: CGRectMake(buttonPadding + ((buttonPadding+DEFAULT_CONTROL_WIDTH)*dayIndex), 0, DEFAULT_CONTROL_WIDTH, DEFAULT_CONTROL_HEIGHT)];
     if (self) {
         self.date = date;
         self.day = [date day];

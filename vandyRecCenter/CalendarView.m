@@ -28,7 +28,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        self.month = [[[NSDate alloc] init] month];
+        self.year = [[[NSDate alloc] init] year];
     }
     return self;
 }
@@ -36,7 +37,8 @@
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder: aDecoder];
     if (self) {
-        
+        self.month = [[[NSDate alloc] init] month];
+        self.year = [[[NSDate alloc] init] year];
     }
     return self;
 }
@@ -44,6 +46,9 @@
 #pragma mark - View Setup
 
 - (void) setUpScrollView {
+    if (self.calendarScroll != nil) {
+        [self.calendarScroll removeFromSuperview];
+    }
     
     if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
 
@@ -53,15 +58,22 @@
         self.calendarScroll = [[UIScrollView alloc] initWithFrame: CGRectMake((self.frame.size.width - DEFAULT_CAL_SCROLL_WIDTH_LANDSCAPE) / 2.0, 0, DEFAULT_CAL_SCROLL_WIDTH_LANDSCAPE, self.frame.size.height)];
     }
     self.calendarScroll.backgroundColor = [UIColor blackColor];
+    [self addSubview: self.calendarScroll];
+    [self addCalendar];
     
-    NSDate *date = [NSDate dateWithYear: 2013 month: 4 andDay: 1];
+}
+
+- (void) addCalendar {
+    
+    NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: 1];
     while ([date month] != 5) {
         DayButton* button = [[DayButton alloc] initWithDate: date andPadding: 0];
+        //add day
         date = [date dateByAddingTimeInterval: 24 * 60 * 60];
         [self.calendarScroll addSubview: button];
     }
-    self.calendarScroll.contentSize = CGSizeMake((31 * (80+0)) + 0, self.calendarScroll.frame.size.height);
-    [self addSubview: self.calendarScroll];
+    self.calendarScroll.contentSize = CGSizeMake(([self daysForMonth: self.month year: self.year] * (DEFAULT_CONTROL_WIDTH+ DAY_PADDING)) + BUTTON_PADDING, self.calendarScroll.frame.size.height);
+    
 }
 
 - (void) addButtons {
@@ -82,6 +94,32 @@
     [self addButtons];
     
 }
+
+
+- (NSUInteger) daysForMonth: (NSUInteger) month year: (NSUInteger) year {
+    switch (month) {
+        case 0:
+        case 2:
+        case 4:
+        case 7:
+        case 9:
+        case 11:
+            return 31;
+        case 3:
+        case 5:
+        case 6:
+        case 8:
+        case 10:
+            return 30;
+        default:
+            if (year % 4 == 0) {
+                return 29;
+            } else {
+                return 28;
+            }
+    }
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
