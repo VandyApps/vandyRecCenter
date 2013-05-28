@@ -21,7 +21,17 @@
 #define DEFAULT_DAY_HEIGHT 85
 #define DEFAULT_DAY_PADDING 10
 
+#define BORDER_WIDTH 3
+#define CORNER_RADIUS 5
 
+#define SUBVIEW_PADDING 5
+
+#define WEEK_DAY_LABEL_HEIGHT 20
+
+#define DAY_LABEL_WIDTH 50
+#define DAY_LABEL_HEIGHT 30
+
+#define YEAR_LABEL_HEIGHT 20
 
 @property (nonatomic) CGFloat dayWidth;
 @property (nonatomic) CGFloat dayHeight;

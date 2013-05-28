@@ -38,22 +38,23 @@
     UIView* view = [[UIView alloc] initWithFrame: CGRectMake((self.frame.size.width - DEFAULT_DAY_WIDTH) / 2.0, (self.frame.size.height - DEFAULT_DAY_HEIGHT) / 2.0, DEFAULT_DAY_WIDTH, DEFAULT_DAY_HEIGHT)];
     view.backgroundColor = [UIColor whiteColor];
     view.layer.borderColor = [[UIColor vanderbiltGold] CGColor];
-    view.layer.borderWidth = 3;
-    view.layer.cornerRadius = 5;
+    view.layer.borderWidth = BORDER_WIDTH;
+    view.layer.cornerRadius = CORNER_RADIUS;
     
-    UILabel *dayLabel = [[UILabel alloc] initWithFrame: CGRectMake( (view.frame.size.width - 50) / 2.0, (view.frame.size.height - 30) / 2.0, 50, 30)];
+    UILabel *weekDay = [[UILabel alloc] initWithFrame: CGRectMake(SUBVIEW_PADDING, SUBVIEW_PADDING, view.frame.size.width - 2* SUBVIEW_PADDING, 20)];
+    weekDay.text = @"Monday";
+    weekDay.font = [UIFont fontWithName: @"TrebuchetMS" size: 12];
+    weekDay.textAlignment = NSTextAlignmentCenter;
+    
+
+    UILabel *dayLabel = [[UILabel alloc] initWithFrame: CGRectMake( (view.frame.size.width - DAY_LABEL_WIDTH) / 2.0, (view.frame.size.height - DAY_LABEL_HEIGHT) / 2.0, DAY_LABEL_WIDTH, DAY_LABEL_HEIGHT)];
     dayLabel.textAlignment = NSTextAlignmentCenter;
     dayLabel.text = @"12";
     dayLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 30];
    
     
-    UILabel *weekDay = [[UILabel alloc] initWithFrame: CGRectMake(5, 5,view.frame.size.width - 10, 20)];
-    weekDay.text = @"Monday";
-    weekDay.font = [UIFont fontWithName: @"TrebuchetMS" size: 12];
-    weekDay.textAlignment = NSTextAlignmentCenter;
-    
-    
-    UILabel *yearLabel = [[UILabel alloc] initWithFrame: CGRectMake( 5, view.frame.size.height - 20 - 5, view.frame.size.width - 10,  20)];
+       
+    UILabel *yearLabel = [[UILabel alloc] initWithFrame: CGRectMake( SUBVIEW_PADDING, view.frame.size.height - 20 - SUBVIEW_PADDING, view.frame.size.width - 2 * SUBVIEW_PADDING,  YEAR_LABEL_HEIGHT)];
     yearLabel.text = @"2013";
     yearLabel.font = [UIFont fontWithName: @"TrebuchetMS" size: 10];
     yearLabel.textAlignment = NSTextAlignmentCenter;
