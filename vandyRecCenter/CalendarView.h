@@ -10,8 +10,13 @@
 #import "CalendarViewDelegate.h"
 #import "DayButton.h"
 
-#define DEFAULT_CAL_SCROLL_WIDTH_PORTRAIT 250
+#define DEFAULT_CAL_SCROLL_WIDTH_PORTRAIT 230
 #define DEFAULT_CAL_SCROLL_WIDTH_LANDSCAPE 300
+
+#define BUTTON_PADDING 15
+#define PLUS_BUTTON_DIMENSIONS 15
+#define MINUS_BUTTON_WIDTH 15
+#define MINUS_BUTTON_HEIGHT 6
 
 
 @interface CalendarView : UIView

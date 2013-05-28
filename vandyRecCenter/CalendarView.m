@@ -64,12 +64,22 @@
     [self addSubview: self.calendarScroll];
 }
 
+- (void) addButtons {
+    UIButton *leftButton = [[UIButton alloc] initWithFrame: CGRectMake(BUTTON_PADDING, (self.frame.size.height - 6) / 2.0, MINUS_BUTTON_WIDTH, MINUS_BUTTON_HEIGHT)];
+    [leftButton setBackgroundImage: [UIImage imageNamed: @"45-minus.png"] forState: UIControlStateNormal];
     
+    UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(self.frame.size.width - BUTTON_PADDING - PLUS_BUTTON_DIMENSIONS, (self.frame.size.height - PLUS_BUTTON_DIMENSIONS) / 2.0, PLUS_BUTTON_DIMENSIONS, PLUS_BUTTON_DIMENSIONS)];
+    [rightButton setBackgroundImage:[UIImage imageNamed: @"50-plus.png"] forState: UIControlStateNormal];
+    
+    [self addSubview: leftButton];
+    [self addSubview: rightButton];
+}
 
 - (void) layoutSubviews {
     [super layoutSubviews];
     
     [self setUpScrollView];
+    [self addButtons];
     
 }
 /*
