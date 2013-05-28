@@ -47,41 +47,55 @@
 }
 
 - (void) addView {
-    UIView* view = [[UIView alloc] initWithFrame: CGRectMake((self.frame.size.width - DEFAULT_DAY_WIDTH) / 2.0, (self.frame.size.height - DEFAULT_DAY_HEIGHT) / 2.0, DEFAULT_DAY_WIDTH, DEFAULT_DAY_HEIGHT)];
-    view.backgroundColor = [UIColor whiteColor];
-    view.layer.borderColor = [[UIColor vanderbiltGold] CGColor];
-    view.layer.borderWidth = BORDER_WIDTH;
-    view.layer.cornerRadius = CORNER_RADIUS;
-    view.userInteractionEnabled = NO;
+    self.dayView = [[UIView alloc] initWithFrame: CGRectMake((self.frame.size.width - DEFAULT_DAY_WIDTH) / 2.0, (self.frame.size.height - DEFAULT_DAY_HEIGHT) / 2.0, DEFAULT_DAY_WIDTH, DEFAULT_DAY_HEIGHT)];
+    self.dayView.backgroundColor = [UIColor whiteColor];
+    self.dayView.layer.borderColor = [[UIColor vanderbiltGold] CGColor];
+    self.dayView.layer.borderWidth = BORDER_WIDTH;
+    self.dayView.layer.cornerRadius = CORNER_RADIUS;
+    self.dayView.userInteractionEnabled = NO;
     
-    UILabel *weekDay = [[UILabel alloc] initWithFrame: CGRectMake(SUBVIEW_PADDING, SUBVIEW_PADDING, view.frame.size.width - 2* SUBVIEW_PADDING, 20)];
-    weekDay.text = [self.date dayOfTheWeekAsString];
-    weekDay.font = [UIFont fontWithName: @"TrebuchetMS" size: 10];
-    weekDay.textAlignment = NSTextAlignmentCenter;
-    weekDay.userInteractionEnabled = NO;
-
-    UILabel *dayLabel = [[UILabel alloc] initWithFrame: CGRectMake( (view.frame.size.width - DAY_LABEL_WIDTH) / 2.0, (view.frame.size.height - DAY_LABEL_HEIGHT) / 2.0, DAY_LABEL_WIDTH, DAY_LABEL_HEIGHT)];
-    dayLabel.textAlignment = NSTextAlignmentCenter;
-    dayLabel.text = [NSString stringWithFormat: @"%i", self.day];
-    dayLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 30];
-    dayLabel.userInteractionEnabled = NO;
+    self.weekDayLabel = [[UILabel alloc] initWithFrame: CGRectMake(SUBVIEW_PADDING, SUBVIEW_PADDING, self.dayView.frame.size.width - 2* SUBVIEW_PADDING, 20)];
+    self.weekDayLabel .text = [self.date dayOfTheWeekAsString];
+    self.weekDayLabel .font = [UIFont fontWithName: @"TrebuchetMS" size: 10];
+    self.weekDayLabel .textAlignment = NSTextAlignmentCenter;
+    self.weekDayLabel .userInteractionEnabled = NO;
+    self.weekDayLabel.backgroundColor = [UIColor clearColor];
     
+    self.dayLabel = [[UILabel alloc] initWithFrame: CGRectMake( (self.dayView.frame.size.width - DAY_LABEL_WIDTH) / 2.0, (self.dayView.frame.size.height - DAY_LABEL_HEIGHT) / 2.0, DAY_LABEL_WIDTH, DAY_LABEL_HEIGHT)];
+    self.dayLabel.textAlignment = NSTextAlignmentCenter;
+    self.dayLabel.text = [NSString stringWithFormat: @"%i", self.day];
+    self.dayLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 30];
+    self.dayLabel.userInteractionEnabled = NO;
+    self.dayLabel.backgroundColor = [UIColor clearColor];
        
-    UILabel *yearLabel = [[UILabel alloc] initWithFrame: CGRectMake( SUBVIEW_PADDING, view.frame.size.height - 20 - SUBVIEW_PADDING, view.frame.size.width - 2 * SUBVIEW_PADDING,  YEAR_LABEL_HEIGHT)];
-    yearLabel.text = [NSString stringWithFormat: @"%i",self.year ];
-    yearLabel.font = [UIFont fontWithName: @"TrebuchetMS" size: 10];
-    yearLabel.textAlignment = NSTextAlignmentCenter;
-    yearLabel.userInteractionEnabled = NO;
+    self.yearLabel = [[UILabel alloc] initWithFrame: CGRectMake( SUBVIEW_PADDING, self.dayView.frame.size.height - 20 - SUBVIEW_PADDING, self.dayView.frame.size.width - 2 * SUBVIEW_PADDING,  YEAR_LABEL_HEIGHT)];
+    self.yearLabel.text = [NSString stringWithFormat: @"%i",self.year ];
+    self.yearLabel.font = [UIFont fontWithName: @"TrebuchetMS" size: 10];
+    self.yearLabel.textAlignment = NSTextAlignmentCenter;
+    self.yearLabel.userInteractionEnabled = NO;
+    self.yearLabel.backgroundColor = [UIColor clearColor];
     
-    [view addSubview: weekDay];
-    [view addSubview: dayLabel];
-    [view addSubview: yearLabel];
+    [self.dayView addSubview: self.weekDayLabel];
+    [self.dayView addSubview: self.dayLabel];
+    [self.dayView addSubview: self.yearLabel];
     
-    [self addSubview: view];
+    [self addSubview: self.dayView];
     
 }
 
-
+- (void) endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+    [super endTrackingWithTouch: touch withEvent: event];
+    [self setSelected: YES];
+}
+-(void) setSelected:(BOOL)selected {
+    NSLog(@"Selecting");
+    [super setSelected: selected];
+    if (selected) {
+        self.dayView.backgroundColor = [UIColor blueColor];
+    } else {
+        self.dayView.backgroundColor = [UIColor whiteColor];
+    }
+}
 
 
 

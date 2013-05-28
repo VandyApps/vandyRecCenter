@@ -48,5 +48,6 @@
 @property (nonatomic, strong) UIView* dayView;
 @property (nonatomic, strong) UILabel* weekDayLabel;
 @property (nonatomic, strong) UILabel* dayLabel;
+@property (nonatomic, strong) UILabel* yearLabel;
 - (id) initWithDate: (NSDate*) date andPadding: (CGFloat) padding;
 @end
