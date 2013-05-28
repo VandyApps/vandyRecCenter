@@ -62,18 +62,16 @@
 }
 
 - (void) addView {
-    CGFloat dayWidth;
-    CGFloat dayHeight;
-    if (self.selected) {
-        dayWidth = DEFAULT_CONTROL_WIDTH;
-        dayHeight = DEFAULT_CONTROL_HEIGHT;
-    } else {
-        dayWidth = DEFAULT_CONTROL_WIDTH * DAY_DIMENSIONS_FRACTION;
-        dayHeight = DEFAULT_CONTROL_HEIGHT * DAY_DIMENSIONS_FRACTION;
+    if (self.dayView != nil) {
+        [self.dayView removeFromSuperview];
     }
-    
-    
-    self.dayView = [[UIView alloc] initWithFrame: CGRectMake((self.frame.size.width - dayHeight) / 2.0, (self.frame.size.height - dayHeight) / 2.0, dayWidth, dayHeight)];
+    CGFloat fraction = (self.selected) ? 1 : DAY_DIMENSIONS_FRACTION;
+   
+    CGFloat dayWidth = DEFAULT_CONTROL_WIDTH * fraction;
+    CGFloat dayHeight = DEFAULT_CONTROL_HEIGHT * fraction;
+        
+    NSLog(@"width is %g", self.frame.size.width);
+    self.dayView = [[UIView alloc] initWithFrame: CGRectMake((self.frame.size.width - dayWidth) / 2.0, (self.frame.size.height - dayHeight) / 2.0, dayWidth, dayHeight)];
     self.dayView.backgroundColor = [UIColor whiteColor];
     self.dayView.layer.borderColor = [[UIColor vanderbiltGold] CGColor];
     self.dayView.layer.borderWidth = DAY_VIEW_BORDER_WIDTH;
@@ -82,7 +80,7 @@
     
     self.weekDayLabel = [[UILabel alloc] initWithFrame: CGRectMake(SUBVIEW_PADDING, SUBVIEW_PADDING, self.dayView.frame.size.width - 2* SUBVIEW_PADDING, 20)];
     self.weekDayLabel .text = [self.date dayOfTheWeekAsString];
-    self.weekDayLabel .font = [UIFont fontWithName: @"TrebuchetMS" size: WEEK_DAY_FONT_SIZE * DAY_DIMENSIONS_FRACTION];
+    self.weekDayLabel .font = [UIFont fontWithName: @"TrebuchetMS" size: WEEK_DAY_FONT_SIZE * fraction];
     self.weekDayLabel .textAlignment = NSTextAlignmentCenter;
     self.weekDayLabel .userInteractionEnabled = NO;
     self.weekDayLabel.backgroundColor = [UIColor clearColor];
@@ -90,13 +88,13 @@
     self.dayLabel = [[UILabel alloc] initWithFrame: CGRectMake( (self.dayView.frame.size.width - DAY_LABEL_WIDTH) / 2.0, (self.dayView.frame.size.height - DAY_LABEL_HEIGHT) / 2.0, DAY_LABEL_WIDTH, DAY_LABEL_HEIGHT)];
     self.dayLabel.textAlignment = NSTextAlignmentCenter;
     self.dayLabel.text = [NSString stringWithFormat: @"%i", self.day];
-    self.dayLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: DAY_FONT_SIZE * DAY_DIMENSIONS_FRACTION];
+    self.dayLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: DAY_FONT_SIZE * fraction];
     self.dayLabel.userInteractionEnabled = NO;
     self.dayLabel.backgroundColor = [UIColor clearColor];
        
     self.yearLabel = [[UILabel alloc] initWithFrame: CGRectMake( SUBVIEW_PADDING, self.dayView.frame.size.height - 20 - SUBVIEW_PADDING, self.dayView.frame.size.width - 2 * SUBVIEW_PADDING,  YEAR_LABEL_HEIGHT)];
     self.yearLabel.text = [NSString stringWithFormat: @"%i",self.year ];
-    self.yearLabel.font = [UIFont fontWithName: @"TrebuchetMS" size: YEAR_LABEL_FONT_SIZE * DAY_DIMENSIONS_FRACTION];
+    self.yearLabel.font = [UIFont fontWithName: @"TrebuchetMS" size: YEAR_LABEL_FONT_SIZE * fraction];
     self.yearLabel.textAlignment = NSTextAlignmentCenter;
     self.yearLabel.userInteractionEnabled = NO;
     self.yearLabel.backgroundColor = [UIColor clearColor];
@@ -116,11 +114,7 @@
 -(void) setSelected:(BOOL)selected {
     NSLog(@"Selecting");
     [super setSelected: selected];
-    if (selected) {
-        self.dayView.backgroundColor = [UIColor blueColor];
-    } else {
-        self.dayView.backgroundColor = [UIColor whiteColor];
-    }
+    [self addView];
 }
 
 
