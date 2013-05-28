@@ -10,6 +10,21 @@
 
 @implementation DayButton
 
+@synthesize dayWidth = _dayWidth;
+@synthesize dayHeight = _dayHeight;
+@synthesize dayPadding = _dayPadding;
+
+@synthesize date = _date;
+@synthesize day = _day;
+@synthesize month = _month;
+@synthesize year = _year;
+@synthesize weekDay = _weekDay;
+
+@synthesize dayView = _dayView;
+@synthesize weekDayLabel = _weekDayLabel;
+@synthesize dayLabel = _dayLabel;
+@synthesize yearLabel = _yearLabel;
+
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -47,11 +62,13 @@
 }
 
 - (void) addView {
-    self.dayView = [[UIView alloc] initWithFrame: CGRectMake((self.frame.size.width - DEFAULT_DAY_WIDTH) / 2.0, (self.frame.size.height - DEFAULT_DAY_HEIGHT) / 2.0, DEFAULT_DAY_WIDTH, DEFAULT_DAY_HEIGHT)];
+    CGFloat dayWidth = DEFAULT_CONTROL_WIDTH * DAY_DIMENSIONS_FRACTION;
+    CGFloat dayHeight = DEFAULT_CONTROL_HEIGHT * DAY_DIMENSIONS_FRACTION;
+    self.dayView = [[UIView alloc] initWithFrame: CGRectMake((self.frame.size.width - dayHeight) / 2.0, (self.frame.size.height - dayHeight) / 2.0, dayWidth, dayHeight)];
     self.dayView.backgroundColor = [UIColor whiteColor];
     self.dayView.layer.borderColor = [[UIColor vanderbiltGold] CGColor];
-    self.dayView.layer.borderWidth = BORDER_WIDTH;
-    self.dayView.layer.cornerRadius = CORNER_RADIUS;
+    self.dayView.layer.borderWidth = DAY_VIEW_BORDER_WIDTH;
+    self.dayView.layer.cornerRadius = DAY_VIEW_CORNER_RADIUS;
     self.dayView.userInteractionEnabled = NO;
     
     self.weekDayLabel = [[UILabel alloc] initWithFrame: CGRectMake(SUBVIEW_PADDING, SUBVIEW_PADDING, self.dayView.frame.size.width - 2* SUBVIEW_PADDING, 20)];
