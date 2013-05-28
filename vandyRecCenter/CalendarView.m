@@ -18,7 +18,7 @@
 @synthesize month = _month;
 @synthesize year = _year;
 @synthesize selectedDate = _selectedDate;
-
+@synthesize dayButtons = _dayButtons;
 #pragma mark - Getters
 
 
@@ -79,7 +79,7 @@
 }
 
 - (void) addCalendar {
-    
+    self.dayButtons = [[NSArray alloc] init];
     NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: 1];
     while ([date month] != 5) {
         DayButton* button = [[DayButton alloc] initWithDate: date andPadding: 0];
@@ -87,6 +87,7 @@
         
         [button addTarget: self action: @selector(clicked:) forControlEvents: UIControlEventTouchUpInside];
         date = [date dateByAddingTimeInterval: 24 * 60 * 60];
+        self.dayButtons = [self.dayButtons arrayByAddingObject: button];
         [self.calendarScroll addSubview: button];
     }
     self.calendarScroll.contentSize = CGSizeMake(([self daysForMonth: self.month year: self.year] * (DEFAULT_CONTROL_WIDTH+ DAY_PADDING)) + BUTTON_PADDING, self.calendarScroll.frame.size.height);
@@ -94,6 +95,7 @@
 }
 
 - (void) addButtons {
+    
     UIButton *leftButton = [[UIButton alloc] initWithFrame: CGRectMake(BUTTON_PADDING, (self.frame.size.height - 6) / 2.0, MINUS_BUTTON_WIDTH, MINUS_BUTTON_HEIGHT)];
     [leftButton setBackgroundImage: [UIImage imageNamed: @"45-minus.png"] forState: UIControlStateNormal];
     
@@ -106,8 +108,8 @@
 
 #pragma mark - Events
 
-- (void) clicked: (id) sender {
-    NSLog(@"Clicked");
+- (void) clicked: (DayButton*) sender {
+    NSLog(@"%@", sender.date);
 }
  
 #pragma mark - Helpers 

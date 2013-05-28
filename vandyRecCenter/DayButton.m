@@ -112,7 +112,6 @@
     [self setSelected: YES];
 }
 -(void) setSelected:(BOOL)selected {
-    NSLog(@"Selecting");
     [super setSelected: selected];
     [self addView];
 }

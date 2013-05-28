@@ -36,6 +36,8 @@
 @property (nonatomic) CGFloat pagePaddingVertical;
 @property (nonatomic) CGFloat pagePaddingHorizontal;
 
+@property (nonatomic, strong) NSArray* dayButtons;
+
 - (void) incrementMonth;
 - (void) decrementMonth;
 
