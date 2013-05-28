@@ -117,6 +117,7 @@
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT: 0];
     NSString* dateString = [formatter stringFromDate: self];
     
     return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 1] intValue];
@@ -135,6 +136,7 @@
 
 - (NSUInteger) month {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT: 0];
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
     NSString* dateString = [formatter stringFromDate: self];
@@ -155,6 +157,7 @@
 
 - (NSUInteger) year {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT: 0];
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
     NSString* dateString = [formatter stringFromDate: self];

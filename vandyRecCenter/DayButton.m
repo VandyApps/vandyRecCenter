@@ -42,6 +42,7 @@
     self = [self initWithFrame: CGRectMake(buttonPadding + ((buttonPadding+DEFAULT_CONTROL_WIDTH)*dayIndex), 0, DEFAULT_CONTROL_WIDTH, DEFAULT_CONTROL_HEIGHT)];
     if (self) {
         self.date = date;
+        NSLog(@"During initialization %@", date);
         self.day = [date day];
         self.month = [date month];
         self.year = [date year];

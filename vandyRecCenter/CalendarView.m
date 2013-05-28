@@ -81,14 +81,20 @@
 - (void) addCalendar {
     self.dayButtons = [[NSArray alloc] init];
     NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: 1];
+    NSLog(@"%@", date);
+    NSLog(@"Day %i", [date day]);
+    NSLog(@"MOnth:: %i", [date month] );
+    NSLog(@"Year: %i", [date year]);
     while ([date month] != 5) {
+        NSLog(@"Before initialization %@", date);
         DayButton* button = [[DayButton alloc] initWithDate: date andPadding: 0];
         //add day
         
         [button addTarget: self action: @selector(clicked:) forControlEvents: UIControlEventTouchUpInside];
-        date = [date dateByAddingTimeInterval: 24 * 60 * 60];
+        
         self.dayButtons = [self.dayButtons arrayByAddingObject: button];
         [self.calendarScroll addSubview: button];
+        date = [date dateByAddingTimeInterval: 24 * 60 * 60];
     }
     self.calendarScroll.contentSize = CGSizeMake(([self daysForMonth: self.month year: self.year] * (DEFAULT_CONTROL_WIDTH+ DAY_PADDING)) + BUTTON_PADDING, self.calendarScroll.frame.size.height);
     
