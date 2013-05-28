@@ -1,6 +1,6 @@
 //
 //  DayButton.h
-//  vandyRecCenter
+//  
 //
 //  Created by Brendan McNamara on 5/27/13.
 //  Copyright (c) 2013 Brendan McNamara. All rights reserved.
@@ -12,6 +12,7 @@
 #import "UIColor-BMColors.h"
 #import "NSDate-MyDateClass.h"
 #import "NSDate-WeekDateClass.h"
+
 @interface DayButton : UIControl
 
 #define DEFAULT_HEIGHT 100
@@ -41,6 +42,7 @@
 @property (nonatomic) NSUInteger day;
 @property (nonatomic) NSUInteger month;
 @property (nonatomic) NSUInteger year;
+@property (nonatomic) NSUInteger weekDay;
 
 
 @property (nonatomic, strong) UIView* dayView;

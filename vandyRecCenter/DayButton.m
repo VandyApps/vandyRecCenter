@@ -10,6 +10,8 @@
 
 @implementation DayButton
 
+
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -24,7 +26,11 @@
     NSUInteger dayIndex = [date day] - 1;
     self = [self initWithFrame: CGRectMake(buttonPadding + ((buttonPadding+DEFAULT_WIDTH)*dayIndex), 0, DEFAULT_WIDTH, DEFAULT_HEIGHT)];
     if (self) {
-        
+        self.date = date;
+        self.day = [date day];
+        self.month = [date month];
+        self.year = [date year];
+        self.weekDay = [date dayOfTheWeekAsInt];
     }
     return self;
 }
@@ -42,20 +48,20 @@
     view.layer.cornerRadius = CORNER_RADIUS;
     
     UILabel *weekDay = [[UILabel alloc] initWithFrame: CGRectMake(SUBVIEW_PADDING, SUBVIEW_PADDING, view.frame.size.width - 2* SUBVIEW_PADDING, 20)];
-    weekDay.text = @"Monday";
-    weekDay.font = [UIFont fontWithName: @"TrebuchetMS" size: 12];
+    weekDay.text = [self.date dayOfTheWeekAsString];
+    weekDay.font = [UIFont fontWithName: @"TrebuchetMS" size: 10];
     weekDay.textAlignment = NSTextAlignmentCenter;
     
 
     UILabel *dayLabel = [[UILabel alloc] initWithFrame: CGRectMake( (view.frame.size.width - DAY_LABEL_WIDTH) / 2.0, (view.frame.size.height - DAY_LABEL_HEIGHT) / 2.0, DAY_LABEL_WIDTH, DAY_LABEL_HEIGHT)];
     dayLabel.textAlignment = NSTextAlignmentCenter;
-    dayLabel.text = @"12";
+    dayLabel.text = [NSString stringWithFormat: @"%i", self.day];
     dayLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 30];
    
     
        
     UILabel *yearLabel = [[UILabel alloc] initWithFrame: CGRectMake( SUBVIEW_PADDING, view.frame.size.height - 20 - SUBVIEW_PADDING, view.frame.size.width - 2 * SUBVIEW_PADDING,  YEAR_LABEL_HEIGHT)];
-    yearLabel.text = @"2013";
+    yearLabel.text = [NSString stringWithFormat: @"%i",self.year ];
     yearLabel.font = [UIFont fontWithName: @"TrebuchetMS" size: 10];
     yearLabel.textAlignment = NSTextAlignmentCenter;
    
