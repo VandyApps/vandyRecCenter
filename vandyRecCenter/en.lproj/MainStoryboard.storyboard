@@ -492,7 +492,6 @@
                                 <color key="tintColor" red="0.66274509803921566" green="0.58431372549019611" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZP-sj-GU7" customClass="CalendarView">
-                                <color key="backgroundColor" red="0.41502269619999999" green="0.77080676020000005" blue="0.2981828084" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" type="user" id="ORU-jQ-wnh"/>
                                 </constraints>

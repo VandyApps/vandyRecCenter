@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CalendarViewDelegate.h"
+#import "DayButton.h"
 
 #define DEFAULT_CAL_SCROLL_WIDTH_PORTRAIT 250
 #define DEFAULT_CAL_SCROLL_WIDTH_LANDSCAPE 300
@@ -27,11 +28,6 @@
 //properties related to element locations and size
 @property (nonatomic) CGFloat pagePaddingVertical;
 @property (nonatomic) CGFloat pagePaddingHorizontal;
-
-//for individual days in the calendar
-@property (nonatomic) CGFloat dayWidth;
-@property (nonatomic) CGFloat dayHeight;
-@property (nonatomic) CGFloat dayPadding;
 
 - (void) incrementMonth;
 - (void) decrementMonth;

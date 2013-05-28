@@ -18,32 +18,9 @@
 @synthesize month = _month;
 @synthesize year = _year;
 @synthesize selectedDate = _selectedDate;
-@synthesize dayWidth = _dayWidth;
-@synthesize dayPadding = _dayPadding;
-@synthesize dayHeight = _dayHeight;
 
 #pragma mark - Getters
 
-- (CGFloat) dayWidth {
-    if (_dayWidth == 0) {
-        _dayWidth = DEFAULT_DAY_WIDTH;
-    }
-    return _dayWidth;
-}
-
-- (CGFloat) dayHeight {
-    if (_dayHeight == 0) {
-        _dayHeight = DEFAULT_DAY_HEIGHT;
-    }
-    return _dayHeight;
-}
-
-- (CGFloat) dayPadding {
-    if (_dayPadding == 0) {
-        _dayPadding = DEFAULT_DAY_PADDING;
-    }
-    return _dayPadding;
-}
 
 #pragma mark - Initializers
 
@@ -76,23 +53,22 @@
         self.calendarScroll = [[UIScrollView alloc] initWithFrame: CGRectMake((self.frame.size.width - DEFAULT_CAL_SCROLL_WIDTH_LANDSCAPE) / 2.0, 0, DEFAULT_CAL_SCROLL_WIDTH_LANDSCAPE, self.frame.size.height)];
     }
     self.calendarScroll.backgroundColor = [UIColor blackColor];
-    [self addSubview: self.calendarScroll];
-    for (size_t i = 0; i < 10; ++i) {
-        [self addCalendarElementAtIndex: i withDay: 0 andWeekDay: 0];
+    
+    NSDate *date = [NSDate dateWithYear: 2013 month: 4 andDay: 1];
+    while ([date month] != 5) {
+        DayButton* button = [[DayButton alloc] initWithDate: date andPadding: 0];
+        date = [date dateByAddingTimeInterval: 24 * 60 * 60];
+        [self.calendarScroll addSubview: button];
     }
+    self.calendarScroll.contentSize = CGSizeMake((31 * (80+0)) + 0, self.calendarScroll.frame.size.height);
+    [self addSubview: self.calendarScroll];
 }
 
-- (void) addCalendarElementAtIndex: (NSUInteger) index withDay: (NSUInteger) day andWeekDay: (NSUInteger) weekDay {
-    
-    UIView* calDay = [[UIView alloc] initWithFrame: CGRectMake(self.dayPadding + (self.dayWidth + self.dayPadding) * index, (self.calendarScroll.frame.size.height - self.dayHeight) / 2.0, self.dayWidth, self.dayHeight)];
-    calDay.backgroundColor = [UIColor whiteColor];
-    [self.calendarScroll addSubview: calDay];
-    self.calendarScroll.contentSize = CGSizeMake(self.dayPadding + (self.dayWidth + self.dayPadding) * (index + 1), self.calendarScroll.frame.size.height);
-}
     
 
 - (void) layoutSubviews {
-    NSLog(@"Laying out subviews");
+    [super layoutSubviews];
+    
     [self setUpScrollView];
     
 }

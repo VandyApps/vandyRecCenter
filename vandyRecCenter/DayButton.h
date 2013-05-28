@@ -7,16 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+
+#import "UIColor-BMColors.h"
 #import "NSDate-MyDateClass.h"
 #import "NSDate-WeekDateClass.h"
 @interface DayButton : UIControl
 
 #define DEFAULT_HEIGHT 100
-#define DEFAULT_WIDTH 80
+#define DEFAULT_WIDTH 75
 
-#define DEFAULT_DAY_WIDTH 60
-#define DEFAULT_DAY_HEIGHT 80
+#define DEFAULT_DAY_WIDTH 65
+#define DEFAULT_DAY_HEIGHT 85
 #define DEFAULT_DAY_PADDING 10
+
 
 
 @property (nonatomic) CGFloat dayWidth;
@@ -27,4 +31,10 @@
 @property (nonatomic) NSUInteger day;
 @property (nonatomic) NSUInteger month;
 @property (nonatomic) NSUInteger year;
+
+
+@property (nonatomic, strong) UIView* dayView;
+@property (nonatomic, strong) UILabel* weekDayLabel;
+@property (nonatomic, strong) UILabel* dayLabel;
+- (id) initWithDate: (NSDate*) date andPadding: (CGFloat) padding;
 @end
