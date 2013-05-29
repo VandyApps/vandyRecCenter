@@ -324,9 +324,9 @@
         NSDate* startDate = [[[self.hours mainHours] objectAtIndex:indexPath.row] objectForKey: @"beginningDate"];
         NSDate *endDate = [[[self.hours mainHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
         
-        [ (UILabel*) [cell viewWithTag: 2] setText: title];
+        [ (UILabel*) [cell viewWithTag: 1] setText: title];
         
-        [(UILabel *) [cell viewWithTag: 3] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
+        [(UILabel *) [cell viewWithTag: 2] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
     } else if (indexPath.section == 1) {
         
         NSString* title = [[[self.hours otherHours] objectAtIndex:indexPath.row] objectForKey: @"title"];
@@ -335,8 +335,8 @@
         NSDate *endDate = [[[self.hours otherHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
         
         
-        [ (UILabel*) [cell viewWithTag: 2] setText: title];
-         [(UILabel *) [cell viewWithTag: 3] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
+        [ (UILabel*) [cell viewWithTag: 1] setText: title];
+         [(UILabel *) [cell viewWithTag: 2] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
         
     } else  {//last section
     
@@ -345,21 +345,14 @@
         NSDate *endDate = [[[self.hours closedHours] objectAtIndex:indexPath.row] objectForKey: @"endDate"];
         
         
-        [(UILabel*) [cell viewWithTag: 2] setText: title];
-        [(UILabel *) [cell viewWithTag: 3] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
-    }
-    
-    if (indexPath.section == self.sectionOfSelectedCell && indexPath.row == self.rowOfSelectedCell) {
-        
-        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed: IMAGE_CELL_SELECTED]];
-    } else {
-        [(UIImageView*) [cell viewWithTag: 1] setImage: [UIImage imageNamed:IMAGE_CELL_NORMAL]];
+        [(UILabel*) [cell viewWithTag: 1] setText: title];
+        [(UILabel *) [cell viewWithTag: 2] setText: [self getDateStringWithStartDate: startDate andEndDate:endDate] ];
     }
     
     if (indexPath.section == self.sectionOfCurrentHours && indexPath.row == self.rowOfCurrentHours) {
-        [(UILabel*) [cell viewWithTag: 4] setText: @"Current"];
+        [(UILabel*) [cell viewWithTag: 3] setText: @"Current"];
     } else {
-        [(UILabel*) [cell viewWithTag: 4] setText: @""];
+        [(UILabel*) [cell viewWithTag: 3] setText: @""];
     }
     return cell;
 }
