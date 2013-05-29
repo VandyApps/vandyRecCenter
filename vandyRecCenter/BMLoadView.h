@@ -26,4 +26,8 @@
 //animation methods
 - (void) start;
 - (void) stop;
+
+//combination of animation and display
+- (void) begin;
+- (void) end;
 @end

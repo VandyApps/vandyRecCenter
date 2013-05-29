@@ -84,5 +84,19 @@
     [self.loadSpiral stopAnimating];
 }
 
+- (void) begin {
+    if (self.hidden) {
+        [self show];
+        [self start];
+    }
+}
+
+- (void) end {
+    if (!self.hidden) {
+        [self hide];
+        [self stop];
+    }
+}
+
 
 @end
