@@ -80,6 +80,7 @@
     } else {
         [self hideCalendarView];
     }
+    [self.GFTableView reloadData];
 }
 
 #pragma mark - Public
@@ -141,7 +142,14 @@
     self.monthLabel.textAlignment = NSTextAlignmentCenter;
     self.monthLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 18];
     self.monthLabel.backgroundColor = [UIColor clearColor];
-    [self displayDate: [self.calendarView selectedDate]];
+    
+    
+    
+    if (self.GFTabs.selectedSegmentIndex == 0) {
+        [self displayDate: [self.calendarView selectedDate]];
+    } else if (self.GFTabs.selectedSegmentIndex == 1) {
+        [self displayDate: [[NSDate alloc] init]];
+    }
     [view addSubview: self.monthLabel];
     return view;
     
