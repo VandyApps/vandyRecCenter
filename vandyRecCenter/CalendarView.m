@@ -54,7 +54,21 @@
     
 }
 
+#pragma mark - Calandar setters
+- (void) selectCurrentCalendar {
+    NSDate * currentDate = [[NSDate alloc] init];
+    self.year = [currentDate year];
+    self.month = [currentDate month];
+    [self setUpScrollView];
+    [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
+}
 
+- (void) selectYear:(NSUInteger)year month:(NSUInteger)month {
+    self.year = year;
+    self.month = month;
+    [self setUpScrollView];
+    [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
+}
 
 #pragma mark - View Setup
 
