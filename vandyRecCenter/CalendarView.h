@@ -28,8 +28,8 @@
 @property (nonatomic, strong) UIButton *decrementButton;
 @property (nonatomic, strong) UIButton *incrementButton;
 
-@property (nonatomic) NSUInteger month;
-@property (nonatomic) NSUInteger year;
+@property (nonatomic) NSInteger month;
+@property (nonatomic) NSInteger year;
 @property (nonatomic, strong) NSDate* selectedDate;
 
 //properties related to element locations and size

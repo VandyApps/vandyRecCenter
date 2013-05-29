@@ -84,12 +84,12 @@
     self.dayButtons = [[NSArray alloc] init];
     NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: 1];
     
-    while ([date month] != 5) {
+    while ([date month] != (self.month+1)) {
         
         DayButton* button = [[DayButton alloc] initWithDate: date andPadding: 0];
         //add day
         
-        [button addTarget: self action: @selector(clicked:) forControlEvents: UIControlEventTouchUpInside];
+        [button addTarget: self action: @selector(daySelected:) forControlEvents: UIControlEventTouchUpInside];
         
         self.dayButtons = [self.dayButtons arrayByAddingObject: button];
         [self.calendarScroll addSubview: button];
@@ -103,9 +103,11 @@
     
     UIButton *leftButton = [[UIButton alloc] initWithFrame: CGRectMake(BUTTON_PADDING, (self.frame.size.height - 6) / 2.0, MINUS_BUTTON_WIDTH, MINUS_BUTTON_HEIGHT)];
     [leftButton setBackgroundImage: [UIImage imageNamed: @"45-minus.png"] forState: UIControlStateNormal];
+    [leftButton addTarget: self action: @selector(decrementMonth) forControlEvents: UIControlEventTouchUpInside];
     
     UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(self.frame.size.width - BUTTON_PADDING - PLUS_BUTTON_DIMENSIONS, (self.frame.size.height - PLUS_BUTTON_DIMENSIONS) / 2.0, PLUS_BUTTON_DIMENSIONS, PLUS_BUTTON_DIMENSIONS)];
     [rightButton setBackgroundImage:[UIImage imageNamed: @"50-plus.png"] forState: UIControlStateNormal];
+    [rightButton addTarget: self action: @selector(incrementMonth) forControlEvents: UIControlEventTouchUpInside];
     
     [self addSubview: leftButton];
     [self addSubview: rightButton];
@@ -113,7 +115,7 @@
 
 #pragma mark - Events
 
-- (void) clicked: (DayButton*) sender {
+- (void) daySelected: (DayButton*) sender {
     for (DayButton* button in self.dayButtons) {
         if (button.day != sender.day) {
             button.selected = NO;
@@ -121,6 +123,28 @@
     }
     [self.calendarDelegate didSelectDate: sender.date];
     [self.calendarDelegate didSelectDateForYear: self.year month: self.month day: sender.day];
+}
+
+- (void) incrementMonth {
+    self.month += 1;
+    if (self.month > 11) {
+        self.month = 0;
+        self.year += 1;
+    }
+    
+    [self setUpScrollView];
+    [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
+}
+
+- (void) decrementMonth {
+    self.month -= 1;
+    if (self.month < 0) {
+        self.month = 11;
+        self.year -= 1;
+    }
+    
+    [self setUpScrollView];
+    [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
 }
 
 #pragma mark - Helpers
