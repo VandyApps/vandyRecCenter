@@ -95,7 +95,7 @@
     self.dayView.userInteractionEnabled = NO;
     
     self.weekDayLabel = [[UILabel alloc] initWithFrame: CGRectMake(SUBVIEW_PADDING, SUBVIEW_PADDING, self.dayView.frame.size.width - 2* SUBVIEW_PADDING, 20)];
-    self.weekDayLabel .text = [self.date dayOfTheWeekAsString];
+    self.weekDayLabel .text = [DateHelper weekDayForIndex: [self.date weekDay]];
     self.weekDayLabel .font = [UIFont fontWithName: @"TrebuchetMS" size: WEEK_DAY_FONT_SIZE * self.fraction];
     self.weekDayLabel .textAlignment = NSTextAlignmentCenter;
     self.weekDayLabel .userInteractionEnabled = NO;

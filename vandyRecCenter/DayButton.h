@@ -11,7 +11,7 @@
 
 #import "UIColor-BMColors.h"
 #import "NSDate-MyDateClass.h"
-#import "NSDate-WeekDateClass.h"
+#import "DateHelper.h"
 
 @interface DayButton : UIControl
 

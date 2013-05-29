@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NSDate-MyDateClass.h"
-#import "NSDate-WeekDateClass.h"
+#import "DateHelper.h"
 #import "ScrollHoursDelegate.h"
 
 //title label

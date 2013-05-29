@@ -171,14 +171,14 @@
                 
                 NSInteger startIndex = [[arrayOfUniqueIndices objectAtIndex: i] intValue];
                 NSInteger endIndex = [[arrayOfUniqueIndices objectAtIndex: i + 1] intValue] - 1;
-                titles = [titles arrayByAddingObject: [NSString stringWithFormat: @"%@ - %@", [NSDate dayOfTheWeekAbreviationForIndex: startIndex], [NSDate dayOfTheWeekAbreviationForIndex:endIndex]]];
+                titles = [titles arrayByAddingObject: [NSString stringWithFormat: @"%@ - %@", [DateHelper weekAbbreviationForIndex: startIndex], [DateHelper weekAbbreviationForIndex:endIndex]]];
                 
                 
             } else { //there is no range, just a single day
-                titles = [titles arrayByAddingObject: [NSDate dayOfTheWeekForIndex:[[arrayOfUniqueIndices objectAtIndex: i] intValue]]];
+                titles = [titles arrayByAddingObject: [DateHelper weekDayForIndex:[[arrayOfUniqueIndices objectAtIndex: i] intValue]]];
             }
         } else {
-            titles = [titles arrayByAddingObject: [NSDate dayOfTheWeekForIndex: [[arrayOfUniqueIndices objectAtIndex:i] intValue]]];
+            titles = [titles arrayByAddingObject: [DateHelper weekDayForIndex: [[arrayOfUniqueIndices objectAtIndex:i] intValue]]];
         }
     }
     return titles;
