@@ -123,7 +123,7 @@
     return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 1] intValue];
 }
 
-- (NSUInteger) dayForAdjustedTimeZone:(NSTimeZone*) timeZone {
+- (NSUInteger) dayForTimeZone:(NSTimeZone*) timeZone {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     formatter.timeZone = timeZone;
     formatter.timeStyle = NSDateFormatterNoStyle;
@@ -144,7 +144,7 @@
     return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 0] intValue] -1;
 }
 
-- (NSUInteger) monthForAdjustedTimeZone:(NSTimeZone *)timeZone {
+- (NSUInteger) monthForTimeZone:(NSTimeZone *)timeZone {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.timeZone = timeZone;
     formatter.timeStyle = NSDateFormatterNoStyle;
@@ -172,7 +172,7 @@
     return year;
 }
 
-- (NSUInteger) yearForAdjustedTimeZone:(NSTimeZone *)timeZone {
+- (NSUInteger) yearForTimeZone:(NSTimeZone *)timeZone {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.timeZone = timeZone;
     formatter.timeStyle = NSDateFormatterNoStyle;
@@ -193,7 +193,7 @@
     
 }
 
-- (NSUInteger) weekDayForAdjustedTimeZone: (NSTimeZone*) timeZone {
+- (NSUInteger) weekDayForTimeZone: (NSTimeZone*) timeZone {
     
 }
 

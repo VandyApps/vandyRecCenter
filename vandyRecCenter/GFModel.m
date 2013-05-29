@@ -132,9 +132,9 @@
 - (NSDictionary*) currentGFClass {
     NSDate *currentDate = [[NSDate alloc] init];
     NSTimeZone* nashville = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
-    if (self.month == [currentDate monthForAdjustedTimeZone: nashville] && self.year == [currentDate yearForAdjustedTimeZone: nashville ]) {
+    if (self.month == [currentDate monthForTimeZone: nashville] && self.year == [currentDate yearForTimeZone: nashville ]) {
         
-        NSArray* GFClasses = [self GFClassesForDay: [currentDate dayForAdjustedTimeZone: nashville]];
+        NSArray* GFClasses = [self GFClassesForDay: [currentDate dayForTimeZone: nashville]];
         for (NSDictionary* GFClass in GFClasses) {
             NSArray* arrayOfTimes = [[GFClass objectForKey: @"timeRange"] componentsSeparatedByString: @" - "];
             TimeString* start = [[TimeString alloc] initWithString: [arrayOfTimes objectAtIndex: 0]];

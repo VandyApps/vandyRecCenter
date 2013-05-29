@@ -18,10 +18,19 @@
 - (NSUInteger) year;
 - (NSUInteger) weekDay;
 
-- (NSUInteger) dayForAdjustedTimeZone: (NSTimeZone*) timeZone;
-- (NSUInteger) monthForAdjustedTimeZone: (NSTimeZone*) timeZone;
-- (NSUInteger) yearForAdjustedTimeZone: (NSTimeZone*) timeZone;
-- (NSUInteger) weekDayForAdjustedTimeZone: (NSTimeZone*) timeZone;
+- (NSUInteger) dayForTimeZone: (NSTimeZone*) timeZone;
+- (NSUInteger) monthForTimeZone: (NSTimeZone*) timeZone;
+- (NSUInteger) yearForTimeZone: (NSTimeZone*) timeZone;
+- (NSUInteger) weekDayForTimeZone: (NSTimeZone*) timeZone;
 
++ (NSUInteger) day;
++ (NSUInteger) month;
++ (NSUInteger) year;
++ (NSUInteger) weekDay;
+
++ (NSUInteger) dayForTimeZone: (NSTimeZone*) timeZone;
++ (NSUInteger) monthForTimeZone: (NSTimeZone*) timeZone;
++ (NSUInteger) yearForTimeZone: (NSTimeZone*) timeZone;
++ (NSUInteger) weekDayForTimeZone: (NSTimeZone*) timeZone;
 
 @end

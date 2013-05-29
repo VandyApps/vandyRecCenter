@@ -6,6 +6,7 @@
 
 @interface NSDate(WeekDateClass)
 
+
 - (NSUInteger) dayOfTheWeekAsInt;
 - (NSUInteger) dayOfTheWeekAsIntWithTimeZone: (NSTimeZone*) timeZone;
 - (NSString*) dayOfTheWeekAsString;

@@ -47,8 +47,8 @@
 - (void) GFModelForCurrentMonth:(void (^)(NSError *, GFModel *))block {
     NSTimeZone* nashville = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
     NSDate* current = [[NSDate alloc] init];
-    NSUInteger month = [current monthForAdjustedTimeZone: nashville];
-    NSUInteger year = [current yearForAdjustedTimeZone: nashville];
+    NSUInteger month = [current monthForTimeZone: nashville];
+    NSUInteger year = [current yearForTimeZone: nashville];
     [self GFModelForYear: year month: month block:^(NSError *error, GFModel *model) {
         block(error, model);
     }];
@@ -73,7 +73,7 @@
             block(error, nil);
         } else {
             NSDate* current = [[NSDate alloc] init];
-            NSUInteger day = [current dayForAdjustedTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
+            NSUInteger day = [current dayForTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
             block(nil, [model GFClassesForDay: day]);
         }
     }];
@@ -122,8 +122,8 @@
 
 - (void) loadCurrentMonth:(void (^)(NSError *, GFModel *))block {
     NSDate *current = [[NSDate alloc] init];
-    NSUInteger month = [current monthForAdjustedTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
-    NSUInteger year = [current yearForAdjustedTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
+    NSUInteger month = [current monthForTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
+    NSUInteger year = [current yearForTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
     [self loadMonth: month andYear: year block:^(NSError *error, GFModel *model) {
         if (error) {
             block(error, nil);
