@@ -28,6 +28,9 @@
 @property (nonatomic, strong) UIButton *decrementButton;
 @property (nonatomic, strong) UIButton *incrementButton;
 
+//day represents the day of the selected DayButton
+@property (nonatomic) NSInteger day;
+
 @property (nonatomic) NSInteger month;
 @property (nonatomic) NSInteger year;
 @property (nonatomic, strong) NSDate* selectedDate;

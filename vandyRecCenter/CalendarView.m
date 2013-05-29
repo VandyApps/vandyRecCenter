@@ -149,6 +149,7 @@
 #pragma mark - Events
 
 - (void) daySelected: (DayButton*) sender {
+    self.day = sender.day;
     for (DayButton* button in self.dayButtons) {
         if (button.day != sender.day) {
             button.selected = NO;

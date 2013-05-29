@@ -119,11 +119,13 @@
 - (void) calendarChangeToYear:(NSUInteger)year month:(NSUInteger)month {
     NSDate *date = [NSDate dateWithYear: year month: month andDay: 1];
     [self displayDate: date];
+    [self.GFTableView reloadData];
 }
 - (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
     
     NSDate *date = [NSDate dateWithYear: year month: month andDay: day];
     [self displayDate: date];
+    [self.GFTableView reloadData];
 }
 
 #pragma mark - Table View DataSource
@@ -135,7 +137,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    __block NSUInteger rowsInSection = 0;
+    [self.collection GFClassesForYear: self.calendarView.year month:self.calendarView.month day:self.calendarView.day  block:^(NSError *error, NSArray *GFClasses) {
+        if (error) {
+            UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle: @"Error with Internet Collection" message: @"Could not connect to the internet" delegate: nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
+            [errorAlert show];
+        } else {
+            rowsInSection = GFClasses.count;
+        }
+
+    }];
+    return rowsInSection;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
