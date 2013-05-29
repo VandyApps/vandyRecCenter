@@ -141,7 +141,7 @@
     self.monthLabel.textAlignment = NSTextAlignmentCenter;
     self.monthLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 18];
     self.monthLabel.backgroundColor = [UIColor clearColor];
-    
+    [self displayDate: [self.calendarView selectedDate]];
     [view addSubview: self.monthLabel];
     return view;
     
@@ -151,5 +151,4 @@
     return 30;
 }
 
-#pragma mark - Helpers (to be moved)
 @end
