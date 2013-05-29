@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "GFModel.h"
+#import "GFCollection.h"
 #import "CalendarView.h"
 #import "CalendarViewDelegate.h"
 
@@ -22,8 +22,9 @@
 @property (nonatomic, weak) IBOutlet UISegmentedControl* GFTabs;
 @property (nonatomic, weak) IBOutlet CalendarView* calendarView;
 @property (nonatomic, strong)  UITableView *GFTableView;
-@property (nonatomic, strong) GFModel *model;
 @property (nonatomic, strong) UILabel* monthLabel;
+
+@property (nonatomic, strong) GFCollection* collection;
 
 - (void) hideCalendarView;
 - (void) showCalendarView;

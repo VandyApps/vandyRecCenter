@@ -14,7 +14,7 @@
 
 @implementation GFViewController
 @synthesize GFTabs = _GFTabs;
-@synthesize model = _model;
+@synthesize collection = _collection;
 @synthesize GFTableView = _GFTableView;
 @synthesize monthLabel = _monthLabel;
 @synthesize calendarView = _calendarView;
@@ -35,6 +35,14 @@
     [super viewDidLoad];
     self.calendarView.calendarDelegate = self;
     [self.GFTabs addTarget: self action: @selector(tabChanged:) forControlEvents: UIControlEventValueChanged];
+    self.collection = [[GFCollection alloc] init];
+    
+    
+   // UIActivityIndicatorView* loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    //loading.center = self.view.center;
+   // [self.collection GFModelForCurrentMonth:^(NSError *error, GFModel *model) {
+        
+   // }];
     
 }
 
@@ -135,8 +143,6 @@
     self.monthLabel.textAlignment = NSTextAlignmentCenter;
     self.monthLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 18];
     self.monthLabel.backgroundColor = [UIColor clearColor];
-    
-    
     
     if (self.GFTabs.selectedSegmentIndex == 0) {
         [self displayDate: [self.calendarView selectedDate]];

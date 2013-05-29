@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2103555817566480008C92FB /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2103555717566480008C92FB /* images.jpeg */; };
+		2103555B17566D3E008C92FB /* BMLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2103555A17566D3E008C92FB /* BMLoadView.m */; };
 		211B16EA1752B4C800180E3D /* TimeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 211B16E91752B4C800180E3D /* TimeString.m */; };
 		211B16EE17530AD900180E3D /* GFCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 211B16ED17530AD900180E3D /* GFCollection.m */; };
 		21201EC21702177D00E89605 /* blackGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC11702177D00E89605 /* blackGradient.png */; };
@@ -79,6 +80,8 @@
 
 /* Begin PBXFileReference section */
 		2103555717566480008C92FB /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
+		2103555917566D3E008C92FB /* BMLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMLoadView.h; sourceTree = "<group>"; };
+		2103555A17566D3E008C92FB /* BMLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMLoadView.m; sourceTree = "<group>"; };
 		211B16E81752B4C800180E3D /* TimeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeString.h; sourceTree = "<group>"; };
 		211B16E91752B4C800180E3D /* TimeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeString.m; sourceTree = "<group>"; };
 		211B16EB1752B61E00180E3D /* TimeStringStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeStringStyle.h; sourceTree = "<group>"; };
@@ -194,6 +197,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2103555C17566D43008C92FB /* Custom Load */ = {
+			isa = PBXGroup;
+			children = (
+				2103555917566D3E008C92FB /* BMLoadView.h */,
+				2103555A17566D3E008C92FB /* BMLoadView.m */,
+			);
+			name = "Custom Load";
+			sourceTree = "<group>";
+		};
 		211B16E71752B4AB00180E3D /* Utility Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +315,7 @@
 				2170328316FE96D900A43833 /* AppDelegate.m */,
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
 				21F1EA631728F17000AB17DB /* Custom Tab Bar */,
+				2103555C17566D43008C92FB /* Custom Load */,
 				21E677C91749753400719EA7 /* Web Client */,
 				21FA94BC172D951D0016918B /* Categories */,
 				211B16E71752B4AB00180E3D /* Utility Classes */,
@@ -570,6 +583,7 @@
 				21A17F651753DD9E00681749 /* CalendarView.m in Sources */,
 				21AA184D1754211800CC2A83 /* DayButton.m in Sources */,
 				214754B91755C9C600179268 /* DateHelper.m in Sources */,
+				2103555B17566D3E008C92FB /* BMLoadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
