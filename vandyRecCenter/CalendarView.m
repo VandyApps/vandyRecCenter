@@ -56,6 +56,7 @@
 
 #pragma mark - Calandar setters
 - (void) selectCurrentCalendar {
+    [self.calendarScroll setContentOffset: CGPointZero animated: YES];
     NSDate * currentDate = [[NSDate alloc] init];
     self.year = [currentDate year];
     self.month = [currentDate month];
@@ -64,6 +65,7 @@
 }
 
 - (void) selectYear:(NSUInteger)year month:(NSUInteger)month {
+    [self.calendarScroll setContentOffset: CGPointZero animated: YES];
     self.year = year;
     self.month = month;
     [self setUpScrollView];
@@ -148,6 +150,7 @@
 }
 
 - (void) incrementMonth {
+    [self.calendarScroll setContentOffset: CGPointZero animated: YES];
     self.month += 1;
     if (self.month > 11) {
         self.month = 0;
@@ -159,6 +162,7 @@
 }
 
 - (void) decrementMonth {
+    [self.calendarScroll setContentOffset: CGPointZero animated: YES];
     self.month -= 1;
     if (self.month < 0) {
         self.month = 11;
