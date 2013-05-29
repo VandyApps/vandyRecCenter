@@ -12,11 +12,17 @@
 #import "CalendarView.h"
 #import "CalendarViewDelegate.h"
 
+#define HEIGHT_OF_GFTABS 29
+
 @interface GFViewController : UIViewController <CalendarViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UISegmentedControl* GFTabs;
 @property (nonatomic, weak) IBOutlet CalendarView* calendarView;
-@property (nonatomic, weak) IBOutlet UITableView *GFTableView;
+@property (nonatomic, strong)  UITableView *GFTableView;
 @property (nonatomic, weak) IBOutlet UIView *monthView;
 @property (nonatomic, strong) GFModel *model;
+
+- (IBAction) toggle:(id)sender;
+- (void) hideCalendarView;
+- (void) showCalendarView;
 @end

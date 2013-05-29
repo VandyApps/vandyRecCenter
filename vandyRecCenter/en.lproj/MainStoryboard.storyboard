@@ -496,28 +496,24 @@
                                     <constraint firstAttribute="height" constant="100" type="user" id="ORU-jQ-wnh"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6BL-lC-Nzx">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="375" type="user" id="Zo8-bv-82K"/>
-                                    <constraint firstAttribute="height" priority="500" constant="375" type="user" id="odd-lm-TtH"/>
-                                </constraints>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6BL-lC-Nzx" firstAttribute="leading" secondItem="Pgd-U3-KAp" secondAttribute="leading" type="default" id="6Yg-NE-9bR"/>
                             <constraint firstItem="EZP-sj-GU7" firstAttribute="trailing" secondItem="Pgd-U3-KAp" secondAttribute="trailing" type="default" id="EfV-WB-B1d"/>
                             <constraint firstItem="4PS-KL-nxb" firstAttribute="top" secondItem="Pgd-U3-KAp" secondAttribute="top" constant="-1" id="OvT-dO-tKD"/>
-                            <constraint firstItem="6BL-lC-Nzx" firstAttribute="top" secondItem="EZP-sj-GU7" secondAttribute="bottom" type="user" id="VtB-sS-Z1d"/>
                             <constraint firstItem="EZP-sj-GU7" firstAttribute="top" secondItem="Pgd-U3-KAp" secondAttribute="top" constant="28" id="chB-qC-Xzc"/>
                             <constraint firstItem="EZP-sj-GU7" firstAttribute="leading" secondItem="Pgd-U3-KAp" secondAttribute="leading" type="default" id="ewI-NT-oai"/>
                             <constraint firstItem="4PS-KL-nxb" firstAttribute="trailing" secondItem="Pgd-U3-KAp" secondAttribute="trailing" type="default" id="q7n-X6-yUb"/>
                             <constraint firstItem="4PS-KL-nxb" firstAttribute="leading" secondItem="Pgd-U3-KAp" secondAttribute="leading" type="default" id="uMX-jY-iTf"/>
-                            <constraint firstItem="6BL-lC-Nzx" firstAttribute="trailing" secondItem="Pgd-U3-KAp" secondAttribute="trailing" type="default" id="vi6-aM-N8s"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Classes" id="FCk-t0-Icd"/>
+                    <navigationItem key="navigationItem" title="Classes" id="FCk-t0-Icd">
+                        <barButtonItem key="rightBarButtonItem" title="toggle" id="qFe-XA-UPP">
+                            <connections>
+                                <action selector="toggle:" destination="2Qc-Wk-9j9" id="vgw-hd-hd5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendarView" destination="EZP-sj-GU7" id="q6K-TK-96O"/>
                     </connections>
@@ -622,9 +618,10 @@
         <class className="GFViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GFViewController.h"/>
             <relationships>
+                <relationship kind="action" name="toggle:"/>
                 <relationship kind="outlet" name="GFTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="GFTabs" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="calendarView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="calendarView" candidateClass="CalendarView"/>
                 <relationship kind="outlet" name="monthView" candidateClass="UIView"/>
             </relationships>
         </class>
