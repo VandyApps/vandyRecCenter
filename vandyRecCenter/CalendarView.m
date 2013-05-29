@@ -67,7 +67,10 @@
     self.year = year;
     self.month = month;
     [self setUpScrollView];
-    [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
+    if ([self.calendarDelegate respondsToSelector: @selector(calendarChangeToYear:month:)]) {
+        [self.calendarDelegate calendarChangeToYear:self.year month: self.month];
+    }
+   
 }
 
 #pragma mark - View Setup
@@ -135,8 +138,13 @@
             button.selected = NO;
         }
     }
-    [self.calendarDelegate didSelectDate: sender.date];
-    [self.calendarDelegate didSelectDateForYear: self.year month: self.month day: sender.day];
+    
+    if ([self.calendarDelegate respondsToSelector: @selector(didSelectDate:)]) {
+        [self.calendarDelegate didSelectDate: sender.date];
+    } else if ([self.calendarDelegate respondsToSelector: @selector(didSelectDateForYear:month:day:)]) {
+        [self.calendarDelegate didSelectDateForYear: self.year month: self.month day: sender.day];
+    }
+    
 }
 
 - (void) incrementMonth {

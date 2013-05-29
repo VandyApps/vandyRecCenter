@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "GFModel.h"
+#import "CalendarView.h"
+#import "CalendarViewDelegate.h"
 
-@interface GFViewController : UIViewController
+@interface GFViewController : UIViewController <CalendarViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UISegmentedControl* GFTabs;
-@property (nonatomic, weak) IBOutlet UIView* calendarView;
+@property (nonatomic, weak) IBOutlet CalendarView* calendarView;
 @property (nonatomic, weak) IBOutlet UITableView *GFTableView;
 @property (nonatomic, weak) IBOutlet UIView *monthView;
 @property (nonatomic, strong) GFModel *model;

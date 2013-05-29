@@ -39,7 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.GFTabs.layer.cornerRadius = 0;
+    self.calendarView.calendarDelegate = self;
     
     
 }
@@ -48,6 +48,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Calendar Delegate
+
+- (void) calendarChangeToYear:(NSUInteger)year month:(NSUInteger)month {
+    NSLog(@"Calendar changed");
+}
+- (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
+    NSLog(@"Selected date");
 }
 
 @end
