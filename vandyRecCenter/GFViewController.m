@@ -10,7 +10,7 @@
 #import "GFCollection.h"
 @interface GFViewController ()
 
-@property (nonatomic, strong) BMLoadView* loadView;
+@property (nonatomic, strong) BMLoadView* loadIndicator;
 
 @end
 
@@ -34,24 +34,20 @@
 #pragma mark - lifecycle
 - (void)viewDidLoad
 {
+    NSLog(@"View did load");
     [super viewDidLoad];
     self.calendarView.calendarDelegate = self;
     [self.GFTabs addTarget: self action: @selector(tabChanged:) forControlEvents: UIControlEventValueChanged];
-    self.collection = [[GFCollection alloc] init];
     
-    self.loadView = [[BMLoadView alloc] initWithParent: self.view];
-   // UIActivityIndicatorView* loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    //loading.center = self.view.center;
-   // [self.collection GFModelForCurrentMonth:^(NSError *error, GFModel *model) {
-        
-   // }];
+    
     
     
 }
 
 - (void) viewDidLayoutSubviews {
+    self.loadIndicator = [[BMLoadView alloc] initWithParent: self.view];
     
-    
+    NSLog(@"Laying out subviews");
     [super viewDidLayoutSubviews];
     if (self.GFTableView != nil) {
         [self.GFTableView removeFromSuperview];
@@ -70,7 +66,8 @@
     self.GFTableView.dataSource = self;
     
     [self.view addSubview: self.GFTableView];
-    
+    [self.loadIndicator start];
+    [self.loadIndicator show];
 }
 
 - (void)didReceiveMemoryWarning

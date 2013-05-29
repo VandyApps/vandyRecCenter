@@ -11,6 +11,7 @@
 
 @interface BMLoadView : UIView
 
+
 #define BM_LOADVIEW_DIMENSION 150
 #define BM_TITLE_WIDTH 100
 #define BM_TITLE_HEIGHT 30
@@ -27,7 +28,4 @@
 - (void) start;
 - (void) stop;
 
-//combination of animation and display
-- (void) begin;
-- (void) end;
 @end

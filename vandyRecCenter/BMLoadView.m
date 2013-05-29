@@ -23,6 +23,7 @@
 @synthesize titleView = _titleView;
 
 #pragma mark - Initializers
+
 - (id) initWithParent: (UIView*) parent {
     
     self = [super initWithFrame: CGRectMake((parent.frame.size.width - 150) / 2.0, (parent.frame.size.height - 150) / 2.0, 150, 150)];
@@ -68,13 +69,6 @@
     }
 }
 
-- (void) toggle {
-    if (self.hidden) {
-        [self show];
-    } else {
-        [self hide];
-    }
-}
 
 - (void) start {
     [self.loadSpiral startAnimating];
@@ -84,19 +78,6 @@
     [self.loadSpiral stopAnimating];
 }
 
-- (void) begin {
-    if (self.hidden) {
-        [self show];
-        [self start];
-    }
-}
-
-- (void) end {
-    if (!self.hidden) {
-        [self hide];
-        [self stop];
-    }
-}
-
+ 
 
 @end
