@@ -103,12 +103,12 @@
 
 - (void) calendarChangeToYear:(NSUInteger)year month:(NSUInteger)month {
     NSDate *date = [NSDate dateWithYear: year month: month andDay: 1];
-    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [self weekDayAbbreviationForIndex:[date weekDay]], [self monthNameForIndex: month], 1, year];
+    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [DateHelper weekDayAbbreviationForIndex:[date weekDay]], [DateHelper monthNameForIndex: month], 1, year];
 }
 - (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
     
     NSDate *date = [NSDate dateWithYear: year month: month andDay: day];
-    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [self weekDayAbbreviationForIndex:[date weekDay]], [self monthNameForIndex: month], day, year];
+    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [DateHelper weekDayAbbreviationForIndex:[date weekDay]], [DateHelper monthNameForIndex: month], day, year];
 }
 
 #pragma mark - Table View DataSource
@@ -132,7 +132,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIImageView* view = [[UIImageView alloc] init];
     view.image = [UIImage imageNamed: @"goldTint.png"];
-    self.monthLabel = [[UILabel alloc] initWithFrame: CGRectMake((self.view.frame.size.height - 220) / 2.0, (30 - 20) / 2.0,  220, 20)];
+    self.monthLabel = [[UILabel alloc] initWithFrame: CGRectMake((self.view.frame.size.height - 250) / 2.0, (30 - 20) / 2.0,  250, 20)];
     
     self.monthLabel.textAlignment = NSTextAlignmentCenter;
     self.monthLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 18];
@@ -148,57 +148,4 @@
 }
 
 #pragma mark - Helpers (to be moved)
-- (NSString*) monthNameForIndex: (NSUInteger) index {
-    switch (index) {
-        case 0:
-            return @"January";
-        case 1:
-            return @"February";
-        case 2:
-            return @"March";
-        case 3:
-            return @"April";
-        case 4:
-            return @"May";
-        case 5:
-            return @"June";
-        case 6:
-            return @"July";
-        case 7:
-            return @"August";
-        case 8:
-            return @"September";
-        case 9:
-            return @"October";
-        case 10:
-            return @"November";
-        case 11:
-            return @"December";
-        default:
-            return nil;
-    }
-}
-
-- (NSString*) weekDayAbbreviationForIndex: (NSUInteger) index {
-    switch (index) {
-        case 0:
-            return @"Sun";
-        case 1:
-            return @"Mon";
-        case 2:
-            return @"Tues";
-        case 3:
-            return @"Wed";
-        case 4:
-            return @"Thurs";
-        case 5:
-            return @"Fri";
-        case 6:
-            return @"Sat";
-        default:
-            return nil;
-    }
-}
-
-
 @end

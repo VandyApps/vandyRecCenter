@@ -12,7 +12,7 @@
 
 + (NSString*) monthNameForIndex: (NSUInteger) index;
 + (NSString*) weekDayForIndex: (NSUInteger) index;
-+ (NSString*) weekAbbreviationForIndex: (NSUInteger) index;
++ (NSString*) weekDayAbbreviationForIndex: (NSUInteger) index;
 
-+ (NSUInteger) daysInMonth: (NSUInteger) month year: (NSUInteger) year;
++ (NSUInteger) daysForMonth: (NSUInteger) month year: (NSUInteger) year;
 @end

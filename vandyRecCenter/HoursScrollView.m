@@ -171,7 +171,7 @@
                 
                 NSInteger startIndex = [[arrayOfUniqueIndices objectAtIndex: i] intValue];
                 NSInteger endIndex = [[arrayOfUniqueIndices objectAtIndex: i + 1] intValue] - 1;
-                titles = [titles arrayByAddingObject: [NSString stringWithFormat: @"%@ - %@", [DateHelper weekAbbreviationForIndex: startIndex], [DateHelper weekAbbreviationForIndex:endIndex]]];
+                titles = [titles arrayByAddingObject: [NSString stringWithFormat: @"%@ - %@", [DateHelper weekDayAbbreviationForIndex: startIndex], [DateHelper weekDayAbbreviationForIndex:endIndex]]];
                 
                 
             } else { //there is no range, just a single day

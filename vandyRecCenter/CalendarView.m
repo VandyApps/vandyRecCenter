@@ -120,7 +120,7 @@
         [self.calendarScroll addSubview: button];
         date = [date dateByAddingTimeInterval: 24 * 60 * 60];
     }
-    self.calendarScroll.contentSize = CGSizeMake(([self daysForMonth: self.month year: self.year] * (DEFAULT_CONTROL_WIDTH+ DAY_PADDING)) + BUTTON_PADDING, self.calendarScroll.frame.size.height);
+    self.calendarScroll.contentSize = CGSizeMake(([DateHelper daysForMonth: self.month year: self.year] * (DEFAULT_CONTROL_WIDTH+ DAY_PADDING)) + BUTTON_PADDING, self.calendarScroll.frame.size.height);
     
 }
 
@@ -190,29 +190,6 @@
 
 #pragma mark - Helpers
 
-- (NSUInteger) daysForMonth: (NSUInteger) month year: (NSUInteger) year {
-    switch (month) {
-        case 0:
-        case 2:
-        case 4:
-        case 7:
-        case 9:
-        case 11:
-            return 31;
-        case 3:
-        case 5:
-        case 6:
-        case 8:
-        case 10:
-            return 30;
-        default:
-            if (year % 4 == 0) {
-                return 29;
-            } else {
-                return 28;
-            }
-    }
-}
 
 
 @end

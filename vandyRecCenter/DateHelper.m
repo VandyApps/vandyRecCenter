@@ -64,7 +64,7 @@
     }
 }
 
-+ (NSString*) weekAbbreviationForIndex:(NSUInteger)index {
++ (NSString*) weekDayAbbreviationForIndex:(NSUInteger)index {
     switch (index) {
         case 0:
             return @"Sun";
@@ -86,26 +86,27 @@
     }
 }
 
-+ (NSUInteger) daysInMonth:(NSUInteger)month year: (NSUInteger) year {
++ (NSUInteger) daysForMonth: (NSUInteger) month year: (NSUInteger) year {
     switch (month) {
         case 0:
         case 2:
         case 4:
+        case 6:
         case 7:
         case 9:
         case 11:
             return 31;
         case 3:
         case 5:
-        case 6:
         case 8:
         case 10:
             return 30;
-        case 1:
-            return (year % 4 ==0) ? 29 : 28;
-            
         default:
-            return 0;
+            if (year % 4 == 0) {
+                return 29;
+            } else {
+                return 28;
+            }
     }
 }
 
