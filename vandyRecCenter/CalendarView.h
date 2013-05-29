@@ -20,7 +20,7 @@
 #define MINUS_BUTTON_HEIGHT 6
 
 
-@interface CalendarView : UIView
+@interface CalendarView : UIView <UIScrollViewDelegate>
 
 @property (nonatomic, weak) id<CalendarViewDelegate> calendarDelegate;
 

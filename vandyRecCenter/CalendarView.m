@@ -46,8 +46,6 @@
 #pragma mark - Lifecycle
 
 
-
-
 - (void) layoutSubviews {
     [super layoutSubviews];
     
@@ -68,9 +66,11 @@
     if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
 
         self.calendarScroll = [[UIScrollView alloc] initWithFrame: CGRectMake((self.frame.size.width - DEFAULT_CAL_SCROLL_WIDTH_PORTRAIT) / 2.0, 0, DEFAULT_CAL_SCROLL_WIDTH_PORTRAIT, self.frame.size.height)];
+        self.calendarScroll.delegate = self;
         
     } else {
         self.calendarScroll = [[UIScrollView alloc] initWithFrame: CGRectMake((self.frame.size.width - DEFAULT_CAL_SCROLL_WIDTH_LANDSCAPE) / 2.0, 0, DEFAULT_CAL_SCROLL_WIDTH_LANDSCAPE, self.frame.size.height)];
+        self.calendarScroll.delegate = self;
     }
     self.calendarScroll.backgroundColor = [UIColor blackColor];
     [self addSubview: self.calendarScroll];
@@ -143,6 +143,8 @@
             }
     }
 }
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
