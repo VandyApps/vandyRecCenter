@@ -75,7 +75,8 @@
 - (void) showCalendarView {
     if (self.calendarView.hidden) {
         self.calendarView.hidden = NO;
-        self.GFTableView.frame = CGRectMake(0, self.calendarView.frame.size.height, self.GFTableView.frame.size.width, self.GFTableView.frame.size.height - self.calendarView.frame.size.height);
+        
+        self.GFTableView.frame = CGRectMake(0, self.calendarView.frame.size.height + HEIGHT_OF_GFTABS, self.GFTableView.frame.size.width, self.GFTableView.frame.size.height - self.calendarView.frame.size.height);
     }
 }
 
