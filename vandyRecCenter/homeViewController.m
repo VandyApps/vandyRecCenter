@@ -14,6 +14,7 @@
 @property (nonatomic, assign) NSInteger indexOfScroll;
 @property (nonatomic, strong) NewsModel* newsModel;
 @property (nonatomic, assign) BOOL dataLoaded;
+@property (nonatomic, strong) BMLoadView* loadIndicator;
 @end
 
 @implementation homeViewController
@@ -41,6 +42,13 @@
         _newsModel = [[NewsModel alloc] init];
     }
     return _newsModel;
+}
+
+- (BMLoadView*) loadIndicator {
+    if (_loadIndicator == nil) {
+        _loadIndicator = [[BMLoadView alloc] initWithParent: self.view];
+    }
+    return _loadIndicator;
 }
 
 #pragma mark - events
@@ -96,10 +104,7 @@
     if (!self.dataLoaded) {
         
         
-        UIActivityIndicatorView *connectionIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhiteLarge];
-        connectionIndicator.center = self.view.center;
-        [connectionIndicator startAnimating];
-        [self.view addSubview: connectionIndicator];
+        [self.loadIndicator begin];
     
         [self.newsModel loadData:^(NSError *error) {
             
@@ -141,9 +146,9 @@
                 [self.scrollView setContentOffset: CGPointMake(self.indexOfScroll * self.scrollView.frame.size.width, 0) animated: YES];
                 self.dataLoaded = YES;
             }
-            [connectionIndicator stopAnimating];
             
-           
+            
+            [self.loadIndicator end];
         }];
     } else {
         //use existing data to layout subviews and scroll view

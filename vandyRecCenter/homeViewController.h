@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor-BMColors.h"
 #import "NewsModel.h"
+#import "BMLoadView.h"
 
 @interface homeViewController : UIViewController <UIScrollViewDelegate>
 
