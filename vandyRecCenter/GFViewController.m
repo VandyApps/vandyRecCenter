@@ -19,13 +19,6 @@
 @synthesize monthLabel = _monthLabel;
 @synthesize calendarView = _calendarView;
 
-
-
-#pragma mark - getters
-
-
-
-
 #pragma mark - initializers
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
