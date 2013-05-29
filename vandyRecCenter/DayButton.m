@@ -131,6 +131,8 @@
     if (selected) {
         
         self.fraction = DAY_DIMENSIONS_SELECTED_FRACTION;
+    } else {
+        self.fraction = DAY_DIMENSIONS_FRACTION;
     }
     [self addView];
 }

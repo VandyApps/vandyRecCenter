@@ -66,12 +66,14 @@
     if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
 
         self.calendarScroll = [[UIScrollView alloc] initWithFrame: CGRectMake((self.frame.size.width - DEFAULT_CAL_SCROLL_WIDTH_PORTRAIT) / 2.0, 0, DEFAULT_CAL_SCROLL_WIDTH_PORTRAIT, self.frame.size.height)];
-        self.calendarScroll.delegate = self;
+        
         
     } else {
         self.calendarScroll = [[UIScrollView alloc] initWithFrame: CGRectMake((self.frame.size.width - DEFAULT_CAL_SCROLL_WIDTH_LANDSCAPE) / 2.0, 0, DEFAULT_CAL_SCROLL_WIDTH_LANDSCAPE, self.frame.size.height)];
-        self.calendarScroll.delegate = self;
     }
+    self.calendarScroll.delegate = self;
+    self.calendarScroll.showsHorizontalScrollIndicator = NO;
+    
     self.calendarScroll.backgroundColor = [UIColor blackColor];
     [self addSubview: self.calendarScroll];
     [self addCalendar];
@@ -81,12 +83,9 @@
 - (void) addCalendar {
     self.dayButtons = [[NSArray alloc] init];
     NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: 1];
-    NSLog(@"%@", date);
-    NSLog(@"Day %i", [date day]);
-    NSLog(@"MOnth:: %i", [date month] );
-    NSLog(@"Year: %i", [date year]);
+    
     while ([date month] != 5) {
-        NSLog(@"Before initialization %@", date);
+        
         DayButton* button = [[DayButton alloc] initWithDate: date andPadding: 0];
         //add day
         
@@ -115,7 +114,11 @@
 #pragma mark - Events
 
 - (void) clicked: (DayButton*) sender {
-    NSLog(@"%@", sender.date);
+    for (DayButton* button in self.dayButtons) {
+        if (button.day != sender.day) {
+            button.selected = NO;
+        }
+    }
 }
  
 #pragma mark - Helpers 
