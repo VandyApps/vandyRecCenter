@@ -119,9 +119,11 @@
             button.selected = NO;
         }
     }
+    [self.calendarDelegate didSelectDate: sender.date];
+    [self.calendarDelegate didSelectDateForYear: self.year month: self.month day: sender.day];
 }
- 
-#pragma mark - Helpers 
+
+#pragma mark - Helpers
 
 - (NSUInteger) daysForMonth: (NSUInteger) month year: (NSUInteger) year {
     switch (month) {
