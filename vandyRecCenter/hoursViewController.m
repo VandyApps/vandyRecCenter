@@ -384,16 +384,7 @@
     return 3;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return @"Main Hours";
-    } else if (section == 1) {
-        return @"Other Hours";
-    } else {
-    
-        return @"Closed";
-    }
-}
+
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
@@ -411,6 +402,8 @@
         
         title.text = @"Closed";
     }
+    
+    
     [imageView addSubview: title];
      return imageView;
 }
