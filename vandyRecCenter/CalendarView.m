@@ -21,6 +21,14 @@
 @synthesize dayButtons = _dayButtons;
 #pragma mark - Getters
 
+- (NSDate*) selectedDate {
+    for (DayButton* button in self.dayButtons) {
+        if (button.selected) {
+            return button.date;
+        }
+    }
+    return nil;
+}
 
 #pragma mark - Initializers
 
@@ -187,8 +195,6 @@
     }
     
 }
-
-#pragma mark - Helpers
 
 
 

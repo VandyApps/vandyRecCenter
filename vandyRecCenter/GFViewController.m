@@ -99,16 +99,20 @@
     }
 }
 
+- (void) displayDate: (NSDate*) date {
+    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [DateHelper weekDayAbbreviationForIndex:[date weekDay]], [DateHelper monthNameForIndex: [date month]], [date day], [date year]];
+}
+
 #pragma mark - Calendar Delegate
 
 - (void) calendarChangeToYear:(NSUInteger)year month:(NSUInteger)month {
     NSDate *date = [NSDate dateWithYear: year month: month andDay: 1];
-    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [DateHelper weekDayAbbreviationForIndex:[date weekDay]], [DateHelper monthNameForIndex: month], 1, year];
+    [self displayDate: date];
 }
 - (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
     
     NSDate *date = [NSDate dateWithYear: year month: month andDay: day];
-    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [DateHelper weekDayAbbreviationForIndex:[date weekDay]], [DateHelper monthNameForIndex: month], day, year];
+    [self displayDate: date];
 }
 
 #pragma mark - Table View DataSource
