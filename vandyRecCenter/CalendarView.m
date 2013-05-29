@@ -103,7 +103,7 @@
     self.dayButtons = [[NSArray alloc] init];
     NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: 1];
     
-    while ([date month] != (self.month+1)) {
+    while ([date month] == self.month) {
         
         DayButton* button = [[DayButton alloc] initWithDate: date andPadding: 0];
         //add day
