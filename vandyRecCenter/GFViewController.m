@@ -10,6 +10,8 @@
 #import "GFCollection.h"
 @interface GFViewController ()
 
+@property (nonatomic, strong) BMLoadView* loadView;
+
 @end
 
 @implementation GFViewController
@@ -37,7 +39,7 @@
     [self.GFTabs addTarget: self action: @selector(tabChanged:) forControlEvents: UIControlEventValueChanged];
     self.collection = [[GFCollection alloc] init];
     
-    
+    self.loadView = [[BMLoadView alloc] initWithParent: self.view];
    // UIActivityIndicatorView* loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     //loading.center = self.view.center;
    // [self.collection GFModelForCurrentMonth:^(NSError *error, GFModel *model) {
@@ -68,7 +70,6 @@
     self.GFTableView.dataSource = self;
     
     [self.view addSubview: self.GFTableView];
-    BMLoadView* loadView = [[BMLoadView alloc] initWithParent: self.view];
     
 }
 

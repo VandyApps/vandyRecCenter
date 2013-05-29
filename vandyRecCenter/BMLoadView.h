@@ -11,6 +11,12 @@
 
 @interface BMLoadView : UIView
 
+#define BM_LOADVIEW_DIMENSION 150
+#define BM_TITLE_WIDTH 100
+#define BM_TITLE_HEIGHT 30
+#define BM_TITLE_Y 10
+#define BM_INDICATOR_Y_CENTER 90
+
 - (id) initWithParent: (UIView*) parent;
 //display methods
 - (void) show;
