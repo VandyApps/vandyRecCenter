@@ -112,6 +112,7 @@
     return [[NSDate alloc] initWithTimeIntervalSince1970: secondsSince1970];
 }
 
+
 #pragma mark - Getters
 - (NSUInteger) day {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
@@ -205,6 +206,40 @@
     NSUInteger dayOfWeek =  (4 + daysSince1970) % 7;
     
     return dayOfWeek;
+}
+
+#pragma mark - week day methods
+
++ (NSUInteger) day {
+    return [[[NSDate alloc] init] day];
+}
+
++ (NSUInteger) month {
+    return  [[[NSDate alloc] init] month];
+}
+
++ (NSUInteger) year {
+    return [[[NSDate alloc] init] year];
+}
+
++ (NSUInteger) weekDay {
+    return [[[NSDate alloc] init] weekDay];
+}
+
++ (NSUInteger) dayForTimeZone:(NSTimeZone *)timeZone {
+    return [[[NSDate alloc] init] dayForTimeZone: timeZone];
+}
+
++ (NSUInteger) monthForTimeZone:(NSTimeZone *)timeZone {
+    return [[[NSDate alloc] init] monthForTimeZone: timeZone];
+}
+
++ (NSUInteger) yearForTimeZone:(NSTimeZone *)timeZone {
+    return [[[NSDate alloc] init] yearForTimeZone: timeZone];
+}
+
++ (NSUInteger) weekDayForTimeZone:(NSTimeZone *)timeZone {
+    return [[[NSDate alloc] init] weekDayForTimeZone: timeZone];
 }
 
 @end
