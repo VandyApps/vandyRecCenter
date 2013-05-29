@@ -19,7 +19,6 @@
 @property (nonatomic, weak) IBOutlet UISegmentedControl* GFTabs;
 @property (nonatomic, weak) IBOutlet CalendarView* calendarView;
 @property (nonatomic, strong)  UITableView *GFTableView;
-@property (nonatomic, weak) IBOutlet UIView *monthView;
 @property (nonatomic, strong) GFModel *model;
 
 

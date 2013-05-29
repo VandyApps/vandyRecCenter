@@ -480,12 +480,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4PS-KL-nxb">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" type="user" id="WzG-rV-Mrp"/>
-                                </constraints>
                                 <segments>
-                                    <segment title="Today"/>
                                     <segment title="All"/>
+                                    <segment title="Today"/>
                                     <segment title="Favorites"/>
                                     <segment title="Canceled"/>
                                 </segments>
@@ -509,6 +506,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Classes" id="FCk-t0-Icd"/>
                     <connections>
+                        <outlet property="GFTabs" destination="4PS-KL-nxb" id="S4u-Eg-f80"/>
                         <outlet property="calendarView" destination="EZP-sj-GU7" id="q6K-TK-96O"/>
                     </connections>
                 </viewController>
@@ -605,56 +603,6 @@
         <image name="leftArrow.png" width="16" height="16"/>
         <image name="rightArrow.png" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="CalendarView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarView.h"/>
-        </class>
-        <class className="GFViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GFViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="GFTabs" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="calendarView" candidateClass="CalendarView"/>
-                <relationship kind="outlet" name="monthView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="HoursScrollView" superclassName="UIScrollView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HoursScrollView.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="TabBarNavigationController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarNavigationController.h"/>
-        </class>
-        <class className="browserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="homeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="scrollLeft"/>
-                <relationship kind="action" name="scrollRight"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="hoursViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="current:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="scrollLeft"/>
-                <relationship kind="action" name="scrollRight"/>
-                <relationship kind="outlet" name="leftScroll" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightScroll" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollHours" candidateClass="HoursScrollView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

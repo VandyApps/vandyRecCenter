@@ -39,7 +39,7 @@
 {
     [super viewDidLoad];
     self.calendarView.calendarDelegate = self;
-    
+    [self.GFTabs addTarget: self action: @selector(tabChanged:) forControlEvents: UIControlEventValueChanged];
     
 }
 
@@ -56,6 +56,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Events
+- (void) tabChanged: (UISegmentedControl*) tabControl {
+    if (tabControl.selectedSegmentIndex == 0) {
+        [self showCalendarView];
+    } else {
+        [self hideCalendarView];
+    }
+}
 
 #pragma mark - Public
 
