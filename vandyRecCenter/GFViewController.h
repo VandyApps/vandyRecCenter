@@ -14,7 +14,7 @@
 
 #define HEIGHT_OF_GFTABS 29
 
-@interface GFViewController : UIViewController <CalendarViewDelegate>
+@interface GFViewController : UIViewController <CalendarViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UISegmentedControl* GFTabs;
 @property (nonatomic, weak) IBOutlet CalendarView* calendarView;

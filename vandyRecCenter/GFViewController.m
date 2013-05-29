@@ -52,12 +52,15 @@
     if (self.calendarView.hidden) {
         self.GFTableView = [[UITableView alloc] initWithFrame:CGRectMake(self.calendarView.frame.origin.x, self.calendarView.frame.origin.y, self.view.frame.size.width, self.GFTableView.frame.size.height + self.calendarView.frame.size.height) style: UITableViewStylePlain];
         
+        
     } else {
         
         self.GFTableView = [[UITableView alloc] initWithFrame: CGRectMake(0, self.calendarView.frame.size.height + HEIGHT_OF_GFTABS, self.view.frame.size.width, self.view.frame.size.height - self.calendarView.frame.size.height - HEIGHT_OF_GFTABS) style:UITableViewStylePlain];
 
     }
-        [self.view addSubview: self.GFTableView];
+    self.GFTableView.delegate = self;
+    self.GFTableView.dataSource = self;
+    [self.view addSubview: self.GFTableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,6 +104,36 @@
 - (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
     NSLog(@"Selected date");
 }
+
+#pragma mark - Table View DataSource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"test"];
+    cell.textLabel.text = @"Here is a cell";
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+#pragma mark - Delegate
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIImageView* view = [[UIImageView alloc] init];
+    view.image = [UIImage imageNamed: @"goldTint.png"];
+    return view;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+
 
 
 
