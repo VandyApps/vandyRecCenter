@@ -47,6 +47,10 @@
 - (BMLoadView*) loadIndicator {
     if (_loadIndicator == nil) {
         _loadIndicator = [[BMLoadView alloc] initWithParent: self.view];
+        _loadIndicator.backgroundColor = [UIColor whiteColor];
+        _loadIndicator.titleView.textColor = [UIColor blackColor];
+        _loadIndicator.loadSpiral.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+        _loadIndicator.alpha = .8;
     }
     return _loadIndicator;
 }
@@ -150,6 +154,7 @@
             
             [self.loadIndicator end];
         }];
+     
     } else {
         //use existing data to layout subviews and scroll view
         BOOL hideScroller = NO;

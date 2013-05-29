@@ -17,6 +17,10 @@
 #define BM_TITLE_HEIGHT 30
 #define BM_TITLE_Y 10
 #define BM_INDICATOR_Y_CENTER 90
+#define BM_LOAD_DEFAULT_COLOR [UIColor blackColor]
+
+@property (nonatomic, strong) UILabel* titleView;
+@property (nonatomic, strong) UIActivityIndicatorView* loadSpiral;
 
 - (id) initWithParent: (UIView*) parent;
 //display methods

@@ -10,9 +10,9 @@
 
 @interface BMLoadView()
 
-@property (nonatomic, strong) UIActivityIndicatorView* loadSpiral;
+
 @property (nonatomic, weak) UIView* parent;
-@property (nonatomic, strong) UILabel* titleView;
+
 @end
 
 
@@ -28,7 +28,7 @@
     
     self = [super initWithFrame: CGRectMake((parent.frame.size.width - 150) / 2.0, (parent.frame.size.height - 150) / 2.0, 150, 150)];
     if (self) {
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = BM_LOAD_DEFAULT_COLOR;
         self.alpha = .7;
         self.layer.cornerRadius = 10;
         self.parent = parent;
