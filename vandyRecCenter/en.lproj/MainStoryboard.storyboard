@@ -507,13 +507,7 @@
                             <constraint firstItem="4PS-KL-nxb" firstAttribute="leading" secondItem="Pgd-U3-KAp" secondAttribute="leading" type="default" id="uMX-jY-iTf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Classes" id="FCk-t0-Icd">
-                        <barButtonItem key="rightBarButtonItem" title="toggle" id="qFe-XA-UPP">
-                            <connections>
-                                <action selector="toggle:" destination="2Qc-Wk-9j9" id="vgw-hd-hd5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Classes" id="FCk-t0-Icd"/>
                     <connections>
                         <outlet property="calendarView" destination="EZP-sj-GU7" id="q6K-TK-96O"/>
                     </connections>
@@ -618,8 +612,6 @@
         <class className="GFViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GFViewController.h"/>
             <relationships>
-                <relationship kind="action" name="toggle:"/>
-                <relationship kind="outlet" name="GFTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="GFTabs" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="calendarView" candidateClass="CalendarView"/>
                 <relationship kind="outlet" name="monthView" candidateClass="UIView"/>

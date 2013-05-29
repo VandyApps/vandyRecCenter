@@ -17,13 +17,7 @@
 @synthesize model = _model;
 
 
-- (IBAction) toggle:(id)sender {
-    if (self.calendarView.hidden) {
-        [self showCalendarView];
-    } else {
-        [self hideCalendarView];
-    }
-}
+
 
 #pragma mark - getters
 

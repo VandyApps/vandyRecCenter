@@ -22,7 +22,7 @@
 @property (nonatomic, weak) IBOutlet UIView *monthView;
 @property (nonatomic, strong) GFModel *model;
 
-- (IBAction) toggle:(id)sender;
+
 - (void) hideCalendarView;
 - (void) showCalendarView;
 @end
