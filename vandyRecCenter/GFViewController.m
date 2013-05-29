@@ -102,10 +102,13 @@
 #pragma mark - Calendar Delegate
 
 - (void) calendarChangeToYear:(NSUInteger)year month:(NSUInteger)month {
-    NSLog(@"Calendar changed");
+    NSDate *date = [NSDate dateWithYear: year month: month andDay: 1];
+    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [self weekDayAbbreviationForIndex:[date dayOfTheWeekAsInt]], [self monthNameForIndex: month], 1, year];
 }
 - (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
-    self.monthLabel.text = [NSString stringWithFormat: @"%@ %i, %i", [self monthNameForIndex: month], day, year];
+    
+    NSDate *date = [NSDate dateWithYear: year month: month andDay: day];
+    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [self weekDayAbbreviationForIndex:[date dayOfTheWeekAsInt]], [self monthNameForIndex: month], day, year];
 }
 
 #pragma mark - Table View DataSource
@@ -129,7 +132,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIImageView* view = [[UIImageView alloc] init];
     view.image = [UIImage imageNamed: @"goldTint.png"];
-    self.monthLabel = [[UILabel alloc] initWithFrame: CGRectMake((self.view.frame.size.height - 200) / 2.0, (30 - 20) / 2.0,  200, 20)];
+    self.monthLabel = [[UILabel alloc] initWithFrame: CGRectMake((self.view.frame.size.height - 220) / 2.0, (30 - 20) / 2.0,  220, 20)];
     
     self.monthLabel.textAlignment = NSTextAlignmentCenter;
     self.monthLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 18];
@@ -171,6 +174,27 @@
             return @"November";
         case 11:
             return @"December";
+        default:
+            return nil;
+    }
+}
+
+- (NSString*) weekDayAbbreviationForIndex: (NSUInteger) index {
+    switch (index) {
+        case 0:
+            return @"Sun";
+        case 1:
+            return @"Mon";
+        case 2:
+            return @"Tues";
+        case 3:
+            return @"Wed";
+        case 4:
+            return @"Thurs";
+        case 5:
+            return @"Fri";
+        case 6:
+            return @"Sat";
         default:
             return nil;
     }

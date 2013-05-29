@@ -49,8 +49,8 @@
 - (void) layoutSubviews {
     [super layoutSubviews];
     
-    [self setUpScrollView];
-    [self addButtons];
+    [self setUpScrollViewWithSelectedDay: 1];
+    [self addMonthButtons];
     
 }
 
@@ -60,7 +60,7 @@
     NSDate * currentDate = [[NSDate alloc] init];
     self.year = [currentDate year];
     self.month = [currentDate month];
-    [self setUpScrollView];
+    [self setUpScrollViewWithSelectedDay: [currentDate day]];
     [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
 }
 
@@ -68,7 +68,7 @@
     [self.calendarScroll setContentOffset: CGPointZero animated: YES];
     self.year = year;
     self.month = month;
-    [self setUpScrollView];
+    [self setUpScrollViewWithSelectedDay: 1];
     if ([self.calendarDelegate respondsToSelector: @selector(calendarChangeToYear:month:)]) {
         [self.calendarDelegate calendarChangeToYear:self.year month: self.month];
     }
@@ -77,7 +77,7 @@
 
 #pragma mark - View Setup
 
-- (void) setUpScrollView {
+- (void) setUpScrollViewWithSelectedDay: (NSUInteger) selectedDay {
     if (self.calendarScroll != nil) {
         [self.calendarScroll removeFromSuperview];
     }
@@ -95,11 +95,11 @@
     
     self.calendarScroll.backgroundColor = [UIColor blackColor];
     [self addSubview: self.calendarScroll];
-    [self addCalendar];
+    [self addCalendarWithSelectedDay: selectedDay];
     
 }
 
-- (void) addCalendar {
+- (void) addCalendarWithSelectedDay: (NSUInteger) selectedDay {
     self.dayButtons = [[NSArray alloc] init];
     NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: 1];
     
@@ -107,6 +107,12 @@
         
         DayButton* button = [[DayButton alloc] initWithDate: date andPadding: 0];
         //add day
+        
+        //default is NO, do not need to explicitly
+        //set a selected value of NO
+        if (button.day == selectedDay) {
+            button.selected = YES;
+        }
         
         [button addTarget: self action: @selector(daySelected:) forControlEvents: UIControlEventTouchUpInside];
         
@@ -118,7 +124,7 @@
     
 }
 
-- (void) addButtons {
+- (void) addMonthButtons {
     
     UIButton *leftButton = [[UIButton alloc] initWithFrame: CGRectMake(BUTTON_PADDING, (self.frame.size.height - 6) / 2.0, MINUS_BUTTON_WIDTH, MINUS_BUTTON_HEIGHT)];
     [leftButton setBackgroundImage: [UIImage imageNamed: @"45-minus.png"] forState: UIControlStateNormal];
@@ -142,8 +148,10 @@
     }
     
     if ([self.calendarDelegate respondsToSelector: @selector(didSelectDate:)]) {
+        
         [self.calendarDelegate didSelectDate: sender.date];
     } else if ([self.calendarDelegate respondsToSelector: @selector(didSelectDateForYear:month:day:)]) {
+        
         [self.calendarDelegate didSelectDateForYear: self.year month: self.month day: sender.day];
     }
     
@@ -157,8 +165,12 @@
         self.year += 1;
     }
     
-    [self setUpScrollView];
-    [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
+    [self setUpScrollViewWithSelectedDay: 1];
+    if ([self.calendarDelegate respondsToSelector: @selector(calendarChangeToYear:month:)]) {
+        [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
+    }
+   
+    
 }
 
 - (void) decrementMonth {
@@ -169,8 +181,11 @@
         self.year -= 1;
     }
     
-    [self setUpScrollView];
-    [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
+    [self setUpScrollViewWithSelectedDay: 1];
+    if ([self.calendarDelegate respondsToSelector: @selector(calendarChangeToYear:month:)]) {
+        [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
+    }
+    
 }
 
 #pragma mark - Helpers
@@ -199,15 +214,5 @@
     }
 }
 
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

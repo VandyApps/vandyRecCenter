@@ -78,6 +78,7 @@
 }
 
 - (void) addView {
+    
     if (self.dayView != nil) {
         [self.dayView removeFromSuperview];
     }
@@ -127,6 +128,7 @@
     [self setSelected: YES];
 }
 -(void) setSelected:(BOOL)selected {
+    
     [super setSelected: selected];
     if (selected) {
         
