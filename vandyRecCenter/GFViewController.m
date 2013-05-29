@@ -15,7 +15,9 @@
 @implementation GFViewController
 @synthesize GFTabs = _GFTabs;
 @synthesize model = _model;
-
+@synthesize GFTableView = _GFTableView;
+@synthesize monthLabel = _monthLabel;
+@synthesize calendarView = _calendarView;
 
 
 
@@ -60,6 +62,7 @@
     }
     self.GFTableView.delegate = self;
     self.GFTableView.dataSource = self;
+    
     [self.view addSubview: self.GFTableView];
 }
 
@@ -102,7 +105,7 @@
     NSLog(@"Calendar changed");
 }
 - (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
-    NSLog(@"Selected date");
+    self.monthLabel.text = [NSString stringWithFormat: @"%@ %i, %i", [self monthNameForIndex: month], day, year];
 }
 
 #pragma mark - Table View DataSource
@@ -126,6 +129,13 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIImageView* view = [[UIImageView alloc] init];
     view.image = [UIImage imageNamed: @"goldTint.png"];
+    self.monthLabel = [[UILabel alloc] initWithFrame: CGRectMake((self.view.frame.size.height - 200) / 2.0, (30 - 20) / 2.0,  200, 20)];
+    
+    self.monthLabel.textAlignment = NSTextAlignmentCenter;
+    self.monthLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 18];
+    self.monthLabel.backgroundColor = [UIColor clearColor];
+    
+    [view addSubview: self.monthLabel];
     return view;
     
 }
@@ -134,7 +144,37 @@
     return 30;
 }
 
-
+#pragma mark - Helpers (to be moved)
+- (NSString*) monthNameForIndex: (NSUInteger) index {
+    switch (index) {
+        case 0:
+            return @"January";
+        case 1:
+            return @"February";
+        case 2:
+            return @"March";
+        case 3:
+            return @"April";
+        case 4:
+            return @"May";
+        case 5:
+            return @"June";
+        case 6:
+            return @"July";
+        case 7:
+            return @"August";
+        case 8:
+            return @"September";
+        case 9:
+            return @"October";
+        case 10:
+            return @"November";
+        case 11:
+            return @"December";
+        default:
+            return nil;
+    }
+}
 
 
 @end

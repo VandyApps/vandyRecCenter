@@ -20,7 +20,7 @@
 @property (nonatomic, weak) IBOutlet CalendarView* calendarView;
 @property (nonatomic, strong)  UITableView *GFTableView;
 @property (nonatomic, strong) GFModel *model;
-
+@property (nonatomic, strong) UILabel* monthLabel;
 
 - (void) hideCalendarView;
 - (void) showCalendarView;
