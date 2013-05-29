@@ -45,9 +45,19 @@
 
 - (void) viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
-    self.GFTableView = [[UITableView alloc] initWithFrame: CGRectMake(0, self.calendarView.frame.size.height + HEIGHT_OF_GFTABS, self.view.frame.size.width, self.view.frame.size.height - self.calendarView.frame.size.height - HEIGHT_OF_GFTABS) style:UITableViewStylePlain];
-    [self.view addSubview: self.GFTableView];
+    if (self.GFTableView != nil) {
+        [self.GFTableView removeFromSuperview];
+    }
+
+    if (self.calendarView.hidden) {
+        self.GFTableView = [[UITableView alloc] initWithFrame:CGRectMake(self.calendarView.frame.origin.x, self.calendarView.frame.origin.y, self.view.frame.size.width, self.GFTableView.frame.size.height + self.calendarView.frame.size.height) style: UITableViewStylePlain];
+        
+    } else {
+        
+        self.GFTableView = [[UITableView alloc] initWithFrame: CGRectMake(0, self.calendarView.frame.size.height + HEIGHT_OF_GFTABS, self.view.frame.size.width, self.view.frame.size.height - self.calendarView.frame.size.height - HEIGHT_OF_GFTABS) style:UITableViewStylePlain];
+
+    }
+        [self.view addSubview: self.GFTableView];
 }
 
 - (void)didReceiveMemoryWarning
