@@ -190,11 +190,21 @@
 }
 
 - (NSUInteger) weekDay {
+    NSUInteger secondsSince1970 = (NSUInteger) [self timeIntervalSince1970] + [[NSTimeZone defaultTimeZone] secondsFromGMT];
+    NSUInteger daysSince1970 = secondsSince1970/ (60 * 60 * 24);
+    NSUInteger dayOfWeek =  (4 + daysSince1970) % 7;
     
+    return dayOfWeek;
 }
 
 - (NSUInteger) weekDayForTimeZone: (NSTimeZone*) timeZone {
     
+    NSUInteger secondsSince1970 = (NSUInteger) [self timeIntervalSince1970] + ([timeZone secondsFromGMT] - [[NSTimeZone defaultTimeZone] secondsFromGMT]);
+    
+    NSUInteger daysSince1970 = secondsSince1970/ (60 * 60 * 24);
+    NSUInteger dayOfWeek =  (4 + daysSince1970) % 7;
+    
+    return dayOfWeek;
 }
 
 @end
