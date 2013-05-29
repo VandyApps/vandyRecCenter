@@ -105,7 +105,7 @@
             return (year % 4 ==0) ? 29 : 28;
             
         default:
-            return nil;
+            return 0;
     }
 }
 
