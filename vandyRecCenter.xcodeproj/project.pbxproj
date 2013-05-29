@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2103555817566480008C92FB /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2103555717566480008C92FB /* images.jpeg */; };
 		211B16EA1752B4C800180E3D /* TimeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 211B16E91752B4C800180E3D /* TimeString.m */; };
 		211B16EE17530AD900180E3D /* GFCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 211B16ED17530AD900180E3D /* GFCollection.m */; };
 		21201EC21702177D00E89605 /* blackGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 21201EC11702177D00E89605 /* blackGradient.png */; };
@@ -77,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2103555717566480008C92FB /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
 		211B16E81752B4C800180E3D /* TimeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeString.h; sourceTree = "<group>"; };
 		211B16E91752B4C800180E3D /* TimeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeString.m; sourceTree = "<group>"; };
 		211B16EB1752B61E00180E3D /* TimeStringStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeStringStyle.h; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		212DECD01700965A0041498E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2103555717566480008C92FB /* images.jpeg */,
 				21E677C7174971B300719EA7 /* logo.png */,
 				21457168172B01310004AC64 /* background */,
 				21EB34EF17177B0D0015AD77 /* leftArrow.png */,
@@ -517,6 +520,7 @@
 				21D92E9F175469CE00CE88EE /* 45-minus@2x.png in Resources */,
 				21D92EA0175469CE00CE88EE /* 50-plus.png in Resources */,
 				21D92EA1175469CE00CE88EE /* 50-plus@2x.png in Resources */,
+				2103555817566480008C92FB /* images.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

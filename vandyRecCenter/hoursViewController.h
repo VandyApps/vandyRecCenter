@@ -45,7 +45,6 @@
 
 //images
 #define IMAGE_CELL_SELECTED @"blue.png"
-#define IMAGE_CELL_NORMAL @"blackGradient.png"
 #define IMAGE_SECTION_HEAD @"goldTint.png"
 
 @interface hoursViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, ScrollHoursDelegate>

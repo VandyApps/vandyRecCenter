@@ -403,7 +403,6 @@
         title.text = @"Closed";
     }
     
-    
     [imageView addSubview: title];
      return imageView;
 }
