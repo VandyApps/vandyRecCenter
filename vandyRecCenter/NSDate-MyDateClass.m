@@ -189,4 +189,12 @@
     return year;
 }
 
+- (NSUInteger) weekDay {
+    
+}
+
+- (NSUInteger) weekDayForAdjustedTimeZone: (NSTimeZone*) timeZone {
+    
+}
+
 @end

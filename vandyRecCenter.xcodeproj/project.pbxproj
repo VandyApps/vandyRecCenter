@@ -29,6 +29,7 @@
 		21457163172AFD5F0004AC64 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 21457162172AFD5F0004AC64 /* blue.png */; };
 		21457165172AFDE20004AC64 /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 21457164172AFDE20004AC64 /* black.png */; };
 		21457167172AFF2C0004AC64 /* goldTint.png in Resources */ = {isa = PBXBuildFile; fileRef = 21457166172AFF2C0004AC64 /* goldTint.png */; };
+		214754B91755C9C600179268 /* DateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 214754B81755C9C600179268 /* DateHelper.m */; };
 		215D04D2170D0AF8008D8277 /* hoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215D04D1170D0AF8008D8277 /* hoursViewController.m */; };
 		215D04D6170D146D008D8277 /* goldGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 215D04D5170D146D008D8277 /* goldGradient.png */; };
 		2170327416FE96D900A43833 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2170327316FE96D900A43833 /* UIKit.framework */; };
@@ -103,6 +104,8 @@
 		21457162172AFD5F0004AC64 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
 		21457164172AFDE20004AC64 /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
 		21457166172AFF2C0004AC64 /* goldTint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldTint.png; sourceTree = "<group>"; };
+		214754B71755C9C600179268 /* DateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateHelper.h; sourceTree = "<group>"; };
+		214754B81755C9C600179268 /* DateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateHelper.m; sourceTree = "<group>"; };
 		215D04D0170D0AF8008D8277 /* hoursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hoursViewController.h; sourceTree = "<group>"; };
 		215D04D1170D0AF8008D8277 /* hoursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hoursViewController.m; sourceTree = "<group>"; };
 		215D04D5170D146D008D8277 /* goldGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goldGradient.png; path = ../goldGradient.png; sourceTree = "<group>"; };
@@ -192,14 +195,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		211B16E71752B4AB00180E3D /* Time String */ = {
+		211B16E71752B4AB00180E3D /* Utility Classes */ = {
 			isa = PBXGroup;
 			children = (
+				214754B71755C9C600179268 /* DateHelper.h */,
+				214754B81755C9C600179268 /* DateHelper.m */,
 				211B16EB1752B61E00180E3D /* TimeStringStyle.h */,
 				211B16E81752B4C800180E3D /* TimeString.h */,
 				211B16E91752B4C800180E3D /* TimeString.m */,
 			);
-			name = "Time String";
+			name = "Utility Classes";
 			sourceTree = "<group>";
 		};
 		212DECD01700965A0041498E /* Images */ = {
@@ -300,7 +305,7 @@
 				21F1EA631728F17000AB17DB /* Custom Tab Bar */,
 				21E677C91749753400719EA7 /* Web Client */,
 				21FA94BC172D951D0016918B /* Categories */,
-				211B16E71752B4AB00180E3D /* Time String */,
+				211B16E71752B4AB00180E3D /* Utility Classes */,
 				21A17F661753DDAC00681749 /* Calendar View */,
 				21E40A1F1719C7380045451F /* Home */,
 				21E40A1D1719C7270045451F /* Hours */,
@@ -566,6 +571,7 @@
 				211B16EE17530AD900180E3D /* GFCollection.m in Sources */,
 				21A17F651753DD9E00681749 /* CalendarView.m in Sources */,
 				21AA184D1754211800CC2A83 /* DayButton.m in Sources */,
+				214754B91755C9C600179268 /* DateHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
