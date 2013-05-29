@@ -22,10 +22,12 @@
 //display methods
 - (void) show;
 - (void) hide;
-- (void) toggle;
 
 //animation methods
 - (void) start;
 - (void) stop;
 
+//animation and display methods 
+- (void) begin;
+- (void) end;
 @end

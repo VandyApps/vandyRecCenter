@@ -66,11 +66,9 @@
     
     [self.view addSubview: self.GFTableView];
 
-    [self.loadIndicator start];
-    [self.loadIndicator show];
+    [self.loadIndicator begin];
     [self.collection GFModelForCurrentMonth:^(NSError *error, GFModel *model) {
-        [self.loadIndicator stop];
-        [self.loadIndicator hide];
+        [self.loadIndicator end];
         //reload the table view here
         
     }];
