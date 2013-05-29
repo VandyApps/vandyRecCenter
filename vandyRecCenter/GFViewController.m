@@ -103,12 +103,12 @@
 
 - (void) calendarChangeToYear:(NSUInteger)year month:(NSUInteger)month {
     NSDate *date = [NSDate dateWithYear: year month: month andDay: 1];
-    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [self weekDayAbbreviationForIndex:[date dayOfTheWeekAsInt]], [self monthNameForIndex: month], 1, year];
+    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [self weekDayAbbreviationForIndex:[date weekDay]], [self monthNameForIndex: month], 1, year];
 }
 - (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
     
     NSDate *date = [NSDate dateWithYear: year month: month andDay: day];
-    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [self weekDayAbbreviationForIndex:[date dayOfTheWeekAsInt]], [self monthNameForIndex: month], day, year];
+    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [self weekDayAbbreviationForIndex:[date weekDay]], [self monthNameForIndex: month], day, year];
 }
 
 #pragma mark - Table View DataSource

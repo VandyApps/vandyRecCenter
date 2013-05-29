@@ -102,7 +102,7 @@
 
 - (BOOL) GFClass: (NSDictionary*) GFClass isOnDay: (NSUInteger) day {
     NSDate *date = [NSDate dateWithYear: self.year month: self.month andDay: day];
-    if ([[GFClass objectForKey: @"dayOfWeek"] intValue] != [date dayOfTheWeekAsInt]) {
+    if ([[GFClass objectForKey: @"dayOfWeek"] intValue] != [date weekDay]) {
        
         return NO;
     }

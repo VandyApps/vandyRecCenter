@@ -61,7 +61,7 @@
         self.day = [date day];
         self.month = [date month];
         self.year = [date year];
-        self.weekDay = [date dayOfTheWeekAsInt];
+        self.weekDay = [date weekDay];
         [self sendActionsForControlEvents: UIControlEventTouchUpInside];
        
     }
