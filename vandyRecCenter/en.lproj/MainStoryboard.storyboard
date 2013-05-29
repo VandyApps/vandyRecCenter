@@ -98,7 +98,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="FTV-vP-ceB"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="173" type="user" id="cZg-t7-mHX"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLP-17-vJM">
@@ -106,7 +106,7 @@
                                                         <constraint firstAttribute="width" constant="104" type="user" id="VcU-eR-Dxr"/>
                                                         <constraint firstAttribute="height" constant="21" id="y9Z-YP-MEW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCJ-tg-Qt8">
@@ -115,7 +115,7 @@
                                                         <constraint firstAttribute="width" constant="76" id="XXh-SV-B43"/>
                                                         <constraint firstAttribute="height" constant="21" id="h36-Qr-kpj"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>

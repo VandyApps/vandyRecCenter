@@ -423,7 +423,7 @@
     //change color of gradient here
     self.sectionOfSelectedCell = indexPath.section;
     self.rowOfSelectedCell = indexPath.row;
-    [tableView reloadData];
+    
     [self setUpScrollViewWithHoursTitle: title];
     
     //move the scroll view offset
