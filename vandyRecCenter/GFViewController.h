@@ -13,6 +13,9 @@
 #import "CalendarViewDelegate.h"
 
 #define HEIGHT_OF_GFTABS 29
+#define WIDTH_OF_MONTH_LABEL 250
+#define HEIGHT_OF_MONTH_LABEL 20
+#define HEIGHT_OF_SECTION_HEADER 30
 
 @interface GFViewController : UIViewController <CalendarViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
