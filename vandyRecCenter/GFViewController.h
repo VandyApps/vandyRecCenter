@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "GFCollection.h"
 #import "CalendarView.h"
+#import "BMLoadView.h"
 #import "CalendarViewDelegate.h"
 
 #define HEIGHT_OF_GFTABS 29

@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface BMLoadView : UIView
 
+- (id) initWithParent: (UIView*) parent;
+//display methods
+- (void) show;
+- (void) hide;
+- (void) toggle;
 
+//animation methods
+- (void) start;
+- (void) stop;
 @end

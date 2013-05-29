@@ -8,24 +8,37 @@
 
 #import "BMLoadView.h"
 
+@interface BMLoadView()
+
+@property (nonatomic, strong) UIActivityIndicatorView* loadSpiral;
+
+@end
+
+
 @implementation BMLoadView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        
+        
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (id) initWithParent: (UIView*) parent {
+    
+    self = [super initWithFrame: CGRectMake((parent.frame.size.width - 150) / 2.0, (parent.frame.size.height - 150) / 2.0, 150, 150)];
+    if (self) {
+        self.backgroundColor = [UIColor blackColor];
+        self.alpha = .7;
+        self.layer.cornerRadius = 10;
+        [parent addSubview: self];
+    }
+    return self;
 }
-*/
+
+
 
 @end

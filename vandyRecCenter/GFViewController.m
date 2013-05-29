@@ -44,9 +44,12 @@
         
    // }];
     
+    
 }
 
 - (void) viewDidLayoutSubviews {
+    
+    
     [super viewDidLayoutSubviews];
     if (self.GFTableView != nil) {
         [self.GFTableView removeFromSuperview];
@@ -65,6 +68,8 @@
     self.GFTableView.dataSource = self;
     
     [self.view addSubview: self.GFTableView];
+    BMLoadView* loadView = [[BMLoadView alloc] initWithParent: self.view];
+    
 }
 
 - (void)didReceiveMemoryWarning
