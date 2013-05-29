@@ -271,7 +271,7 @@
 //should not call this method when the current hours are not displayed
 - (void) selectCurrentDayOfTheWeek {
     assert(self.sectionOfCurrentHours == self.sectionOfSelectedCell && self.rowOfCurrentHours == self.rowOfSelectedCell);
-    NSUInteger indexForCurrentDayOfWeek = [NSDate currentDayOfTheWeekAsIntWithTimeZone: [NSTimeZone localTimeZone]];
+    NSUInteger indexForCurrentDayOfWeek = [NSDate weekDayForTimeZone: [NSTimeZone localTimeZone]];
     NSArray* hours = [[self.hours hoursForCurrentTime] objectForKey: @"hours"];
     NSArray *uniqueDaysOfWeek = [self.scrollHours arrayOfUniqueIndices: hours];
     

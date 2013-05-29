@@ -14,8 +14,8 @@
 + (NSString*) dayOfTheWeekAbreviationForIndex: (NSUInteger) index;
 + (NSString*) dayOfTheWeekForIndex: (NSInteger) index;
 
-+ (NSUInteger) currentDayOfTheWeekAsInt;
-+ (NSUInteger) currentDayOfTheWeekAsIntWithTimeZone: (NSTimeZone*) timeZone;
+
+
 + (NSString*) currentDayOfTheWeekAsString;
 + (NSString*) currentDayOfTheWeekAsStringWithTimeZone: (NSTimeZone*) timeZone;
 
