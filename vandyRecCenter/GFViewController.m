@@ -136,7 +136,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIImageView* view = [[UIImageView alloc] init];
     view.image = [UIImage imageNamed: @"goldTint.png"];
-    self.monthLabel = [[UILabel alloc] initWithFrame: CGRectMake((self.view.frame.size.height - 250) / 2.0, (30 - 20) / 2.0,  250, 20)];
+    self.monthLabel = [[UILabel alloc] initWithFrame: CGRectMake((self.view.frame.size.width - 250) / 2.0, (30 - 20) / 2.0,  250, 20)];
     
     self.monthLabel.textAlignment = NSTextAlignmentCenter;
     self.monthLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 18];
