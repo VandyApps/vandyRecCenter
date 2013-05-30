@@ -28,6 +28,7 @@
             block(nil, model);
         }
     }
+    
     if (!foundModel) {
         GFModel * newModel = [[GFModel alloc] init];
         [newModel loadData:^(NSError *error, NSArray *data) {

@@ -61,8 +61,10 @@
         self.GFTableView = [[UITableView alloc] initWithFrame: CGRectMake(0, self.calendarView.frame.size.height + HEIGHT_OF_GFTABS, self.view.frame.size.width, self.view.frame.size.height - self.calendarView.frame.size.height - HEIGHT_OF_GFTABS) style:UITableViewStylePlain];
         
     }
+    //set properties on the table view here
     self.GFTableView.delegate = self;
     self.GFTableView.dataSource = self;
+    self.GFTableView.allowsSelection = NO;
     
     [self.view addSubview: self.GFTableView];
 
@@ -138,15 +140,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     __block NSUInteger rowsInSection = 0;
-    [self.collection GFClassesForYear: self.calendarView.year month:self.calendarView.month day:self.calendarView.day  block:^(NSError *error, NSArray *GFClasses) {
-        if (error) {
-            UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle: @"Error with Internet Collection" message: @"Could not connect to the internet" delegate: nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
-            [errorAlert show];
-        } else {
-            rowsInSection = GFClasses.count;
-        }
+    if (self.GFTabs.selectedSegmentIndex == 0) {
+        [self.collection GFClassesForYear: self.calendarView.year month:self.calendarView.month day:self.calendarView.day  block:^(NSError *error, NSArray *GFClasses) {
+            if (error) {
+                [self connectionError];
+            } else {
+                rowsInSection = GFClasses.count;
+            }
 
-    }];
+        }];
+    } else if (self.GFTabs.selectedSegmentIndex == 1) {
+        [self.collection GFClassesForCurrentDay:^(NSError *error, NSArray *GFClasses) {
+            if (error) {
+                [self connectionError];
+            } else {
+                rowsInSection = GFClasses.count;
+            }
+        }];
+    }
     return rowsInSection;
 }
 
@@ -177,6 +188,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return HEIGHT_OF_SECTION_HEADER;
+}
+
+#pragma mark - Helpers
+
+- (void) connectionError {
+    UIAlertView* errorAlert = [[UIAlertView alloc] initWithTitle: @"Error with Internet Collection" message: @"Could not connect to the internet" delegate: nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
+    [errorAlert show];
 }
 
 @end
