@@ -146,23 +146,33 @@
 #pragma mark - Table View DataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString* allClassesID = @"allClasses";
-    static NSString* todaysClassesID = @"todaysClasses";
+    static NSString* allClassesID = @"GFClasses";
     static NSString* favoriteClassesID = @"favoriteClasses";
     
     UITableViewCell* cell;
     
     
-    if (self.GFTabs.selectedSegmentIndex == 0) {
+    if (self.GFTabs.selectedSegmentIndex != 2) {
         __block NSDictionary* GFClass;
-        [self.collection GFClassesForYear: self.calendarView.year month: self.calendarView.month day:self.calendarView.day block:^(NSError *error, NSArray *GFClasses) {
-            
-            if (error) {[self connectionError];}
-            else {
-                GFClass = [GFClasses objectAtIndex: indexPath.row];
-            }
-            
-        }];
+        if (self.GFTabs.selectedSegmentIndex == 0) {
+          
+            [self.collection GFClassesForYear: self.calendarView.year month: self.calendarView.month day:self.calendarView.day block:^(NSError *error, NSArray *GFClasses) {
+                
+                if (error) {[self connectionError];}
+                else {
+                    GFClass = [GFClasses objectAtIndex: indexPath.row];
+                }
+                
+            }];
+        } else if (self.GFTabs.selectedSegmentIndex == 1) {
+            [self.collection GFClassesForCurrentDay:^(NSError *error, NSArray *GFClasses) {
+                if (error) {[self connectionError];}
+                else {
+                    GFClass = [GFClasses objectAtIndex: indexPath.row];
+                }
+            }];
+        }
+       
         cell = [tableView dequeueReusableCellWithIdentifier: allClassesID];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:allClassesID];
@@ -254,6 +264,8 @@
         [self displayDate: [self.calendarView selectedDate]];
     } else if (self.GFTabs.selectedSegmentIndex == 1) {
         [self displayDate: [[NSDate alloc] init]];
+    } else {
+        self.monthLabel.text = @"Favorites";
     }
     [view addSubview: self.monthLabel];
     return view;
@@ -265,7 +277,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 85;
 }
 
 #pragma mark - Helpers
