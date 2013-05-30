@@ -92,6 +92,10 @@
     [self.GFTableView reloadData];
 }
 
+- (void) pushClassToFavorites: (ContainerButton*) sender {
+    NSLog(@"%@", sender.data);
+}
+
 #pragma mark - Public
 
 - (void) hideCalendarView {
@@ -142,8 +146,65 @@
 #pragma mark - Table View DataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"test"];
-    cell.textLabel.text = @"Here is a cell";
+    static NSString* allClassesID = @"allClasses";
+    static NSString* todaysClassesID = @"todaysClasses";
+    static NSString* favoriteClassesID = @"favoriteClasses";
+    
+    UITableViewCell* cell;
+    
+    
+    if (self.GFTabs.selectedSegmentIndex == 0) {
+        __block NSDictionary* GFClass;
+        [self.collection GFClassesForYear: self.calendarView.year month: self.calendarView.month day:self.calendarView.day block:^(NSError *error, NSArray *GFClasses) {
+            
+            if (error) {[self connectionError];}
+            else {
+                GFClass = [GFClasses objectAtIndex: indexPath.row];
+            }
+            
+        }];
+        cell = [tableView dequeueReusableCellWithIdentifier: allClassesID];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:allClassesID];
+        }
+        
+        UILabel* className = [[UILabel alloc] initWithFrame: CGRectMake( (self.GFTableView.frame.size.width - 250) / 2.0, 5, 250, 30)];
+        className.text = [GFClass objectForKey: @"className"];
+        className.font = [UIFont fontWithName: @"Helvetica-Bold" size: 18];
+        className.textColor = [UIColor blueColor];
+        className.textAlignment = NSTextAlignmentCenter;
+        
+        
+        UILabel* instructor = [[UILabel alloc] initWithFrame: CGRectMake(10, 5 + 30 + 5, 130, 15)];
+        instructor.text = [GFClass objectForKey: @"instructor"];
+        instructor.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
+        
+        
+        UILabel* timeRange = [[UILabel alloc] initWithFrame: CGRectMake(10, 5 + 30 + 5 + 15 + 5, 130, 15)];
+        timeRange.text = [GFClass objectForKey: @"timeRange"];
+        timeRange.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
+       
+        ContainerButton* addToFavorites = [[ContainerButton alloc] initWithFrame: CGRectMake(self.view.frame.size.width - 20 - 80, 40, 80, 30)];
+        addToFavorites.data = GFClass;
+        [addToFavorites setTitle: @"Add to Favorites" forState: UIControlStateNormal];
+        addToFavorites.titleLabel.font = [UIFont systemFontOfSize: 10];
+        [addToFavorites setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
+        addToFavorites.layer.borderWidth = 1;
+        addToFavorites.layer.borderColor = [[UIColor blackColor] CGColor];
+        addToFavorites.layer.cornerRadius = 4;
+        
+        [addToFavorites addTarget:self action:@selector(pushClassToFavorites:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [cell addSubview: className];
+        [cell addSubview: instructor];
+        [cell addSubview: timeRange];
+        [cell addSubview: addToFavorites];
+        
+    } else {
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"test"];
+        cell.textLabel.text = @"Here is a cell";
+    }
+    
     return cell;
 }
 
@@ -201,6 +262,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return HEIGHT_OF_SECTION_HEADER;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
 }
 
 #pragma mark - Helpers
