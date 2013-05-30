@@ -80,16 +80,13 @@
 
  
 - (void) begin {
-    if (self.hidden) {
-        [self show];
-        [self start];
-    }
+    [self show];
+    [self start];
 }
 
 - (void) end {
-    if (!self.hidden) {
-        [self hide];
-        [self stop];
-    }
+    NSLog(@"End was called");
+    [self hide];
+    [self stop];
 }
 @end

@@ -10,8 +10,6 @@
 #import "GFCollection.h"
 @interface GFViewController ()
 
-@property (nonatomic, strong) BMLoadView* loadIndicator;
-
 @end
 
 @implementation GFViewController
@@ -44,7 +42,6 @@
 }
 
 - (void) viewDidLayoutSubviews {
-    self.loadIndicator = [[BMLoadView alloc] initWithParent: self.view];
     
     [super viewDidLayoutSubviews];
     
@@ -68,10 +65,10 @@
     
     [self.view addSubview: self.GFTableView];
 
-    [self.loadIndicator begin];
+    BMLoadView* loadIndicator = [[BMLoadView alloc] initWithParent: self.view];
+    [loadIndicator begin];
     [self.collection GFModelForCurrentMonth:^(NSError *error, GFModel *model) {
-        [self.loadIndicator end];
-        //reload the table view here
+        [loadIndicator end];
         
     }];
         
@@ -121,7 +118,19 @@
 - (void) calendarChangeToYear:(NSUInteger)year month:(NSUInteger)month {
     NSDate *date = [NSDate dateWithYear: year month: month andDay: 1];
     [self displayDate: date];
-    [self.GFTableView reloadData];
+    
+    //load the month
+    BMLoadView* loadIndicator = [[BMLoadView alloc] initWithParent: self.GFTableView];
+    [loadIndicator begin];
+    [self.collection GFModelForYear: year month: month block:^(NSError *error, GFModel *model) {
+        if (error) {
+            [self connectionError];
+        } else {
+            [self.GFTableView reloadData];
+        }
+        [loadIndicator end];
+    }];
+    
 }
 - (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
     
@@ -140,6 +149,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     __block NSUInteger rowsInSection = 0;
+    
+    
     if (self.GFTabs.selectedSegmentIndex == 0) {
         [self.collection GFClassesForYear: self.calendarView.year month:self.calendarView.month day:self.calendarView.day  block:^(NSError *error, NSArray *GFClasses) {
             if (error) {
@@ -158,6 +169,8 @@
             }
         }];
     }
+    
+    
     return rowsInSection;
 }
 
