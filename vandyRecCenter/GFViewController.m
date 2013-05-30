@@ -94,7 +94,11 @@
 
 - (void) pushClassToFavorites: (ContainerButton*) sender {
     NSLog(@"%@", sender.data);
-    sender.selected = YES;
+    if (sender.selected) {
+        sender.selected = NO;
+    } else {
+        sender.selected = YES;
+    }
 }
 
 #pragma mark - Public
