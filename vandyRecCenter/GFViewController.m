@@ -94,6 +94,7 @@
 
 - (void) pushClassToFavorites: (ContainerButton*) sender {
     NSLog(@"%@", sender.data);
+    sender.selected = YES;
 }
 
 #pragma mark - Public
@@ -196,12 +197,11 @@
        
         ContainerButton* addToFavorites = [[ContainerButton alloc] initWithFrame: CGRectMake(self.view.frame.size.width - 20 - 80, 40, 80, 30)];
         addToFavorites.data = GFClass;
-        [addToFavorites setTitle: @"Add to Favorites" forState: UIControlStateNormal];
-        addToFavorites.titleLabel.font = [UIFont systemFontOfSize: 10];
-        [addToFavorites setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
-        addToFavorites.layer.borderWidth = 1;
-        addToFavorites.layer.borderColor = [[UIColor blackColor] CGColor];
+        [addToFavorites setTitle: @"Add" forState: UIControlStateNormal];
+        addToFavorites.titleLabel.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
         addToFavorites.layer.cornerRadius = 4;
+        [addToFavorites setTitle: @"Favorite" forState: UIControlStateSelected];
+        
         
         [addToFavorites addTarget:self action:@selector(pushClassToFavorites:) forControlEvents:UIControlEventTouchUpInside];
         
