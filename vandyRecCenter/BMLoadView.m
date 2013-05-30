@@ -85,7 +85,6 @@
 }
 
 - (void) end {
-    NSLog(@"End was called");
     [self hide];
     [self stop];
 }
