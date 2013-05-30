@@ -15,7 +15,7 @@
 
 - (void) add: (NSDictionary*) GFClass;
 - (void) removeGFClassWithID: (NSString*) ID;
-
+- (NSDictionary*) GFClassWithID: (NSString*) ID;
 //sorts the elements in the list of favorites
 //the GFClasses are sorted so that those with earlier
 //starting dates come first

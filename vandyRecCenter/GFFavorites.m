@@ -13,11 +13,34 @@
 @synthesize favorites = _favorites;
 
 - (void) add:(NSDictionary *)GFClass {
-    
+    self.favorites = [self.favorites arrayByAddingObject: GFClass];
+    [self sort];
 }
 
 - (void) removeGFClassWithID:(NSString *)ID {
-    
+    for (NSUInteger i = 0; i < self.favorites.count; ++i) {
+        if ([[[self.favorites objectAtIndex: i] objectForKey: @"_id"] isEqualToString: ID]) {
+            if (i == 0) {
+                self.favorites = [self.favorites subarrayWithRange: NSMakeRange(1, self.favorites.count - 1)];
+            } else if (i == self.favorites.count - 1) {
+                self.favorites = [self.favorites subarrayWithRange: NSMakeRange(0, self.favorites.count - 1)];
+            } else {
+                NSArray* partial1 = [self.favorites subarrayWithRange: NSMakeRange(0, i)];
+                NSArray* partial2 = [self.favorites subarrayWithRange: NSMakeRange(i+1, self.favorites.count - i - 1)];
+                self.favorites = partial1;
+                self.favorites = [self.favorites arrayByAddingObjectsFromArray: partial2];
+            }
+        }
+    }
+}
+
+- (NSDictionary*) GFClassWithID: (NSString*) ID {
+    for (NSDictionary* GFClass in self.favorites) {
+        if ([[GFClass objectForKey: @"_id"] isEqualToString: ID]) {
+            return GFClass;
+        }
+    }
+    return nil;
 }
 
 - (void) sort {
