@@ -51,6 +51,7 @@
 		21D303A917526E46007D8247 /* GFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D303A817526E46007D8247 /* GFViewController.m */; };
 		21D303AC17527DF8007D8247 /* GFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D303AB17527DF8007D8247 /* GFModel.m */; };
 		21D8513F1756EC4D00117526 /* ContainerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8513E1756EC4D00117526 /* ContainerButton.m */; };
+		21D851431756F07B00117526 /* GFFavorites.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D851421756F07B00117526 /* GFFavorites.m */; };
 		21D92E9E175469CE00CE88EE /* 45-minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D92E9A175469CE00CE88EE /* 45-minus.png */; };
 		21D92E9F175469CE00CE88EE /* 45-minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D92E9B175469CE00CE88EE /* 45-minus@2x.png */; };
 		21D92EA0175469CE00CE88EE /* 50-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D92E9C175469CE00CE88EE /* 50-plus.png */; };
@@ -145,6 +146,8 @@
 		21D303AB17527DF8007D8247 /* GFModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFModel.m; sourceTree = "<group>"; };
 		21D8513D1756EC4D00117526 /* ContainerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerButton.h; sourceTree = "<group>"; };
 		21D8513E1756EC4D00117526 /* ContainerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerButton.m; sourceTree = "<group>"; };
+		21D851411756F07B00117526 /* GFFavorites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFFavorites.h; sourceTree = "<group>"; };
+		21D851421756F07B00117526 /* GFFavorites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFFavorites.m; sourceTree = "<group>"; };
 		21D92E9A175469CE00CE88EE /* 45-minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "45-minus.png"; sourceTree = "<group>"; };
 		21D92E9B175469CE00CE88EE /* 45-minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "45-minus@2x.png"; sourceTree = "<group>"; };
 		21D92E9C175469CE00CE88EE /* 50-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "50-plus.png"; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 				211B16ED17530AD900180E3D /* GFCollection.m */,
 				21D303AA17527DF8007D8247 /* GFModel.h */,
 				21D303AB17527DF8007D8247 /* GFModel.m */,
+				21D851411756F07B00117526 /* GFFavorites.h */,
+				21D851421756F07B00117526 /* GFFavorites.m */,
 			);
 			name = GF;
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 				214754B91755C9C600179268 /* DateHelper.m in Sources */,
 				2103555B17566D3E008C92FB /* BMLoadView.m in Sources */,
 				21D8513F1756EC4D00117526 /* ContainerButton.m in Sources */,
+				21D851431756F07B00117526 /* GFFavorites.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
