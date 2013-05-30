@@ -19,6 +19,14 @@
 #define HEIGHT_OF_MONTH_LABEL 20
 #define HEIGHT_OF_SECTION_HEADER 30
 
+#define GFCELL_MAINLABEL_HEIGHT 30
+#define GFCELL_NAME_WIDTH 250
+#define GFCELL_PADDING 5
+#define GFCELL_SUBLABEL_HEIGHT 15
+#define GFCELL_SUBLABEL_WIDTH 130
+#define GFCELL_BUTTON_WIDTH 130
+
+
 @interface GFViewController : UIViewController <CalendarViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UISegmentedControl* GFTabs;

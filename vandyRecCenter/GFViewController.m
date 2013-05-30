@@ -168,19 +168,19 @@
             cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:allClassesID];
         }
         
-        UILabel* className = [[UILabel alloc] initWithFrame: CGRectMake( (self.GFTableView.frame.size.width - 250) / 2.0, 5, 250, 30)];
+        UILabel* className = [[UILabel alloc] initWithFrame: CGRectMake( (self.GFTableView.frame.size.width - GFCELL_NAME_WIDTH) / 2.0, GFCELL_PADDING, GFCELL_NAME_WIDTH, GFCELL_MAINLABEL_HEIGHT)];
         className.text = [GFClass objectForKey: @"className"];
         className.font = [UIFont fontWithName: @"Helvetica-Bold" size: 18];
         className.textColor = [UIColor blueColor];
         className.textAlignment = NSTextAlignmentCenter;
         
         
-        UILabel* instructor = [[UILabel alloc] initWithFrame: CGRectMake(10, 5 + 30 + 5, 130, 15)];
+        UILabel* instructor = [[UILabel alloc] initWithFrame: CGRectMake(10, GFCELL_PADDING*2 + GFCELL_MAINLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH, GFCELL_SUBLABEL_HEIGHT)];
         instructor.text = [GFClass objectForKey: @"instructor"];
         instructor.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
         
         
-        UILabel* timeRange = [[UILabel alloc] initWithFrame: CGRectMake(10, 5 + 30 + 5 + 15 + 5, 130, 15)];
+        UILabel* timeRange = [[UILabel alloc] initWithFrame: CGRectMake(10, GFCELL_PADDING*3 + GFCELL_SUBLABEL_HEIGHT + GFCELL_MAINLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH, GFCELL_SUBLABEL_HEIGHT)];
         timeRange.text = [GFClass objectForKey: @"timeRange"];
         timeRange.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
        
