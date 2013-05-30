@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TimeString.h"
 
 @interface GFFavorites : NSObject
 
@@ -16,6 +17,10 @@
 - (void) removeGFClassWithID: (NSString*) ID;
 
 //sorts the elements in the list of favorites
+//the GFClasses are sorted so that those with earlier
+//starting dates come first
+//if two elements have the same starting date
+//then they are sorted based on the times the classes start
 - (void) sort;
 
 //determines if the dictionary already exists in the
