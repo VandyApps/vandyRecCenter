@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VandyRecClient.h"
+#import "NSDate-MyDateClass.h"
 
 @interface GFSpecialDates : NSObject
 

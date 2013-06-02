@@ -59,8 +59,10 @@
         
         [operation start];
         
+    
     } else if ([type isEqualToString: @"GFSpecialDate"]) {
        
+        //unlike GFClass data, GFSpecal dates do not require a month and year
         NSURLRequest *GFRequest = [self requestWithMethod: @"GET" path: @"GF" parameters:[[NSDictionary alloc] initWithObjects: [[NSArray alloc] initWithObjects: type, nil] forKeys:@[@"type"]]];
         
         AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:GFRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
