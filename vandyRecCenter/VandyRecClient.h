@@ -23,6 +23,6 @@
 - (void) JSONFromNewsTab: (void (^)(NSError* error, NSArray* jsonData)) block;
 
 - (void) JSONFromGFTab: (void (^)(NSError* error, NSArray* jsonData)) block;
-- (void) JSONFromGFTab:(void (^)(NSError *error, NSArray *jsonData))block forMonth: (NSUInteger) monthIndex andYear: (NSUInteger) year;
+- (void) JSONFromGFTab:(void (^)(NSError *error, NSArray *jsonData))block forType: (NSString*) type month: (NSUInteger) monthIndex andYear: (NSUInteger) year;
 
 @end

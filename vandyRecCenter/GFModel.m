@@ -62,7 +62,7 @@
                 self.GFClasses = jsonData;
                 block(nil, jsonData);
             }
-        } forMonth: month andYear: year];
+        } forType: @"GFClass" month: month andYear: year];
     
     }
     
