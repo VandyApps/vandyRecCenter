@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GFModel.h"
+#import "GFSpecialDates.h"
 #import "NSDate-MyDateClass.h"
 
 #ifndef NASHVILLE_TIMEZONE

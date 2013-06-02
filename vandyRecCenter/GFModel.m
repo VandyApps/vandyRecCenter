@@ -11,6 +11,7 @@
 @interface GFModel()
 
 @property (nonatomic, strong) VandyRecClient* webClient;
+
 @end
 
 @implementation GFModel

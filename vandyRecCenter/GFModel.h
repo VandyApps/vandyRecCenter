@@ -40,7 +40,9 @@
 
 //returns true if the class is on the day for the month and year
 //of this GFModel instance.  Does not take into account whether
-//the class is marked as canceled or not
+//the class is marked as canceled or not and does not account for
+//special dates of the courses.  Special dates are further filtered out
+//when this function passes through GFCollection
 - (BOOL) GFClass: (NSDictionary*) GFClass isOnDay: (NSUInteger) day;
 
 //this method should only be used when month and year are non-negative numbers

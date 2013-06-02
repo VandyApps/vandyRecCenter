@@ -8,7 +8,16 @@
 
 #import "GFCollection.h"
 
+@interface GFCollection()
+
+@property (nonatomic, strong) GFSpecialDates* specialDates;
+
+@end
+
 @implementation GFCollection
+
+@synthesize models = _models;
+@synthesize specialDates = _specialDates;
 
 #pragma mark - Getters
 - (NSArray*) models {
@@ -17,6 +26,13 @@
     }
     return _models;
 }
+- (GFSpecialDates*) specialDates {
+    if (_specialDates == nil) {
+        _specialDates = [[GFSpecialDates alloc] init];
+    }
+    return _specialDates;
+}
+
 
 #pragma mark - Model Getters
 - (void) GFModelForYear:(NSUInteger)year month:(NSUInteger)month block:(void (^)(NSError *error, GFModel *model))block {
@@ -57,12 +73,15 @@
 }
 
 #pragma mark - Sub-model getters
+
 - (void) GFClassesForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day block:(void (^)(NSError *, NSArray *))block {
     
     [self GFModelForYear: year month: month block:^(NSError *error, GFModel *model) {
         if (error) {
             block(error, nil);
         } else {
+            NSArray* classesForDay = [model GFClassesForDay: day];
+            
             block(nil,[model GFClassesForDay: day]);
         }
     }];
@@ -144,5 +163,31 @@
         }
     }
     return NO;
+}
+
+#pragma mark - Private
+
+- (NSArray*) filterClasses: (NSArray*) GFClasses bySpecialDateForYear: (NSUInteger) year month: (NSUInteger) month day: (NSUInteger) day {
+    
+    __block NSArray* filteredClasses = [[NSArray alloc] init];
+    [self.specialDates loadData:^(NSError *error, GFSpecialDates *specialDates) {
+        
+        
+        if ([specialDates isSpecialDateForYear: year month: month day: day]) {
+            for (NSDictionary* GFClass in GFClasses) {
+                if ([[GFClass objectForKey: @"specialDateClass"] boolValue]) {
+                    filteredClasses = [filteredClasses arrayByAddingObject: GFClass];
+                }
+            }
+        } else {
+            for (NSDictionary* GFClass in GFClasses) {
+                if (![[GFClass objectForKey: @"specialDateClass"] boolValue]) {
+                    filteredClasses = [filteredClasses arrayByAddingObject: GFClass];
+                }
+            }
+        }
+        
+    }];
+    return filteredClasses;
 }
 @end
