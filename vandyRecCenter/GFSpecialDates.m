@@ -64,7 +64,7 @@
     for (NSDictionary* specialDate in self.specialDates) {
         NSDate* startDate = [NSDate dateWithDateString: [specialDate objectForKey: @"startDate"]];
         NSDate* endDate = [NSDate dateWithDateString: [specialDate objectForKey: @"endDate"]];
-        if ([date compare: startDate] == NSOrderedDescending && [date compare: endDate] == NSOrderedAscending) {
+        if (([date compare: startDate] == NSOrderedDescending || [date compare: startDate] == NSOrderedSame) && ([date compare: endDate] == NSOrderedAscending || [date compare: endDate] == NSOrderedSame)) {
             return specialDate;
         }
     }

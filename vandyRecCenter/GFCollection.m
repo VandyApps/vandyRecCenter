@@ -81,8 +81,8 @@
             block(error, nil);
         } else {
             NSArray* classesForDay = [model GFClassesForDay: day];
-            
-            block(nil,[model GFClassesForDay: day]);
+            classesForDay = [self filterClasses: classesForDay bySpecialDateForYear: year month:month day: day];
+            block(nil,classesForDay);
         }
     }];
 }
@@ -94,7 +94,9 @@
         } else {
             NSDate* current = [[NSDate alloc] init];
             NSUInteger day = [current dayForTimeZone: [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
-            block(nil, [model GFClassesForDay: day]);
+            NSArray* currentClasses = [model GFClassesForDay: day];
+            currentClasses = [self filterClasses: currentClasses bySpecialDateForYear: [current year] month: [current month] day: [current day]];
+            block(nil, currentClasses);
         }
     }];
 }
