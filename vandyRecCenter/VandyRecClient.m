@@ -43,18 +43,36 @@
     [operation start];
 }
 
-- (void) JSONFromGFTab: (void (^)(NSError *, NSArray *)) block forType: (NSString*) type month: (NSUInteger) monthIndex andYear: (NSUInteger) year {
-    NSDictionary *params = [[NSDictionary alloc] initWithObjects: [[NSArray alloc] initWithObjects: type, [NSNumber numberWithInt: monthIndex], [NSNumber numberWithInt: year], nil] forKeys: @[@"type", @"month", @"year"]];
-    NSURLRequest *GFRequest = [self requestWithMethod: @"GET" path: @"GF" parameters: params];
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: GFRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        
-        block(nil, JSON);
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        
-        block(error, JSON);
-    }];
+- (void) JSONFromGFTab: (void (^)(NSError *, NSArray *)) block forType: (NSString*) type month:(NSUInteger) monthIndex andYear: (NSUInteger) year {
     
-    [operation start];
-    
+    if ([type isEqualToString: @"GFClass"]) {
+        
+        NSDictionary *params = [[NSDictionary alloc] initWithObjects: [[NSArray alloc] initWithObjects: type, [NSNumber numberWithInt: monthIndex], [NSNumber numberWithInt: year], nil] forKeys: @[@"type", @"month", @"year"]];
+        NSURLRequest *GFRequest = [self requestWithMethod: @"GET" path: @"GF" parameters: params];
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest: GFRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            
+            block(nil, JSON);
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            
+            block(error, JSON);
+        }];
+        
+        [operation start];
+        
+    } else if ([type isEqualToString: @"GFSpecialDate"]) {
+       
+        NSURLRequest *GFRequest = [self requestWithMethod: @"GET" path: @"GF" parameters:[[NSDictionary alloc] initWithObjects: [[NSArray alloc] initWithObjects: type, nil] forKeys:@[@"type"]]];
+        
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:GFRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            block(nil, JSON);
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            block(error,JSON);
+        }];
+        
+        [operation start];
+    } else {
+        NSLog(@"Request did not send the correct type.  Need to present this in an error object");
+        block(nil, nil);
+    }
 }
 @end
