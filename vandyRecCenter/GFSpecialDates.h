@@ -29,12 +29,12 @@
 
 //returns a special date that exists during the passed in date parameter
 //returns nil if the date has no special date
-- (void) specialDateForDate: (NSDate*) date;
+- (NSDictionary*) specialDateForDate: (NSDate*) date;
 
 //returns a special date that exists during the year, day, month
 //alternative method to the above method, which takes a NSDate object
 //returns nil if the date has no special date
-- (void) specialDateForYear: (NSUInteger) year month: (NSUInteger) month day: (NSUInteger) day;
+- (NSDictionary*) specialDateForYear: (NSUInteger) year month: (NSUInteger) month day: (NSUInteger) day;
 
 
 @end
