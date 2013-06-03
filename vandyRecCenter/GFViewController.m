@@ -155,10 +155,12 @@
         [view removeFromSuperview];
     }
 }
+
 - (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
     
     NSDate *date = [NSDate dateWithYear: year month: month andDay: day];
     [self displayDate: date];
+    //the data is reloaded based on the new variables for calendar view
     [self.GFTableView reloadData];
     for (UIView* view in self.cancelViews) {
         [view removeFromSuperview];

@@ -15,6 +15,7 @@
 @synthesize calendarScroll = _calendarScroll;
 @synthesize decrementButton = _decrementButton;
 @synthesize incrementButton = _incrementButton;
+@synthesize day = _day;
 @synthesize month = _month;
 @synthesize year = _year;
 @synthesize selectedDate = _selectedDate;
@@ -68,14 +69,19 @@
     NSDate * currentDate = [[NSDate alloc] init];
     self.year = [currentDate year];
     self.month = [currentDate month];
+    self.day = [currentDate day];
     [self setUpScrollViewWithSelectedDay: [currentDate day]];
-    [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
+    if ([self.calendarDelegate respondsToSelector: @selector(calendarChangeToYear:month:)]) {
+        [self.calendarDelegate calendarChangeToYear: self.year month: self.month];
+    }
+    
 }
 
 - (void) selectYear:(NSUInteger)year month:(NSUInteger)month {
     [self.calendarScroll setContentOffset: CGPointZero animated: YES];
     self.year = year;
     self.month = month;
+    self.day = 1;
     [self setUpScrollViewWithSelectedDay: 1];
     if ([self.calendarDelegate respondsToSelector: @selector(calendarChangeToYear:month:)]) {
         [self.calendarDelegate calendarChangeToYear:self.year month: self.month];
@@ -173,6 +179,7 @@
         self.month = 0;
         self.year += 1;
     }
+    self.day = 1;
     
     [self setUpScrollViewWithSelectedDay: 1];
     if ([self.calendarDelegate respondsToSelector: @selector(calendarChangeToYear:month:)]) {
@@ -189,6 +196,7 @@
         self.month = 11;
         self.year -= 1;
     }
+    self.day = 1;
     
     [self setUpScrollViewWithSelectedDay: 1];
     if ([self.calendarDelegate respondsToSelector: @selector(calendarChangeToYear:month:)]) {
