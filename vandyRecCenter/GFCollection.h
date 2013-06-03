@@ -38,5 +38,8 @@
 - (void) GFModelForCurrentMonth: (void (^)(NSError* error, GFModel *model)) block;
 - (void) GFModelForYear: (NSUInteger) year month: (NSUInteger) month block: (void (^)(NSError *error, GFModel* model)) block;
 
+//querying for a single class
+- (void) getClassForYear: (NSUInteger) year month: (NSUInteger) month ID: (NSString*) ID block: (void(^)(NSError* error, NSDictionary* GFClass)) block;
+
 
 @end

@@ -155,6 +155,23 @@
     }];
 }
 
+#pragma mark - Query
+- (void) getClassForYear: (NSUInteger) year month: (NSUInteger) month ID: (NSString*) ID block: (void(^)(NSError* error, NSDictionary* GFClass)) block {
+    
+    [self GFModelForYear:year month:month block:^(NSError *error, GFModel *model) {
+        if (error) {
+            block(error, nil);
+        } else {
+            for (NSDictionary* GFClass in model.GFClasses) {
+                if ([[GFClass objectForKey: @"_id"] isEqualToString: ID]) {
+                    block(nil, GFClass);
+                }
+            }
+        }
+        
+    }];
+}
+
 #pragma mark - Validate
 - (BOOL) dataLoadedForYear:(NSUInteger)year month:(NSUInteger)month {
     for (GFModel* model in self.models) {
