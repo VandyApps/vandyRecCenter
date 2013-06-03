@@ -151,6 +151,9 @@
         [loadIndicator end];
     }];
     
+    for (UIView* view in self.cancelViews) {
+        [view removeFromSuperview];
+    }
 }
 - (void) didSelectDateForYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
     
