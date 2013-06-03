@@ -10,6 +10,9 @@
 #import "GFCollection.h"
 @interface GFViewController ()
 
+//find a better way to remove these
+@property (nonatomic, strong) NSArray* cancelViews;
+
 @end
 
 @implementation GFViewController
@@ -18,6 +21,16 @@
 @synthesize GFTableView = _GFTableView;
 @synthesize monthLabel = _monthLabel;
 @synthesize calendarView = _calendarView;
+@synthesize cancelViews = _cancelViews;
+
+#pragma mark - getter
+
+- (NSArray*) cancelViews {
+    if (_cancelViews == nil) {
+        _cancelViews = [[NSArray alloc] init];
+    }
+    return _cancelViews;
+}
 
 #pragma mark - initializers
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,8 +49,6 @@
     self.calendarView.calendarDelegate = self;
     [self.GFTabs addTarget: self action: @selector(tabChanged:) forControlEvents: UIControlEventValueChanged];
     self.collection = [[GFCollection alloc] init];
-    
-    
     
 }
 
@@ -146,6 +157,9 @@
     NSDate *date = [NSDate dateWithYear: year month: month andDay: day];
     [self displayDate: date];
     [self.GFTableView reloadData];
+    for (UIView* view in self.cancelViews) {
+        [view removeFromSuperview];
+    }
 }
 
 #pragma mark - Table View DataSource
@@ -179,6 +193,7 @@
         }
        
         cell = [tableView dequeueReusableCellWithIdentifier: allClassesID];
+        
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:allClassesID];
         }
@@ -213,6 +228,30 @@
         [cell addSubview: instructor];
         [cell addSubview: timeRange];
         [cell addSubview: addToFavorites];
+        
+        //check if the class is cancelled for today
+        BOOL isCancelled = NO;
+        NSArray* cancelledDates = [GFClass objectForKey: @"cancelledDates"];
+        NSDate* date = [NSDate dateWithYear: self.calendarView.year month: self.calendarView.month andDay:self.calendarView.day];
+        for (NSString* cancelledDate in cancelledDates) {
+            if ([date compare: [NSDate dateWithDateString: cancelledDate]] == NSOrderedSame) {
+                isCancelled = YES;
+            }
+        }
+        
+        if (isCancelled) {
+            UILabel* cancelledLabel = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, CELL_VIEW_HEIGHT)];
+            cancelledLabel.text = @"Cancelled";
+            cancelledLabel.textColor = [UIColor redColor];
+            cancelledLabel.backgroundColor = [UIColor whiteColor];
+            cancelledLabel.alpha = .65;
+            cancelledLabel.font = [UIFont systemFontOfSize: 20];
+            cancelledLabel.textAlignment = NSTextAlignmentCenter;
+            cancelledLabel.userInteractionEnabled = YES;
+            [cell addSubview: cancelledLabel];
+            self.cancelViews = [self.cancelViews arrayByAddingObject: cancelledLabel];
+        }
+        
         
     } else {
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"test"];
@@ -253,7 +292,7 @@
     return 1;
 }
 
-#pragma mark - Delegate
+#pragma mark - Table View Delegate
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIImageView* view = [[UIImageView alloc] init];
@@ -281,7 +320,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 85;
+    return CELL_VIEW_HEIGHT;
 }
 
 #pragma mark - Helpers

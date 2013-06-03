@@ -14,6 +14,7 @@
 #import "CalendarViewDelegate.h"
 #import "ContainerButton.h"
 
+#define CELL_VIEW_HEIGHT 85
 #define HEIGHT_OF_GFTABS 29
 #define WIDTH_OF_MONTH_LABEL 250
 #define HEIGHT_OF_MONTH_LABEL 20
