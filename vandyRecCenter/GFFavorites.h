@@ -11,7 +11,7 @@
 
 @interface GFFavorites : NSObject
 
-@property (nonatomic, strong) NSArray* favorites;
+@property (nonatomic, strong) NSArray* GFClasses;
 @property (nonatomic, strong) NSString* pathName;
 
 - (void) loadData;
