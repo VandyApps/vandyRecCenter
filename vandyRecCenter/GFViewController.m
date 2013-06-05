@@ -293,7 +293,7 @@
 
         
         UILabel* timeRange = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 3 + GFCELL_MAINLABEL_HEIGHT + GFCELL_SUBLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH_EXTENDED, GFCELL_SUBLABEL_HEIGHT)];
-        timeRange.text = [NSString stringWithFormat: @"%@ at %@", [DateHelper weekDayForIndex:[[GFClass objectForKey: @"weekDay"] intValue]], [GFClass objectForKey: @"timeRange"]];
+        timeRange.text = [NSString stringWithFormat: @"%@ at %@", [DateHelper weekDayForIndex:[[GFClass objectForKey: @"dayOfWeek"] intValue]], [GFClass objectForKey: @"timeRange"]];
         
         timeRange.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
         
