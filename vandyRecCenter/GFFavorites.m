@@ -21,6 +21,7 @@
 - (void) add:(NSDictionary *)GFClass {
     self.GFClasses = [self.GFClasses arrayByAddingObject: GFClass];
     [self sort];
+    NSLog(@"%@", self.GFClasses);
 }
 
 - (void) removeGFClassWithID:(NSString *)ID {
@@ -38,6 +39,7 @@
             }
         }
     }
+    NSLog(@"%@", self.GFClasses);
 }
 
 - (NSDictionary*) GFClassWithID: (NSString*) ID {

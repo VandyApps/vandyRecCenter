@@ -109,6 +109,8 @@
     //toggle the selector
     if (sender.selected) {
         sender.selected = NO;
+        
+        [self.collection.favorites removeGFClassWithID: [sender.data objectForKey: @"_id"]];
     } else {
         sender.selected = YES;
         

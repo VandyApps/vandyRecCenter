@@ -11,7 +11,9 @@
 
 @interface GFFavorites : NSObject
 
+//classes that are marked as favorites
 @property (nonatomic, strong) NSArray* GFClasses;
+//path at which data is loaded and removed
 @property (nonatomic, strong) NSString* pathName;
 
 - (void) loadData;
