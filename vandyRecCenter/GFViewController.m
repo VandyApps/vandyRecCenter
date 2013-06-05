@@ -236,6 +236,9 @@
         
         
         [addToFavorites addTarget:self action:@selector(pushClassToFavorites:) forControlEvents:UIControlEventTouchUpInside];
+        if ([self.collection.favorites isFavorite: GFClass]) {
+            addToFavorites.selected = YES;
+        }
         
         [cell addSubview: className];
         [cell addSubview: instructor];
