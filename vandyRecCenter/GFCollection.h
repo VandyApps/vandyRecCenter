@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "GFModel.h"
 #import "GFSpecialDates.h"
+#import "GFFavorites.h"
 #import "NSDate-MyDateClass.h"
 
 #ifndef NASHVILLE_TIMEZONE
@@ -18,6 +19,7 @@
 @interface GFCollection : NSObject
 
 @property (nonatomic, strong) NSArray* models;
+@property (nonatomic, strong) GFFavorites* favorites;
 
 
 //loads the collection with a single element

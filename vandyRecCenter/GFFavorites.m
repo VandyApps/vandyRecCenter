@@ -12,9 +12,17 @@
 
 @synthesize favorites = _favorites;
 
+- (NSArray*) favorites {
+    if (_favorites == nil) {
+        _favorites = [[NSArray alloc] init];
+    }
+    return _favorites;
+}
 - (void) add:(NSDictionary *)GFClass {
+    NSLog(@"Add called");
     self.favorites = [self.favorites arrayByAddingObject: GFClass];
     [self sort];
+    NSLog(@"%@", self.favorites);
 }
 
 - (void) removeGFClassWithID:(NSString *)ID {

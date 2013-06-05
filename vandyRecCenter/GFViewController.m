@@ -105,11 +105,18 @@
 
 - (void) pushClassToFavorites: (ContainerButton*) sender {
     NSLog(@"%@", sender.data);
+    
+    //toggle the selector
     if (sender.selected) {
         sender.selected = NO;
     } else {
         sender.selected = YES;
+        
+        //add the class to favorites
+        [self.collection.favorites add: sender.data];
     }
+    
+    
 }
 
 #pragma mark - Public

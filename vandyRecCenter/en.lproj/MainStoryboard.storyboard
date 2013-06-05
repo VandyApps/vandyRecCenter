@@ -592,6 +592,55 @@
         <image name="leftArrow.png" width="16" height="16"/>
         <image name="rightArrow.png" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="CalendarView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarView.h"/>
+        </class>
+        <class className="GFViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GFViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="GFTabs" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="calendarView" candidateClass="CalendarView"/>
+            </relationships>
+        </class>
+        <class className="HoursScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HoursScrollView.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TabBarNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarNavigationController.h"/>
+        </class>
+        <class className="browserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/browserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="homePageForRec" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="homeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="scrollLeft"/>
+                <relationship kind="action" name="scrollRight"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="hoursViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/hoursViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="current:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="scrollLeft"/>
+                <relationship kind="action" name="scrollRight"/>
+                <relationship kind="outlet" name="leftScroll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="remainingTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightScroll" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollHours" candidateClass="HoursScrollView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
