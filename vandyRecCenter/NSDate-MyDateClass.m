@@ -31,7 +31,7 @@
     //this regular expression only makes sure that the date string is in the correct format
     //with some error checking of the actual digits, but does not check if the number
     //of days are valid for a specific month
-    NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern: @"^((0\\d)|(1[012]))/[0123]\\d/((19\\d\\d)|(20\\d\\d))$" options: NSRegularExpressionAnchorsMatchLines error:nil];
+    NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern: @"^((0?\\d)|(1[012]))/[0123]?\\d/((19\\d\\d)|(20\\d\\d))$" options: NSRegularExpressionAnchorsMatchLines error:nil];
     if ([regex numberOfMatchesInString: dateString options: NSMatchingAnchored range: NSMakeRange(0, [dateString length])] == 1) {
         
         NSArray* dateArray = [dateString componentsSeparatedByString: @"/"];
@@ -148,7 +148,6 @@
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterShortStyle;
     NSString* dateString = [formatter stringFromDate: self];
-    
     return [[[dateString componentsSeparatedByString: @"/"] objectAtIndex: 1] intValue];
     
 }

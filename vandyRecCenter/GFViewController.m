@@ -138,6 +138,7 @@
 }
 
 - (void) displayDate: (NSDate*) date {
+    
     self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [DateHelper weekDayAbbreviationForIndex:[date weekDay]], [DateHelper monthNameForIndex: [date month]], [date day], [date year]];
 }
 
@@ -349,7 +350,18 @@
     if (self.GFTabs.selectedSegmentIndex == 0) {
         [self displayDate: [self.calendarView selectedDate]];
     } else if (self.GFTabs.selectedSegmentIndex == 1) {
-        [self displayDate: [[NSDate alloc] init]];
+        
+        //get the current date for the time zone using
+        //the date formatter method
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateStyle = NSDateFormatterShortStyle;
+        formatter.timeStyle = NSDateFormatterNoStyle;
+        formatter.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
+        NSString* dateString = [formatter stringFromDate: [[NSDate alloc] init]];
+        //add the 20 into the date for the year
+        dateString = [[[dateString substringToIndex: dateString.length - 2] stringByAppendingString:@"20"] stringByAppendingString: [dateString substringFromIndex:dateString.length - 2]];
+        [self displayDate: [NSDate dateWithDateString: dateString]];
+        
     } else {
         self.monthLabel.text = @"Favorites";
     }

@@ -436,15 +436,6 @@
 			name = "Web Client";
 			sourceTree = "<group>";
 		};
-		21EAD7E2170E81B600449EA3 /* Date Category */ = {
-			isa = PBXGroup;
-			children = (
-				21EAD7E6170E883900449EA3 /* NSDate-MyDateClass.h */,
-				21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */,
-			);
-			name = "Date Category";
-			sourceTree = "<group>";
-		};
 		21F1EA631728F17000AB17DB /* Custom Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,7 +457,8 @@
 			children = (
 				21FA94B9172D95120016918B /* UIColor-BMColors.h */,
 				21FA94BA172D95120016918B /* UIColor-BMColors.m */,
-				21EAD7E2170E81B600449EA3 /* Date Category */,
+				21EAD7E6170E883900449EA3 /* NSDate-MyDateClass.h */,
+				21EAD7E7170E883900449EA3 /* NSDate-MyDateClass.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
