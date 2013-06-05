@@ -86,6 +86,11 @@
     return NO;
 }
 
+#pragma mark - Array-like methods
+- (NSDictionary*) GFClassForIndex:(NSUInteger)index {
+    return [self.GFClasses objectAtIndex: index];
+}
+
 - (NSUInteger) count {
     return self.GFClasses.count;
 }

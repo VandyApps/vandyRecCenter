@@ -253,7 +253,7 @@
         }
         
         if (isCancelled) {
-            UILabel* cancelledLabel = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, CELL_VIEW_HEIGHT)];
+            UILabel* cancelledLabel = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, CELL_VIEW_HEIGHT_STANDARD)];
             cancelledLabel.text = @"Cancelled";
             cancelledLabel.textColor = [UIColor redColor];
             cancelledLabel.backgroundColor = [UIColor whiteColor];
@@ -274,7 +274,22 @@
             cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: favoriteClassesID];
         }
         
-        cell.textLabel.text = @"Here is a cell";
+        NSDictionary* GFClass = [self.collection.favorites GFClassForIndex: indexPath.row];
+        
+        UILabel* className = [[UILabel alloc] initWithFrame: CGRectMake( (self.GFTableView.frame.size.width - GFCELL_NAME_WIDTH) / 2.0, GFCELL_PADDING, GFCELL_NAME_WIDTH, GFCELL_MAINLABEL_HEIGHT)];
+        className.text = [GFClass objectForKey: @"className"];
+        className.font = [UIFont fontWithName: @"Helvetica-Bold" size: 18];
+        className.textColor = [UIColor blueColor];
+        className.textAlignment = NSTextAlignmentCenter;
+        
+        UILabel* weekDay = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 2 + GFCELL_MAINLABEL_HEIGHT, 100, GFCELL_SUBLABEL_HEIGHT)];
+        weekDay.text = [DateHelper weekDayForIndex: [[GFClass objectForKey: @"weekDay"] intValue]];
+        weekDay.font = [UIFont systemFontOfSize: 12];
+        weekDay.layer.borderColor = [[UIColor blackColor] CGColor];
+        weekDay.layer.borderWidth = 2;
+        
+        [cell addSubview: className];
+        [cell addSubview: weekDay];
     }
     
     return cell;
@@ -342,7 +357,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return CELL_VIEW_HEIGHT;
+    if (self.GFTabs.selectedSegmentIndex == 2) {
+        return CELL_VIEW_HEIGHT_FAVORITES;
+    } else {
+       return CELL_VIEW_HEIGHT_STANDARD;
+    }
+    
 }
 
 #pragma mark - Helpers

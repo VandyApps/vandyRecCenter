@@ -34,5 +34,7 @@
 //list of favorites
 - (BOOL) isFavorite: (NSDictionary*) GFClass;
 
+//array-like methods
+- (NSDictionary*) GFClassForIndex: (NSUInteger) index;
 - (NSUInteger) count;
 @end
