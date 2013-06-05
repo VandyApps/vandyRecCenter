@@ -20,8 +20,15 @@
 @synthesize year = _year;
 @synthesize selectedDate = _selectedDate;
 @synthesize dayButtons = _dayButtons;
+
 #pragma mark - Getters
 
+- (NSInteger) day {
+    if (_day == 0) {
+        _day = 1;
+    }
+    return _day;
+}
 - (NSDate*) selectedDate {
     for (DayButton* button in self.dayButtons) {
         if (button.selected) {
@@ -58,7 +65,7 @@
 - (void) layoutSubviews {
     [super layoutSubviews];
     
-    [self setUpScrollViewWithSelectedDay: 1];
+    [self setUpScrollViewWithSelectedDay: self.day];
     [self addMonthButtons];
     
 }
