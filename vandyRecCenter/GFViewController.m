@@ -270,7 +270,7 @@
         
         
     } else {
-        
+        //render the favorite cell style
         cell = [tableView dequeueReusableCellWithIdentifier: favoriteClassesID];
         
         if (cell == nil) {
@@ -285,14 +285,17 @@
         className.textColor = [UIColor blueColor];
         className.textAlignment = NSTextAlignmentCenter;
         
-        UILabel* weekDay = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 2 + GFCELL_MAINLABEL_HEIGHT, 100, GFCELL_SUBLABEL_HEIGHT)];
+        UILabel* weekDay = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 2 + GFCELL_MAINLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH, GFCELL_SUBLABEL_HEIGHT)];
         weekDay.text = [DateHelper weekDayForIndex: [[GFClass objectForKey: @"weekDay"] intValue]];
         weekDay.font = [UIFont systemFontOfSize: 12];
-        weekDay.layer.borderColor = [[UIColor blackColor] CGColor];
-        weekDay.layer.borderWidth = 2;
+        
+        UILabel* timeRange = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 3 + GFCELL_MAINLABEL_HEIGHT + GFCELL_SUBLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH, GFCELL_SUBLABEL_HEIGHT)];
+        timeRange.text = [GFClass objectForKey: @"timeRange"];
+        timeRange.font = [UIFont systemFontOfSize: 12];
         
         [cell addSubview: className];
         [cell addSubview: weekDay];
+        [cell addSubview: timeRange];
     }
     
     return cell;
