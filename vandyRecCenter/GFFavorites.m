@@ -19,9 +19,11 @@
     return _favorites;
 }
 - (void) add:(NSDictionary *)GFClass {
-    self.GFClasses = [self.GFClasses arrayByAddingObject: GFClass];
-    [self sort];
-    NSLog(@"%@", self.GFClasses);
+    if (![self isFavorite: GFClass]) {
+        self.GFClasses = [self.GFClasses arrayByAddingObject: GFClass];
+        [self sort];
+        NSLog(@"%@", self.GFClasses);
+    }
 }
 
 - (void) removeGFClassWithID:(NSString *)ID {

@@ -104,7 +104,6 @@
 }
 
 - (void) pushClassToFavorites: (ContainerButton*) sender {
-    NSLog(@"%@", sender.data);
     
     //toggle the selector
     if (sender.selected) {
