@@ -262,7 +262,7 @@
             cancelledLabel.textColor = [UIColor redColor];
             cancelledLabel.backgroundColor = [UIColor whiteColor];
             cancelledLabel.alpha = .65;
-            cancelledLabel.font = [UIFont systemFontOfSize: 20];
+            cancelledLabel.font = [UIFont fontWithName: @"Helvetica-Bold" size: 20];
             cancelledLabel.textAlignment = NSTextAlignmentCenter;
             cancelledLabel.userInteractionEnabled = YES;
             [cell addSubview: cancelledLabel];
@@ -286,17 +286,22 @@
         className.textColor = [UIColor blueColor];
         className.textAlignment = NSTextAlignmentCenter;
         
-        UILabel* weekDay = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 2 + GFCELL_MAINLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH, GFCELL_SUBLABEL_HEIGHT)];
-        weekDay.text = [DateHelper weekDayForIndex: [[GFClass objectForKey: @"weekDay"] intValue]];
-        weekDay.font = [UIFont systemFontOfSize: 12];
+        UILabel* instructor = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 2 + GFCELL_MAINLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH, GFCELL_SUBLABEL_HEIGHT)];
         
-        UILabel* timeRange = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 3 + GFCELL_MAINLABEL_HEIGHT + GFCELL_SUBLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH, GFCELL_SUBLABEL_HEIGHT)];
-        timeRange.text = [GFClass objectForKey: @"timeRange"];
-        timeRange.font = [UIFont systemFontOfSize: 12];
+        instructor.text = [GFClass objectForKey: @"instructor"];
+        instructor.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
+
         
+        UILabel* timeRange = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 3 + GFCELL_MAINLABEL_HEIGHT + GFCELL_SUBLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH_EXTENDED, GFCELL_SUBLABEL_HEIGHT)];
+        timeRange.text = [NSString stringWithFormat: @"%@ at %@", [DateHelper weekDayForIndex:[[GFClass objectForKey: @"weekDay"] intValue]], [GFClass objectForKey: @"timeRange"]];
+        
+        timeRange.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
+        
+                
         [cell addSubview: className];
-        [cell addSubview: weekDay];
+        
         [cell addSubview: timeRange];
+        [cell addSubview: instructor];
     }
     
     return cell;
