@@ -191,6 +191,7 @@
     return NO;
 }
 
+
 #pragma mark - Private
 
 - (NSArray*) filterClasses: (NSArray*) GFClasses bySpecialDateForYear: (NSUInteger) year month: (NSUInteger) month day: (NSUInteger) day {

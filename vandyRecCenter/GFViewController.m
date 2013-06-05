@@ -267,7 +267,13 @@
         
         
     } else {
-        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"test"];
+        
+        cell = [tableView dequeueReusableCellWithIdentifier: favoriteClassesID];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: favoriteClassesID];
+        }
+        
         cell.textLabel.text = @"Here is a cell";
     }
     
@@ -295,6 +301,9 @@
                 rowsInSection = GFClasses.count;
             }
         }];
+    } else {
+        //the selected tab is 2
+        rowsInSection = [self.collection.favorites count];
     }
     
     

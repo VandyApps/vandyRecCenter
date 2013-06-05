@@ -85,4 +85,8 @@
     }
     return NO;
 }
+
+- (NSUInteger) count {
+    return self.GFClasses.count;
+}
 @end

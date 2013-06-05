@@ -33,4 +33,6 @@
 //determines if the dictionary already exists in the
 //list of favorites
 - (BOOL) isFavorite: (NSDictionary*) GFClass;
+
+- (NSUInteger) count;
 @end
