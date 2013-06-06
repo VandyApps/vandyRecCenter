@@ -120,6 +120,11 @@
     }
 }
 
+- (void) removeFavoriteCell: (ContainerButton*) sender {
+    UIAlertView* removeAlert = [[UIAlertView alloc] initWithTitle: @"Remove" message: @"Are you sure you would like to remove this fitness class from your list of favorite fitness classes" delegate:self cancelButtonTitle: @"NO" otherButtonTitles: @"YES", nil];
+    [removeAlert show];
+}
+
 #pragma mark - Public
 
 - (void) hideCalendarView {
@@ -176,6 +181,16 @@
     }
 }
 
+
+#pragma mark - Alert view delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if ([alertView.title isEqualToString: @"Remove"] && buttonIndex == 1) {
+        //should delete the cell
+        NSLog(@"Removing the cell");
+    }
+    
+}
 #pragma mark - Table View DataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -332,9 +347,8 @@
         removeButton.titleLabel.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
         removeButton.backgroundColor = [UIColor redColor];
         removeButton.data = GFClass;
-        
         removeButton.layer.cornerRadius = 10;
-        
+        [removeButton addTarget: self action: @selector(removeFavoriteCell:) forControlEvents:UIControlEventTouchUpInside];
         
         
         [cell addSubview: className];

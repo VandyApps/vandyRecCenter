@@ -31,7 +31,7 @@
 #define GFCELL_BUTTON_HEIGHT 30
 
 
-@interface GFViewController : UIViewController <CalendarViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface GFViewController : UIViewController <CalendarViewDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UISegmentedControl* GFTabs;
 @property (nonatomic, weak) IBOutlet CalendarView* calendarView;
