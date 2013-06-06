@@ -12,7 +12,9 @@
 
 //find a better way to remove these
 @property (nonatomic, strong) NSArray* cancelViews;
-
+//find a better way to pass these along rather
+//than an instance variable
+@property (nonatomic, strong) NSDictionary* removalData;
 @end
 
 @implementation GFViewController
@@ -121,8 +123,10 @@
 }
 
 - (void) removeFavoriteCell: (ContainerButton*) sender {
+    self.removalData = sender.data;
     UIAlertView* removeAlert = [[UIAlertView alloc] initWithTitle: @"Remove" message: @"Are you sure you would like to remove this fitness class from your list of favorite fitness classes" delegate:self cancelButtonTitle: @"NO" otherButtonTitles: @"YES", nil];
     [removeAlert show];
+    
 }
 
 #pragma mark - Public
@@ -187,8 +191,10 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if ([alertView.title isEqualToString: @"Remove"] && buttonIndex == 1) {
         //should delete the cell
-        NSLog(@"Removing the cell");
+        NSLog(@"%@", self.removalData);
+       
     }
+    self.removalData = nil;
     
 }
 #pragma mark - Table View DataSource
@@ -345,7 +351,13 @@
         removeButton.titleLabel.textAlignment = NSTextAlignmentCenter;
         removeButton.titleLabel.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
         removeButton.backgroundColor = [UIColor redColor];
-        removeButton.data = GFClass;
+        //add the index path of the cell to the data being inserted in the
+        //button
+        NSMutableDictionary* mutableData = [GFClass mutableCopy];
+        [mutableData setObject: indexPath forKey: @"indexPath"];
+        //set the data to an immutable copy
+        removeButton.data = [mutableData copy];
+        
         removeButton.layer.cornerRadius = 10;
         [removeButton addTarget: self action: @selector(removeFavoriteCell:) forControlEvents:UIControlEventTouchUpInside];
         
