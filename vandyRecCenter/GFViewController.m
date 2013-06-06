@@ -107,17 +107,17 @@
     
     //toggle the selector
     if (sender.selected) {
+        sender.backgroundColor = [UIColor colorWithRed: 137/255.0 green:171/255.0 blue:255/255.0 alpha:1];
         sender.selected = NO;
         
         [self.collection.favorites removeGFClassWithID: [sender.data objectForKey: @"_id"]];
     } else {
-        sender.selected = YES;
+        sender.backgroundColor = [UIColor colorWithRed:100/255.0 green: 1 blue: 75/255.0 alpha:1];
         
+        sender.selected = YES;
         //add the class to favorites
         [self.collection.favorites add: sender.data];
     }
-    
-    
 }
 
 #pragma mark - Public
@@ -234,7 +234,9 @@
         addToFavorites.titleLabel.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
         addToFavorites.layer.cornerRadius = 4;
         [addToFavorites setTitle: @"Favorite" forState: UIControlStateSelected];
-        
+        [addToFavorites setTitleColor: [UIColor blueColor] forState: UIControlStateNormal];
+        [addToFavorites setTitleColor: [UIColor colorWithRed:47/255.0 green: 121/255.0 blue:35/255.0 alpha: 1] forState:UIControlStateSelected];
+        addToFavorites.backgroundColor = [UIColor colorWithRed: 137/255.0 green:171/255.0 blue:255/255.0 alpha:1];
         
         [addToFavorites addTarget:self action:@selector(pushClassToFavorites:) forControlEvents:UIControlEventTouchUpInside];
         if ([self.collection.favorites isFavorite: GFClass]) {
