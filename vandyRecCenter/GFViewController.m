@@ -314,7 +314,7 @@
         
         //check to see if the class being added to the favorites
         //list still exists in the schedule (the end date has not yet passed)
-        //if (![[GFClass objectForKey: @"endDate"] isEqualToString: @"*"] && [currentDate compare: [NSDate dateWithDateString: [GFClass objectForKey: @"endDate"]]] == NSOrderedDescending) {
+        if (![[GFClass objectForKey: @"endDate"] isEqualToString: @"*"] && [currentDate compare: [NSDate dateWithDateString: [GFClass objectForKey: @"endDate"]]] == NSOrderedDescending) {
             UILabel* discontinue = [[UILabel alloc] initWithFrame: CGRectMake((self.GFTableView.frame.size.width - GFCELL_SUBLABEL_WIDTH_EXTENDED)/2.0, CELL_VIEW_HEIGHT_FAVORITES - GFCELL_SUBLABEL_HEIGHT - GFCELL_PADDING, GFCELL_SUBLABEL_WIDTH_EXTENDED, GFCELL_SUBLABEL_HEIGHT)];
             discontinue.textColor = [UIColor redColor];
             discontinue.text = @"This class is discontinued";
@@ -322,15 +322,16 @@
             discontinue.textAlignment = NSTextAlignmentCenter;
             
             [cell addSubview: discontinue];
-        //}
-        
-        UIButton* removeButton = [[UIButton alloc] initWithFrame: CGRectMake(self.GFTableView.frame.size.width - GFCELL_BUTTON_WIDTH - GFCELL_PADDING*3, GFCELL_PADDING*2 + GFCELL_MAINLABEL_HEIGHT, GFCELL_BUTTON_WIDTH, GFCELL_BUTTON_HEIGHT)];
+        }
+
+        ContainerButton* removeButton = [[ContainerButton alloc] initWithFrame: CGRectMake(self.GFTableView.frame.size.width - GFCELL_BUTTON_WIDTH - GFCELL_PADDING*3, GFCELL_PADDING*2 + GFCELL_MAINLABEL_HEIGHT, GFCELL_BUTTON_WIDTH, GFCELL_BUTTON_HEIGHT)];
         [removeButton setTitle: @"Remove" forState: UIControlStateNormal];
         [removeButton setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
         [removeButton setTitleColor: [UIColor whiteColor] forState: UIControlStateHighlighted];
         removeButton.titleLabel.textAlignment = NSTextAlignmentCenter;
         removeButton.titleLabel.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
         removeButton.backgroundColor = [UIColor redColor];
+        removeButton.data = GFClass;
         
         removeButton.layer.cornerRadius = 10;
         
