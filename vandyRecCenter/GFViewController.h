@@ -15,7 +15,7 @@
 #import "ContainerButton.h"
 
 #define CELL_VIEW_HEIGHT_STANDARD 85
-#define CELL_VIEW_HEIGHT_FAVORITES 160
+#define CELL_VIEW_HEIGHT_FAVORITES 100
 #define HEIGHT_OF_GFTABS 29
 #define WIDTH_OF_MONTH_LABEL 250
 #define HEIGHT_OF_MONTH_LABEL 20
@@ -27,7 +27,8 @@
 #define GFCELL_SUBLABEL_HEIGHT 15
 #define GFCELL_SUBLABEL_WIDTH 130
 #define GFCELL_SUBLABEL_WIDTH_EXTENDED 180
-#define GFCELL_BUTTON_WIDTH 130
+#define GFCELL_BUTTON_WIDTH 80
+#define GFCELL_BUTTON_HEIGHT 30
 
 
 @interface GFViewController : UIViewController <CalendarViewDelegate, UITableViewDataSource, UITableViewDelegate>

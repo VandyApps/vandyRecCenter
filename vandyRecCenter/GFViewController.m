@@ -228,7 +228,7 @@
         timeRange.text = [GFClass objectForKey: @"timeRange"];
         timeRange.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
        
-        ContainerButton* addToFavorites = [[ContainerButton alloc] initWithFrame: CGRectMake(self.view.frame.size.width - 20 - 80, 40, 80, 30)];
+        ContainerButton* addToFavorites = [[ContainerButton alloc] initWithFrame: CGRectMake(self.view.frame.size.width - 20 - GFCELL_BUTTON_WIDTH, 40, GFCELL_BUTTON_WIDTH, GFCELL_BUTTON_HEIGHT)];
         addToFavorites.data = GFClass;
         [addToFavorites setTitle: @"Add" forState: UIControlStateNormal];
         addToFavorites.titleLabel.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
@@ -322,16 +322,14 @@
             [cell addSubview: discontinue];
         //}
         
-        //buttons
-        UIButton* calendarButton = [[UIButton alloc] initWithFrame: CGRectMake((self.GFTableView.frame.size.width - 40 * 2 - GFCELL_PADDING*10) / 2.0, GFCELL_PADDING * 5 + GFCELL_SUBLABEL_HEIGHT* 2 + GFCELL_MAINLABEL_HEIGHT, 40, 40)];
+        UIButton* removeButton = [[UIButton alloc] initWithFrame: CGRectMake(self.GFTableView.frame.size.width - GFCELL_BUTTON_WIDTH - GFCELL_PADDING*3, GFCELL_PADDING*2 + GFCELL_MAINLABEL_HEIGHT, GFCELL_BUTTON_WIDTH, GFCELL_BUTTON_HEIGHT)];
+        [removeButton setTitle: @"Remove" forState: UIControlStateNormal];
+        [removeButton setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
+        [removeButton setTitleColor: [UIColor whiteColor] forState: UIControlStateHighlighted];
+        removeButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+        removeButton.titleLabel.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
+        removeButton.backgroundColor = [UIColor redColor];
         
-        calendarButton.layer.backgroundColor = [[UIColor darkGrayColor] CGColor];
-        calendarButton.layer.cornerRadius = 10;
-        [calendarButton setBackgroundImage: [UIImage imageNamed: @"426-calendar.png"] forState:UIControlStateNormal];
-        
-        UIButton* removeButton = [[UIButton alloc] initWithFrame: CGRectMake((self.GFTableView.frame.size.width + GFCELL_PADDING * 10) / 2.0, GFCELL_PADDING * 5 + GFCELL_SUBLABEL_HEIGHT*2 + GFCELL_MAINLABEL_HEIGHT, 40, 40)];
-        [removeButton setBackgroundImage: [UIImage imageNamed:@"432-no.png"] forState: UIControlStateNormal];
-        removeButton.layer.backgroundColor = [[UIColor darkGrayColor] CGColor];
         removeButton.layer.cornerRadius = 10;
         
         
@@ -339,7 +337,6 @@
         [cell addSubview: className];
         [cell addSubview: timeRange];
         [cell addSubview: instructor];
-        [cell addSubview: calendarButton];
         [cell addSubview: removeButton];
         
     }
