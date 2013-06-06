@@ -309,14 +309,10 @@
         UILabel* instructor = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 2 + GFCELL_MAINLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH, GFCELL_SUBLABEL_HEIGHT)];
         instructor.text = [GFClass objectForKey: @"instructor"];
         instructor.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
-        instructor.layer.borderWidth = 2;
-        instructor.layer.borderColor = [[UIColor blackColor] CGColor];
         
         UILabel* timeRange = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 3 + GFCELL_MAINLABEL_HEIGHT + GFCELL_SUBLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH_EXTENDED, GFCELL_SUBLABEL_HEIGHT)];
         timeRange.text = [NSString stringWithFormat: @"%@ at %@", [DateHelper weekDayForIndex:[[GFClass objectForKey: @"dayOfWeek"] intValue]], [GFClass objectForKey: @"timeRange"]];
         timeRange.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
-        timeRange.layer.borderWidth = 2;
-        timeRange.layer.borderColor = [[UIColor blackColor] CGColor];
         
         
         //get the current date for the time zone using
