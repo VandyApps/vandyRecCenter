@@ -251,11 +251,14 @@
         [addToFavorites setTitle: @"Favorite" forState: UIControlStateSelected];
         [addToFavorites setTitleColor: [UIColor blueColor] forState: UIControlStateNormal];
         [addToFavorites setTitleColor: [UIColor colorWithRed:47/255.0 green: 121/255.0 blue:35/255.0 alpha: 1] forState:UIControlStateSelected];
-        addToFavorites.backgroundColor = [UIColor colorWithRed: 137/255.0 green:171/255.0 blue:255/255.0 alpha:1];
+        
         
         [addToFavorites addTarget:self action:@selector(pushClassToFavorites:) forControlEvents:UIControlEventTouchUpInside];
         if ([self.collection.favorites isFavorite: GFClass]) {
             addToFavorites.selected = YES;
+            addToFavorites.backgroundColor = [UIColor colorWithRed:100/255.0 green: 1 blue: 75/255.0 alpha:1];
+        } else {
+            addToFavorites.backgroundColor = [UIColor colorWithRed: 137/255.0 green:171/255.0 blue:255/255.0 alpha:1];
         }
         
         [cell addSubview: className];
