@@ -48,6 +48,10 @@
 		21A17F651753DD9E00681749 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A17F641753DD9E00681749 /* CalendarView.m */; };
 		21A37AC0171B34F1008990C5 /* HoursModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A37ABF171B34F1008990C5 /* HoursModel.m */; };
 		21AA184D1754211800CC2A83 /* DayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AA184C1754211800CC2A83 /* DayButton.m */; };
+		21D0CD3D176011560010B732 /* 426-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D0CD39176011560010B732 /* 426-calendar.png */; };
+		21D0CD3E176011560010B732 /* 426-calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D0CD3A176011560010B732 /* 426-calendar@2x.png */; };
+		21D0CD3F176011560010B732 /* 432-no.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D0CD3B176011560010B732 /* 432-no.png */; };
+		21D0CD40176011560010B732 /* 432-no@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D0CD3C176011560010B732 /* 432-no@2x.png */; };
 		21D303A917526E46007D8247 /* GFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D303A817526E46007D8247 /* GFViewController.m */; };
 		21D303AC17527DF8007D8247 /* GFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D303AB17527DF8007D8247 /* GFModel.m */; };
 		21D8513F1756EC4D00117526 /* ContainerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D8513E1756EC4D00117526 /* ContainerButton.m */; };
@@ -141,6 +145,10 @@
 		21AA184C1754211800CC2A83 /* DayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayButton.m; sourceTree = "<group>"; };
 		21C2C2C71745C8B8006A97DC /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
 		21C2C2C81745C8B8006A97DC /* 53-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house@2x.png"; sourceTree = "<group>"; };
+		21D0CD39176011560010B732 /* 426-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "426-calendar.png"; sourceTree = "<group>"; };
+		21D0CD3A176011560010B732 /* 426-calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "426-calendar@2x.png"; sourceTree = "<group>"; };
+		21D0CD3B176011560010B732 /* 432-no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "432-no.png"; sourceTree = "<group>"; };
+		21D0CD3C176011560010B732 /* 432-no@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "432-no@2x.png"; sourceTree = "<group>"; };
 		21D303A717526E46007D8247 /* GFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFViewController.h; sourceTree = "<group>"; };
 		21D303A817526E46007D8247 /* GFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFViewController.m; sourceTree = "<group>"; };
 		21D303AA17527DF8007D8247 /* GFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFModel.h; sourceTree = "<group>"; };
@@ -239,6 +247,7 @@
 				21EB34F217177B0D0015AD77 /* rightArrow@2x.png */,
 				21201EC31702199B00E89605 /* vandyLogo.png */,
 				212DECD1170096C40041498E /* imageOfRec.jpeg */,
+				21D0CD38176011480010B732 /* icons-gray */,
 				21352DC01729CA5C006D5E64 /* icons-white */,
 			);
 			name = Images;
@@ -365,6 +374,17 @@
 			name = "Calendar View";
 			sourceTree = "<group>";
 		};
+		21D0CD38176011480010B732 /* icons-gray */ = {
+			isa = PBXGroup;
+			children = (
+				21D0CD39176011560010B732 /* 426-calendar.png */,
+				21D0CD3A176011560010B732 /* 426-calendar@2x.png */,
+				21D0CD3B176011560010B732 /* 432-no.png */,
+				21D0CD3C176011560010B732 /* 432-no@2x.png */,
+			);
+			name = "icons-gray";
+			sourceTree = "<group>";
+		};
 		21D303A617526E14007D8247 /* GF */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,10 +411,10 @@
 				21D303AB17527DF8007D8247 /* GFModel.m */,
 				21E3476C175BDECD0007DE39 /* GFSpecialDates.h */,
 				21E3476D175BDECD0007DE39 /* GFSpecialDates.m */,
-				211B16EC17530AD900180E3D /* GFCollection.h */,
-				211B16ED17530AD900180E3D /* GFCollection.m */,
 				21D851411756F07B00117526 /* GFFavorites.h */,
 				21D851421756F07B00117526 /* GFFavorites.m */,
+				211B16EC17530AD900180E3D /* GFCollection.h */,
+				211B16ED17530AD900180E3D /* GFCollection.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -557,6 +577,10 @@
 				21D92EA0175469CE00CE88EE /* 50-plus.png in Resources */,
 				21D92EA1175469CE00CE88EE /* 50-plus@2x.png in Resources */,
 				2103555817566480008C92FB /* images.jpeg in Resources */,
+				21D0CD3D176011560010B732 /* 426-calendar.png in Resources */,
+				21D0CD3E176011560010B732 /* 426-calendar@2x.png in Resources */,
+				21D0CD3F176011560010B732 /* 432-no.png in Resources */,
+				21D0CD40176011560010B732 /* 432-no@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

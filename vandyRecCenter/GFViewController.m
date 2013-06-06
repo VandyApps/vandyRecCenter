@@ -287,21 +287,61 @@
         className.textAlignment = NSTextAlignmentCenter;
         
         UILabel* instructor = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 2 + GFCELL_MAINLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH, GFCELL_SUBLABEL_HEIGHT)];
-        
         instructor.text = [GFClass objectForKey: @"instructor"];
         instructor.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
-
+        instructor.layer.borderWidth = 2;
+        instructor.layer.borderColor = [[UIColor blackColor] CGColor];
         
         UILabel* timeRange = [[UILabel alloc] initWithFrame: CGRectMake(GFCELL_PADDING, GFCELL_PADDING * 3 + GFCELL_MAINLABEL_HEIGHT + GFCELL_SUBLABEL_HEIGHT, GFCELL_SUBLABEL_WIDTH_EXTENDED, GFCELL_SUBLABEL_HEIGHT)];
         timeRange.text = [NSString stringWithFormat: @"%@ at %@", [DateHelper weekDayForIndex:[[GFClass objectForKey: @"dayOfWeek"] intValue]], [GFClass objectForKey: @"timeRange"]];
-        
         timeRange.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
+        timeRange.layer.borderWidth = 2;
+        timeRange.layer.borderColor = [[UIColor blackColor] CGColor];
         
-                
+        
+        //get the current date for the time zone using
+        //the date formatter method
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateStyle = NSDateFormatterShortStyle;
+        formatter.timeStyle = NSDateFormatterNoStyle;
+        formatter.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
+        NSString* dateString = [formatter stringFromDate: [[NSDate alloc] init]];
+        //add the 20 into the date for the year
+        dateString = [[[dateString substringToIndex: dateString.length - 2] stringByAppendingString:@"20"] stringByAppendingString: [dateString substringFromIndex:dateString.length - 2]];
+        NSDate *currentDate = [NSDate dateWithDateString: dateString];
+        
+        //check to see if the class being added to the favorites
+        //list still exists in the schedule (the end date has not yet passed)
+        //if (![[GFClass objectForKey: @"endDate"] isEqualToString: @"*"] && [currentDate compare: [NSDate dateWithDateString: [GFClass objectForKey: @"endDate"]]] == NSOrderedDescending) {
+            UILabel* discontinue = [[UILabel alloc] initWithFrame: CGRectMake((self.GFTableView.frame.size.width - GFCELL_SUBLABEL_WIDTH_EXTENDED)/2.0, CELL_VIEW_HEIGHT_FAVORITES - GFCELL_SUBLABEL_HEIGHT - GFCELL_PADDING, GFCELL_SUBLABEL_WIDTH_EXTENDED, GFCELL_SUBLABEL_HEIGHT)];
+            discontinue.textColor = [UIColor redColor];
+            discontinue.text = @"This class is discontinued";
+            discontinue.font = [UIFont fontWithName: @"Helvetica-Bold" size: 12];
+            discontinue.textAlignment = NSTextAlignmentCenter;
+            
+            [cell addSubview: discontinue];
+        //}
+        
+        //buttons
+        UIButton* calendarButton = [[UIButton alloc] initWithFrame: CGRectMake((self.GFTableView.frame.size.width - 40 * 2 - GFCELL_PADDING*10) / 2.0, GFCELL_PADDING * 5 + GFCELL_SUBLABEL_HEIGHT* 2 + GFCELL_MAINLABEL_HEIGHT, 40, 40)];
+        
+        calendarButton.layer.backgroundColor = [[UIColor darkGrayColor] CGColor];
+        calendarButton.layer.cornerRadius = 10;
+        [calendarButton setBackgroundImage: [UIImage imageNamed: @"426-calendar.png"] forState:UIControlStateNormal];
+        
+        UIButton* removeButton = [[UIButton alloc] initWithFrame: CGRectMake((self.GFTableView.frame.size.width + GFCELL_PADDING * 10) / 2.0, GFCELL_PADDING * 5 + GFCELL_SUBLABEL_HEIGHT*2 + GFCELL_MAINLABEL_HEIGHT, 40, 40)];
+        [removeButton setBackgroundImage: [UIImage imageNamed:@"432-no.png"] forState: UIControlStateNormal];
+        removeButton.layer.backgroundColor = [[UIColor darkGrayColor] CGColor];
+        removeButton.layer.cornerRadius = 10;
+        
+        
+        
         [cell addSubview: className];
-        
         [cell addSubview: timeRange];
         [cell addSubview: instructor];
+        [cell addSubview: calendarButton];
+        [cell addSubview: removeButton];
+        
     }
     
     return cell;
