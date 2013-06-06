@@ -191,8 +191,9 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if ([alertView.title isEqualToString: @"Remove"] && buttonIndex == 1) {
         //should delete the cell
-        NSLog(@"%@", self.removalData);
-       
+        [self.collection.favorites removeGFClassWithID: [self.removalData objectForKey: @"_id"]];
+        [self.GFTableView deleteRowsAtIndexPaths: [[NSArray alloc] initWithObjects: [self.removalData objectForKey: @"indexPath"], nil] withRowAnimation: UITableViewRowAnimationTop];
+        [self.GFTableView reloadData];
     }
     self.removalData = nil;
     
