@@ -35,6 +35,7 @@
 //if the GFClasses for the the day have not
 //loaded, they are loaded before calling the block
 - (void) GFClassesForCurrentDay: (void (^)(NSError* error, NSArray* GFClasses)) block;
+- (void) GFClassesForDaysAfterCurrentDay: (NSInteger) days block: (void (^)(NSError*, NSArray* GFClasses)) block;
 - (void) GFClassesForYear: (NSUInteger) year month: (NSUInteger) month day: (NSUInteger) day block: (void (^)(NSError* error, NSArray* GFClasses)) block;
 
 - (void) GFModelForCurrentMonth: (void (^)(NSError* error, GFModel *model)) block;

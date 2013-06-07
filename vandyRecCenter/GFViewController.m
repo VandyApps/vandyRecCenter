@@ -221,6 +221,8 @@
                 
             }];
         } else if (self.GFTabs.selectedSegmentIndex == 1) {
+            //THERE ARE 7 SECTIONS
+            
             [self.collection GFClassesForCurrentDay:^(NSError *error, NSArray *GFClasses) {
                 if (error) {[self connectionError];}
                 else {
