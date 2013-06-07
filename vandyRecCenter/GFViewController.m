@@ -453,7 +453,9 @@
             NSString* dateString = [formatter stringFromDate: displayDate];
             //add the 20 into the date for the year
             dateString = [[[dateString substringToIndex: dateString.length - 2] stringByAppendingString:@"20"] stringByAppendingString: [dateString substringFromIndex:dateString.length - 2]];
-            monthLabel.text = [self displayDate: [NSDate dateWithDateString: dateString]];
+            NSDate* correctedDate = [NSDate dateWithDateString: dateString];
+            
+            monthLabel.text = [DateHelper weekDayForIndex: [correctedDate weekDay]];
         }
         
     } else {
