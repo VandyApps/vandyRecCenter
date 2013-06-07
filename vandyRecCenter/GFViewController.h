@@ -43,5 +43,5 @@
 
 - (void) hideCalendarView;
 - (void) showCalendarView;
-- (void) displayDate: (NSDate*) date;
+- (NSString*) displayDate: (NSDate*) date;
 @end

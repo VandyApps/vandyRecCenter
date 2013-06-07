@@ -148,9 +148,9 @@
     }
 }
 
-- (void) displayDate: (NSDate*) date {
+- (NSString*) displayDate: (NSDate*) date {
     
-    self.monthLabel.text = [NSString stringWithFormat: @"%@. %@ %i, %i", [DateHelper weekDayAbbreviationForIndex:[date weekDay]], [DateHelper monthNameForIndex: [date month]], [date day], [date year]];
+    return [NSString stringWithFormat: @"%@. %@ %i, %i", [DateHelper weekDayAbbreviationForIndex:[date weekDay]], [DateHelper monthNameForIndex: [date month]], [date day], [date year]];
 }
 
 #pragma mark - Calendar Delegate
@@ -414,14 +414,14 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIImageView* view = [[UIImageView alloc] init];
     view.image = [UIImage imageNamed: @"goldTint.png"];
-    self.monthLabel = [[UILabel alloc] initWithFrame: CGRectMake((self.view.frame.size.width - WIDTH_OF_MONTH_LABEL) / 2.0, (HEIGHT_OF_SECTION_HEADER - HEIGHT_OF_MONTH_LABEL) / 2.0,  WIDTH_OF_MONTH_LABEL, HEIGHT_OF_MONTH_LABEL)];
+    UILabel* monthLabel = [[UILabel alloc] initWithFrame: CGRectMake((self.view.frame.size.width - WIDTH_OF_MONTH_LABEL) / 2.0, (HEIGHT_OF_SECTION_HEADER - HEIGHT_OF_MONTH_LABEL) / 2.0,  WIDTH_OF_MONTH_LABEL, HEIGHT_OF_MONTH_LABEL)];
     
-    self.monthLabel.textAlignment = NSTextAlignmentCenter;
-    self.monthLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 18];
-    self.monthLabel.backgroundColor = [UIColor clearColor];
+    monthLabel.textAlignment = NSTextAlignmentCenter;
+    monthLabel.font = [UIFont fontWithName: @"TrebuchetMS-Bold" size: 18];
+    monthLabel.backgroundColor = [UIColor clearColor];
     
     if (self.GFTabs.selectedSegmentIndex == 0) {
-        [self displayDate: [self.calendarView selectedDate]];
+        monthLabel.text = [self displayDate: [self.calendarView selectedDate]];
     } else if (self.GFTabs.selectedSegmentIndex == 1) {
         
         //get the current date for the time zone using
@@ -433,12 +433,12 @@
         NSString* dateString = [formatter stringFromDate: [[NSDate alloc] init]];
         //add the 20 into the date for the year
         dateString = [[[dateString substringToIndex: dateString.length - 2] stringByAppendingString:@"20"] stringByAppendingString: [dateString substringFromIndex:dateString.length - 2]];
-        [self displayDate: [NSDate dateWithDateString: dateString]];
+        monthLabel.text = [self displayDate: [NSDate dateWithDateString: dateString]];
         
     } else {
-        self.monthLabel.text = @"Favorites";
+        monthLabel.text = @"Favorites";
     }
-    [view addSubview: self.monthLabel];
+    [view addSubview: monthLabel];
     return view;
     
 }
