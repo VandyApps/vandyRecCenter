@@ -25,6 +25,7 @@
 @synthesize calendarView = _calendarView;
 @synthesize cancelViews = _cancelViews;
 
+
 #pragma mark - getter
 
 - (NSArray*) cancelViews {
@@ -93,6 +94,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 #pragma mark - Events

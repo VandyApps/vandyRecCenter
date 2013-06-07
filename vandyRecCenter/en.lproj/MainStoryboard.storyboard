@@ -461,7 +461,7 @@
             </objects>
             <point key="canvasLocation" x="385" y="-17"/>
         </scene>
-        <!--View Controller - Classes-->
+        <!--View Controller - Group Fitness-->
         <scene sceneID="gFz-DX-wSp">
             <objects>
                 <viewController id="2Qc-Wk-9j9" customClass="GFViewController" sceneMemberID="viewController">
@@ -493,7 +493,7 @@
                             <constraint firstItem="4PS-KL-nxb" firstAttribute="leading" secondItem="Pgd-U3-KAp" secondAttribute="leading" type="default" id="uMX-jY-iTf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Classes" id="FCk-t0-Icd"/>
+                    <navigationItem key="navigationItem" title="Group Fitness" id="FCk-t0-Icd"/>
                     <connections>
                         <outlet property="GFTabs" destination="4PS-KL-nxb" id="S4u-Eg-f80"/>
                         <outlet property="calendarView" destination="EZP-sj-GU7" id="q6K-TK-96O"/>

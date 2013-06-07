@@ -12,6 +12,8 @@
 
 @synthesize GFClasses = _favorites;
 
+
+
 - (NSArray*) GFClasses {
     if (_favorites == nil) {
         _favorites = [[NSArray alloc] init];
@@ -93,5 +95,17 @@
 
 - (NSUInteger) count {
     return self.GFClasses.count;
+}
+
+
+#pragma mark - Persistant Data
+
+//saves data to a property list
+- (void) saveData {
+    //implement CORE DATA to save favorites list
+}
+
+- (void) loadData {
+    //implement CORE DATA to load favorites list
 }
 @end

@@ -40,6 +40,7 @@
 
 @property (nonatomic, strong) GFCollection* collection;
 
+
 - (void) hideCalendarView;
 - (void) showCalendarView;
 - (void) displayDate: (NSDate*) date;
