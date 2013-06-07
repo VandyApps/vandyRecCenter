@@ -11,6 +11,7 @@
 #import "GFSpecialDates.h"
 #import "GFFavorites.h"
 #import "NSDate-MyDateClass.h"
+#import "DateHelper.h"
 
 #ifndef NASHVILLE_TIMEZONE
 #define NASHVILLE_TIMEZONE @"America/Chicago"

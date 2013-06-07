@@ -10,6 +10,22 @@
 
 @implementation DateHelper
 
++ (NSDate*) currentDateForTimeZone:(NSTimeZone *)timezone {
+    NSDate* testDate = [[NSDate alloc] init];
+    
+    //get the current date for the time zone using
+    //the date formatter method
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    formatter.timeZone = timezone;
+    NSString* dateString = [formatter stringFromDate: testDate];
+    //add the 20 into the date for the year
+    dateString = [[[dateString substringToIndex: dateString.length - 2] stringByAppendingString:@"20"] stringByAppendingString: [dateString substringFromIndex:dateString.length - 2]];
+    
+    return [NSDate dateWithDateString: dateString];
+}
+
 + (NSString*) monthNameForIndex:(NSUInteger)index {
     switch (index) {
         case 0:

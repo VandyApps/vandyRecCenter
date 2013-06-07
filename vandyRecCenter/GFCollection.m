@@ -109,20 +109,11 @@
 }
 
 - (void) GFClassesForDaysAfterCurrentDay:(NSInteger)days block:(void (^)(NSError *, NSArray *))block {
-    NSDate* testDate = [[NSDate alloc] init];
-    //add days to the date
-    testDate = [testDate dateByAddingTimeInterval: days * 24 * 60 * 60];
-    //get the current date for the time zone using
-    //the date formatter method
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateStyle = NSDateFormatterShortStyle;
-    formatter.timeStyle = NSDateFormatterNoStyle;
-    formatter.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
-    NSString* dateString = [formatter stringFromDate: testDate];
-    //add the 20 into the date for the year
-    dateString = [[[dateString substringToIndex: dateString.length - 2] stringByAppendingString:@"20"] stringByAppendingString: [dateString substringFromIndex:dateString.length - 2]];
     
-    NSDate* date = [NSDate dateWithDateString: dateString];
+    NSDate* date = [DateHelper currentDateForTimeZone:[NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE]];
+    //add days to the date
+    date = [date dateByAddingTimeInterval: days * 24 * 60 * 60];
+    
     [self GFClassesForYear:[date year] month: [date month] day: [date day] block:^(NSError *error, NSArray *GFClasses) {
         
         block(error, GFClasses);

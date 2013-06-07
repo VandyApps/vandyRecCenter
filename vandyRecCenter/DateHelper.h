@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "NSDate-MyDateClass.h"
 @interface DateHelper : NSObject
+
++ (NSDate*) currentDateForTimeZone: (NSTimeZone*) timezone;
 
 + (NSString*) monthNameForIndex: (NSUInteger) index;
 + (NSString*) weekDayForIndex: (NSUInteger) index;
