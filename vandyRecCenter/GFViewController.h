@@ -36,7 +36,6 @@
 @property (nonatomic, weak) IBOutlet UISegmentedControl* GFTabs;
 @property (nonatomic, weak) IBOutlet CalendarView* calendarView;
 @property (nonatomic, strong)  UITableView *GFTableView;
-@property (nonatomic, strong) UILabel* monthLabel;
 
 @property (nonatomic, strong) GFCollection* collection;
 

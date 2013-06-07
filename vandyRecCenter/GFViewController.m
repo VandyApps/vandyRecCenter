@@ -21,7 +21,6 @@
 @synthesize GFTabs = _GFTabs;
 @synthesize collection = _collection;
 @synthesize GFTableView = _GFTableView;
-@synthesize monthLabel = _monthLabel;
 @synthesize calendarView = _calendarView;
 @synthesize cancelViews = _cancelViews;
 
