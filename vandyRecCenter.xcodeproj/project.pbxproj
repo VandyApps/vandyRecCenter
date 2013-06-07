@@ -333,12 +333,8 @@
 				2170328316FE96D900A43833 /* AppDelegate.m */,
 				2170328B16FE96D900A43833 /* MainStoryboard.storyboard */,
 				21F1EA631728F17000AB17DB /* Custom Tab Bar */,
-				2103555C17566D43008C92FB /* Custom Load */,
-				21D851401756EC5200117526 /* Container Button */,
 				21E677C91749753400719EA7 /* Web Client */,
-				21FA94BC172D951D0016918B /* Categories */,
-				211B16E71752B4AB00180E3D /* Utility Classes */,
-				21A17F661753DDAC00681749 /* Calendar View */,
+				21E91E7317626DD900D7FCEC /* Dependencies */,
 				21E40A1F1719C7380045451F /* Home */,
 				21E40A1D1719C7270045451F /* Hours */,
 				21D303A617526E14007D8247 /* GF */,
@@ -454,6 +450,18 @@
 				21E677CB1749754B00719EA7 /* VandyRecClient.m */,
 			);
 			name = "Web Client";
+			sourceTree = "<group>";
+		};
+		21E91E7317626DD900D7FCEC /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				21A17F661753DDAC00681749 /* Calendar View */,
+				211B16E71752B4AB00180E3D /* Utility Classes */,
+				21FA94BC172D951D0016918B /* Categories */,
+				21D851401756EC5200117526 /* Container Button */,
+				2103555C17566D43008C92FB /* Custom Load */,
+			);
+			name = Dependencies;
 			sourceTree = "<group>";
 		};
 		21F1EA631728F17000AB17DB /* Custom Tab Bar */ = {
