@@ -15,6 +15,8 @@
 
 //accepts string in format: 12:00am or 12:00 AM
 - (NSDate*) dateBySettingTimeToTime: (NSString*) time; 
+- (NSDate*) dateByIncrementingDay;
+- (NSDate*) dateByDecrementingDay;
 
 //getters for the day, month, and year
 - (NSUInteger) day;
@@ -37,5 +39,6 @@
 + (NSUInteger) monthForTimeZone: (NSTimeZone*) timeZone;
 + (NSUInteger) yearForTimeZone: (NSTimeZone*) timeZone;
 + (NSUInteger) weekDayForTimeZone: (NSTimeZone*) timeZone;
+
 
 @end

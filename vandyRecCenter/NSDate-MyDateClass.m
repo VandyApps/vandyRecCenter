@@ -45,6 +45,14 @@
     }
 }
 
+- (NSDate*) dateByIncrementingDay {
+    return [self dateByAddingTimeInterval: 24*60*60];
+}
+
+- (NSDate*) dateByDecrementingDay {
+    return [self dateByAddingTimeInterval: -24*60*60];
+}
+
 
 //private methods here
 //if earlyMidnight is true, midnight is represented as 0 hours
@@ -258,5 +266,7 @@
 + (NSUInteger) weekDayForTimeZone:(NSTimeZone *)timeZone {
     return [[[NSDate alloc] init] weekDayForTimeZone: timeZone];
 }
+
+
 
 @end
