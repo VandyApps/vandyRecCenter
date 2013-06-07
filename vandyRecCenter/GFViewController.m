@@ -147,6 +147,8 @@
     }
 }
 
+#pragma mark - Display
+
 - (NSString*) displayDate: (NSDate*) date {
     
     return [NSString stringWithFormat: @"%@. %@ %i, %i", [DateHelper weekDayAbbreviationForIndex:[date weekDay]], [DateHelper monthNameForIndex: [date month]], [date day], [date year]];
