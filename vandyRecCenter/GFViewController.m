@@ -405,6 +405,10 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (self.GFTabs.selectedSegmentIndex == 1) {
+        //section for each day of the week
+        return 7;
+    }
     return 1;
 }
 
@@ -422,17 +426,23 @@
     if (self.GFTabs.selectedSegmentIndex == 0) {
         monthLabel.text = [self displayDate: [self.calendarView selectedDate]];
     } else if (self.GFTabs.selectedSegmentIndex == 1) {
-        
-        //get the current date for the time zone using
-        //the date formatter method
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateStyle = NSDateFormatterShortStyle;
-        formatter.timeStyle = NSDateFormatterNoStyle;
-        formatter.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
-        NSString* dateString = [formatter stringFromDate: [[NSDate alloc] init]];
-        //add the 20 into the date for the year
-        dateString = [[[dateString substringToIndex: dateString.length - 2] stringByAppendingString:@"20"] stringByAppendingString: [dateString substringFromIndex:dateString.length - 2]];
-        monthLabel.text = [self displayDate: [NSDate dateWithDateString: dateString]];
+        if (section == 0) {
+            monthLabel.text = @"Today";
+        } else {
+            NSDate* displayDate = [[NSDate alloc] init];
+            //add days to the date
+            displayDate = [displayDate dateByAddingTimeInterval: section * 24 * 60 * 60];
+            //get the current date for the time zone using
+            //the date formatter method
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            formatter.dateStyle = NSDateFormatterShortStyle;
+            formatter.timeStyle = NSDateFormatterNoStyle;
+            formatter.timeZone = [NSTimeZone timeZoneWithName: NASHVILLE_TIMEZONE];
+            NSString* dateString = [formatter stringFromDate: displayDate];
+            //add the 20 into the date for the year
+            dateString = [[[dateString substringToIndex: dateString.length - 2] stringByAppendingString:@"20"] stringByAppendingString: [dateString substringFromIndex:dateString.length - 2]];
+            monthLabel.text = [self displayDate: [NSDate dateWithDateString: dateString]];
+        }
         
     } else {
         monthLabel.text = @"Favorites";
