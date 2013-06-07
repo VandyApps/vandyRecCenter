@@ -222,13 +222,22 @@
             }];
         } else if (self.GFTabs.selectedSegmentIndex == 1) {
             //THERE ARE 7 SECTIONS
+            if (indexPath.section == 0) {
+                [self.collection GFClassesForCurrentDay:^(NSError *error, NSArray *GFClasses) {
+                    if (error) {[self connectionError];}
+                    else {
+                        GFClass = [GFClasses objectAtIndex: indexPath.row];
+                    }
+                }];
+            } else {
+                [self.collection GFClassesForDaysAfterCurrentDay: indexPath.section block:^(NSError * error, NSArray *GFClasses) {
+                    if (error) {[self connectionError];}
+                    else {
+                        GFClass = [GFClasses objectAtIndex: indexPath.row];
+                    }
+                }];
+            }
             
-            [self.collection GFClassesForCurrentDay:^(NSError *error, NSArray *GFClasses) {
-                if (error) {[self connectionError];}
-                else {
-                    GFClass = [GFClasses objectAtIndex: indexPath.row];
-                }
-            }];
         }
        
         cell = [tableView dequeueReusableCellWithIdentifier: allClassesID];
@@ -390,13 +399,14 @@
 
         }];
     } else if (self.GFTabs.selectedSegmentIndex == 1) {
-        [self.collection GFClassesForCurrentDay:^(NSError *error, NSArray *GFClasses) {
+        [self.collection GFClassesForDaysAfterCurrentDay: section block:^(NSError *error, NSArray *GFClasses) {
             if (error) {
                 [self connectionError];
             } else {
                 rowsInSection = GFClasses.count;
             }
         }];
+        
     } else {
         //the selected tab is 2
         rowsInSection = [self.collection.favorites count];
